@@ -1,0 +1,22 @@
+{
+  "generatedOn": "2026-10-14",
+  "rotationDate": "2026-10-14",
+  "inputFile": "data/quotes.csv",
+  "inputRow": 2,
+  "author": "Ralph Waldo Emerson",
+  "background": "rain-window",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationSeconds": 10.8,
+  "creditsQuoted": 11,
+  "videoCodec": "h264",
+  "audioCodec": "aac",
+  "videoFile": "assets/sample-output.mp4",
+  "posterFile": "assets/sample-output.jpg",
+  "projectFile": "assets/sample-project.json",
+  "videoSha256": "89123ba2a01de4408cd803df2887d90884ef6543a3dca05efde734dcfd27bd81",
+  "workflowSha256": "a2e72e40e5f1b8faaf514568ac2beb99bc0c533d646f1ef9ed49d9527387abea",
+  "reproduce": "node src/index.js --date 2026-10-14 --max-credits 11",
+  "note": "A real render from the shared builder. Reproduction spends credits; inspect a fresh validation quote first. The video and workflow files are preserved byte-for-byte from the verified source."
+}

@@ -1,0 +1,13 @@
+{
+  "name": "zvid-workflow-examples",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Independently runnable Zvid workflow examples with tests and real outputs.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "check:structure": "node scripts/check-structure.mjs",
+    "check": "node scripts/run-workflows.mjs check",
+    "test": "node scripts/run-workflows.mjs test"
+  }
+}

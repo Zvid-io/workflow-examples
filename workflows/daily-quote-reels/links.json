@@ -1,0 +1,10 @@
+{
+  "workflowSlug": "daily-quote-reels",
+  "website": "https://zvid.io/n8n/workflows/google-sheets-daily-quote-videos",
+  "n8n": "https://n8n.io/workflows/19632-create-daily-quote-videos-from-google-sheets-with-zvid/",
+  "code": "https://github.com/Zvid-io/workflow-examples/tree/main/workflows/daily-quote-reels",
+  "youtube": "https://youtu.be/Ra6mPdmDDYs",
+  "docs": "https://docs.zvid.io",
+  "support": "https://zvid.io/contact",
+  "blog": null
+}

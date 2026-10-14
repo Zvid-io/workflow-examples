@@ -1,0 +1,65 @@
+{
+  "name": "daily-quote-videos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Automate daily motivational quote videos from Google Sheets with n8n and Zvid. Create branded videos for YouTube Shorts, TikTok, Instagram Reels, and faceless social media channels.",
+  "keywords": [
+    "daily motivational quote videos",
+    "motivational video generator",
+    "motivational video automation",
+    "quote video maker",
+    "daily quote video",
+    "n8n workflow template",
+    "n8n video automation",
+    "n8n google sheets",
+    "google sheets automation",
+    "google sheets to video",
+    "youtube shorts automation",
+    "youtube channel automation",
+    "tiktok video automation",
+    "tiktok channel automation",
+    "instagram reels automation",
+    "faceless youtube channel",
+    "faceless video automation",
+    "social media video automation",
+    "vertical video generator",
+    "video api",
+    "programmatic video",
+    "zvid"
+  ],
+  "homepage": "https://zvid.io",
+  "links": {
+    "website": "https://zvid.io",
+    "documentation": "https://docs.zvid.io",
+    "workflowTemplates": "https://zvid.io/n8n/workflows",
+    "dashboard": "https://app.zvid.io",
+    "apiKeys": "https://app.zvid.io/api-keys",
+    "visualEditor": "https://editor.zvid.io",
+    "api": "https://api.zvid.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zvid-io/workflow-examples.git",
+    "directory": "workflows/daily-quote-reels"
+  },
+  "bugs": {
+    "url": "https://zvid.io/contact"
+  },
+  "author": "Zvid (https://zvid.io/contact)",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "check": "node src/check.js",
+    "start": "node src/index.js",
+    "dry-run": "node src/index.js --dry-run",
+    "sample": "node src/index.js --date 2026-10-14",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "csv-parse": "^6.0.0",
+    "@zvid/sdk": "^0.2.0"
+  }
+}
