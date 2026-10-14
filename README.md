@@ -1,32 +1,47 @@
 # Zvid workflow examples
 
-Runnable Node.js examples for Zvid video workflows. Each workflow has its own setup guide, locked dependencies, safe input data, tests, synchronized n8n template, and a real example of the output.
+An open collection of runnable video automation workflows built with [Zvid](https://zvid.io). Use it to explore use cases, run a Node.js implementation, or adapt an accompanying n8n template to your own process.
 
-## Workflows
+Each workflow is self-contained. Its folder contains the implementation, setup guide, example inputs, tests, and real rendered output. New workflows are added to this shared repository as the collection grows.
 
-| Workflow | Outcome | Tutorial | Output |
-| --- | --- | --- | --- |
-| [Daily motivational quote videos](workflows/daily-quote-reels/) | Turn a quote queue into branded vertical videos with music and an author card. | [Watch](https://youtu.be/Ra6mPdmDDYs) | [MP4](workflows/daily-quote-reels/assets/sample-output.mp4) |
+## What each workflow includes
 
-[![Example quote video](workflows/daily-quote-reels/assets/sample-output.jpg)](workflows/daily-quote-reels/assets/sample-output.mp4)
+- A README explaining the outcome, prerequisites, setup, costs, and limitations.
+- Runnable Node.js code with its own dependencies and lockfile.
+- Safe sample inputs, blank environment configuration, and behavior tests.
+- A synchronized n8n workflow with setup instructions and a canvas screenshot.
+- A real output example, preview image, source project, and reproduction metadata.
+- Links to the workflow page, official template, code, and video tutorial when available.
 
-## Run an example
+## Getting started
 
 ```bash
 git clone https://github.com/Zvid-io/workflow-examples.git
-cd workflow-examples/workflows/daily-quote-reels
-npm ci
+cd workflow-examples
 ```
 
-Copy `.env.example` to `.env` and add a key from [https://app.zvid.io/api-keys](https://app.zvid.io/api-keys). Then follow the workflow's README. For the daily quote example:
+Choose a workflow from the catalog below and open its README. Each guide provides the required Node.js version, credentials, input format, and commands for that example.
+
+To install an example, replace `WORKFLOW_SLUG` with its folder name:
 
 ```bash
+cd workflows/WORKFLOW_SLUG
+npm ci
 npm run check
 npm test
-npm run dry-run
 ```
 
-The checks and tests are local and use no render credits. The dry run calls Zvid to validate the project and attempts to save an editor draft without submitting a render. A real render spends credits; check the workflow's instructions and current validation quote before running it.
+For API access, copy that workflow's `.env.example` to `.env` and configure the values described in its README. Create a Zvid key at [https://app.zvid.io/api-keys](https://app.zvid.io/api-keys).
+
+Local checks and tests do not spend render credits. Preview options, live API calls, rendering costs, and scheduling behavior are documented separately for each workflow. Follow its guide before starting a real render.
+
+## Workflow catalog
+
+| Workflow | Use case |
+| --- | --- |
+| [Daily motivational quote videos](workflows/daily-quote-reels/) | Create branded vertical videos from a queue of quotes. |
+
+Open a workflow's folder for its tutorial, screenshots, sample output, and complete setup instructions.
 
 ## Repository layout
 
@@ -55,11 +70,21 @@ workflows/
 
 Each example installs independently. There are no shared runtime dependencies or root npm workspaces to understand before trying one workflow. `links.json` records the website, official n8n template, code and YouTube URLs; unavailable publication URLs are `null` rather than invented links.
 
-For maintainers, run `npm run check:structure`, `npm run check`, and `npm test` from this repository root after installing each example's dependencies. GitHub Actions runs the same checks automatically on pushes and pull requests.
+## Repository checks
+
+After installing each example's dependencies, run these commands from the repository root:
+
+```bash
+npm run check:structure
+npm run check
+npm test
+```
+
+These verify the required folder structure, example assets, and workflow behavior across the collection. GitHub Actions runs the same checks automatically on pushes and pull requests.
 
 ## Add a workflow
 
-Follow [CONTRIBUTING.md](CONTRIBUTING.md). New examples belong in this repository. Existing standalone example repositories keep their published URLs; this collection starts with the tested daily quote example and grows one workflow at a time.
+Follow [CONTRIBUTING.md](CONTRIBUTING.md) to add a folder under `workflows/`, validate its implementation, include a real sample output, and add an entry to the catalog. Keep workflow-specific tutorials, screenshots, demonstrations, and operating details in that workflow's folder.
 
 Sample media demonstrates the named input and configuration. It is not a guarantee that arbitrary inputs fit the design or have the same duration, cost, or rendering time.
 

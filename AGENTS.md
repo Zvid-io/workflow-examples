@@ -2,6 +2,8 @@
 
 All new Node.js workflow examples belong in this repository under `workflows/<workflow-slug>/`. Follow CONTRIBUTING.md and the root README layout. Never create a new repository for each workflow.
 
+- Keep the root README about the overall repository: purpose, general setup, layout, workflow catalog, checks, and contributions. Individual workflows may appear in the catalog; their tutorials, preview images, videos, and specific run instructions belong only in their own folders.
+
 - Preserve each example's independent package.json and package-lock.json. Keep tests under `tests/`, the synchronized export at `n8n/workflow.json`, and screenshots/rendered examples under `assets/`.
 - Include a real example output, poster, source project and sanitized reproduction metadata. Do not substitute mock bytes or generated diagrams for actual media or canvas screenshots.
 - Never commit credentials, `.env`, dependencies, scratch outputs, private media URLs, or customer inputs. `.env.example` must contain only empty or illustrative configuration.
