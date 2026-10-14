@@ -12,8 +12,19 @@ quote pages, faceless content channels, and other scheduled video-automation
 workflows. Before configuring Zvid credentials, install **`@zvid/n8n-nodes-zvid`**
 from **Settings → Community nodes**; a workspace owner/admin may need to install it.
 
+## Workflow resources
+
+- [Blog tutorial](https://zvid.io/blog/developer-tutorials/automate-daily-quote-videos-n8n-google-sheets) — publication pending; this link will be available when the guide is published.
 - [Official n8n template](https://n8n.io/workflows/19632-create-daily-quote-videos-from-google-sheets-with-zvid/)
-- [Video walkthrough](https://youtu.be/Ra6mPdmDDYs)
+- [Workflow page on Zvid](https://zvid.io/n8n/workflows/google-sheets-daily-quote-videos)
+
+## Video walkthrough
+
+[![Watch the daily quote video walkthrough on YouTube](https://i.ytimg.com/vi/Ra6mPdmDDYs/hqdefault.jpg)](https://youtu.be/Ra6mPdmDDYs)
+
+**[Watch the walkthrough on YouTube](https://youtu.be/Ra6mPdmDDYs)**
+
+Click the video preview to follow the Google Sheets and n8n setup step by step.
 
 ## Output example
 
