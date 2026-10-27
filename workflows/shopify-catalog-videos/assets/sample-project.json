@@ -1,0 +1,373 @@
+{
+  "name": "zvid-studio-product-video",
+  "resolution": "instagram-reel",
+  "frameRate": 30,
+  "backgroundColor": "#F5F0E8",
+  "outputFormat": "mp4",
+  "scenes": [
+    {
+      "id": "hero",
+      "duration": 4.2,
+      "backgroundColor": "#F5F0E8",
+      "transition": "smoothup",
+      "transitionId": "details",
+      "transitionDuration": 0.5,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 4.2,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><rect width='1080' height='1920' fill='#F5F0E8'/><rect x='54' y='184' width='972' height='972' rx='42' fill='#E7D6CC'/><path d='M54 1198 H1026' stroke='#C9BDAE' stroke-width='2'/><path d='M54 1760 H1026' stroke='#C9BDAE' stroke-width='2'/></svg>"
+        },
+        {
+          "type": "IMAGE",
+          "src": "https://cdn.shopify.com/s/files/1/0738/3888/6956/files/terracotta-pocket-hero.png?v=1786110389",
+          "x": 90,
+          "y": 220,
+          "width": 900,
+          "height": 900,
+          "anchor": "top-left",
+          "radius": {
+            "tl": 30,
+            "tr": 30,
+            "bl": 30,
+            "br": 30
+          },
+          "zoom": true,
+          "track": 1,
+          "enterBegin": 0.05,
+          "enterEnd": 0.65,
+          "enterAnimation": "fade",
+          "exitEnd": 4.2
+        },
+        {
+          "type": "TEXT",
+          "x": 54,
+          "y": 64,
+          "width": 430,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.1,
+          "enterEnd": 0.45,
+          "enterAnimation": "fade",
+          "exitEnd": 4.2,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#1C1D1D"
+          },
+          "html": "<div style='font-size:25px; font-weight:800; letter-spacing:5px;'>Zvid Studio</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 720,
+          "y": 64,
+          "width": 306,
+          "anchor": "top-left",
+          "track": 5,
+          "enterBegin": 0.1,
+          "enterEnd": 0.45,
+          "enterAnimation": "fade",
+          "exitEnd": 4.2,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#746F68"
+          },
+          "html": "<div style='font-size:21px; font-weight:700; letter-spacing:4px;'>THE EVERYDAY EDIT</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 72,
+          "y": 1240,
+          "width": 936,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.45,
+          "enterEnd": 0.95,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.2,
+          "style": {
+            "fontFamily": "Fraunces",
+            "color": "#1C1D1D"
+          },
+          "html": "<div style='color:#A85F45; font-family:Archivo; font-size:23px; font-weight:800; letter-spacing:5px;'>Terracotta</div><div style='margin-top:20px; color:#1C1D1D; font-size:68px; line-height:1.03; font-weight:650; letter-spacing:-2px;'>Clay Pocket Oversized Tee</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 72,
+          "y": 1535,
+          "width": 936,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 0.7,
+          "enterEnd": 1.1,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.2,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#1C1D1D"
+          },
+          "html": "<div style='display:flex; justify-content:space-between; align-items:flex-end;'><span style='font-size:66px; font-weight:900; letter-spacing:-2px;'>$35</span><span style='color:#746F68; font-size:25px; font-weight:650; letter-spacing:2px;'>Sizes S · M · L · XL</span></div><div style='margin-top:48px; color:#746F68; font-family:Fraunces; font-size:34px; font-style:italic;'>Quiet staples. Built with intention.</div>"
+        }
+      ]
+    },
+    {
+      "id": "details",
+      "duration": 5.2,
+      "backgroundColor": "#F5F0E8",
+      "transition": "fade",
+      "transitionId": "shop",
+      "transitionDuration": 0.5,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 5.2,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><rect width='1080' height='1920' fill='#F5F0E8'/><rect x='40' y='188' width='650' height='650' rx='34' fill='#E7D6CC'/><rect x='650' y='444' width='390' height='390' rx='30' fill='#A85F45' fill-opacity='0.18'/><path d='M70 896 H1010' stroke='#A85F45' stroke-width='5'/><path d='M70 1768 H1010' stroke='#C9BDAE' stroke-width='2'/></svg>"
+        },
+        {
+          "type": "IMAGE",
+          "src": "https://cdn.shopify.com/s/files/1/0738/3888/6956/files/terracotta-pocket-hero.png?v=1786110389",
+          "x": 70,
+          "y": 218,
+          "width": 590,
+          "height": 590,
+          "anchor": "top-left",
+          "radius": {
+            "tl": 28,
+            "tr": 28,
+            "bl": 28,
+            "br": 28
+          },
+          "zoom": true,
+          "track": 1,
+          "enterBegin": 0.05,
+          "enterEnd": 0.6,
+          "enterAnimation": "smoothup",
+          "exitEnd": 5.2
+        },
+        {
+          "type": "IMAGE",
+          "src": "https://cdn.shopify.com/s/files/1/0738/3888/6956/files/terracotta-pocket-hero.png?v=1786110389",
+          "x": 684,
+          "y": 478,
+          "width": 320,
+          "height": 320,
+          "anchor": "top-left",
+          "radius": {
+            "tl": 24,
+            "tr": 24,
+            "bl": 24,
+            "br": 24
+          },
+          "zoom": true,
+          "track": 2,
+          "enterBegin": 0.35,
+          "enterEnd": 0.85,
+          "enterAnimation": "smoothup",
+          "exitEnd": 5.2
+        },
+        {
+          "type": "TEXT",
+          "x": 70,
+          "y": 68,
+          "width": 430,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.1,
+          "enterEnd": 0.45,
+          "enterAnimation": "fade",
+          "exitEnd": 5.2,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#1C1D1D"
+          },
+          "html": "<div style='font-size:24px; font-weight:800; letter-spacing:5px;'>Zvid Studio</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 785,
+          "y": 68,
+          "width": 225,
+          "anchor": "top-left",
+          "track": 6,
+          "enterBegin": 0.1,
+          "enterEnd": 0.45,
+          "enterAnimation": "fade",
+          "exitEnd": 5.2,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#746F68"
+          },
+          "html": "<div style='font-size:22px; font-weight:700; letter-spacing:4px;'>02 / DETAILS</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 88,
+          "y": 940,
+          "width": 904,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 0.55,
+          "enterEnd": 1,
+          "enterAnimation": "smoothup",
+          "exitEnd": 5.2,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#1C1D1D"
+          },
+          "html": "<div style='color:#A85F45; font-size:25px; font-weight:850; letter-spacing:6px;'>CUT · CLOTH · FINISH</div><div style='display:flex; gap:30px; border-top:1.5px solid rgba(28,29,29,0.14); padding-top:24px; margin-top:24px;'><div style='min-width:52px; color:#A85F45; font-size:22px; font-weight:850; letter-spacing:2px;'>01</div><div style='color:#1C1D1D; font-size:34px; line-height:1.28; font-weight:600;'>Oversized silhouette</div></div><div style='display:flex; gap:30px; border-top:1.5px solid rgba(28,29,29,0.14); padding-top:24px; margin-top:24px;'><div style='min-width:52px; color:#A85F45; font-size:22px; font-weight:850; letter-spacing:2px;'>02</div><div style='color:#1C1D1D; font-size:34px; line-height:1.28; font-weight:600;'>Chest pocket detail</div></div><div style='display:flex; gap:30px; border-top:1.5px solid rgba(28,29,29,0.14); padding-top:24px; margin-top:24px;'><div style='min-width:52px; color:#A85F45; font-size:22px; font-weight:850; letter-spacing:2px;'>03</div><div style='color:#1C1D1D; font-size:34px; line-height:1.28; font-weight:600;'>Terracotta color</div></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 70,
+          "y": 1794,
+          "width": 940,
+          "anchor": "top-left",
+          "track": 5,
+          "enterBegin": 0.45,
+          "enterEnd": 0.8,
+          "enterAnimation": "fade",
+          "exitEnd": 5.2,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#746F68"
+          },
+          "html": "<div style='display:flex; justify-content:space-between; font-size:22px; font-weight:700; letter-spacing:3px;'><span>Zvid Studio · T-Shirts</span><span>Sizes S · M · L · XL</span></div>"
+        }
+      ]
+    },
+    {
+      "id": "shop",
+      "duration": 4.2,
+      "backgroundColor": "#1C1D1D",
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 4.2,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><rect width='1080' height='1920' fill='#1C1D1D'/><rect x='54' y='122' width='972' height='972' rx='42' fill='#A85F45'/><path d='M54 1138 H1026' stroke='rgba(245,240,232,0.25)' stroke-width='2'/></svg>"
+        },
+        {
+          "type": "IMAGE",
+          "src": "https://cdn.shopify.com/s/files/1/0738/3888/6956/files/terracotta-pocket-hero.png?v=1786110389",
+          "x": 90,
+          "y": 158,
+          "width": 900,
+          "height": 900,
+          "anchor": "top-left",
+          "radius": {
+            "tl": 30,
+            "tr": 30,
+            "bl": 30,
+            "br": 30
+          },
+          "zoom": true,
+          "track": 1,
+          "enterBegin": 0.05,
+          "enterEnd": 0.65,
+          "enterAnimation": "fade",
+          "exitEnd": 4.2
+        },
+        {
+          "type": "TEXT",
+          "x": 54,
+          "y": 52,
+          "width": 430,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.1,
+          "enterEnd": 0.45,
+          "enterAnimation": "fade",
+          "exitEnd": 4.2,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#F5F0E8"
+          },
+          "html": "<div style='font-size:23px; font-weight:800; letter-spacing:5px;'>Zvid Studio</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 845,
+          "y": 52,
+          "width": 181,
+          "anchor": "top-left",
+          "track": 6,
+          "enterBegin": 0.1,
+          "enterEnd": 0.45,
+          "enterAnimation": "fade",
+          "exitEnd": 4.2,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#F5F0E8"
+          },
+          "html": "<div style='color:rgba(245,240,232,0.62); font-size:23px; font-weight:800; letter-spacing:5px;'>03 / SHOP</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 72,
+          "y": 1185,
+          "width": 936,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.4,
+          "enterEnd": 0.85,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.2,
+          "style": {
+            "fontFamily": "Fraunces",
+            "color": "#F5F0E8"
+          },
+          "html": "<div style='color:#A85F45; font-family:Archivo; font-size:23px; font-weight:850; letter-spacing:5px;'>YOUR NEXT UNIFORM</div><div style='margin-top:18px; color:#F5F0E8; font-size:68px; line-height:1.04; font-weight:650; letter-spacing:-2px;'>Clay Pocket Oversized Tee</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 72,
+          "y": 1460,
+          "width": 936,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 0.65,
+          "enterEnd": 1.05,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.2,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#F5F0E8"
+          },
+          "html": "<div style='font-size:72px; font-weight:900; letter-spacing:-2px;'>$35</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 72,
+          "y": 1640,
+          "width": 936,
+          "anchor": "top-left",
+          "track": 5,
+          "enterBegin": 0.85,
+          "enterEnd": 1.2,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.2,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#F5F0E8"
+          },
+          "html": "<div style='display:inline-block; background:#A85F45; color:#F5F0E8; border-radius:999px; padding:24px 52px; font-size:34px; font-weight:850;'>Explore the fit</div><div style='margin-top:28px; color:rgba(245,240,232,0.58); font-size:23px; font-weight:650; letter-spacing:3px;'>your-store.myshopify.com</div>"
+        }
+      ]
+    }
+  ],
+  "audios": [],
+  "duration": 12.6,
+  "type": "video",
+  "width": 1080,
+  "height": 1920
+}

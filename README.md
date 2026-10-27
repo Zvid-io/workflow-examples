@@ -40,6 +40,7 @@ Local checks and tests do not spend render credits. Preview options, live API ca
 | Workflow | Use case |
 | --- | --- |
 | [Daily motivational quote videos](workflows/daily-quote-reels/) | Create branded vertical videos from a queue of quotes. |
+| [Shopify catalog videos](workflows/shopify-catalog-videos/) | Render eligible product videos in a batch, review them, and optionally attach them to Shopify products. |
 
 Open a workflow's folder for its tutorial, screenshots, sample output, and complete setup instructions.
 

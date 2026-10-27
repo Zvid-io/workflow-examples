@@ -1,0 +1,94 @@
+{
+  "data": {
+    "shop": {
+      "name": "Zvid Studio",
+      "currencyCode": "USD",
+      "primaryDomain": {
+        "url": "https://example.com"
+      }
+    },
+    "products": {
+      "nodes": [
+        {
+          "id": "gid://shopify/Product/1",
+          "title": "Clay Pocket Oversized Tee",
+          "handle": "clay-pocket-oversized-tee",
+          "status": "ACTIVE",
+          "vendor": "Zvid Studio",
+          "productType": "T-Shirts",
+          "description": "An oversized cotton tee with a chest pocket.",
+          "descriptionHtml": "<ul><li>Oversized silhouette</li><li>Chest pocket detail</li><li>Terracotta color</li></ul>",
+          "tags": [
+            "terracotta"
+          ],
+          "productImages": {
+            "nodes": [
+              {
+                "image": {
+                  "url": "https://cdn.shopify.com/s/files/1/0738/3888/6956/files/terracotta-pocket-hero.png?v=1786110389"
+                }
+              }
+            ]
+          },
+          "hostedVideos": {
+            "nodes": []
+          },
+          "externalVideos": {
+            "nodes": []
+          },
+          "variants": {
+            "nodes": [
+              {
+                "title": "S",
+                "price": "35.00",
+                "compareAtPrice": null,
+                "selectedOptions": [
+                  {
+                    "name": "Size",
+                    "value": "S"
+                  }
+                ]
+              },
+              {
+                "title": "M",
+                "price": "35.00",
+                "compareAtPrice": null,
+                "selectedOptions": [
+                  {
+                    "name": "Size",
+                    "value": "M"
+                  }
+                ]
+              },
+              {
+                "title": "L",
+                "price": "35.00",
+                "compareAtPrice": null,
+                "selectedOptions": [
+                  {
+                    "name": "Size",
+                    "value": "L"
+                  }
+                ]
+              },
+              {
+                "title": "XL",
+                "price": "35.00",
+                "compareAtPrice": null,
+                "selectedOptions": [
+                  {
+                    "name": "Size",
+                    "value": "XL"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "pageInfo": {
+        "hasNextPage": false
+      }
+    }
+  }
+}

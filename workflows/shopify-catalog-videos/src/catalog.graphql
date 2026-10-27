@@ -1,0 +1,29 @@
+query CatalogCandidates($first: Int!, $query: String!) {
+  shop { name currencyCode primaryDomain { url } }
+  products(first: $first, query: $query, sortKey: UPDATED_AT, reverse: true) {
+    pageInfo { hasNextPage endCursor }
+    nodes {
+      id
+      title
+      handle
+      description
+      descriptionHtml
+      vendor
+      productType
+      tags
+      status
+      productImages: media(first: 4, query: "media_type:IMAGE") {
+        nodes { ... on MediaImage { image { url(transform: { maxWidth: 1600, maxHeight: 1600, preferredContentType: WEBP }) altText } } }
+      }
+      hostedVideos: media(first: 1, query: "media_type:VIDEO") {
+        nodes { id mediaContentType status }
+      }
+      externalVideos: media(first: 1, query: "media_type:EXTERNAL_VIDEO") {
+        nodes { id mediaContentType status }
+      }
+      variants(first: 20) {
+        nodes { title price compareAtPrice selectedOptions { name value } }
+      }
+    }
+  }
+}
