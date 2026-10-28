@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-28",
+  "sourceCommit": "0f06541bf87dab5f852987e15075a36143d349eb",
+  "sourceChecks": "https://github.com/Zvid-io/workflow-examples/actions/runs/40690277220",
+  "examples": [
+    {
+      "workflow": "daily-quote-reels",
+      "sourceUrl": "https://github.com/Zvid-io/workflow-examples/tree/0f06541bf87dab5f852987e15075a36143d349eb/workflows/daily-quote-reels",
+      "zipUrl": "https://cdn.zvid.io/blog/daily-quote-reels/c9f6fed29f73/daily-quote-reels-0f06541.zip",
+      "bytes": 1570422,
+      "sha256": "c9f6fed29f73246e7a989bd8c90e2393dbce625e10dcac15558ceb7155c5d396",
+      "offlineTestsPassed": 14
+    }
+  ],
+  "verification": "Exact committed subtree plus MIT LICENSE; clean install, structure and 14 mocked tests passed, zero reported dependency vulnerabilities. All fixed source media are byte-identical Zvid CDN mirrors. Updated sample project remotely validated at 11 credits with no warnings. B2/CDN and browser-downloaded ZIP bytes match. Existing sample video unchanged; no new render submitted."
+}
