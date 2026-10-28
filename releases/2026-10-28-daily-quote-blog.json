@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-28",
+  "sourceCommit": "4df1903cab36deed69cfc63497249c3927110029",
+  "sourceChecks": "https://github.com/Zvid-io/workflow-examples/actions/runs/40686124538",
+  "examples": [
+    {
+      "workflow": "daily-quote-reels",
+      "sourceUrl": "https://github.com/Zvid-io/workflow-examples/tree/4df1903cab36deed69cfc63497249c3927110029/workflows/daily-quote-reels",
+      "zipUrl": "https://cdn.zvid.io/blog/daily-quote-reels/d5befcf329a9/daily-quote-reels-4df1903.zip",
+      "bytes": 1569642,
+      "sha256": "d5befcf329a927cfdc6e995172884fd5d4948c247d1e72977c1b8020ef32896b",
+      "offlineTestsPassed": 14
+    }
+  ],
+  "verification": "Exact committed subtree plus MIT LICENSE. Clean install, check and 14 offline tests passed; install audit reports zero vulnerabilities after csv-parse 7.0.3 update. B2 and CDN bytes match. Existing sample retained; no new render was submitted."
+}
