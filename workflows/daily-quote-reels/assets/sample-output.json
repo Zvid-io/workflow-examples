@@ -16,7 +16,63 @@
   "posterFile": "assets/sample-output.jpg",
   "projectFile": "assets/sample-project.json",
   "videoSha256": "89123ba2a01de4408cd803df2887d90884ef6543a3dca05efde734dcfd27bd81",
-  "workflowSha256": "a2e72e40e5f1b8faaf514568ac2beb99bc0c533d646f1ef9ed49d9527387abea",
+  "workflowSha256": "96b875fddda5611c9fc82bc0e08aa82f732309e77aff23cd6e5723e34985dd52",
   "reproduce": "node src/index.js --date 2026-10-14 --max-credits 11",
-  "note": "A real render from the shared builder. Reproduction spends credits; inspect a fresh validation quote first. The video and workflow files are preserved byte-for-byte from the verified source."
+  "note": "A real render from the shared builder, retained from 2026-10-14. On 2026-10-28 the project and workflow media URLs were changed to byte-verified Zvid CDN mirrors; layout, inputs and rendered video are unchanged. Reproduction spends credits; inspect a fresh validation quote first.",
+  "sourceMediaMigration": {
+    "date": "2026-10-28",
+    "originalProjectSha256": "5b54aa35e9392a79f797b3912e8aebe62576a2b8d26bbb946bc251710b69f547",
+    "projectSha256": "cc326c48d87be628d080cb467618cd3c93bdd489ec0469e9d1b6659f3ab4233b",
+    "change": "media URLs only; original bytes retained privately",
+    "sources": [
+      {
+        "url": "https://cdn.zvid.io/blog/daily-quote-reels/source-media/957ff3d84018/calm-music.mp3",
+        "sha256": "957ff3d84018315538f90573bb0dab9134bb2bd9ceabe71312bc119c7dff4dc6",
+        "bytes": 1556480,
+        "contentType": "audio/mpeg"
+      },
+      {
+        "url": "https://cdn.zvid.io/blog/daily-quote-reels/source-media/6497ff1dfad9/warm-music.mp3",
+        "sha256": "6497ff1dfad98ed4b26c38be4cb982d2849e55d26abda98caa6998a95ecfe8b0",
+        "bytes": 3695616,
+        "contentType": "audio/mpeg"
+      },
+      {
+        "url": "https://cdn.zvid.io/blog/daily-quote-reels/source-media/746a284ed9e0/mist-forest.mp4",
+        "sha256": "746a284ed9e03cc2f5fb19929a0321ca19b25557a815cde85d9ef308e6b9da07",
+        "bytes": 20095608,
+        "contentType": "video/mp4"
+      },
+      {
+        "url": "https://cdn.zvid.io/blog/daily-quote-reels/source-media/4a2051213ff8/ember-ink.mp4",
+        "sha256": "4a2051213ff88311d60da0aa7e4aacf65ff51156e7cd790005de1a7602473c57",
+        "bytes": 27430295,
+        "contentType": "video/mp4"
+      },
+      {
+        "url": "https://cdn.zvid.io/blog/daily-quote-reels/source-media/ec005b2bc7e0/rain-window.mp4",
+        "sha256": "ec005b2bc7e0229f034575193c84e4d35cc20d2d8ac2354c02aa8ade32f5c0be",
+        "bytes": 15688234,
+        "contentType": "video/mp4"
+      },
+      {
+        "url": "https://cdn.zvid.io/blog/daily-quote-reels/source-media/7210754f979c/cloud-sea.mp4",
+        "sha256": "7210754f979c163a75736d4634906bed2afcfac13ff2040be281b6f300b98dc1",
+        "bytes": 11949589,
+        "contentType": "video/mp4"
+      },
+      {
+        "url": "https://cdn.zvid.io/blog/daily-quote-reels/source-media/ff765ea08203/calm-shore.mp4",
+        "sha256": "ff765ea082035f206a8b0069cf18df7a1c714f4d421a10f22bc03b703cfde65b",
+        "bytes": 16775472,
+        "contentType": "video/mp4"
+      },
+      {
+        "url": "https://cdn.zvid.io/blog/daily-quote-reels/source-media/c30696ca11de/author-background.jpg",
+        "sha256": "c30696ca11de1971ecf6adca3fcc3dcc3a652d06403ca38f5fafedc2456b433b",
+        "bytes": 46938,
+        "contentType": "image/jpeg"
+      }
+    ]
+  }
 }

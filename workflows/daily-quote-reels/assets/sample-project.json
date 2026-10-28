@@ -15,7 +15,7 @@
       "visuals": [
         {
           "type": "VIDEO",
-          "src": "https://videos.pexels.com/video-files/19802056/19802056-hd_1080_1920_30fps.mp4",
+          "src": "https://cdn.zvid.io/blog/daily-quote-reels/source-media/ec005b2bc7e0/rain-window.mp4",
           "width": 1080,
           "height": 1920,
           "position": "center-center",
@@ -90,7 +90,7 @@
       "visuals": [
         {
           "type": "IMAGE",
-          "src": "https://images.pexels.com/photos/15637846/pexels-photo-15637846.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1920&fit=crop",
+          "src": "https://cdn.zvid.io/blog/daily-quote-reels/source-media/c30696ca11de/author-background.jpg",
           "width": 1080,
           "height": 1920,
           "position": "center-center",
@@ -162,7 +162,7 @@
   ],
   "audios": [
     {
-      "src": "https://cdn.pixabay.com/audio/2025/04/21/audio_ed6f0ed574.mp3",
+      "src": "https://cdn.zvid.io/blog/daily-quote-reels/source-media/957ff3d84018/calm-music.mp3",
       "volume": 0.15
     }
   ]

@@ -5,7 +5,7 @@ n8n and the Zvid video API. The workflow reads the first pending row, renders a
 1080×1920 motivational Reel, writes `done` and the finished MP4 URL back to that
 exact row, then lets you watch the video inside n8n.
 
-[![Complete n8n Google Sheets to video workflow](assets/workflow.png)](n8n/workflow.json)
+[![Complete n8n Google Sheets to video workflow](https://cdn.zvid.io/blog/daily-quote-reels/b025443c1291/full-workflow.png)](n8n/workflow.json)
 
 This example is ready for Instagram Reels, YouTube Shorts, TikTok videos, daily
 quote pages, faceless content channels, and other scheduled video-automation
@@ -14,7 +14,7 @@ from **Settings → Community nodes**; a workspace owner/admin may need to insta
 
 ## Workflow resources
 
-- [Blog tutorial](https://zvid.io/blog/developer-tutorials/automate-daily-quote-videos-n8n-google-sheets) — publication pending; this link will be available when the guide is published.
+- [Blog tutorial](https://zvid.io/blog/developer-tutorials/automate-daily-quote-videos-n8n-google-sheets). publication pending; this link will be available when the guide is published.
 - [Official n8n template](https://n8n.io/workflows/19632-create-daily-quote-videos-from-google-sheets-with-zvid/)
 - [Workflow page on Zvid](https://zvid.io/n8n/workflows/google-sheets-daily-quote-videos)
 
@@ -24,13 +24,13 @@ from **Settings → Community nodes**; a workspace owner/admin may need to insta
 
 **[Watch the walkthrough on YouTube](https://youtu.be/Ra6mPdmDDYs)**
 
-Click the video preview to follow the Google Sheets and n8n setup step by step.
+Open the walkthrough to follow the Google Sheets and n8n setup step by step.
 
 ## Output example
 
-[![Rendered daily motivational quote video example](assets/sample-output.jpg)](assets/sample-output.mp4)
+[![Rendered daily motivational quote video example](https://cdn.zvid.io/blog/daily-quote-reels/b6a6df67f4d9/sample-output.jpg)](https://cdn.zvid.io/blog/daily-quote-reels/89123ba2a01d/sample-output.mp4)
 
-**[Watch or download the complete MP4 output](assets/sample-output.mp4)**
+**[Watch or download the complete MP4 output](https://cdn.zvid.io/blog/daily-quote-reels/89123ba2a01d/sample-output.mp4)**
 
 The checked-in example was rendered and inspected on 2026-10-14 from the first row in
 [`data/quotes.csv`](data/quotes.csv) with the deterministic sample date
@@ -40,7 +40,7 @@ The checked-in example was rendered and inspected on 2026-10-14 from the first r
 - 10.8 seconds
 - 11-credit validation quote (not an independently audited billing total)
 - two scenes: quote over moving footage, then author and call-to-action card
-- source project: [`assets/sample-project.json`](assets/sample-project.json)
+- source project: [`assets/sample-project.json`](https://cdn.zvid.io/blog/daily-quote-reels/cc326c48d87b/sample-project.json)
 - reproduction metadata and hashes: [`assets/sample-output.json`](assets/sample-output.json)
 
 ## What the workflow does
@@ -95,6 +95,8 @@ and author names scale independently for the end card.
 See [`n8n/README.md`](n8n/README.md) for node-by-node setup and troubleshooting.
 
 ## Run the same design from Node.js
+
+The supplied project and workflow use verified Zvid CDN media URLs. The retained sample video is unchanged from its original render.
 
 The CLI uses the CSV as a local stand-in for Google Sheets. It loads the exact
 project-builder function embedded in the n8n workflow, so the no-code and code
@@ -172,9 +174,9 @@ than placeholder bylines:
 | [`src/project.js`](src/project.js) | Loads the canonical builder from the workflow JSON. |
 | [`src/queue.js`](src/queue.js) | Exact Sheet/CSV schema and first-pending-row logic. |
 | [`package.json`](package.json) | Installs `@zvid/sdk`, the official API client with retry handling. |
-| [`assets/sample-project.json`](assets/sample-project.json) | Project used for the checked-in MP4. |
-| [`assets/sample-output.jpg`](assets/sample-output.jpg) | Representative frame and clickable README preview. |
-| [`assets/sample-output.mp4`](assets/sample-output.mp4) | Real rendered output example. |
+| [`assets/sample-project.json`](https://cdn.zvid.io/blog/daily-quote-reels/cc326c48d87b/sample-project.json) | Project used for the checked-in MP4. |
+| [`assets/sample-output.jpg`](https://cdn.zvid.io/blog/daily-quote-reels/b6a6df67f4d9/sample-output.jpg) | Representative frame and clickable README preview. |
+| [`assets/sample-output.mp4`](https://cdn.zvid.io/blog/daily-quote-reels/89123ba2a01d/sample-output.mp4) | Real rendered output example. |
 
 ## Production notes
 
