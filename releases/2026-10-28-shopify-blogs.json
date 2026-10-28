@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-28",
+  "sourceCommit": "10390047e779b1e4f0af0a8a9d98bd98fb14629b",
+  "sourceChecks": "https://github.com/Zvid-io/workflow-examples/actions/runs/40658245838",
+  "examples": [
+    {
+      "workflow": "shopify-product-ad-variants",
+      "sourceUrl": "https://github.com/Zvid-io/workflow-examples/tree/10390047e779b1e4f0af0a8a9d98bd98fb14629b/workflows/shopify-product-ad-variants",
+      "zipUrl": "https://cdn.zvid.io/blog/shopify-product-ad-variants/7f63d44182d8/shopify-product-ad-variants-1039004.zip",
+      "bytes": 2322989,
+      "sha256": "7f63d44182d8040c5a0f012871859c4df75e3b79cfdf810bb512328d8ddd0532",
+      "offlineTestsPassed": 14
+    },
+    {
+      "workflow": "shopify-abandoned-checkout-videos",
+      "sourceUrl": "https://github.com/Zvid-io/workflow-examples/tree/10390047e779b1e4f0af0a8a9d98bd98fb14629b/workflows/shopify-abandoned-checkout-videos",
+      "zipUrl": "https://cdn.zvid.io/blog/shopify-abandoned-checkout-videos/cfb6d8abe3a4/shopify-abandoned-checkout-videos-1039004.zip",
+      "bytes": 1651960,
+      "sha256": "cfb6d8abe3a42d8684093681c12658f29c05448ddb3d70c083c215cb63cd21a4",
+      "offlineTestsPassed": 18
+    }
+  ],
+  "verification": "Each ZIP contains only its committed workflow subtree plus the committed MIT LICENSE. Source bytes, clean installation, checks, offline tests, stored bytes and CDN bytes were verified. Live samples completed with quotes of 19 and 14 credits; no Shopify writes or email delivery were performed."
+}
