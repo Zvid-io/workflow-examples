@@ -1,0 +1,979 @@
+{
+  "name": "Create dynamic Shopify product ad variants with Zvid",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1500,
+        300
+      ],
+      "id": "zvid-da-0001",
+      "name": "Test manually"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9 * * 1"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1500,
+        480
+      ],
+      "id": "zvid-da-0002",
+      "name": "Every Monday at 9am"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"editorUrl\": \"https://editor.zvid.io\",\n  \"shopDomain\": \"your-store\",\n  \"shopifyApiVersion\": \"2026-07\",\n  \"shopifyProductQuery\": \"status:active\",\n  \"scanLimit\": 50,\n  \"maxProducts\": 3,\n  \"variantsPerProduct\": 3,\n  \"maxTotalAds\": 5,\n  \"brandName\": \"YOUR BRAND\",\n  \"website\": \"your-store.com\",\n  \"ctaText\": \"Shop now\",\n  \"accentColor\": \"#C96F4A\",\n  \"paleAccentColor\": \"#F1C7B3\",\n  \"backgroundColor\": \"#2B1D18\",\n  \"creamColor\": \"#FAFAF7\",\n  \"resolution\": \"instagram-post\",\n  \"musicUrl\": \"\",\n  \"musicVolume\": 0.16,\n  \"hookTemplates\": [\n    \"Meet your next everyday favorite.\",\n    \"A fresh look at {{product}}.\",\n    \"{{product}} belongs in the rotation.\"\n  ],\n  \"creativeFormats\": [\n    \"product-first\",\n    \"benefit-first\",\n    \"offer-first\"\n  ],\n  \"dryRun\": true,\n  \"deliveryWebhookUrl\": \"\",\n  \"bulkName\": \"Shopify dynamic product ads\",\n  \"pollSeconds\": 10,\n  \"timeoutMinutes\": 20\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1280,
+        390
+      ],
+      "id": "zvid-da-0003",
+      "name": "Config"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ 'https://' + $('Config').first().json.shopDomain + '.myshopify.com/admin/api/' + $('Config').first().json.shopifyApiVersion + '/graphql.json' }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ query: `query AdCandidates($first: Int!, $query: String!) { shop { name currencyCode primaryDomain { url } } products(first: $first, query: $query, sortKey: UPDATED_AT, reverse: true) { nodes { id title handle description vendor productType tags status featuredImage { url(transform: { maxWidth: 1600, maxHeight: 1600, preferredContentType: WEBP }) altText } images(first: 3) { nodes { url(transform: { maxWidth: 1600, maxHeight: 1600, preferredContentType: WEBP }) altText } } variants(first: 1) { nodes { title price compareAtPrice } } } } }`, variables: { first: Math.min(250, Math.max(1, Number($('Config').first().json.scanLimit || 50))), query: String($('Config').first().json.shopifyProductQuery || 'status:active') } }) }}",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1060,
+        390
+      ],
+      "id": "zvid-da-0004",
+      "name": "Get Shopify catalog"
+    },
+    {
+      "parameters": {
+        "jsCode": "const cfg = $('Config').first().json;\nconst res = $input.first().json || {};\nconst status = Number(res.statusCode || 200);\nconst body = res.body === undefined ? res : res.body;\nif (status !== 200) throw new Error('Shopify catalog query failed (HTTP ' + status + '): ' + JSON.stringify(body).slice(0, 700));\nif (Array.isArray(body.errors) && body.errors.length) throw new Error('Shopify GraphQL error: ' + body.errors.map((e) => e.message).join('; '));\nconst data = body.data || {};\nconst products = data.products && Array.isArray(data.products.nodes) ? data.products.nodes : [];\nconst clean = (value) => String(value == null ? '' : value).replace(/\\s+/g, ' ').trim();\nconst trim = (value, max) => { const text = clean(value); if (text.length <= max) return text; const cut = text.slice(0, max - 1); const at = cut.lastIndexOf(' '); return (at > max * 0.55 ? cut.slice(0, at) : cut).replace(/[\\s,;:.—-]+$/, '') + '…'; };\nconst currency = clean(data.shop && data.shop.currencyCode) || 'USD';\nconst money = (value) => { const amount = Number(value); if (!Number.isFinite(amount)) return clean(value); try { return new Intl.NumberFormat('en', { style: 'currency', currency, maximumFractionDigits: 2 }).format(amount); } catch { return '$' + amount.toFixed(2); } };\nconst storefront = clean(data.shop && data.shop.primaryDomain && data.shop.primaryDomain.url).replace(/\\/+$/, '') || ('https://' + cfg.shopDomain + '.myshopify.com');\nconst hookTemplates = Array.isArray(cfg.hookTemplates) && cfg.hookTemplates.length ? cfg.hookTemplates : ['Meet your next everyday favorite.'];\nconst creativeFormats = Array.isArray(cfg.creativeFormats) && cfg.creativeFormats.length ? cfg.creativeFormats : ['product-first'];\nconst maxProducts = Math.max(1, Math.floor(Number(cfg.maxProducts || 3)));\nconst variantsPerProduct = Math.max(1, Math.floor(Number(cfg.variantsPerProduct || 3)));\nconst maxTotalAds = Math.max(1, Math.floor(Number(cfg.maxTotalAds ?? cfg.maxAdVariants ?? 5)));\nconst selected = [];\nconst skipped = [];\nfor (const product of products) {\n  if (selected.length >= maxProducts) break;\n  const title = clean(product.title);\n  const variant = product.variants && Array.isArray(product.variants.nodes) ? product.variants.nodes[0] : null;\n  const images = [\n    clean(product.featuredImage && product.featuredImage.url),\n    ...((product.images && Array.isArray(product.images.nodes) ? product.images.nodes : []).map((entry) => clean(entry && entry.url))),\n  ].filter((url, index, all) => /^https?:\\/\\//i.test(url) && all.indexOf(url) === index);\n  if (!title || !variant || clean(variant.price) === '' || !images.length) {\n    skipped.push({ productId: product.id, title: title || '(untitled)', reason: !images.length ? 'missing public image' : !variant ? 'missing priced variant' : 'missing title' });\n    continue;\n  }\n  selected.push({ product, title, variant, images });\n}\nconst ads = [];\nfor (let variantIndex = 0; variantIndex < variantsPerProduct && ads.length < maxTotalAds; variantIndex += 1) {\n  for (const entry of selected) {\n    if (ads.length >= maxTotalAds) break;\n    const { product, title, variant, images } = entry;\n    const price = Number(variant.price);\n    const compareAt = Number(variant.compareAtPrice);\n    const hasDiscount = Number.isFinite(compareAt) && compareAt > price;\n    const savingPercent = hasDiscount ? Math.round((1 - price / compareAt) * 100) : 0;\n    const description = trim(product.description, 92) || 'Designed to earn a place in your everyday rotation.';\n    const offerOptions = [\n      hasDiscount ? ('Save ' + savingPercent + '% — now ' + money(price)) : (money(price) + ' — available now'),\n      'Discover ' + title + ' for ' + money(price),\n      hasDiscount ? ('Was ' + money(compareAt) + '. Yours for ' + money(price)) : ('A standout pick at ' + money(price)),\n    ];\n    const format = creativeFormats[variantIndex % creativeFormats.length];\n    let hook = clean(hookTemplates[variantIndex % hookTemplates.length]).replace(/\\{\\{product\\}\\}/g, title);\n    const offer = offerOptions[variantIndex % offerOptions.length];\n    if (format === 'benefit-first') hook = description;\n    if (format === 'offer-first') hook = hasDiscount ? ('Save ' + savingPercent + '% on ' + title) : (title + ' for ' + money(price));\n    const angleLabel = format === 'benefit-first' ? 'WHY YOU WILL LOVE IT' : format === 'offer-first' ? 'THE OFFER' : 'THE NEW EDIT';\n    const openerHeadline = format === 'benefit-first'\n      ? 'Why you will love it'\n      : format === 'offer-first'\n        ? (hasDiscount ? ('Save ' + savingPercent + '% today') : ('Available for ' + money(price)))\n        : title;\n    const openerSubheadline = format === 'benefit-first'\n      ? description\n      : format === 'offer-first'\n        ? title\n        : hook;\n    const storyKicker = format === 'benefit-first' ? 'WHY IT STANDS OUT' : format === 'offer-first' ? 'SHOP THE OFFER' : 'THE PRODUCT';\n    const storyCopy = format === 'offer-first' ? offer : description;\n    const benefits = format === 'benefit-first'\n      ? [\n          { title: 'Why it stands out', detail: description },\n          { title: 'Ready when you are', detail: offer },\n        ]\n      : format === 'offer-first'\n        ? [\n            { title: hasDiscount ? ('Save ' + savingPercent + '%') : money(price), detail: offer },\n            { title: 'Worth a closer look', detail: description },\n          ]\n        : [\n            { title: 'Made for the rotation', detail: description },\n            { title: 'Available now', detail: offer },\n          ];\n    const conceptId = String(product.id).split('/').pop() + '-' + String(variantIndex + 1).padStart(2, '0');\n    ads.push({\n      conceptId,\n      trackingKey: 'zvid-ad-' + conceptId,\n      shopifyProductId: product.id,\n      product: title,\n      handle: product.handle,\n      productUrl: storefront + '/products/' + product.handle,\n      creativeFormat: format,\n      audienceHook: trim(hook, 72),\n      openerHeadline: trim(openerHeadline, 62),\n      openerSubheadline: trim(openerSubheadline, 84),\n      storyKicker,\n      storyCopy: trim(storyCopy, 92),\n      offer: trim(offer, 72),\n      price: money(price),\n      compareAtPrice: hasDiscount ? money(compareAt) : '',\n      ctaText: cfg.ctaText || 'Shop now',\n      productImage: images[0],\n      productImage2: images[1] || images[0],\n      productImage3: images[2] || images[1] || images[0],\n      angleLabel,\n      description,\n      benefits,\n      variantLabel: format + ' · ' + conceptId,\n    });\n  }\n}\nconst variantDistribution = selected.map((entry) => ({\n  productId: entry.product.id,\n  product: entry.title,\n  variants: ads.filter((ad) => ad.shopifyProductId === entry.product.id).length,\n  formats: ads.filter((ad) => ad.shopifyProductId === entry.product.id).map((ad) => ad.creativeFormat),\n}));\nreturn [{ json: {\n  ready: ads.length > 0,\n  ads,\n  skipped,\n  productsScanned: products.length,\n  productsSelected: selected.length,\n  requested: { maxProducts, variantsPerProduct, maxTotalAds },\n  variantDistribution,\n  allocation: 'round-robin-by-variant',\n} }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -840,
+        390
+      ],
+      "id": "zvid-da-0005",
+      "name": "Create ad concepts"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "shopify-products-found",
+              "leftValue": "={{ $json.ready }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -620,
+        390
+      ],
+      "id": "zvid-da-0006",
+      "name": "Ads found?"
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json; return [{ json: { status: 'nothing_to_render', productsScanned: data.productsScanned, skipped: data.skipped, message: 'No eligible Shopify products were found. Products need a title, priced variant, and public image.' } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -400,
+        620
+      ],
+      "id": "zvid-da-0007",
+      "name": "Nothing to render"
+    },
+    {
+      "parameters": {
+        "jsCode": "const cfg = $('Config').first().json;\nconst source = $('Create ad concepts').first().json;\nconst ads = source.ads || [];\nif (!ads.length) throw new Error('No ad concepts to build.');\nconst first = ads[0];\nconst safeJobName = (value) => String(value || '').normalize('NFKD').replace(/[^a-zA-Z0-9_ -]+/g, '-').replace(/\\s+/g, ' ').replace(/-+/g, '-').trim().slice(0, 120) || 'Shopify product ad';\nconst background = cfg.backgroundColor || '#2B1D18';\nconst accent = cfg.accentColor || '#C96F4A';\nconst paleAccent = cfg.paleAccentColor || '#F1C7B3';\nconst cream = cfg.creamColor || '#FAFAF7';\nconst payload = {\n  name: 'shopify-atelier-editorial-ad',\n  resolution: cfg.resolution || 'instagram-post',\n  frameRate: 30,\n  backgroundColor: cream,\n  outputFormat: 'mp4',\n  variables: {\n    brandName: cfg.brandName,\n    productName: first.product,\n    angleLabel: first.angleLabel,\n    openerHeadline: first.openerHeadline,\n    openerSubheadline: first.openerSubheadline,\n    storyKicker: first.storyKicker,\n    storyCopy: first.storyCopy,\n    ctaText: first.ctaText,\n    price: first.price,\n    offer: first.offer,\n    productImage: first.productImage,\n    detailImage: first.productImage2,\n    textureImage: first.productImage3,\n    benefits: first.benefits,\n    website: cfg.website,\n    variantLabel: first.variantLabel,\n    musicUrl: cfg.musicUrl || '',\n  },\n  scenes: [\n    { id: 'opener', duration: 3.6, backgroundColor: cream, transition: 'fade', transitionId: 'about', transitionDuration: 0.5, visuals: [\n      { type: 'IMAGE', src: '{{productImage}}', width: 1080, height: 1080, position: 'center-center', resize: 'cover', zoom: true, track: 0, enterBegin: 0, exitEnd: 3.6 },\n      { type: 'SVG', width: 1080, height: 1080, track: 1, enterBegin: 0, exitEnd: 3.6, svg: \"<svg width='1080' height='1080' viewBox='0 0 1080 1080' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='editorialOpen' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='\" + background + \"' stop-opacity='.42'/><stop offset='.5' stop-color='\" + background + \"' stop-opacity='.2'/><stop offset='1' stop-color='\" + background + \"' stop-opacity='.9'/></linearGradient></defs><rect width='1080' height='1080' fill='\" + background + \"' fill-opacity='.18'/><rect width='1080' height='1080' fill='url(#editorialOpen)'/></svg>\" },\n      { type: 'TEXT', x: 70, y: 690, width: 940, anchor: 'top-left', track: 2, enterBegin: 0.3, enterEnd: 0.75, enterAnimation: 'smoothup', exitEnd: 3.6, style: { fontFamily: 'Manrope', color: '#FFFFFF' }, html: \"<div style='color:\" + paleAccent + \";font-size:20px;font-weight:800;letter-spacing:4px;'>{{angleLabel}}</div><div style='margin-top:12px;color:#FFFFFF;font-size:54px;line-height:1.08;font-weight:800;letter-spacing:-1px;overflow-wrap:anywhere;'>{{openerHeadline}}</div><div style='margin-top:14px;color:#F7EDE8;font-size:27px;line-height:1.3;font-weight:600;'>{{openerSubheadline}}</div><div style='margin-top:16px;color:\" + paleAccent + \";font-size:19px;font-weight:700;letter-spacing:2px;'>{{brandName}} · {{productName}}</div>\" },\n    ] },\n    { id: 'about', duration: 4.2, backgroundColor: cream, transition: 'smoothleft', transitionId: 'benefit', transitionDuration: 0.5, visuals: [\n      { type: 'IMAGE', src: '{{detailImage}}', width: 1080, height: 1080, position: 'center-center', resize: 'cover', zoom: true, track: 0, enterEnd: 0.5, enterAnimation: 'smoothright', exitEnd: 4.2 },\n      { type: 'SVG', width: 1080, height: 1080, track: 1, enterBegin: 0, exitEnd: 4.2, svg: \"<svg width='1080' height='1080' viewBox='0 0 1080 1080' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='productReadability' x1='0' y1='0' x2='1' y2='0'><stop offset='0' stop-color='#211612' stop-opacity='.82'/><stop offset='.48' stop-color='#211612' stop-opacity='.38'/><stop offset='.78' stop-color='#211612' stop-opacity='.05'/><stop offset='1' stop-color='#211612' stop-opacity='0'/></linearGradient><linearGradient id='productBottom' x1='0' y1='0' x2='0' y2='1'><stop offset='.45' stop-color='#211612' stop-opacity='0'/><stop offset='1' stop-color='#211612' stop-opacity='.58'/></linearGradient></defs><rect width='1080' height='1080' fill='url(#productReadability)'/><rect width='1080' height='1080' fill='url(#productBottom)'/></svg>\" },\n      { type: 'TEXT', x: 72, y: 720, width: 520, anchor: 'top-left', track: 2, enterBegin: 0.4, enterEnd: 0.85, enterAnimation: 'smoothup', exitEnd: 4.2, style: { fontFamily: 'Manrope', color: '#FFFFFF' }, html: \"<div style='color:\" + paleAccent + \";font-size:20px;font-weight:800;letter-spacing:4px;'>{{storyKicker}}</div><div style='margin-top:14px;color:#FFFFFF;font-size:34px;line-height:1.35;font-weight:700;'>{{storyCopy}}</div>\" },\n    ] },\n    { id: 'benefit', iterate: 'benefits', iterateAs: 'benefit', duration: 3, backgroundColor: '#F4E6DA', transition: 'smoothleft', transitionId: 'offer', transitionDuration: 0.5, visuals: [\n      { type: 'SVG', width: 1080, height: 1080, track: 0, enterBegin: 0, exitEnd: 3, svg: \"<svg width='1080' height='1080' viewBox='0 0 1080 1080' xmlns='http://www.w3.org/2000/svg'><rect width='1080' height='1080' fill='#F4E6DA'/><circle cx='540' cy='385' r='120' fill='\" + accent + \"'/><path d='M485 385 L525 427 L600 343' stroke='#FFFFFF' stroke-width='16' fill='none' stroke-linecap='round' stroke-linejoin='round'/><circle cx='540' cy='385' r='150' fill='none' stroke='\" + accent + \"' stroke-opacity='.35' stroke-width='2'/></svg>\" },\n      { type: 'TEXT', x: 540, y: 590, width: 880, anchor: 'top-center', track: 2, enterBegin: 0.25, enterEnd: 0.7, enterAnimation: 'smoothup', exitEnd: 3, style: { fontFamily: 'Manrope', color: background }, html: \"<div style='text-align:center;color:\" + background + \";font-size:52px;line-height:1.1;font-weight:800;'>{{benefit.title}}</div><div style='margin-top:16px;text-align:center;color:#6C554C;font-size:27px;line-height:1.4;font-weight:600;'>{{benefit.detail}}</div>\" },\n      { type: 'TEXT', x: 540, y: 80, anchor: 'center-center', track: 1, enterBegin: 0, exitEnd: 3, style: { fontFamily: 'Manrope', color: '#6C554C' }, html: \"<div style='color:#6C554C;font-size:19px;font-weight:700;letter-spacing:5px;'>{{brandName}} · {{productName}}</div>\" },\n    ] },\n    { id: 'offer', duration: 3.8, backgroundColor: cream, transition: 'fade', transitionId: 'outro', transitionDuration: 0.5, visuals: [\n      { type: 'IMAGE', src: '{{textureImage}}', width: 1080, height: 1080, position: 'center-center', resize: 'cover', zoom: true, track: 0, enterBegin: 0, exitEnd: 3.8 },\n      { type: 'SVG', width: 1080, height: 1080, track: 1, enterBegin: 0, exitEnd: 3.8, svg: \"<svg width='1080' height='1080' viewBox='0 0 1080 1080' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='offerShade' x1='0' y1='1' x2='0' y2='0'><stop offset='0' stop-color='\" + background + \"' stop-opacity='.88'/><stop offset='.6' stop-color='\" + background + \"' stop-opacity='.16'/><stop offset='1' stop-color='\" + background + \"' stop-opacity='.34'/></linearGradient></defs><rect width='1080' height='1080' fill='url(#offerShade)'/></svg>\" },\n      { type: 'TEXT', x: 70, y: 720, width: 940, anchor: 'top-left', track: 2, enterBegin: 0.3, enterEnd: 0.75, enterAnimation: 'smoothup', exitEnd: 3.8, style: { fontFamily: 'Manrope', color: '#FFFFFF' }, html: \"<div style='color:\" + paleAccent + \";font-size:21px;font-weight:800;letter-spacing:4px;'>THE OFFER</div><div style='margin-top:12px;color:#FFFFFF;font-size:52px;line-height:1.15;font-weight:800;'>{{offer}}</div>\" },\n    ] },\n    { id: 'outro', duration: 3.8, backgroundColor: background, visuals: [\n      { type: 'SVG', width: 1080, height: 1080, track: 0, enterBegin: 0, exitEnd: 3.8, svg: \"<svg width='1080' height='1080' viewBox='0 0 1080 1080' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='editorialOut' cx='.5' cy='.4' r='.9'><stop offset='0' stop-color='#5A3326'/><stop offset='1' stop-color='\" + background + \"'/></radialGradient></defs><rect width='1080' height='1080' fill='url(#editorialOut)'/><rect x='300' y='210' width='480' height='130' rx='65' fill='none' stroke='\" + paleAccent + \"' stroke-opacity='.82' stroke-width='2'/></svg>\" },\n      { type: 'TEXT', x: 540, y: 275, width: 420, anchor: 'center-center', track: 1, enterBegin: 0.2, enterEnd: 0.6, enterAnimation: 'fade', exitEnd: 3.8, style: { fontFamily: 'Cormorant Garamond', color: paleAccent }, html: \"<div style='text-align:center;color:\" + paleAccent + \";font-size:52px;line-height:1;font-weight:700;white-space:nowrap;'>{{brandName}}</div>\" },\n      { type: 'TEXT', x: 540, y: 460, width: 920, anchor: 'top-center', track: 2, enterBegin: 0.45, enterEnd: 0.9, enterAnimation: 'smoothup', exitEnd: 3.8, style: { fontFamily: 'Manrope', color: '#FFFFFF' }, html: \"<div style='text-align:center;color:#FFFFFF;font-size:44px;line-height:1.12;font-weight:800;'>{{productName}}</div><div style='margin-top:18px;text-align:center;color:\" + paleAccent + \";font-size:66px;font-weight:800;'>{{price}}</div>\" },\n      { type: 'TEXT', x: 540, y: 710, anchor: 'top-center', track: 3, enterBegin: 0.9, enterEnd: 1.3, enterAnimation: 'circleopen', exitEnd: 3.8, style: { fontFamily: 'Manrope', color: '#FFFFFF' }, html: \"<div style='display:inline-block;border:2px solid \" + paleAccent + \";color:#FFFFFF;border-radius:999px;padding:22px 58px;font-size:32px;font-weight:800;'>{{ctaText}} →</div>\" },\n      { type: 'TEXT', x: 540, y: 900, width: 900, anchor: 'top-center', track: 4, enterBegin: 1.1, enterEnd: 1.5, enterAnimation: 'fade', exitEnd: 3.8, style: { fontFamily: 'Manrope', color: '#D8C9C1' }, html: \"<div style='text-align:center;color:#D8C9C1;font-size:20px;'>{{website}} · {{variantLabel}}</div>\" },\n    ] },\n  ],\n  audios: cfg.musicUrl ? [{ src: '{{musicUrl}}', volume: Number(cfg.musicVolume || 0.16), track: 0 }] : [],\n};\nconst items = ads.map((ad) => ({\n  name: safeJobName(ad.product + ' - ' + ad.creativeFormat + ' - ' + ad.conceptId),\n  variables: { brandName: cfg.brandName, productName: ad.product, angleLabel: ad.angleLabel, openerHeadline: ad.openerHeadline, openerSubheadline: ad.openerSubheadline, storyKicker: ad.storyKicker, storyCopy: ad.storyCopy, ctaText: ad.ctaText, price: ad.price, offer: ad.offer, productImage: ad.productImage, detailImage: ad.productImage2, textureImage: ad.productImage3, benefits: ad.benefits, website: cfg.website, variantLabel: ad.variantLabel, musicUrl: cfg.musicUrl || '' },\n}));\nreturn [{ json: { payload, items, meta: { approvedTemplate: 'Atelier Editorial · Contrast Fix', designBasisTemplateId: 'tpl_EghDTSfEMbc4Jh7MGCHh', ads, skipped: source.skipped, productsScanned: source.productsScanned, productsSelected: source.productsSelected, approxVideoSeconds: 18.9 } } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -400,
+        280
+      ],
+      "id": "zvid-da-0008",
+      "name": "Build ad template"
+    },
+    {
+      "parameters": {
+        "resource": "render",
+        "operation": "validate",
+        "source": "json",
+        "projectJson": "={{ $json.payload }}",
+        "validationVariables": "={{ $json.items[0].variables }}",
+        "additionalFields": {}
+      },
+      "type": "@zvid/n8n-nodes-zvid.zvid",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        280
+      ],
+      "id": "zvid-da-0009",
+      "name": "Validate project (free)"
+    },
+    {
+      "parameters": {
+        "jsCode": "const result = $input.first().json || {};\nif (!result.valid) {\n  const details = Array.isArray(result.errors)\n    ? result.errors.map((entry) => '  - ' + (entry.field || 'project') + ': ' + entry.message).join('\\n')\n    : JSON.stringify(result).slice(0, 500);\n  throw new Error('Zvid rejected the project: ' + (result.message || result.error || 'Validation failed') + '\\n' + details);\n}\nconst build = $('Build ad template').first().json;\nconst perVideo = Number(result.creditsRequired) || 0;\nreturn [{ json: {\n  ...build,\n  creditsPerVideo: perVideo,\n  totalCredits: perVideo * build.items.length,\n  warnings: result.warnings || [],\n  resolvedFirst: result.payload,\n  schemaVersion: result.schemaVersion,\n} }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        80,
+        280
+      ],
+      "id": "zvid-da-0010",
+      "name": "Check validation"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "dry-run--cond",
+              "leftValue": "={{ $('Config').first().json.dryRun }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        320,
+        280
+      ],
+      "id": "zvid-da-0011",
+      "name": "Dry run?"
+    },
+    {
+      "parameters": {
+        "resource": "project",
+        "operation": "create",
+        "projectName": "={{ ('Ad preview - ' + ($json.meta.ads[0] ? $json.meta.ads[0].product : 'first concept')).slice(0, 120) }}",
+        "projectJson": "={{ $json.resolvedFirst }}"
+      },
+      "type": "@zvid/n8n-nodes-zvid.zvid",
+      "typeVersion": 1,
+      "position": [
+        560,
+        80
+      ],
+      "id": "zvid-da-0012",
+      "name": "Save draft to editor",
+      "onError": "continueRegularOutput",
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "jsCode": "const cfg = $('Config').first().json;\nconst d = $('Check validation').first().json;\nlet editorLink = null;\nlet editorDraftError = null;\nconst cleanDraftError = (error) => {\n  const text = String((error && error.message) || error || 'Unknown editor draft error');\n  if (/Project limit reached/i.test(text)) return 'Project limit reached. Delete an old saved project in Zvid, then run the dry test again.';\n  return text.slice(0, 500);\n};\ntry {\n  const saved = $('Save draft to editor').first().json;\n  const project = saved.project;\n  if (project && project.id) editorLink = String(cfg.editorUrl).replace(/\\/+$/, '') + '/?project=' + project.id;\n  if (saved.error) editorDraftError = cleanDraftError(saved.error);\n} catch (error) { editorDraftError = cleanDraftError(error); }\nconst conceptPlan = $('Create ad concepts').first().json;\nreturn [{ json: { dryRun: true, productsSelected: conceptPlan.productsSelected, adVariantsPlanned: d.items.length, requested: conceptPlan.requested, allocation: conceptPlan.allocation, variantDistribution: conceptPlan.variantDistribution, concepts: d.meta.ads.map((ad) => ({ trackingKey: ad.trackingKey, product: ad.product, creativeFormat: ad.creativeFormat, hook: ad.audienceHook, openerHeadline: ad.openerHeadline, openerSubheadline: ad.openerSubheadline, storyKicker: ad.storyKicker, storyCopy: ad.storyCopy, offer: ad.offer })), creditsPerVideo: d.creditsPerVideo, totalCredits: d.totalCredits, approxSecondsPerVideo: d.meta.approxVideoSeconds, skipped: d.meta.skipped, warnings: d.warnings, editorLink, editorDraftError, nextStep: editorDraftError ? 'Resolve editorDraftError, then run again with dryRun still true.' : 'Review editorLink, then set dryRun to false. Add deliveryWebhookUrl only when your asset store or social scheduler is ready to accept the rendered manifest.' } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        800,
+        80
+      ],
+      "id": "zvid-da-0013",
+      "name": "Dry run summary"
+    },
+    {
+      "parameters": {
+        "resource": "render",
+        "operation": "createBulk",
+        "renderType": "video",
+        "source": "json",
+        "projectJson": "={{ $json.payload }}",
+        "items": "={{ $json.items }}",
+        "additionalFields": {
+          "batchName": "={{ String($('Config').first().json.bulkName || 'Catalog videos').slice(0, 120) }}"
+        }
+      },
+      "type": "@zvid/n8n-nodes-zvid.zvid",
+      "typeVersion": 1,
+      "position": [
+        560,
+        400
+      ],
+      "id": "zvid-da-0014",
+      "name": "Submit bulk render",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "jsCode": "const res = $input.first().json;\n    const build = $('Check validation').first().json;\nif (!res || !res.bulkId) throw new Error('Bulk submit returned no bulkId: ' + JSON.stringify(res).slice(0, 400));\nconst jobIndexById = {};\nfor (const job of res.jobs || []) jobIndexById[job.jobId] = job.index;\nconst rejected = (res.errors || []).map((error) => { const ad = build.meta.ads[error.item] || {}; return { trackingKey: ad.trackingKey, product: ad.product, creativeFormat: ad.creativeFormat, error: error.error, details: error.details }; });\nreturn [{ json: { bulkId: res.bulkId, totalJobs: res.totalJobs, creditsReserved: res.creditsReserved, queueAhead: res.queueAhead, jobIndexById, rejected } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        800,
+        400
+      ],
+      "id": "zvid-da-0015",
+      "name": "Check batch accepted"
+    },
+    {
+      "parameters": {
+        "amount": "={{ $('Config').first().json.pollSeconds }}",
+        "unit": "seconds"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1040,
+        400
+      ],
+      "id": "zvid-da-0016",
+      "name": "Wait"
+    },
+    {
+      "parameters": {
+        "resource": "render",
+        "operation": "getBulk",
+        "bulkId": "={{ $('Check batch accepted').first().json.bulkId }}"
+      },
+      "type": "@zvid/n8n-nodes-zvid.zvid",
+      "typeVersion": 1,
+      "position": [
+        1280,
+        400
+      ],
+      "id": "zvid-da-0017",
+      "name": "Get batch status",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "batch-finished--cond",
+              "leftValue": "={{ $json.bulk.status !== 'processing' }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1520,
+        400
+      ],
+      "id": "zvid-da-0018",
+      "name": "Batch finished?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Fails fast when the whole batch failed, and stops the poll loop at\n// timeoutMinutes. A timeout does NOT cancel the renders — they finish on\n// Zvid's side (see https://app.zvid.io); raise timeoutMinutes for bigger\n// catalogs rather than re-running immediately.\nconst cfg = $('Config').first().json;\nconst poll = $input.first().json;\nconst b = poll.bulk || {};\nconst c = b.counts || {};\n\nif (b.status === 'failed') {\n  const firstError = (poll.jobs || []).map((j) => j.errorMessage).filter(Boolean)[0];\n  throw new Error('Every job in bulk ' + b.id + ' failed. First error: ' + (firstError || 'no reason given'));\n}\n\nconst maxPolls = Math.ceil((Number(cfg.timeoutMinutes || 20) * 60) / Number(cfg.pollSeconds || 10));\nif ($runIndex + 1 >= maxPolls) {\n  throw new Error(\n    'Bulk ' + b.id + ' did not finish within ' + cfg.timeoutMinutes + ' minutes (' +\n    (c.completed || 0) + '/' + b.totalJobs + ' done, ' + (c.pending || 0) + ' still rendering). ' +\n    'The remaining renders continue on Zvid\\'s side — check https://app.zvid.io before re-running, or raise timeoutMinutes.'\n  );\n}\n\nreturn $input.all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1520,
+        620
+      ],
+      "id": "zvid-da-0019",
+      "name": "Still rendering?"
+    },
+    {
+      "parameters": {
+        "jsCode": "const poll = $input.first().json;\nconst sub = $('Check batch accepted').first().json;\nconst build = $('Check validation').first().json;\nconst completed = [];\nconst failures = [...(sub.rejected || [])];\nfor (const job of poll.jobs || []) {\n  const index = sub.jobIndexById[job.id];\n  const ad = index == null ? null : build.meta.ads[index];\n  if (!ad) continue;\n  if (job.status === 'completed' && job.outputUrl) completed.push({ ...ad, videoUrl: job.outputUrl, jobId: job.id, creditsUsed: Number(job.creditsConsumed) || null });\n  else failures.push({ trackingKey: ad.trackingKey, product: ad.product, creativeFormat: ad.creativeFormat, status: job.status, error: job.errorMessage || null });\n}\nif (!completed.length) throw new Error('The batch finished without a video URL. ' + JSON.stringify(failures).slice(0, 700));\nreturn completed.map((ad) => ({ json: { ...ad, renderFailures: failures } }));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1760,
+        300
+      ],
+      "id": "zvid-da-0020",
+      "name": "Collect rendered ads"
+    },
+    {
+      "parameters": {
+        "jsCode": "const cfg = $('Config').first().json;\nconst rendered = $input.all().map((item) => item.json);\nconst failures = rendered[0] && Array.isArray(rendered[0].renderFailures) ? rendered[0].renderFailures : [];\nreturn [{ json: { source: 'zvid-n8n-shopify-dynamic-ad-factory', generatedAt: new Date().toISOString(), campaign: cfg.bulkName, destination: cfg.deliveryWebhookUrl || null, assets: rendered.map((ad) => ({ trackingKey: ad.trackingKey, productId: ad.shopifyProductId, product: ad.product, productUrl: ad.productUrl, creativeFormat: ad.creativeFormat, hook: ad.audienceHook, offer: ad.offer, videoUrl: ad.videoUrl, jobId: ad.jobId, performance: { status: 'not_published', impressions: 0, clicks: 0, conversions: 0, spend: 0, revenue: 0 } })), failures, creditsUsed: rendered.reduce((sum, ad) => sum + (Number(ad.creditsUsed) || 0), 0) } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2000,
+        300
+      ],
+      "id": "zvid-da-0021",
+      "name": "Build delivery manifest"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "shopify-auto-publish",
+              "leftValue": "={{ Boolean($('Config').first().json.deliveryWebhookUrl) }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2240,
+        300
+      ],
+      "id": "zvid-da-0022",
+      "name": "Delivery configured?"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('Config').first().json.deliveryWebhookUrl }}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          },
+          "timeout": 60000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2480,
+        180
+      ],
+      "id": "zvid-da-0023",
+      "name": "Send to asset store or scheduler",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $input.first().json || {};\nconst manifest = $('Build delivery manifest').first().json;\nconst statusCode = Number(response.statusCode || 0);\nif (statusCode < 200 || statusCode >= 300) throw new Error('Delivery webhook rejected the manifest (HTTP ' + statusCode + '): ' + JSON.stringify(response.body || response).slice(0, 500));\nreturn [{ json: { delivered: true, destination: manifest.destination, assetCount: manifest.assets.length, trackingKeys: manifest.assets.map((asset) => asset.trackingKey), creditsUsed: manifest.creditsUsed, webhookStatus: statusCode } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2720,
+        180
+      ],
+      "id": "zvid-da-0024",
+      "name": "Delivery summary"
+    },
+    {
+      "parameters": {
+        "jsCode": "const manifest = $input.first().json; return [{ json: { delivered: false, assetCount: manifest.assets.length, assets: manifest.assets, failures: manifest.failures, creditsUsed: manifest.creditsUsed, nextStep: 'Review the videos. Set Config.deliveryWebhookUrl to send this exact manifest to an asset store or social scheduler.' } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2480,
+        440
+      ],
+      "id": "zvid-da-0025",
+      "name": "Rendered for review"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.videoUrl }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file",
+              "outputPropertyName": "data"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2000,
+        40
+      ],
+      "id": "zvid-da-0026",
+      "name": "▶ Watch video",
+      "onError": "continueRegularOutput",
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "content": "## Dynamic Product Ad Factory\n\nReads selected Shopify products, creates product-first, benefit-first, and offer-first concepts, renders them as one Zvid bulk job, and builds a scheduler-neutral delivery/performance manifest.\n\n### Required community node\nBefore configuring credentials or running the workflow, open **Settings → Community nodes → Install** and install the exact package **`@zvid/n8n-nodes-zvid`**. A workspace owner or admin may need to do this.\n\n**Safe first run:** `dryRun` defaults to `true`. Validation and the editor draft are free. Set it to `false` only after checking the quote and preview.\n\nThis workflow is intentionally independent and contains all setup instructions on its canvas. Shopify access is **read-only**: it reads catalog data but does not attach videos to products. Leave `deliveryWebhookUrl` blank unless you have an asset store or scheduler ready.",
+        "height": 820,
+        "width": 620,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1900,
+        -980
+      ],
+      "id": "zvid-da-n001",
+      "name": "Overview and safety"
+    },
+    {
+      "parameters": {
+        "content": "## 1 · Create a Shopify app (2026+)\n\nIn Shopify Admin open **Settings → Apps → Develop apps → Build apps in Dev Dashboard**. In Dev Dashboard:\n1. Select **Apps → Create app → Start from Dev Dashboard**.\n2. Name the app.\n3. Open **Versions** and create a version.\n4. For an API-only app, keep Shopify's default app-home URL.\n5. Add only the Admin API scope **`read_products`**.\n6. Select **Release**.\n7. Open **Home → Install app**, select the store, and approve installation.\n\nNew custom apps can no longer be created directly in Shopify Admin. Existing admin-created apps may continue using their installed Admin API token.\n\nOfficial guide: https://shopify.dev/docs/apps/build/dev-dashboard/create-apps-using-dev-dashboard",
+        "height": 700,
+        "width": 700,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1260,
+        -980
+      ],
+      "id": "zvid-da-n002",
+      "name": "Create the Shopify app"
+    },
+    {
+      "parameters": {
+        "content": "## 2 · Get `X-Shopify-Access-Token`\n\nThe Client ID and Client secret are **not** the access token. In Dev Dashboard open the app → **Settings**, copy both, then exchange them:\n\n```bash\ncurl -X POST \\\n  https://YOUR_STORE.myshopify.com/admin/oauth/access_token \\\n  -H 'Content-Type: application/x-www-form-urlencoded' \\\n  -d 'grant_type=client_credentials' \\\n  -d 'client_id=YOUR_CLIENT_ID' \\\n  -d 'client_secret=YOUR_CLIENT_SECRET'\n```\n\nCopy `access_token` from the JSON response. Never paste the Client secret into this workflow JSON. Dev Dashboard client-credentials tokens expire after **24 hours**; request a new token and update the n8n credential before a later run. For unattended scheduling, implement secure token refresh. The client-credentials grant is for an app and store owned by the same Shopify organization; use Shopify's OAuth installation flow for other merchants.\n\nOfficial guide: https://shopify.dev/docs/apps/build/dev-dashboard/get-api-access-tokens?lang=curl",
+        "height": 700,
+        "width": 760,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -540,
+        -980
+      ],
+      "id": "zvid-da-n002b",
+      "name": "Get the Shopify token"
+    },
+    {
+      "parameters": {
+        "content": "## 3 · Connect Shopify in n8n\n\nOpen **Credentials → New credential → Header Auth** and enter:\n- **Name:** `X-Shopify-Access-Token`\n- **Value:** the returned `access_token`\n\nOpen **Get Shopify catalog**, choose that credential, and save the node.\n\nIn **Config** set:\n- `shopDomain`: prefix only; use `example` for `example.myshopify.com`\n- `shopifyProductQuery`: default `status:active`; change it to target a vendor, tag, product type, or another Shopify Admin filter\n- `scanLimit`: products fetched from Shopify\n- `maxProducts`: eligible products selected\n- `variantsPerProduct`: maximum variants for each selected product\n- `maxTotalAds`: total video cap across all products\n\nThe planner allocates one variant to each selected product before starting the second round. For 2 products × 2 variants, set `maxTotalAds` to 4. Set it to 2 for one variant per product.\n\nA `401 Unauthorized` usually means the wrong value was used or the 24-hour token expired. A `403` usually means `read_products` was not granted or the new app version was not approved.",
+        "height": 700,
+        "width": 660,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        240,
+        -980
+      ],
+      "id": "zvid-da-n002c",
+      "name": "Connect Shopify in n8n"
+    },
+    {
+      "parameters": {
+        "content": "## 4 · Install and connect Zvid\n\nThe Zvid nodes are supplied by a community package and are required by this workflow. Before running it:\n1. Open **Settings → Community nodes** in n8n.\n2. Select **Install**.\n3. Enter the exact package name **`@zvid/n8n-nodes-zvid`**.\n4. Confirm the installation. If you cannot install community nodes, ask the n8n workspace owner or admin.\n\nCreate an API key at **https://app.zvid.io/api-keys**. In n8n create a **Zvid API** credential and enter:\n- **API Key:** your `zvid_…` key\n- **Base URL:** keep `https://api.zvid.io`\n\nAssign the same credential to all four native Zvid nodes:\n- **Validate project (free)** — Render → Validate\n- **Save draft to editor** — Project → Create Editor Project\n- **Submit bulk render** — Render → Create Bulk\n- **Get batch status** — Render → Get Bulk\n\nThen set your brand, website, colors, CTA, and optional licensed `musicUrl` in **Config**. Keep `dryRun: true`, run **Test manually**, review the exact credit quote and editor link, then set it to `false` to render.",
+        "height": 820,
+        "width": 620,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        920,
+        -980
+      ],
+      "id": "zvid-da-n003",
+      "name": "Install and connect Zvid"
+    },
+    {
+      "parameters": {
+        "content": "## Concept matrix\n\nFor each selected product the workflow rotates through:\n1. **product-first** — product-led headline and price context\n2. **benefit-first** — benefit headline and Shopify description\n3. **offer-first** — price or real compare-at savings\n\nEach format supplies distinct opener, story, benefit, and offer copy to Zvid. The planner uses round-robin allocation across products: every selected product receives its first variant before any product receives a second. The total is capped by `maxTotalAds` (default 5).\n\nExample: `maxProducts: 2`, `variantsPerProduct: 2`, `maxTotalAds: 4` creates 4 ads. A total cap of 2 creates 2 ads: one per product.\n\nNo unsupported discount is invented. Shopify's product connection does not support `BEST_SELLING`; use `UPDATED_AT` plus your query or feed it sales-ranked IDs from another workflow.",
+        "height": 700,
+        "width": 600,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1560,
+        -980
+      ],
+      "id": "zvid-da-n004",
+      "name": "Concept strategy"
+    },
+    {
+      "parameters": {
+        "content": "## Delivery contract\n\nLeave `deliveryWebhookUrl` blank to receive review links in n8n. Add an HTTPS endpoint only when it is ready to accept one JSON manifest containing every rendered asset. Add any destination credential to **Send to asset store or scheduler**.\n\nEach asset includes a stable `trackingKey`, Shopify product ID/URL, format, hook, offer, video URL, job ID, and zeroed performance fields. Store the tracking key beside the platform post/ad ID so a later reporting workflow can join metrics to the exact creative.\n\nThis template does **not** publish an ad or collect live metrics by itself. It hands off assets and a tracking contract to the destination. With no webhook, the tested review branch returns all URLs and plays the MP4s inside n8n.",
+        "height": 700,
+        "width": 650,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2180,
+        -980
+      ],
+      "id": "zvid-da-n005",
+      "name": "Delivery and tracking"
+    },
+    {
+      "parameters": {
+        "content": "## Approved Atelier Editorial design\n\nA product such as **Harbor Stripe Breton Tee — Navy & Ivory** at **$36** produces up to three editorial variants:\n- Product-first: direct new-edit framing\n- Benefit-first: description-led benefits\n- Offer-first: price or real compare-at savings\n\nThe design uses up to three Shopify images across an image-led opener, product story, benefits, offer, and CTA. If only one image exists, it is safely reused. The first scene uses a full-frame dark wash plus a strong bottom gradient; the second uses a dark two-axis overlay behind white copy. The end-card brand sits inside a wide bordered capsule that accommodates realistic brand names.\n\nThe design resolves to about **18.9 seconds** with two benefit cards. Always use the free validation quote returned by your own dry run before rendering.",
+        "height": 700,
+        "width": 620,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2850,
+        -980
+      ],
+      "id": "zvid-da-n006",
+      "name": "Product example"
+    },
+    {
+      "parameters": {
+        "content": "### 1 · Select and plan\nRecently updated Shopify products matching `shopifyProductQuery` → validated creative concepts. Products without a title, priced variant, or public image are reported and skipped.",
+        "height": 300,
+        "width": 1160,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1540,
+        220
+      ],
+      "id": "zvid-da-n007",
+      "name": "Section 1 — Select and plan"
+    },
+    {
+      "parameters": {
+        "content": "### 2 · Build and validate\nThe approved **Atelier Editorial · Contrast Fix** design is built once, with Shopify copy/media supplied as per-concept variables. The first and second product-image scenes have dark readability overlays, and the end-card brand uses a wide bordered capsule. The first concept is validated for free before any credits can be spent.",
+        "height": 300,
+        "width": 980,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -460,
+        180
+      ],
+      "id": "zvid-da-n008",
+      "name": "Section 2 — Build and validate"
+    },
+    {
+      "parameters": {
+        "content": "### 3 · Preview or render\n`dryRun: true` saves the first resolved ad as an editor draft and returns the exact quote. `dryRun: false` submits all concepts as one bulk render and polls one batch.",
+        "height": 760,
+        "width": 1180,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        500,
+        0
+      ],
+      "id": "zvid-da-n009",
+      "name": "Section 3 — Preview or bulk render"
+    },
+    {
+      "parameters": {
+        "content": "### 4 · Deliver and measure\nRendered MP4s branch to n8n's inline player and a portable manifest. With no webhook, review links are returned. With a webhook, the manifest is posted to your asset store or social scheduler.",
+        "height": 760,
+        "width": 1240,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1700,
+        0
+      ],
+      "id": "zvid-da-n010",
+      "name": "Section 4 — Deliver and measure"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Test manually": {
+      "main": [
+        [
+          {
+            "node": "Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Every Monday at 9am": {
+      "main": [
+        [
+          {
+            "node": "Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Config": {
+      "main": [
+        [
+          {
+            "node": "Get Shopify catalog",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Shopify catalog": {
+      "main": [
+        [
+          {
+            "node": "Create ad concepts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create ad concepts": {
+      "main": [
+        [
+          {
+            "node": "Ads found?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ads found?": {
+      "main": [
+        [
+          {
+            "node": "Build ad template",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Nothing to render",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build ad template": {
+      "main": [
+        [
+          {
+            "node": "Validate project (free)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate project (free)": {
+      "main": [
+        [
+          {
+            "node": "Check validation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check validation": {
+      "main": [
+        [
+          {
+            "node": "Dry run?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Dry run?": {
+      "main": [
+        [
+          {
+            "node": "Save draft to editor",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Submit bulk render",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save draft to editor": {
+      "main": [
+        [
+          {
+            "node": "Dry run summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Submit bulk render": {
+      "main": [
+        [
+          {
+            "node": "Check batch accepted",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check batch accepted": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Get batch status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get batch status": {
+      "main": [
+        [
+          {
+            "node": "Batch finished?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Batch finished?": {
+      "main": [
+        [
+          {
+            "node": "Collect rendered ads",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Still rendering?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Still rendering?": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Collect rendered ads": {
+      "main": [
+        [
+          {
+            "node": "Build delivery manifest",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "▶ Watch video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build delivery manifest": {
+      "main": [
+        [
+          {
+            "node": "Delivery configured?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delivery configured?": {
+      "main": [
+        [
+          {
+            "node": "Send to asset store or scheduler",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Rendered for review",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send to asset store or scheduler": {
+      "main": [
+        [
+          {
+            "node": "Delivery summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "6a1fb92d-5e91-4bb4-b2aa-98bbd47eef01",
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}

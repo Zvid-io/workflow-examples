@@ -1,0 +1,8 @@
+{
+  "maxProducts": 1,
+  "variantsPerProduct": 1,
+  "maxTotalAds": 1,
+  "brandName": "YOUR BRAND",
+  "website": "your-store.com",
+  "deliveryWebhookUrl": ""
+}

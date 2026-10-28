@@ -1,0 +1,154 @@
+{
+  "data": {
+    "shop": {
+      "name": "Zvid workflow fixture store",
+      "currencyCode": "USD",
+      "primaryDomain": {
+        "url": "https://zvid-2.myshopify.com"
+      }
+    },
+    "products": {
+      "nodes": [
+        {
+          "id": "gid://shopify/Product/8449570340908",
+          "title": "Harbor Stripe Breton Tee , Navy & Ivory",
+          "handle": "harbor-stripe-breton-tee-navy-ivory",
+          "description": "A soft striped tee with an easy fit for everyday layering.",
+          "vendor": "Zvid Studio",
+          "productType": "T-shirt",
+          "tags": ["editorial", "summer"],
+          "status": "ACTIVE",
+          "featuredImage": {
+            "url": "https://cdn.zvid.io/blog/shopify-product-ad-variants/b3282b677c64/product-source-alpine-hero.webp",
+            "altText": "Harbor Stripe Breton Tee"
+          },
+          "images": {
+            "nodes": [
+              {
+                "url": "https://cdn.zvid.io/blog/shopify-product-ad-variants/b3282b677c64/product-source-alpine-hero.webp",
+                "altText": "Harbor Stripe Breton Tee front"
+              },
+              {
+                "url": "https://cdn.zvid.io/blog/shopify-product-ad-variants/b3282b677c64/product-source-alpine-hero.webp",
+                "altText": "Harbor Stripe Breton Tee detail"
+              }
+            ]
+          },
+          "variants": {
+            "nodes": [
+              {
+                "title": "Default Title",
+                "price": "36.00",
+                "compareAtPrice": null
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Product/8449570373676",
+          "title": "Clay Pocket Oversized Tee , Terracotta",
+          "handle": "clay-pocket-oversized-tee-terracotta",
+          "description": "An oversized cotton tee with a relaxed shoulder and practical chest pocket.",
+          "vendor": "Zvid Studio",
+          "productType": "T-shirt",
+          "tags": ["editorial", "essentials"],
+          "status": "ACTIVE",
+          "featuredImage": {
+            "url": "https://cdn.zvid.io/blog/shopify-product-ad-variants/b3282b677c64/product-source-alpine-hero.webp",
+            "altText": "Clay Pocket Oversized Tee"
+          },
+          "images": {
+            "nodes": [
+              {
+                "url": "https://cdn.zvid.io/blog/shopify-product-ad-variants/b3282b677c64/product-source-alpine-hero.webp",
+                "altText": "Clay Pocket Oversized Tee front"
+              },
+              {
+                "url": "https://cdn.zvid.io/blog/shopify-product-ad-variants/b3282b677c64/product-source-alpine-hero.webp",
+                "altText": "Clay Pocket Oversized Tee detail"
+              }
+            ]
+          },
+          "variants": {
+            "nodes": [
+              {
+                "title": "Default Title",
+                "price": "35.00",
+                "compareAtPrice": "42.00"
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Product/9000000000001",
+          "title": "Fixture Product Three",
+          "handle": "fixture-product-three",
+          "description": "A third valid fixture product used to verify product caps.",
+          "status": "ACTIVE",
+          "featuredImage": {
+            "url": "https://cdn.zvid.io/blog/shopify-product-ad-variants/b3282b677c64/product-source-alpine-hero.webp",
+            "altText": "Fixture Product Three"
+          },
+          "images": {
+            "nodes": []
+          },
+          "variants": {
+            "nodes": [
+              {
+                "title": "Default Title",
+                "price": "28.00",
+                "compareAtPrice": null
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Product/9000000000002",
+          "title": "Fixture Product Four",
+          "handle": "fixture-product-four",
+          "description": "A fourth valid fixture product used to verify product caps.",
+          "status": "ACTIVE",
+          "featuredImage": {
+            "url": "https://cdn.zvid.io/blog/shopify-product-ad-variants/b3282b677c64/product-source-alpine-hero.webp",
+            "altText": "Fixture Product Four"
+          },
+          "images": {
+            "nodes": []
+          },
+          "variants": {
+            "nodes": [
+              {
+                "title": "Default Title",
+                "price": "31.00",
+                "compareAtPrice": null
+              }
+            ]
+          }
+        },
+        {
+          "id": "gid://shopify/Product/9000000000003",
+          "title": "Fixture Product Five",
+          "handle": "fixture-product-five",
+          "description": "A fifth valid fixture product used to verify product caps.",
+          "status": "ACTIVE",
+          "featuredImage": {
+            "url": "https://cdn.zvid.io/blog/shopify-product-ad-variants/b3282b677c64/product-source-alpine-hero.webp",
+            "altText": "Fixture Product Five"
+          },
+          "images": {
+            "nodes": []
+          },
+          "variants": {
+            "nodes": [
+              {
+                "title": "Default Title",
+                "price": "44.00",
+                "compareAtPrice": null
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

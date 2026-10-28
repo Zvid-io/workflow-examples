@@ -1,0 +1,10 @@
+{
+  "maxProducts": 1,
+  "variantsPerProduct": 1,
+  "maxTotalAds": 1,
+  "brandName": "Zvid Studio",
+  "website": "example.com",
+  "ctaText": "Shop now",
+  "musicUrl": "",
+  "deliveryWebhookUrl": ""
+}

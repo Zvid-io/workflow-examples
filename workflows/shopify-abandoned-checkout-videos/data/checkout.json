@@ -1,0 +1,19 @@
+{
+  "checkoutId": "gid://shopify/AbandonedCheckout/TEST",
+  "checkoutName": "#TEST",
+  "firstName": "Alex",
+  "email": "alex@example.com",
+  "phone": "+15555550123",
+  "totalPrice": "35.00",
+  "items": [
+    {
+      "title": "Clay Pocket Oversized Tee",
+      "variantTitle": "M",
+      "quantity": 1,
+      "price": "35.00",
+      "imageUrl": "https://cdn.zvid.io/blog/shopify-abandoned-checkout-videos/bae3f3127eb6/product-source-clay-hero.png"
+    }
+  ],
+  "checkoutUrl": "https://your-store.myshopify.com",
+  "cartRef": "fixture-alex-clay-pocket"
+}

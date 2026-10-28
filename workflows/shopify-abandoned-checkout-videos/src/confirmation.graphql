@@ -1,0 +1,8 @@
+query ConfirmAbandonedCheckout($id: ID!) {
+  abandonmentByAbandonedCheckoutId(abandonedCheckoutId: $id) {
+    id customerHasNoOrderSinceAbandonment customerHasNoDraftOrderSinceAbandonment
+    inventoryAvailable emailSentAt emailState hoursSinceLastAbandonedCheckout
+    isMostSignificantAbandonment
+    abandonedCheckoutPayload { id completedAt abandonedCheckoutUrl }
+  }
+}

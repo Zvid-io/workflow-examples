@@ -1,0 +1,15 @@
+import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {buildProject} from './build-project.js';
+import {checkConfig} from './run.js';
+const json=file=>JSON.parse(readFileSync(new URL(file,import.meta.url),'utf8'));
+const config=checkConfig(json('../config.json'));
+const fixture=json('../data/checkout.json');
+const built=buildProject(config,fixture);
+if(built.payload.scenes.length!==3 || built.meta.itemCount!==1)throw new Error('Unexpected example layout');
+const text=JSON.stringify(built.payload);
+for(const value of [fixture.email,fixture.phone,fixture.checkoutUrl])if(value&&text.includes(value))throw new Error('Private delivery field leaked into project');
+const workflow=json('../n8n/workflow.json');
+if(workflow.active)throw new Error('n8n download must be inactive');
+for(const node of workflow.nodes)if(node.type.includes('n8n-nodes-zvid')&&!['@zvid/n8n-nodes-zvid.zvid','@zvid/n8n-nodes-zvid.zvidTrigger'].includes(node.type))throw new Error('Invalid Zvid node type');
+console.log(JSON.stringify({valid:true,scenes:3,seconds:built.meta.totalSeconds,n8nSha256:createHash('sha256').update(readFileSync(new URL('../n8n/workflow.json',import.meta.url))).digest('hex')}));
