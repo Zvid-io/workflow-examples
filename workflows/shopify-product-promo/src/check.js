@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { selectProduct, buildProduct, checkConfig } from './workflow.js';
+const json = relative => JSON.parse(readFileSync(new URL(relative, import.meta.url), 'utf8'));
+const config = checkConfig(json('../config.json'));
+const product = selectProduct(json('../data/product.json'), config);
+const built = buildProduct(product, config);
+assert.equal(built.payload.scenes.length, 3);
+assert.equal(built.meta.totalSeconds, 14.3);
+assert.equal(built.meta.title, 'Demo Lip Color Kit');
+console.log('Canonical mapper and three-scene product promo build passed; no network requests or rendering.');

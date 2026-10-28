@@ -1,0 +1,1247 @@
+{
+  "name": "blog-video-google-health-evolving-so-you-can-focus-on-living",
+  "resolution": "instagram-reel",
+  "frameRate": 30,
+  "backgroundColor": "#0F1626",
+  "outputFormat": "mp4",
+  "scenes": [
+    {
+      "id": "intro",
+      "duration": 3.2,
+      "backgroundColor": "#0F1626",
+      "transition": "fade",
+      "transitionDuration": 0.4,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 3.2,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='btvIntro' cx='0.28' cy='0.3' r='1.05'><stop offset='0' stop-color='#252c3c'/><stop offset='1' stop-color='#0F1626'/></radialGradient><pattern id='btvDots' width='44' height='44' patternUnits='userSpaceOnUse'><circle cx='3' cy='3' r='3' fill='rgba(255,180,84,0.16)'/></pattern></defs><rect width='1080' height='1920' fill='url(#btvIntro)'/><rect x='680' y='150' width='310' height='310' fill='url(#btvDots)'/><rect x='90' y='560' width='150' height='10' rx='5' fill='#FFB454'/><path d='M90 1780 H430' stroke='rgba(255,180,84,0.35)' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 960,
+          "anchor": "center-center",
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 3.2,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div class='btvg'><i></i></div>",
+          "customCode": {
+            "animationDuration": 3.2,
+            "css": ".btvg{position:relative;width:1080px;height:1920px;overflow:hidden}.btvg i{position:absolute;display:block;left:0;top:0;width:1080px;height:1920px;background-repeat:no-repeat;background-size:1500px 1500px;background-image:radial-gradient(circle,rgba(37,44,60,0.8) 0%,rgba(0,0,0,0) 66%);animation:btvGlow 8s ease-in-out infinite}@keyframes btvGlow{0%{background-position:-240px 40px}33%{background-position:540px 640px}66%{background-position:-80px 1060px}100%{background-position:-240px 40px}}"
+          }
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 620,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.15,
+          "enterEnd": 0.55,
+          "enterAnimation": "smoothright",
+          "exitEnd": 3.2,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFB454"
+          },
+          "html": "<div style='color:#FFB454; font-size:30px; font-weight:700; letter-spacing:8px;'>NEW ON THE BLOG</div><div style='margin-top:12px; color:#9AA7BD; font-size:26px; font-weight:600; letter-spacing:4px;'>Oct 12, 2026</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 736,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.4,
+          "enterEnd": 0.9,
+          "enterAnimation": "smoothup",
+          "exitEnd": 3.2,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='color:#FFFFFF; font-size:54px; line-height:1.14; font-weight:800; letter-spacing:-1px; text-wrap:balance;'>Google Health: Evolving so you can focus on living better</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 915,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 0.85,
+          "enterEnd": 1.25,
+          "enterAnimation": "fade",
+          "exitEnd": 3.2,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFB454"
+          },
+          "html": "<span style='display:inline-block; background:rgba(255,180,84,0.14); border:1.5px solid rgba(255,180,84,0.5); color:#FFB454; border-radius:999px; padding:12px 28px; font-size:26px; font-weight:700; letter-spacing:3px;'>&#9679;&nbsp; FIELDNOTES</span>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1023,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 1.15,
+          "enterEnd": 1.6,
+          "enterAnimation": "wiperight",
+          "exitEnd": 3.2,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#9AA7BD"
+          },
+          "html": "<div style='display:flex; align-items:center; gap:12px;'><span style='width:54px; height:5px; border-radius:3px; background:rgba(255,180,84,0.55);'></span><span style='width:54px; height:5px; border-radius:3px; background:rgba(255,180,84,0.2);'></span><span style='width:54px; height:5px; border-radius:3px; background:rgba(255,180,84,0.2);'></span><span style='width:54px; height:5px; border-radius:3px; background:rgba(255,180,84,0.2);'></span><span style='width:54px; height:5px; border-radius:3px; background:rgba(255,180,84,0.2);'></span><span style='margin-left:12px; color:#9AA7BD; font-size:22px; font-weight:700; letter-spacing:5px;'>5 POINTS</span></div>"
+        }
+      ]
+    },
+    {
+      "id": "point-1",
+      "duration": 5.5,
+      "backgroundColor": "#0F1626",
+      "transition": "fade",
+      "transitionDuration": 0.4,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 5.5,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='btvPanel0' cx='0.72' cy='0.24' r='1.1'><stop offset='0' stop-color='#252c3c'/><stop offset='1' stop-color='#0F1626'/></radialGradient><pattern id='btvPanelDots0' width='44' height='44' patternUnits='userSpaceOnUse'><circle cx='3' cy='3' r='3' fill='rgba(255,180,84,0.16)'/></pattern></defs><rect width='1080' height='1920' fill='url(#btvPanel0)'/><rect x='680' y='150' width='310' height='310' fill='url(#btvPanelDots0)'/><path d='M90 1780 H430' stroke='rgba(255,180,84,0.35)' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 960,
+          "anchor": "center-center",
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 5.5,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div class='btvw'><i class='lt'></i><i class='bm'></i><i class='rg'></i><i class='rg2'></i></div>",
+          "customCode": {
+            "animationDuration": 5.5,
+            "css": ".btvw{position:relative;width:1080px;height:1920px;overflow:hidden}.btvw i{position:absolute;display:block;left:0;top:0;width:1080px;height:1920px;background-repeat:no-repeat}.btvw .lt{background-size:1500px 1500px;background-image:radial-gradient(circle,rgba(37,44,60,0.85) 0%,rgba(0,0,0,0) 68%);animation:btvLight 8s ease-in-out infinite}.btvw .bm{background-size:250% 100%;background-image:linear-gradient(104deg,rgba(0,0,0,0) 40%,rgba(255,180,84,0.22) 50%,rgba(0,0,0,0) 60%);animation:btvBeam 8s linear infinite}.btvw .rg{left:60px;top:210px;width:380px;height:380px;border-radius:50%;border:2px solid rgba(255,180,84,0.16);animation:btvPulse 4s ease-in-out infinite}.btvw .rg2{left:155px;top:305px;width:190px;height:190px;border-radius:50%;border:2px solid rgba(255,180,84,0.26);animation:btvPulse 4s ease-in-out infinite;animation-delay:-2s}@keyframes btvLight{0%{background-position:-260px 60px}25%{background-position:420px -40px}50%{background-position:820px 520px}75%{background-position:140px 760px}100%{background-position:-260px 60px}}@keyframes btvBeam{0%{background-position:0% 0}100%{background-position:100% 0}}@keyframes btvPulse{0%{opacity:0.3}50%{opacity:0.95}100%{opacity:0.3}}"
+          }
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 919,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.25,
+          "enterEnd": 0.7,
+          "enterAnimation": "smoothleft",
+          "exitEnd": 5.5,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='display:inline-block; border-left:8px solid #FFB454; padding-left:34px; max-width:856px;'><div style='color:#FFB454; font-size:25px; font-weight:800; letter-spacing:5px;'>POINT 01</div><div style='margin-top:14px; color:#FFFFFF; font-size:68px; line-height:1.14; font-weight:800; letter-spacing:-0.5px; text-wrap:balance;'>New devices and apps</div></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1105,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.7,
+          "enterEnd": 1.15,
+          "enterAnimation": "wiperight",
+          "exitEnd": 5.5,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFB454"
+          },
+          "html": "<div style='display:flex; gap:12px;'><span style='flex:1; height:6px; border-radius:3px; background:#FFB454;'></span><span style='flex:1; height:6px; border-radius:3px; background:rgba(255,180,84,0.18);'></span><span style='flex:1; height:6px; border-radius:3px; background:rgba(255,180,84,0.18);'></span><span style='flex:1; height:6px; border-radius:3px; background:rgba(255,180,84,0.18);'></span><span style='flex:1; height:6px; border-radius:3px; background:rgba(255,180,84,0.18);'></span></div>"
+        }
+      ]
+    },
+    {
+      "id": "point-2",
+      "duration": 5.4,
+      "backgroundColor": "#0F1626",
+      "transition": "fade",
+      "transitionDuration": 0.4,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 5.4,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='btvPanel1' cx='0.72' cy='0.24' r='1.1'><stop offset='0' stop-color='#252c3c'/><stop offset='1' stop-color='#0F1626'/></radialGradient><pattern id='btvPanelDots1' width='44' height='44' patternUnits='userSpaceOnUse'><circle cx='3' cy='3' r='3' fill='rgba(255,180,84,0.16)'/></pattern></defs><rect width='1080' height='1920' fill='url(#btvPanel1)'/><rect x='680' y='150' width='310' height='310' fill='url(#btvPanelDots1)'/><path d='M90 1780 H430' stroke='rgba(255,180,84,0.35)' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 960,
+          "anchor": "center-center",
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 5.4,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div class='btvw'><i class='lt'></i><i class='bm'></i><i class='rg'></i><i class='rg2'></i></div>",
+          "customCode": {
+            "animationDuration": 5.4,
+            "css": ".btvw{position:relative;width:1080px;height:1920px;overflow:hidden}.btvw i{position:absolute;display:block;left:0;top:0;width:1080px;height:1920px;background-repeat:no-repeat}.btvw .lt{background-size:1500px 1500px;background-image:radial-gradient(circle,rgba(37,44,60,0.85) 0%,rgba(0,0,0,0) 68%);animation:btvLight 8s ease-in-out infinite}.btvw .bm{background-size:250% 100%;background-image:linear-gradient(104deg,rgba(0,0,0,0) 40%,rgba(255,180,84,0.22) 50%,rgba(0,0,0,0) 60%);animation:btvBeam 8s linear infinite}.btvw .rg{left:60px;top:210px;width:380px;height:380px;border-radius:50%;border:2px solid rgba(255,180,84,0.16);animation:btvPulse 4s ease-in-out infinite}.btvw .rg2{left:155px;top:305px;width:190px;height:190px;border-radius:50%;border:2px solid rgba(255,180,84,0.26);animation:btvPulse 4s ease-in-out infinite;animation-delay:-2s}@keyframes btvLight{0%{background-position:-260px 60px}25%{background-position:420px -40px}50%{background-position:820px 520px}75%{background-position:140px 760px}100%{background-position:-260px 60px}}@keyframes btvBeam{0%{background-position:0% 0}100%{background-position:100% 0}}@keyframes btvPulse{0%{opacity:0.3}50%{opacity:0.95}100%{opacity:0.3}}"
+          }
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 881,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.25,
+          "enterEnd": 0.7,
+          "enterAnimation": "smoothleft",
+          "exitEnd": 5.4,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='display:inline-block; border-left:8px solid #FFB454; padding-left:34px; max-width:856px;'><div style='color:#FFB454; font-size:25px; font-weight:800; letter-spacing:5px;'>POINT 02</div><div style='margin-top:14px; color:#FFFFFF; font-size:68px; line-height:1.14; font-weight:800; letter-spacing:-0.5px; text-wrap:balance;'>Continuous improvements</div></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1144,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.7,
+          "enterEnd": 1.15,
+          "enterAnimation": "wiperight",
+          "exitEnd": 5.4,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFB454"
+          },
+          "html": "<div style='display:flex; gap:12px;'><span style='flex:1; height:6px; border-radius:3px; background:rgba(255,180,84,0.18);'></span><span style='flex:1; height:6px; border-radius:3px; background:#FFB454;'></span><span style='flex:1; height:6px; border-radius:3px; background:rgba(255,180,84,0.18);'></span><span style='flex:1; height:6px; border-radius:3px; background:rgba(255,180,84,0.18);'></span><span style='flex:1; height:6px; border-radius:3px; background:rgba(255,180,84,0.18);'></span></div>"
+        }
+      ]
+    },
+    {
+      "id": "point-3",
+      "duration": 6.9,
+      "backgroundColor": "#0F1626",
+      "transition": "fade",
+      "transitionDuration": 0.4,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 6.9,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='btvPanel2' cx='0.72' cy='0.24' r='1.1'><stop offset='0' stop-color='#252c3c'/><stop offset='1' stop-color='#0F1626'/></radialGradient><pattern id='btvPanelDots2' width='44' height='44' patternUnits='userSpaceOnUse'><circle cx='3' cy='3' r='3' fill='rgba(255,180,84,0.16)'/></pattern></defs><rect width='1080' height='1920' fill='url(#btvPanel2)'/><rect x='680' y='150' width='310' height='310' fill='url(#btvPanelDots2)'/><path d='M90 1780 H430' stroke='rgba(255,180,84,0.35)' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 960,
+          "anchor": "center-center",
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 6.9,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div class='btvw'><i class='lt'></i><i class='bm'></i><i class='rg'></i><i class='rg2'></i></div>",
+          "customCode": {
+            "animationDuration": 6.9,
+            "css": ".btvw{position:relative;width:1080px;height:1920px;overflow:hidden}.btvw i{position:absolute;display:block;left:0;top:0;width:1080px;height:1920px;background-repeat:no-repeat}.btvw .lt{background-size:1500px 1500px;background-image:radial-gradient(circle,rgba(37,44,60,0.85) 0%,rgba(0,0,0,0) 68%);animation:btvLight 8s ease-in-out infinite}.btvw .bm{background-size:250% 100%;background-image:linear-gradient(104deg,rgba(0,0,0,0) 40%,rgba(255,180,84,0.22) 50%,rgba(0,0,0,0) 60%);animation:btvBeam 8s linear infinite}.btvw .rg{left:60px;top:210px;width:380px;height:380px;border-radius:50%;border:2px solid rgba(255,180,84,0.16);animation:btvPulse 4s ease-in-out infinite}.btvw .rg2{left:155px;top:305px;width:190px;height:190px;border-radius:50%;border:2px solid rgba(255,180,84,0.26);animation:btvPulse 4s ease-in-out infinite;animation-delay:-2s}@keyframes btvLight{0%{background-position:-260px 60px}25%{background-position:420px -40px}50%{background-position:820px 520px}75%{background-position:140px 760px}100%{background-position:-260px 60px}}@keyframes btvBeam{0%{background-position:0% 0}100%{background-position:100% 0}}@keyframes btvPulse{0%{opacity:0.3}50%{opacity:0.95}100%{opacity:0.3}}"
+          }
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 881,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.25,
+          "enterEnd": 0.7,
+          "enterAnimation": "smoothleft",
+          "exitEnd": 6.9,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='display:inline-block; border-left:8px solid #FFB454; padding-left:34px; max-width:856px;'><div style='color:#FFB454; font-size:25px; font-weight:800; letter-spacing:5px;'>POINT 03</div><div style='margin-top:14px; color:#FFFFFF; font-size:68px; line-height:1.14; font-weight:800; letter-spacing:-0.5px; text-wrap:balance;'>Introducing Fitbit Edge</div></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1144,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.7,
+          "enterEnd": 1.15,
+          "enterAnimation": "wiperight",
+          "exitEnd": 6.9,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFB454"
+          },
+          "html": "<div style='display:flex; gap:12px;'><span style='flex:1; height:6px; border-radius:3px; background:rgba(255,180,84,0.18);'></span><span style='flex:1; height:6px; border-radius:3px; background:rgba(255,180,84,0.18);'></span><span style='flex:1; height:6px; border-radius:3px; background:#FFB454;'></span><span style='flex:1; height:6px; border-radius:3px; background:rgba(255,180,84,0.18);'></span><span style='flex:1; height:6px; border-radius:3px; background:rgba(255,180,84,0.18);'></span></div>"
+        }
+      ]
+    },
+    {
+      "id": "point-4",
+      "duration": 6.5,
+      "backgroundColor": "#0F1626",
+      "transition": "fade",
+      "transitionDuration": 0.4,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 6.5,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='btvPanel3' cx='0.72' cy='0.24' r='1.1'><stop offset='0' stop-color='#252c3c'/><stop offset='1' stop-color='#0F1626'/></radialGradient><pattern id='btvPanelDots3' width='44' height='44' patternUnits='userSpaceOnUse'><circle cx='3' cy='3' r='3' fill='rgba(255,180,84,0.16)'/></pattern></defs><rect width='1080' height='1920' fill='url(#btvPanel3)'/><rect x='680' y='150' width='310' height='310' fill='url(#btvPanelDots3)'/><path d='M90 1780 H430' stroke='rgba(255,180,84,0.35)' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 960,
+          "anchor": "center-center",
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 6.5,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div class='btvw'><i class='lt'></i><i class='bm'></i><i class='rg'></i><i class='rg2'></i></div>",
+          "customCode": {
+            "animationDuration": 6.5,
+            "css": ".btvw{position:relative;width:1080px;height:1920px;overflow:hidden}.btvw i{position:absolute;display:block;left:0;top:0;width:1080px;height:1920px;background-repeat:no-repeat}.btvw .lt{background-size:1500px 1500px;background-image:radial-gradient(circle,rgba(37,44,60,0.85) 0%,rgba(0,0,0,0) 68%);animation:btvLight 8s ease-in-out infinite}.btvw .bm{background-size:250% 100%;background-image:linear-gradient(104deg,rgba(0,0,0,0) 40%,rgba(255,180,84,0.22) 50%,rgba(0,0,0,0) 60%);animation:btvBeam 8s linear infinite}.btvw .rg{left:60px;top:210px;width:380px;height:380px;border-radius:50%;border:2px solid rgba(255,180,84,0.16);animation:btvPulse 4s ease-in-out infinite}.btvw .rg2{left:155px;top:305px;width:190px;height:190px;border-radius:50%;border:2px solid rgba(255,180,84,0.26);animation:btvPulse 4s ease-in-out infinite;animation-delay:-2s}@keyframes btvLight{0%{background-position:-260px 60px}25%{background-position:420px -40px}50%{background-position:820px 520px}75%{background-position:140px 760px}100%{background-position:-260px 60px}}@keyframes btvBeam{0%{background-position:0% 0}100%{background-position:100% 0}}@keyframes btvPulse{0%{opacity:0.3}50%{opacity:0.95}100%{opacity:0.3}}"
+          }
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 881,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.25,
+          "enterEnd": 0.7,
+          "enterAnimation": "smoothleft",
+          "exitEnd": 6.5,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='display:inline-block; border-left:8px solid #FFB454; padding-left:34px; max-width:856px;'><div style='color:#FFB454; font-size:25px; font-weight:800; letter-spacing:5px;'>POINT 04</div><div style='margin-top:14px; color:#FFFFFF; font-size:68px; line-height:1.14; font-weight:800; letter-spacing:-0.5px; text-wrap:balance;'>Women’s health features</div></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1144,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.7,
+          "enterEnd": 1.15,
+          "enterAnimation": "wiperight",
+          "exitEnd": 6.5,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFB454"
+          },
+          "html": "<div style='display:flex; gap:12px;'><span style='flex:1; height:6px; border-radius:3px; background:rgba(255,180,84,0.18);'></span><span style='flex:1; height:6px; border-radius:3px; background:rgba(255,180,84,0.18);'></span><span style='flex:1; height:6px; border-radius:3px; background:rgba(255,180,84,0.18);'></span><span style='flex:1; height:6px; border-radius:3px; background:#FFB454;'></span><span style='flex:1; height:6px; border-radius:3px; background:rgba(255,180,84,0.18);'></span></div>"
+        }
+      ]
+    },
+    {
+      "id": "point-5",
+      "duration": 6,
+      "backgroundColor": "#0F1626",
+      "transition": "fade",
+      "transitionDuration": 0.4,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 6,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='btvPanel4' cx='0.72' cy='0.24' r='1.1'><stop offset='0' stop-color='#252c3c'/><stop offset='1' stop-color='#0F1626'/></radialGradient><pattern id='btvPanelDots4' width='44' height='44' patternUnits='userSpaceOnUse'><circle cx='3' cy='3' r='3' fill='rgba(255,180,84,0.16)'/></pattern></defs><rect width='1080' height='1920' fill='url(#btvPanel4)'/><rect x='680' y='150' width='310' height='310' fill='url(#btvPanelDots4)'/><path d='M90 1780 H430' stroke='rgba(255,180,84,0.35)' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 960,
+          "anchor": "center-center",
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 6,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div class='btvw'><i class='lt'></i><i class='bm'></i><i class='rg'></i><i class='rg2'></i></div>",
+          "customCode": {
+            "animationDuration": 6,
+            "css": ".btvw{position:relative;width:1080px;height:1920px;overflow:hidden}.btvw i{position:absolute;display:block;left:0;top:0;width:1080px;height:1920px;background-repeat:no-repeat}.btvw .lt{background-size:1500px 1500px;background-image:radial-gradient(circle,rgba(37,44,60,0.85) 0%,rgba(0,0,0,0) 68%);animation:btvLight 8s ease-in-out infinite}.btvw .bm{background-size:250% 100%;background-image:linear-gradient(104deg,rgba(0,0,0,0) 40%,rgba(255,180,84,0.22) 50%,rgba(0,0,0,0) 60%);animation:btvBeam 8s linear infinite}.btvw .rg{left:60px;top:210px;width:380px;height:380px;border-radius:50%;border:2px solid rgba(255,180,84,0.16);animation:btvPulse 4s ease-in-out infinite}.btvw .rg2{left:155px;top:305px;width:190px;height:190px;border-radius:50%;border:2px solid rgba(255,180,84,0.26);animation:btvPulse 4s ease-in-out infinite;animation-delay:-2s}@keyframes btvLight{0%{background-position:-260px 60px}25%{background-position:420px -40px}50%{background-position:820px 520px}75%{background-position:140px 760px}100%{background-position:-260px 60px}}@keyframes btvBeam{0%{background-position:0% 0}100%{background-position:100% 0}}@keyframes btvPulse{0%{opacity:0.3}50%{opacity:0.95}100%{opacity:0.3}}"
+          }
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 881,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.25,
+          "enterEnd": 0.7,
+          "enterAnimation": "smoothleft",
+          "exitEnd": 6,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='display:inline-block; border-left:8px solid #FFB454; padding-left:34px; max-width:856px;'><div style='color:#FFB454; font-size:25px; font-weight:800; letter-spacing:5px;'>POINT 05</div><div style='margin-top:14px; color:#FFFFFF; font-size:68px; line-height:1.14; font-weight:800; letter-spacing:-0.5px; text-wrap:balance;'>An expanding expert team</div></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1144,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.7,
+          "enterEnd": 1.15,
+          "enterAnimation": "wiperight",
+          "exitEnd": 6,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFB454"
+          },
+          "html": "<div style='display:flex; gap:12px;'><span style='flex:1; height:6px; border-radius:3px; background:rgba(255,180,84,0.18);'></span><span style='flex:1; height:6px; border-radius:3px; background:rgba(255,180,84,0.18);'></span><span style='flex:1; height:6px; border-radius:3px; background:rgba(255,180,84,0.18);'></span><span style='flex:1; height:6px; border-radius:3px; background:rgba(255,180,84,0.18);'></span><span style='flex:1; height:6px; border-radius:3px; background:#FFB454;'></span></div>"
+        }
+      ]
+    },
+    {
+      "id": "outro",
+      "duration": 5.3,
+      "backgroundColor": "#0F1626",
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 5.3,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='btvEnd' cx='0.5' cy='0.38' r='0.95'><stop offset='0' stop-color='#252c3c'/><stop offset='1' stop-color='#0F1626'/></radialGradient></defs><rect width='1080' height='1920' fill='url(#btvEnd)'/><circle cx='540' cy='680' r='110' fill='none' stroke='rgba(255,180,84,0.55)' stroke-width='2.5'/><path d='M492 680 H580 M548 644 L588 680 L548 716' fill='none' stroke='#FFB454' stroke-width='11' stroke-linecap='round' stroke-linejoin='round'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 960,
+          "anchor": "center-center",
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 5.3,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div class='btvg'><i></i></div>",
+          "customCode": {
+            "animationDuration": 5.3,
+            "css": ".btvg{position:relative;width:1080px;height:1920px;overflow:hidden}.btvg i{position:absolute;display:block;left:0;top:0;width:1080px;height:1920px;background-repeat:no-repeat;background-size:1500px 1500px;background-image:radial-gradient(circle,rgba(37,44,60,0.8) 0%,rgba(0,0,0,0) 66%);animation:btvGlow 8s ease-in-out infinite}@keyframes btvGlow{0%{background-position:-240px 40px}33%{background-position:540px 640px}66%{background-position:-80px 1060px}100%{background-position:-240px 40px}}"
+          }
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 880,
+          "width": 920,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.25,
+          "enterEnd": 0.7,
+          "enterAnimation": "smoothup",
+          "exitEnd": 5.3,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='height:200px; display:flex; align-items:center; justify-content:center;'><div style='text-align:center; color:#FFFFFF; font-size:64px; line-height:1.15; font-weight:800; letter-spacing:-1px; text-wrap:balance;'>Read the full post</div></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1120,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 0.7,
+          "enterEnd": 1.1,
+          "enterAnimation": "circleopen",
+          "exitEnd": 5.3,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFB454"
+          },
+          "html": "<div style='display:inline-block; background:#FFB454; color:#0F1626; border-radius:999px; padding:22px 54px; font-size:32px; font-weight:800;'>blog.google</div><div style='margin-top:18px; text-align:center; color:#9AA7BD; font-size:24px; font-weight:600; letter-spacing:5px;'>FIELDNOTES</div>"
+        }
+      ]
+    }
+  ],
+  "visuals": [
+    {
+      "type": "TEXT",
+      "x": 540,
+      "y": 84,
+      "anchor": "top-center",
+      "track": 5,
+      "opacity": 0.9,
+      "style": {
+        "fontFamily": "Space Grotesk",
+        "color": "#ffffff"
+      },
+      "html": "<div style='display:inline-block; background:rgba(15,22,38,0.55); border:1px solid rgba(255,255,255,0.18); border-radius:999px; padding:10px 28px; color:#ffffff; font-size:25px; font-weight:700; letter-spacing:4px;'>Fieldnotes</div>"
+    }
+  ],
+  "audios": [
+    {
+      "src": "https://cdn.zvid.io/blog/blog-to-video/6fe2836c79b7/blog-narration.mp3",
+      "volume": 1,
+      "enter": 0
+    }
+  ],
+  "subtitle": {
+    "captions": [
+      {
+        "start": 0,
+        "end": 0.7,
+        "text": "Google Health is",
+        "words": [
+          {
+            "start": 0,
+            "end": 0.3,
+            "text": "Google"
+          },
+          {
+            "start": 0.3,
+            "end": 0.6,
+            "text": "Health"
+          },
+          {
+            "start": 0.6,
+            "end": 0.7,
+            "text": "is"
+          }
+        ]
+      },
+      {
+        "start": 0.7,
+        "end": 1.7000000000000002,
+        "text": "transforming to be",
+        "words": [
+          {
+            "start": 0.7,
+            "end": 1.3,
+            "text": "transforming"
+          },
+          {
+            "start": 1.3,
+            "end": 1.6,
+            "text": "to"
+          },
+          {
+            "start": 1.6,
+            "end": 1.7000000000000002,
+            "text": "be"
+          }
+        ]
+      },
+      {
+        "start": 1.7,
+        "end": 2.3,
+        "text": "your daily health",
+        "words": [
+          {
+            "start": 1.7,
+            "end": 1.8,
+            "text": "your"
+          },
+          {
+            "start": 1.8,
+            "end": 2.1,
+            "text": "daily"
+          },
+          {
+            "start": 2.1,
+            "end": 2.3,
+            "text": "health"
+          }
+        ]
+      },
+      {
+        "start": 2.3,
+        "end": 4.2,
+        "text": "companion. Google Health",
+        "words": [
+          {
+            "start": 2.3,
+            "end": 2.8,
+            "text": "companion."
+          },
+          {
+            "start": 3.6,
+            "end": 3.8,
+            "text": "Google"
+          },
+          {
+            "start": 3.8,
+            "end": 4.2,
+            "text": "Health"
+          }
+        ]
+      },
+      {
+        "start": 4.2,
+        "end": 5.3,
+        "text": "launched new devices",
+        "words": [
+          {
+            "start": 4.2,
+            "end": 4.5,
+            "text": "launched"
+          },
+          {
+            "start": 4.5,
+            "end": 4.9,
+            "text": "new"
+          },
+          {
+            "start": 4.9,
+            "end": 5.3,
+            "text": "devices"
+          }
+        ]
+      },
+      {
+        "start": 5.3,
+        "end": 6,
+        "text": "and apps to",
+        "words": [
+          {
+            "start": 5.3,
+            "end": 5.5,
+            "text": "and"
+          },
+          {
+            "start": 5.5,
+            "end": 5.7,
+            "text": "apps"
+          },
+          {
+            "start": 5.7,
+            "end": 6,
+            "text": "to"
+          }
+        ]
+      },
+      {
+        "start": 6,
+        "end": 6.8,
+        "text": "shift health tracking",
+        "words": [
+          {
+            "start": 6,
+            "end": 6.2,
+            "text": "shift"
+          },
+          {
+            "start": 6.2,
+            "end": 6.4,
+            "text": "health"
+          },
+          {
+            "start": 6.4,
+            "end": 6.8,
+            "text": "tracking"
+          }
+        ]
+      },
+      {
+        "start": 6.8,
+        "end": 7.9,
+        "text": "toward personal coaching.",
+        "words": [
+          {
+            "start": 6.8,
+            "end": 7.1,
+            "text": "toward"
+          },
+          {
+            "start": 7.1,
+            "end": 7.5,
+            "text": "personal"
+          },
+          {
+            "start": 7.5,
+            "end": 7.9,
+            "text": "coaching."
+          }
+        ]
+      },
+      {
+        "start": 8.6,
+        "end": 9.2,
+        "text": "They have released",
+        "words": [
+          {
+            "start": 8.6,
+            "end": 8.7,
+            "text": "They"
+          },
+          {
+            "start": 8.7,
+            "end": 8.8,
+            "text": "have"
+          },
+          {
+            "start": 8.8,
+            "end": 9.2,
+            "text": "released"
+          }
+        ]
+      },
+      {
+        "start": 9.2,
+        "end": 10.1,
+        "text": "10 updates and",
+        "words": [
+          {
+            "start": 9.2,
+            "end": 9.5,
+            "text": "10"
+          },
+          {
+            "start": 9.5,
+            "end": 9.9,
+            "text": "updates"
+          },
+          {
+            "start": 9.9,
+            "end": 10.1,
+            "text": "and"
+          }
+        ]
+      },
+      {
+        "start": 10.1,
+        "end": 11,
+        "text": "over 50 features",
+        "words": [
+          {
+            "start": 10.1,
+            "end": 10.3,
+            "text": "over"
+          },
+          {
+            "start": 10.3,
+            "end": 10.6,
+            "text": "50"
+          },
+          {
+            "start": 10.6,
+            "end": 11,
+            "text": "features"
+          }
+        ]
+      },
+      {
+        "start": 11,
+        "end": 11.9,
+        "text": "to improve user",
+        "words": [
+          {
+            "start": 11,
+            "end": 11.2,
+            "text": "to"
+          },
+          {
+            "start": 11.2,
+            "end": 11.6,
+            "text": "improve"
+          },
+          {
+            "start": 11.6,
+            "end": 11.9,
+            "text": "user"
+          }
+        ]
+      },
+      {
+        "start": 11.9,
+        "end": 14.2,
+        "text": "experience continually. Fitbit",
+        "words": [
+          {
+            "start": 11.9,
+            "end": 12.4,
+            "text": "experience"
+          },
+          {
+            "start": 12.4,
+            "end": 12.9,
+            "text": "continually."
+          },
+          {
+            "start": 13.9,
+            "end": 14.2,
+            "text": "Fitbit"
+          }
+        ]
+      },
+      {
+        "start": 14.2,
+        "end": 15.3,
+        "text": "Edge provides real",
+        "words": [
+          {
+            "start": 14.2,
+            "end": 14.5,
+            "text": "Edge"
+          },
+          {
+            "start": 14.5,
+            "end": 15,
+            "text": "provides"
+          },
+          {
+            "start": 15,
+            "end": 15.3,
+            "text": "real"
+          }
+        ]
+      },
+      {
+        "start": 15.3,
+        "end": 16.6,
+        "text": "-time guidance between",
+        "words": [
+          {
+            "start": 15.3,
+            "end": 15.6,
+            "text": "-time"
+          },
+          {
+            "start": 15.6,
+            "end": 16.1,
+            "text": "guidance"
+          },
+          {
+            "start": 16.1,
+            "end": 16.6,
+            "text": "between"
+          }
+        ]
+      },
+      {
+        "start": 16.6,
+        "end": 18.1,
+        "text": "Fitbit Air and",
+        "words": [
+          {
+            "start": 16.6,
+            "end": 17.2,
+            "text": "Fitbit"
+          },
+          {
+            "start": 17.2,
+            "end": 17.5,
+            "text": "Air"
+          },
+          {
+            "start": 17.5,
+            "end": 18.1,
+            "text": "and"
+          }
+        ]
+      },
+      {
+        "start": 18.1,
+        "end": 18.7,
+        "text": "Pixel Watch for",
+        "words": [
+          {
+            "start": 18.1,
+            "end": 18.3,
+            "text": "Pixel"
+          },
+          {
+            "start": 18.3,
+            "end": 18.5,
+            "text": "Watch"
+          },
+          {
+            "start": 18.5,
+            "end": 18.7,
+            "text": "for"
+          }
+        ]
+      },
+      {
+        "start": 18.7,
+        "end": 20.5,
+        "text": "active users. Health",
+        "words": [
+          {
+            "start": 18.7,
+            "end": 19.1,
+            "text": "active"
+          },
+          {
+            "start": 19.1,
+            "end": 19.4,
+            "text": "users."
+          },
+          {
+            "start": 20.3,
+            "end": 20.5,
+            "text": "Health"
+          }
+        ]
+      },
+      {
+        "start": 20.5,
+        "end": 21.4,
+        "text": "features for women",
+        "words": [
+          {
+            "start": 20.5,
+            "end": 20.8,
+            "text": "features"
+          },
+          {
+            "start": 20.8,
+            "end": 21.1,
+            "text": "for"
+          },
+          {
+            "start": 21.1,
+            "end": 21.4,
+            "text": "women"
+          }
+        ]
+      },
+      {
+        "start": 21.4,
+        "end": 22.6,
+        "text": "now include cycle",
+        "words": [
+          {
+            "start": 21.4,
+            "end": 21.8,
+            "text": "now"
+          },
+          {
+            "start": 21.8,
+            "end": 22.2,
+            "text": "include"
+          },
+          {
+            "start": 22.2,
+            "end": 22.6,
+            "text": "cycle"
+          }
+        ]
+      },
+      {
+        "start": 22.6,
+        "end": 24.2,
+        "text": "pregnancy and menopause",
+        "words": [
+          {
+            "start": 22.6,
+            "end": 23.1,
+            "text": "pregnancy"
+          },
+          {
+            "start": 23.1,
+            "end": 23.7,
+            "text": "and"
+          },
+          {
+            "start": 23.7,
+            "end": 24.2,
+            "text": "menopause"
+          }
+        ]
+      },
+      {
+        "start": 24.2,
+        "end": 25.3,
+        "text": "support through Flow",
+        "words": [
+          {
+            "start": 24.2,
+            "end": 24.6,
+            "text": "support"
+          },
+          {
+            "start": 24.6,
+            "end": 25,
+            "text": "through"
+          },
+          {
+            "start": 25,
+            "end": 25.3,
+            "text": "Flow"
+          }
+        ]
+      },
+      {
+        "start": 25.3,
+        "end": 27.1,
+        "text": "Health. Google Health",
+        "words": [
+          {
+            "start": 25.3,
+            "end": 25.5,
+            "text": "Health."
+          },
+          {
+            "start": 26.4,
+            "end": 26.8,
+            "text": "Google"
+          },
+          {
+            "start": 26.8,
+            "end": 27.1,
+            "text": "Health"
+          }
+        ]
+      },
+      {
+        "start": 27.1,
+        "end": 28.4,
+        "text": "welcomes new experts",
+        "words": [
+          {
+            "start": 27.1,
+            "end": 27.5,
+            "text": "welcomes"
+          },
+          {
+            "start": 27.5,
+            "end": 27.9,
+            "text": "new"
+          },
+          {
+            "start": 27.9,
+            "end": 28.4,
+            "text": "experts"
+          }
+        ]
+      },
+      {
+        "start": 28.4,
+        "end": 29.2,
+        "text": "aiming to push",
+        "words": [
+          {
+            "start": 28.4,
+            "end": 28.7,
+            "text": "aiming"
+          },
+          {
+            "start": 28.7,
+            "end": 29,
+            "text": "to"
+          },
+          {
+            "start": 29,
+            "end": 29.2,
+            "text": "push"
+          }
+        ]
+      },
+      {
+        "start": 29.2,
+        "end": 30.6,
+        "text": "forward health technology",
+        "words": [
+          {
+            "start": 29.2,
+            "end": 29.6,
+            "text": "forward"
+          },
+          {
+            "start": 29.6,
+            "end": 29.9,
+            "text": "health"
+          },
+          {
+            "start": 29.9,
+            "end": 30.6,
+            "text": "technology"
+          }
+        ]
+      },
+      {
+        "start": 30.6,
+        "end": 32.5,
+        "text": "innovation. Visit blog",
+        "words": [
+          {
+            "start": 30.6,
+            "end": 31.1,
+            "text": "innovation."
+          },
+          {
+            "start": 32,
+            "end": 32.1,
+            "text": "Visit"
+          },
+          {
+            "start": 32.1,
+            "end": 32.5,
+            "text": "blog"
+          }
+        ]
+      },
+      {
+        "start": 32.5,
+        "end": 33.8,
+        "text": ".google to explore",
+        "words": [
+          {
+            "start": 32.5,
+            "end": 33.1,
+            "text": ".google"
+          },
+          {
+            "start": 33.1,
+            "end": 33.4,
+            "text": "to"
+          },
+          {
+            "start": 33.4,
+            "end": 33.8,
+            "text": "explore"
+          }
+        ]
+      },
+      {
+        "start": 33.8,
+        "end": 34.7,
+        "text": "how Google Health",
+        "words": [
+          {
+            "start": 33.8,
+            "end": 34,
+            "text": "how"
+          },
+          {
+            "start": 34,
+            "end": 34.3,
+            "text": "Google"
+          },
+          {
+            "start": 34.3,
+            "end": 34.7,
+            "text": "Health"
+          }
+        ]
+      },
+      {
+        "start": 34.7,
+        "end": 35.3,
+        "text": "helps you live",
+        "words": [
+          {
+            "start": 34.7,
+            "end": 34.9,
+            "text": "helps"
+          },
+          {
+            "start": 34.9,
+            "end": 35.1,
+            "text": "you"
+          },
+          {
+            "start": 35.1,
+            "end": 35.3,
+            "text": "live"
+          }
+        ]
+      },
+      {
+        "start": 35.3,
+        "end": 35.5,
+        "text": "better.",
+        "words": [
+          {
+            "start": 35.3,
+            "end": 35.5,
+            "text": "better."
+          }
+        ]
+      }
+    ],
+    "animation": "karaoke",
+    "activeWord": {
+      "color": "#FFB454"
+    },
+    "font": {
+      "family": "Space Grotesk",
+      "size": 54,
+      "color": "#ffffff",
+      "bold": true,
+      "transform": "uppercase"
+    },
+    "stroke": {
+      "color": "#000000",
+      "width": 6
+    },
+    "position": "bottom",
+    "margin": {
+      "x": 90,
+      "y": 300
+    },
+    "maxWordsPerLine": 3
+  }
+}

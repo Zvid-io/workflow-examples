@@ -1,0 +1,32 @@
+{
+  "name": "weekly-news-roundup",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Build a narrated weekly RSS news countdown with the official Zvid SDK.",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zvid-io/workflow-examples.git",
+    "directory": "workflows/weekly-news-roundup"
+  },
+  "bugs": {
+    "url": "https://zvid.io/contact"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "check": "node src/check.js",
+    "test": "node --test tests/*.test.js",
+    "offline": "node src/index.js --offline",
+    "prepare-news": "node src/index.js --prepare",
+    "validate": "node src/index.js --validate",
+    "sample": "node src/index.js --sample --out out/sample"
+  },
+  "dependencies": {
+    "@zvid/sdk": "0.2.0",
+    "rss-parser": "3.13.0"
+  }
+}

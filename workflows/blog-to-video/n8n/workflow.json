@@ -1,0 +1,1297 @@
+{
+  "name": "Turn every new blog post into a 60-second video (Zvid)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        50,
+        240
+      ],
+      "id": "zvid-bv-0001",
+      "name": "Every day at 9am"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        310,
+        240
+      ],
+      "id": "zvid-bv-0002",
+      "name": "Test manually"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"apiUrl\": \"https://api.zvid.io\",\n  \"editorUrl\": \"https://editor.zvid.io\",\n  \"feedUrl\": \"https://blog.google/rss/\",\n  \"brandName\": \"Fieldnotes\",\n  \"ctaText\": \"Read the full post\",\n  \"language\": \"English\",\n  \"targetSeconds\": 60,\n  \"llmModel\": \"openai/gpt-4.1-mini\",\n  \"voiceId\": \"nPczCjzI2devNBz1zQrb\",\n  \"voiceLabel\": \"Brian (deep narrator)\",\n  \"elevenModel\": \"eleven_multilingual_v2\",\n  \"voiceStability\": 0.4,\n  \"voiceSimilarity\": 0.75,\n  \"brandColor\": \"#0F1626\",\n  \"brandAccent\": \"#FFB454\",\n  \"textColor\": \"#FFFFFF\",\n  \"mutedTextColor\": \"#9AA7BD\",\n  \"headlineFont\": \"Archivo\",\n  \"uiFont\": \"Space Grotesk\",\n  \"captionAnimation\": \"karaoke\",\n  \"captionWordsPerCue\": 3,\n  \"captionSize\": 54,\n  \"captionStrokeWidth\": 6,\n  \"captionActiveColor\": \"#0F1626\",\n  \"kenBurnsDepth\": 1.12,\n  \"sceneTransition\": \"fade\",\n  \"transitionSeconds\": 0.4,\n  \"maxPromptChars\": 4000,\n  \"musicVolume\": 0.1,\n  \"maxMusicSeconds\": 200,\n  \"maxMusicBytes\": 5242880,\n  \"resolution\": \"instagram-reel\",\n  \"frameRate\": 30,\n  \"tailSeconds\": 0.4,\n  \"dryRun\": false,\n  \"pollSeconds\": 10,\n  \"timeoutMinutes\": 20\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        570,
+        240
+      ],
+      "id": "zvid-bv-0003",
+      "name": "Config"
+    },
+    {
+      "parameters": {
+        "url": "={{ $('Config').first().json.feedUrl }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.1,
+      "position": [
+        1050,
+        240
+      ],
+      "id": "zvid-bv-0004",
+      "name": "Read blog feed",
+      "onError": "continueRegularOutput",
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "jsCode": "// One item per feed entry comes in; keep the newest one we have not already\n// rendered. Workflow static data remembers the last rendered guid — but ONLY\n// on production executions (an active workflow). Manual test runs start empty.\n// `Read blog feed` runs with alwaysOutputData + onError:continueRegularOutput,\n// so a feed that parses to ZERO entries arrives here as one blank item and an\n// unreachable feed as one error item. Without those two flags the RSS node\n// emitted nothing, n8n skipped every downstream node, and the run finished\n// \"successful\" with no output — the guard below could never fire.\nconst incoming = $input.all().map((i) => i.json || {});\nconst items = incoming.filter((it) => it && (it.title || it.link));\nif (!items.length) {\n  const failed = incoming.find((it) => it && (it.error || it.message));\n  const detail = failed\n    ? ' The feed request failed: ' + String((failed.error && (failed.error.message || failed.error)) || failed.message).slice(0, 200)\n    : '';\n  throw new Error('The feed returned no readable posts. Check feedUrl in Config — it must be an RSS or Atom feed URL, like https://blog.google/rss/.' + detail);\n}\n\nconst ts = (it) => {\n  const t = Date.parse(it.isoDate || it.pubDate || '');\n  return Number.isFinite(t) ? t : null;\n};\n// Newest first when the feed provides dates. Feeds without dates keep feed\n// order — virtually every feed lists newest first.\nconst dated = items.map((it, i) => ({ it, i, t: ts(it) }));\nif (dated.some((d) => d.t !== null)) {\n  dated.sort((a, b) => ((b.t == null ? -Infinity : b.t) - (a.t == null ? -Infinity : a.t)) || a.i - b.i);\n}\nconst post = dated[0].it;\n\nconst link = String(post.link || '').trim();\nconst guid = String(post.guid || link || post.title).trim();\n\nconst store = $getWorkflowStaticData('global');\nif (store.lastGuid && store.lastGuid === guid) {\n  return [{ json: { found: false, reason: 'Newest post already rendered (guid unchanged since the last successful production run).', title: String(post.title || ''), guid } }];\n}\n\n// Feed body: full content when the feed carries it, else the snippet.\nconst raw = String(post['content:encoded'] || post.content || post.summary || post.contentSnippet || post.description || '');\nconst feedText = raw\n  .replace(/\\x3Cscript[\\s\\S]*?\\x3C\\/script>/gi, ' ')\n  .replace(/<style[\\s\\S]*?<\\/style>/gi, ' ')\n  .replace(/<[^>]+>/g, ' ')\n  .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&#39;|&apos;/g, \"'\").replace(/&quot;/g, '\"').replace(/&lt;/g, '<').replace(/&gt;/g, '>')\n  .replace(/\\s+/g, ' ').trim();\n\n// n8n's Code-node sandbox has NO `URL` global (typeof URL === 'undefined'), so\n// `new URL(link)` throws ReferenceError and this catch silently left the domain\n// blank — every live render then fell back to the placeholder host. Parse the\n// host off the string instead: works in n8n AND in plain node.\nlet domain = '';\nconst hostMatch = link.match(/^https?:\\/\\/([^\\/?#]+)/i);\nif (hostMatch) domain = hostMatch[1].replace(/^www\\./, '').replace(/:\\d+$/, '');\n\nreturn [{\n  json: {\n    found: true,\n    title: String(post.title || '').replace(/\\s+/g, ' ').trim(),\n    link,\n    guid,\n    domain,\n    published: post.isoDate || post.pubDate || null,\n    feedText,\n  },\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1310,
+        240
+      ],
+      "id": "zvid-bv-0005",
+      "name": "Pick newest post"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "new-post--cond",
+              "leftValue": "={{ $json.found }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1570,
+        240
+      ],
+      "id": "zvid-bv-0006",
+      "name": "New post?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// The newest post has already been rendered, so there is nothing to do until\n// the blog publishes again. This is a normal, successful outcome — not an error.\nconst picked = $('Pick newest post').first().json;\nreturn [{\n  json: {\n    rendered: false,\n    reason: picked.reason || 'No new post.',\n    newestPost: picked.title,\n    nextStep: 'Run again after the next post is published. (Static data only persists on production executions, so manual test runs always see the newest post as new.)',\n  },\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1830,
+        240
+      ],
+      "id": "zvid-bv-0007",
+      "name": "Nothing new today"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.link }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          },
+          "timeout": 20000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2310,
+        240
+      ],
+      "id": "zvid-bv-0008",
+      "name": "Fetch post page",
+      "onError": "continueRegularOutput",
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "jsCode": "// Prefer the post's real page text over the feed excerpt: many feeds (including\n// the default) only carry a one-line snippet, and a summary written from a\n// snippet would force the model to invent the rest. The page fetch is\n// best-effort — when it fails or the page is thin, the feed text is used and\n// the prompt's no-invention rule keeps the script honest.\nconst cfg = $('Config').first().json;\nconst post = $('Pick newest post').first().json;\nconst res = $input.first().json || {};\n\nconst maxChars = Math.max(600, Number(cfg.maxPromptChars || 4000));\nlet pageText = '';\nif (typeof res.data === 'string' && res.data.length > 200) {\n  let html = res.data;\n  const section = /<article[\\s\\S]*?<\\/article>/i.exec(html) || /<main[\\s\\S]*?<\\/main>/i.exec(html) || /<body[\\s\\S]*?<\\/body>/i.exec(html);\n  html = section ? section[0] : html;\n  pageText = html\n    .replace(/\\x3Cscript[\\s\\S]*?\\x3C\\/script>/gi, ' ')\n    .replace(/<style[\\s\\S]*?<\\/style>/gi, ' ')\n    .replace(/<noscript[\\s\\S]*?<\\/noscript>/gi, ' ')\n    .replace(/<svg[\\s\\S]*?<\\/svg>/gi, ' ')\n    .replace(/<[^>]+>/g, ' ')\n    .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&#39;|&apos;/g, \"'\").replace(/&quot;/g, '\"').replace(/&lt;/g, '<').replace(/&gt;/g, '>')\n    .replace(/\\s+/g, ' ').trim();\n}\n\n// The page text wins only when it is meaningfully richer than the feed text.\nconst useable = pageText.length > Math.max(400, post.feedText.length * 1.5) ? pageText : post.feedText;\nconst articleSource = useable === pageText ? 'page' : 'feed';\nconst article = useable.slice(0, maxChars);\n\nconst targetWords = Math.round(Number(cfg.targetSeconds || 60) * 2.5);\n\nconst promptText = 'Blog post title: ' + post.title + '\\n'\n  + 'Blog domain: ' + post.domain + '\\n'\n  + 'Language: ' + (cfg.language || 'English') + '\\n'\n  + 'Target length: about ' + (cfg.targetSeconds || 60) + ' seconds of speech, roughly ' + targetWords + ' words in total\\n'\n  + '\\nArticle text (may be partial):\\n\"\"\"\\n' + article + '\\n\"\"\"\\n'\n  + '\\nTurn this blog post into a short vertical summary video script. Rules:\\n'\n  + '1. Use ONLY facts that appear in the article text above. If the text is thin, stay general — NEVER invent numbers, names, dates or details that are not in it.\\n'\n  + '2. hook: one spoken sentence under fifteen words that opens with the most interesting idea of the post. No greeting, no \"did you know\".\\n'\n  + '3. points: three to five entries, in the order the article makes them. Each has:\\n'\n  + '   - text: ONE spoken sentence of fifteen to twenty five words summarising one concrete idea from the article.\\n'\n  + '   - label: an on-screen headline for that idea, EIGHT WORDS OR FEWER, no ending period.\\n'\n  + '   - visualQuery: two to four plain words naming concrete, filmable stock footage (an object, place or action - never an abstract idea).\\n'\n  + '4. cta: one spoken closing sentence inviting the viewer to read the full post on ' + (post.domain || 'the blog') + '.\\n'\n  + '5. Plain spoken words only: no emoji, markdown, quotes, parentheses or hashtags. Plain ASCII punctuation. Spell every number out as words (\"nineteen\", not \"19\") and avoid abbreviations.\\n'\n  + '6. title: a video title under sixty characters based on the post title.\\n'\n  + '7. musicTag: one of ambient, cinematic, inspiring, chill, calm, piano.\\n'\n  + '\\nReturn exactly this JSON shape:\\n'\n  + '{\\n  \"title\": \"...\",\\n  \"hook\": \"...\",\\n  \"musicTag\": \"...\",\\n  \"points\": [{ \"text\": \"...\", \"label\": \"...\", \"visualQuery\": \"...\" }],\\n  \"cta\": \"...\"\\n}';\n\nreturn [{ json: { promptText, articleSource, articleChars: article.length } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2570,
+        240
+      ],
+      "id": "zvid-bv-0009",
+      "name": "Prepare prompt"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openRouterApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ model: $('Config').first().json.llmModel, response_format: { type: \"json_object\" }, messages: [ { role: \"system\", content: \"You turn blog posts into scripts for short vertical summary videos. You return JSON only.\\n\\nEvery sentence you write is spoken by a text-to-speech voice and burned on screen as word-timed captions, so the script must be clean spoken English with no formatting.\" }, { role: \"user\", content: $json.promptText } ] }) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3050,
+        240
+      ],
+      "id": "zvid-bv-0010",
+      "name": "Write script",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parses the writer's JSON, sanity-checks it, and builds the exact narration\n// string that will be sent to TTS. Everything downstream reads this node.\nconst cfg = $('Config').first().json;\nconst post = $('Pick newest post').first().json;\nconst prep = $('Prepare prompt').first().json;\nconst res = $input.first().json;\n\nconst content = res && res.choices && res.choices[0] && res.choices[0].message ? res.choices[0].message.content : null;\nif (!content) throw new Error('The model returned no content: ' + JSON.stringify(res).slice(0, 400));\n\nlet script;\ntry { script = JSON.parse(content); } catch (e) {\n  const m = /\\{[\\s\\S]*\\}/.exec(content);\n  if (!m) throw new Error('The model did not return JSON:\\n' + content.slice(0, 400));\n  script = JSON.parse(m[0]);\n}\n\n// Models slip curly quotes and dashes in even when told not to, and unusual\n// characters make the voice stumble. Normalise to ASCII before anything counts\n// words or reaches the synthesiser.\nconst toAscii = (s) => String(s)\n  .replace(/[\\u2018\\u2019\\u02BC]/g, \"'\")\n  .replace(/[\\u201C\\u201D]/g, '\"')\n  .replace(/[\\u2013\\u2014]/g, '-')\n  .replace(/\\u2026/g, '...')\n  .replace(/\\s+/g, ' ')\n  .trim();\n\nconst hook = toAscii(script.hook || '');\nconst cta = toAscii(script.cta || '');\nif (!hook) throw new Error('The model returned no hook sentence.');\nif (!cta) throw new Error('The model returned no cta sentence.');\n\nlet points = Array.isArray(script.points) ? script.points : [];\npoints = points\n  .filter((p) => p && typeof p.text === 'string' && p.text.trim())\n  .slice(0, 5) // free plans allow 5 video elements — one b-roll clip per point\n  .map((p) => {\n    const text = toAscii(p.text);\n    let label = toAscii(p.label || '').replace(/[.!?]+$/, '');\n    if (!label) label = text.split(' ').slice(0, 6).join(' ').replace(/[.!?,;:]+$/, '');\n    const labelWords = label.split(' ');\n    if (labelWords.length > 8) label = labelWords.slice(0, 8).join(' ');\n    return { text, label, visualQuery: toAscii(p.visualQuery || post.title) };\n  });\nif (points.length < 3) throw new Error('The model returned only ' + points.length + ' usable points (need 3-5). Retry, or use a stronger model.');\n\nconst MUSIC_TAGS = ['ambient', 'cinematic', 'inspiring', 'chill', 'calm', 'piano'];\nconst musicTag = MUSIC_TAGS.includes(String(script.musicTag || '').toLowerCase()) ? String(script.musicTag).toLowerCase() : 'chill';\n\n// One space between sentences. This exact string is what gets spoken, and the\n// alignment that comes back is measured against it — which is what keeps\n// captions and scene cuts frame-accurate.\nconst narration = [hook].concat(points.map((p) => p.text)).concat([cta]).join(' ');\nconst targetWords = Math.round(Number(cfg.targetSeconds || 60) * 2.5);\nconst wordCount = narration.split(/\\s+/).filter(Boolean).length;\n// A legitimate 3-point summary can sit near half the target, so the guard is\n// 50% — it exists to stop a one-line script from reaching a paid render.\nif (wordCount < targetWords * 0.5) {\n  throw new Error('The script is only ' + wordCount + ' words for a ' + cfg.targetSeconds + 's video (expected around ' + targetWords + '). Retry, or use a stronger model.');\n}\n\nreturn [{\n  json: {\n    title: String(script.title || post.title).slice(0, 100),\n    hook,\n    points,\n    cta,\n    narration,\n    musicTag,\n    wordCount,\n    targetWords,\n    articleSource: prep.articleSource,\n    post: { title: post.title, link: post.link, domain: post.domain, published: post.published, guid: post.guid },\n  },\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3310,
+        240
+      ],
+      "id": "zvid-bv-0011",
+      "name": "Parse script"
+    },
+    {
+      "parameters": {
+        "jsCode": "// One item per point so the stock search below runs once per point.\nconst script = $input.first().json;\nreturn script.points.map((p, index) => ({ json: { index, visualQuery: p.visualQuery, label: p.label } }));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        50,
+        920
+      ],
+      "id": "zvid-bv-0012",
+      "name": "Expand points"
+    },
+    {
+      "parameters": {
+        "resource": "stockMedia",
+        "operation": "search",
+        "stockType": "video",
+        "stockQuery": "={{ $json.visualQuery }}",
+        "stockPage": 1,
+        "stockPerPage": "20"
+      },
+      "type": "@zvid/n8n-nodes-zvid.zvid",
+      "typeVersion": 1,
+      "position": [
+        310,
+        920
+      ],
+      "id": "zvid-bv-0013",
+      "name": "Search stock clips",
+      "onError": "continueRegularOutput",
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "jsCode": "// Picks one b-roll clip per point from Zvid's stock library.\n// Portrait clips win because the canvas is 1080x1920 — a landscape clip still\n// works via resize:\"cover\", it is just cropped harder.\nconst cfg = $('Config').first().json;\nconst script = $('Parse script').first().json;\nconst responses = $input.all();\nconst approxSceneSeconds = Number(cfg.targetSeconds || 60) / Math.max(1, script.points.length + 2);\n\nfunction pick(items, needSeconds) {\n  const usable = (items || []).filter((it) => it && it.src);\n  if (!usable.length) return null;\n  return usable\n    .map((it) => {\n      const portrait = Number(it.height) > Number(it.width);\n      const longEnough = Number(it.duration || 0) >= needSeconds;\n      return {\n        it,\n        score: (portrait ? 2 : 0) + (longEnough ? 1 : 0) + Math.min(1, Number(it.duration || 0) / 30),\n      };\n    })\n    .sort((a, b) => b.score - a.score)[0].it;\n}\n\nconst sceneMedia = script.points.map((_, i) => {\n  const body = responses[i] && responses[i].json ? responses[i].json : {};\n  const chosen = pick(body.items, approxSceneSeconds);\n  if (!chosen) return null;\n  return {\n    kind: chosen.kind || 'video',\n    src: chosen.src,\n    duration: Number(chosen.duration) || null,\n    width: Number(chosen.width) || null,\n    height: Number(chosen.height) || null,\n    credit: chosen.credit || null,\n  };\n});\n\n// Unlike a pure b-roll format, a missing clip never fails this workflow: that\n// point renders as a designed brand slide instead (big point label, progress\n// rail, animated light sweep).\nconst missing = sceneMedia.filter((m) => !m).length;\nreturn [{ json: { sceneMedia, missing } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        570,
+        920
+      ],
+      "id": "zvid-bv-0014",
+      "name": "Pick scene clip"
+    },
+    {
+      "parameters": {
+        "jsCode": "// The music catalogue is tag-matched and occasionally returns nothing for a tag\n// that worked a minute ago, so ask for the writer's tag plus two broad\n// fallbacks. One item per query -> the search node runs once per tag.\nconst tag = $('Parse script').first().json.musicTag;\nconst queries = [...new Set([tag, 'chill', 'ambient'])];\nreturn queries.map((query) => ({ json: { query } }));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1050,
+        920
+      ],
+      "id": "zvid-bv-0015",
+      "name": "Music queries"
+    },
+    {
+      "parameters": {
+        "resource": "stockMedia",
+        "operation": "search",
+        "stockType": "audio",
+        "stockQuery": "={{ $json.query }}",
+        "stockPage": 1,
+        "stockPerPage": "10"
+      },
+      "type": "@zvid/n8n-nodes-zvid.zvid",
+      "typeVersion": 1,
+      "position": [
+        1310,
+        920
+      ],
+      "id": "zvid-bv-0016",
+      "name": "Find background music",
+      "onError": "continueRegularOutput",
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "jsCode": "// Rank the music candidates. Long tracks mean big files, and the renderer\n// rejects any asset over the plan's audio size cap — a 6.3 MB track fails the\n// WHOLE render, so a nice-to-have music bed must never be able to do that.\n// Shortest-but-long-enough wins; the next node probes the real byte size.\nconst cfg = $('Config').first().json;\nconst maxSeconds = Number(cfg.maxMusicSeconds == null ? 200 : cfg.maxMusicSeconds);\n\nconst seen = new Set();\nconst all = [];\nfor (const r of $input.all()) {\n  for (const m of r.json.items || []) {\n    if (!m || !m.src) continue;\n    const key = m.id || m.src;\n    if (seen.has(key)) continue;\n    seen.add(key);\n    all.push(m);\n  }\n}\n\nconst sized = all\n  .filter((m) => { const d = Number(m.duration) || 0; return d >= 45 && d <= maxSeconds; })\n  .sort((a, b) => (Number(a.duration) || 0) - (Number(b.duration) || 0));\n\nconst pool = (sized.length ? sized : all).slice(0, 4);\nif (!pool.length) {\n  // Nothing to probe — send one item the probe can hit harmlessly.\n  return [{ json: { candidate: null, probeUrl: cfg.apiUrl } }];\n}\nreturn pool.map((candidate) => ({ json: { candidate, probeUrl: candidate.src } }));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1570,
+        920
+      ],
+      "id": "zvid-bv-0017",
+      "name": "Shortlist music"
+    },
+    {
+      "parameters": {
+        "method": "HEAD",
+        "url": "={{ $json.probeUrl }}",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          },
+          "redirect": {
+            "redirect": {}
+          },
+          "timeout": 15000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1830,
+        920
+      ],
+      "id": "zvid-bv-0018",
+      "name": "Check music asset",
+      "onError": "continueRegularOutput",
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "jsCode": "// Keep the first candidate that is actually downloadable and within the size\n// cap, then collapse to ONE item — otherwise the voiceover step downstream\n// would run once per candidate. No usable track just means no music bed; it\n// must never fail the run.\nconst cfg = $('Config').first().json;\nconst limit = Number(cfg.maxMusicBytes == null ? 5242880 : cfg.maxMusicBytes);\nconst shortlist = $('Shortlist music').all().map((i) => i.json);\nconst probes = $input.all();\n\nlet music = null;\nconst rejected = [];\nfor (let i = 0; i < probes.length; i += 1) {\n  const candidate = shortlist[i] && shortlist[i].candidate;\n  if (!candidate) continue;\n  const p = probes[i] ? probes[i].json : {};\n  const status = Number(p.statusCode);\n  const headers = p.headers || {};\n  const bytes = Number(headers['content-length'] || headers['Content-Length'] || 0);\n\n  if (status !== 200) { rejected.push(candidate.id + ': HTTP ' + (status || '?')); continue; }\n  if (bytes && bytes > limit) { rejected.push(candidate.id + ': ' + bytes + ' bytes > ' + limit); continue; }\n  music = candidate;\n  break;\n}\n\nreturn [{ json: { music, checked: probes.length, rejected } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1830,
+        1160
+      ],
+      "id": "zvid-bv-0019",
+      "name": "Pick music"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.elevenlabs.io/v1/text-to-speech/{{ $('Config').first().json.voiceId }}/with-timestamps",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "output_format",
+              "value": "mp3_44100_128"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ text: $('Parse script').first().json.narration, model_id: $('Config').first().json.elevenModel, voice_settings: { stability: $('Config').first().json.voiceStability, similarity_boost: $('Config').first().json.voiceSimilarity } }) }}",
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2310,
+        920
+      ],
+      "id": "zvid-bv-0020",
+      "name": "Generate voiceover",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "jsCode": "// Turns one ElevenLabs \"with-timestamps\" response into (a) an mp3 binary ready\n// for upload and (b) word timings.\n//\n// The alignment comes from the synthesiser itself, so the timings ARE the audio\n// — there is no separate transcription step to disagree with, and nothing that\n// can drift. That is the whole reason this endpoint is used instead of plain\n// text-to-speech.\nconst res = $input.first().json;\n\nif (!res || !res.audio_base64) {\n  throw new Error(\n    'ElevenLabs returned no audio. Check the xi-api-key credential, the voiceId, and your character quota. Response: ' +\n      JSON.stringify(res).slice(0, 300)\n  );\n}\n\nconst a = res.alignment || res.normalized_alignment;\nif (!a || !Array.isArray(a.characters)) {\n  throw new Error('ElevenLabs returned audio but no alignment — make sure the URL ends in /with-timestamps.');\n}\n\nconst chars = a.characters;\nconst starts = a.character_start_times_seconds || [];\nconst ends = a.character_end_times_seconds || [];\n\n// Alignment is per CHARACTER; group runs of non-whitespace into words.\nconst words = [];\nlet cur = null;\nfor (let i = 0; i < chars.length; i += 1) {\n  const ch = chars[i];\n  if (/\\s/.test(ch)) {\n    if (cur) { words.push(cur); cur = null; }\n    continue;\n  }\n  if (!cur) cur = { text: ch, start: Number(starts[i]), end: Number(ends[i]) };\n  else { cur.text += ch; cur.end = Number(ends[i]); }\n}\nif (cur) words.push(cur);\n\nif (!words.length) throw new Error('Alignment contained no words.');\n\nconst duration = Number(ends[ends.length - 1]) || words[words.length - 1].end;\n\nreturn [{\n  json: { words, duration, wordCount: words.length },\n  // n8n binary payloads carry base64 in `data`; naming it matters because Zvid\n  // derives the media kind from the MIME type on upload.\n  binary: {\n    data: {\n      data: res.audio_base64,\n      mimeType: 'audio/mpeg',\n      fileName: 'voiceover.mp3',\n      fileExtension: 'mp3',\n    },\n  },\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2570,
+        920
+      ],
+      "id": "zvid-bv-0021",
+      "name": "Voice + timings"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('Config').first().json.apiUrl }}/api/uploads",
+        "authentication": "predefinedCredentialType",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "parameterType": "formBinaryData",
+              "name": "file",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {},
+        "nodeCredentialType": "zvidApi"
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2830,
+        920
+      ],
+      "id": "zvid-bv-0022",
+      "name": "Upload voiceover",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "notes": "File upload exception: the published Zvid node does not expose multipart uploads. The upload step uses HTTP Request → `POST /api/uploads`, authenticated with the same **Zvid API** credential. All supported Zvid operations use the Zvid node.",
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Assembles the Zvid project JSON: branded intro card, one point scene per\n// summary point (b-roll or brand panel + accent-bar point card), outro CTA\n// card, word-timed karaoke captions, voiceover and music bed.\nconst cfg = $('Config').first().json;\nconst script = $('Parse script').first().json;\nconst sceneMedia = $('Pick scene clip').first().json.sceneMedia;\nconst music = $('Pick music').first().json.music || null;\nconst upload = $('Upload voiceover').first().json.upload;\nconst timings = $('Voice + timings').first().json;\n\nif (!upload || !upload.url) {\n  throw new Error('The voiceover upload returned no URL: ' + JSON.stringify($('Upload voiceover').first().json).slice(0, 300));\n}\n\nconst clamp = (n, lo, hi) => Math.min(hi, Math.max(lo, n));\nconst round = (n) => Math.round(n * 100) / 100;\nconst escapeHtml = (s) =>\n  String(s).replace(/[&<>\"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '\"': '&quot;', \"'\": '&#39;' }[c]));\n\n// ---- brand ---------------------------------------------------------------\nconst bg = String(cfg.brandColor || '#0F1626').trim();\nconst accent = String(cfg.brandAccent || '#FFB454').trim();\nconst textColor = String(cfg.textColor || '#FFFFFF').trim();\nconst muted = String(cfg.mutedTextColor || '#9AA7BD').trim();\nconst headlineFont = String(cfg.headlineFont || 'Archivo').trim();\nconst uiFont = String(cfg.uiFont || 'Space Grotesk').trim();\nconst brandName = String(cfg.brandName || 'The Blog').replace(/\\s+/g, ' ').trim();\n\n// Lighten/alpha helpers so every panel and scrim follows brandColor instead of\n// hardcoding a second palette.\nconst hexRgb = (hex) => {\n  const m = /^#?([0-9a-fA-F]{6})$/.exec(String(hex).trim());\n  const n = m ? parseInt(m[1], 16) : 0x0f1626;\n  return [(n >> 16) & 255, (n >> 8) & 255, n & 255];\n};\nconst lighten = (hex, amt) => {\n  const [r, g, b] = hexRgb(hex);\n  const ch = (v) => clamp(Math.round(v + amt), 0, 255).toString(16).padStart(2, '0');\n  return '#' + ch(r) + ch(g) + ch(b);\n};\nconst rgba = (hex, a) => {\n  const [r, g, b] = hexRgb(hex);\n  return 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')';\n};\nconst bgLift = lighten(bg, 22);\n\n// ---- narration timing (same machinery as the faceless-shorts template) ---\nconst words = (Array.isArray(timings.words) ? timings.words : [])\n  .map((w) => ({ text: String(w.text == null ? '' : w.text).trim(), start: Number(w.start), end: Number(w.end) }))\n  .filter((w) => w.text && Number.isFinite(w.start) && Number.isFinite(w.end));\n\nconst narrationEnd = words.length ? words[words.length - 1].end : Number(timings.duration) || 45;\nconst audioDuration = Math.max(Number(timings.duration) || 0, narrationEnd);\n\n// The alignment groups characters by WHITESPACE, so the script is counted the\n// same way: whitespace-delimited tokens that contain at least one letter or\n// digit (\"on-device\" is one word on both sides, unlike a class-based split).\nconst countWords = (s) =>\n  String(s || '').trim().split(/\\s+/).filter((t) => /[\\p{L}\\p{N}]/u.test(t)).length;\n\n// Units: hook -> intro scene, each point -> its own scene, cta -> outro scene.\nconst points = script.points;\nconst units = [script.hook].concat(points.map((p) => p.text)).concat([script.cta]);\nconst perUnit = units.map((u) => countWords(u));\nconst totalScripted = perUnit.reduce((a, b) => a + b, 0);\n\n// Walking the timed word stream by per-unit word count puts every cut on a\n// sentence boundary. If tokenisation drifts (digits, abbreviations), fall back\n// to a proportional split so the render can never desync.\nconst drift = totalScripted ? Math.abs(words.length - totalScripted) / totalScripted : 1;\nconst useWordMap = words.length > 0 && drift <= 0.2;\n\nconst spans = [];\nif (useWordMap) {\n  let cursor = 0;\n  for (let i = 0; i < perUnit.length; i += 1) {\n    const start = cursor === 0 ? 0 : words[cursor - 1].end;\n    cursor = Math.min(cursor + perUnit[i], words.length);\n    const last = words[cursor - 1];\n    spans.push({ start, end: i === perUnit.length - 1 ? audioDuration : last ? last.end : audioDuration });\n  }\n} else {\n  const weightTotal = totalScripted || perUnit.length;\n  let t = 0;\n  for (let i = 0; i < perUnit.length; i += 1) {\n    const start = t;\n    t = i === perUnit.length - 1 ? audioDuration : t + ((perUnit[i] || 1) / weightTotal) * audioDuration;\n    spans.push({ start, end: t });\n  }\n}\nspans[spans.length - 1].end += Number(cfg.tailSeconds == null ? 0.4 : cfg.tailSeconds);\n\nconst transition = cfg.sceneTransition || null;\nconst tDur = transition ? Number(cfg.transitionSeconds == null ? 0.4 : cfg.transitionSeconds) : 0;\nconst minScene = Math.max(1.6, tDur * 3);\nconst visibleOf = (span) => Math.max(minScene, round(span.end - span.start));\n\n// ---- adaptive type -------------------------------------------------------\n// Greedy word-wrap estimate (Archivo 800 averages ~0.55em per glyph) so the\n// intro chip can sit below however many lines the title takes.\nconst wrapLines = (text, fontPx, boxPx, avgEm) => {\n  const perLine = Math.max(6, Math.floor(boxPx / (fontPx * avgEm)));\n  let lines = 1;\n  let used = 0;\n  for (const w of String(text).split(' ')) {\n    const need = used === 0 ? w.length : used + 1 + w.length;\n    if (need <= perLine) { used = need; continue; }\n    lines += 1;\n    used = Math.min(w.length, perLine);\n  }\n  return lines;\n};\n\n// The intro shows the REAL post title (the LLM title is only video metadata).\nlet postTitle = String(script.post.title || '').replace(/\\s+/g, ' ').trim();\nif (postTitle.length > 110) {\n  postTitle = postTitle.slice(0, 109).replace(/\\s+\\S*$/, '') + '…';\n}\nconst titleSize = postTitle.length <= 45 ? 62 : postTitle.length <= 65 ? 54 : postTitle.length <= 85 ? 47 : 41;\nconst titleLines = wrapLines(postTitle, titleSize, 900, 0.55);\nconst titleY = 640;\nconst chipY = Math.round(titleY + 96 + titleLines * titleSize * 1.14 + 56);\n\n// Dateline: the post date when the feed provides one, otherwise the domain.\n// A feed entry can carry neither (no date, no absolute link), and both places\n// that print these fields must survive that: the dateline is dropped entirely\n// rather than rendering an empty line.\nconst MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];\nconst pubTs = script.post.published ? Date.parse(script.post.published) : NaN;\nconst dateLine = Number.isFinite(pubTs)\n  ? (() => { const d = new Date(pubTs); return MONTHS[d.getUTCMonth()] + ' ' + d.getUTCDate() + ', ' + d.getUTCFullYear(); })()\n  : String(script.post.domain || '').trim();\n\n// ---- scenes --------------------------------------------------------------\nconst scenes = [];\n\n// Slow radial light drift for the two card scenes (intro and outro), which\n// would otherwise freeze once their entrance animations finish. Only\n// background-position animates: it never changes the element's box, so the\n// frame capture can never grow past the canvas. The keyframes start and end on\n// the same position, so a loop shorter than the scene repeats without a seam.\nconst glowCss =\n  '.btvg{position:relative;width:1080px;height:1920px;overflow:hidden}' +\n  '.btvg i{position:absolute;display:block;left:0;top:0;width:1080px;height:1920px;background-repeat:no-repeat;' +\n  'background-size:1500px 1500px;background-image:radial-gradient(circle,' + rgba(bgLift, 0.8) + ' 0%,rgba(0,0,0,0) 66%);' +\n  'animation:btvGlow 8s ease-in-out infinite}' +\n  '@keyframes btvGlow{0%{background-position:-240px 40px}33%{background-position:540px 640px}66%{background-position:-80px 1060px}100%{background-position:-240px 40px}}';\nconst glowVisual = (dur, track) => ({\n  type: 'TEXT', x: 540, y: 960, anchor: 'center-center', track, enterBegin: 0, exitEnd: dur,\n  style: { fontFamily: uiFont, color: textColor },\n  html: \"<div class='btvg'><i></i></div>\",\n  customCode: { animationDuration: Math.min(8, dur), css: glowCss },\n});\n\n// Scene 1: branded intro card.\nconst introVisible = visibleOf(spans[0]);\nconst introDur = round(introVisible + tDur);\n// A dim version of the point-progress rail used on the point scenes: it tells\n// the viewer up front how many ideas are coming and ties the intro to them.\nconst introRail = points\n  .map((_, n) => \"<span style='width:54px; height:5px; border-radius:3px; background:\" + rgba(accent, n === 0 ? 0.55 : 0.2) + \";'></span>\")\n  .join('');\nscenes.push({\n  id: 'intro',\n  duration: introDur,\n  backgroundColor: bg,\n  ...(transition ? { transition, transitionDuration: tDur } : {}),\n  visuals: [\n    {\n      type: 'SVG', width: 1080, height: 1920, track: 0, enterBegin: 0, exitEnd: introDur,\n      svg: \"<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='btvIntro' cx='0.28' cy='0.3' r='1.05'><stop offset='0' stop-color='\" + bgLift + \"'/><stop offset='1' stop-color='\" + bg + \"'/></radialGradient><pattern id='btvDots' width='44' height='44' patternUnits='userSpaceOnUse'><circle cx='3' cy='3' r='3' fill='\" + rgba(accent, 0.16) + \"'/></pattern></defs><rect width='1080' height='1920' fill='url(#btvIntro)'/><rect x='680' y='150' width='310' height='310' fill='url(#btvDots)'/><rect x='90' y='560' width='150' height='10' rx='5' fill='\" + accent + \"'/><path d='M90 1780 H430' stroke='\" + rgba(accent, 0.35) + \"' stroke-width='1.5'/></svg>\",\n    },\n    glowVisual(introDur, 1),\n    {\n      type: 'TEXT', x: 90, y: 620, anchor: 'top-left', track: 2, enterBegin: 0.15, enterEnd: 0.55, enterAnimation: 'smoothright', exitEnd: introDur,\n      style: { fontFamily: uiFont, color: accent },\n      html: \"<div style='color:\" + accent + \"; font-size:30px; font-weight:700; letter-spacing:8px;'>NEW ON THE BLOG</div>\" + (dateLine ? \"<div style='margin-top:12px; color:\" + muted + \"; font-size:26px; font-weight:600; letter-spacing:4px;'>\" + escapeHtml(dateLine) + '</div>' : ''),\n    },\n    {\n      type: 'TEXT', x: 90, y: titleY + 96, width: 900, anchor: 'top-left', track: 3, enterBegin: 0.4, enterEnd: 0.9, enterAnimation: 'smoothup', exitEnd: introDur,\n      style: { fontFamily: headlineFont, color: textColor },\n      html: \"<div style='color:\" + textColor + '; font-size:' + titleSize + \"px; line-height:1.14; font-weight:800; letter-spacing:-1px; text-wrap:balance;'>\" + escapeHtml(postTitle) + '</div>',\n    },\n    {\n      type: 'TEXT', x: 90, y: chipY, anchor: 'top-left', track: 4, enterBegin: 0.85, enterEnd: 1.25, enterAnimation: 'fade', exitEnd: introDur,\n      style: { fontFamily: uiFont, color: accent },\n      html: \"<span style='display:inline-block; background:\" + rgba(accent, 0.14) + '; border:1.5px solid ' + rgba(accent, 0.5) + '; color:' + accent + \"; border-radius:999px; padding:12px 28px; font-size:26px; font-weight:700; letter-spacing:3px;'>&#9679;&nbsp; \" + escapeHtml(brandName.toUpperCase()) + '</span>',\n    },\n    {\n      type: 'TEXT', x: 90, y: chipY + 108, width: 900, anchor: 'top-left', track: 4, enterBegin: 1.15, enterEnd: 1.6, enterAnimation: 'wiperight', exitEnd: introDur,\n      style: { fontFamily: uiFont, color: muted },\n      html: \"<div style='display:flex; align-items:center; gap:12px;'>\" + introRail + \"<span style='margin-left:12px; color:\" + muted + \"; font-size:22px; font-weight:700; letter-spacing:5px;'>\" + points.length + \" POINTS</span></div>\",\n    },\n  ],\n});\n\n// Point scenes: b-roll (or a designed brand slide) + accent-bar point card.\nconst cardBg = rgba(bg, 0.9);\n\n// Motion layer for the no-b-roll slide. Only background-position and opacity\n// animate: neither changes an element's box, so the frame capture never has to\n// grow past the canvas. Every period divides the 8 s loop, so a scene longer\n// than the loop repeats it without a visible seam.\nconst slideCss =\n  '.btvw{position:relative;width:1080px;height:1920px;overflow:hidden}' +\n  '.btvw i{position:absolute;display:block;left:0;top:0;width:1080px;height:1920px;background-repeat:no-repeat}' +\n  '.btvw .lt{background-size:1500px 1500px;background-image:radial-gradient(circle,' + rgba(bgLift, 0.85) + ' 0%,rgba(0,0,0,0) 68%);animation:btvLight 8s ease-in-out infinite}' +\n  '.btvw .bm{background-size:250% 100%;background-image:linear-gradient(104deg,rgba(0,0,0,0) 40%,' + rgba(accent, 0.22) + ' 50%,rgba(0,0,0,0) 60%);animation:btvBeam 8s linear infinite}' +\n  '.btvw .rg{left:60px;top:210px;width:380px;height:380px;border-radius:50%;border:2px solid ' + rgba(accent, 0.16) + ';animation:btvPulse 4s ease-in-out infinite}' +\n  '.btvw .rg2{left:155px;top:305px;width:190px;height:190px;border-radius:50%;border:2px solid ' + rgba(accent, 0.26) + ';animation:btvPulse 4s ease-in-out infinite;animation-delay:-2s}' +\n  '@keyframes btvLight{0%{background-position:-260px 60px}25%{background-position:420px -40px}50%{background-position:820px 520px}75%{background-position:140px 760px}100%{background-position:-260px 60px}}' +\n  '@keyframes btvBeam{0%{background-position:0% 0}100%{background-position:100% 0}}' +\n  '@keyframes btvPulse{0%{opacity:0.3}50%{opacity:0.95}100%{opacity:0.3}}';\n\npoints.forEach((point, i) => {\n  const span = spans[i + 1];\n  const visible = visibleOf(span);\n  const dur = round(visible + tDur);\n  const media = sceneMedia[i] || null;\n  const visuals = [];\n  const label = point.label;\n  const num = String(i + 1).padStart(2, '0');\n\n  if (media && media.kind === 'video') {\n    // videoEnd is measured in SOURCE time: a clip played at speed s covers\n    // visible * s seconds of source. Slowing a short clip beats a freeze.\n    const speed = media.duration && media.duration < visible\n      ? clamp(round(media.duration / visible), 0.5, 1)\n      : 1;\n    const sourceWindow = round(visible * speed);\n    visuals.push({\n      type: 'VIDEO',\n      src: media.src,\n      resize: 'cover',\n      position: 'center-center',\n      anchor: 'center-center',\n      volume: 0,\n      videoBegin: 0,\n      videoEnd: media.duration ? Math.min(media.duration, sourceWindow) : sourceWindow,\n      ...(speed !== 1 ? { speed } : {}),\n      zoom: { depth: Number(cfg.kenBurnsDepth == null ? 1.12 : cfg.kenBurnsDepth) },\n    });\n    visuals.push({\n      type: 'SVG', width: 1080, height: 1920, track: 1, enterBegin: 0, exitEnd: dur,\n      svg: \"<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='btvScrim\" + i + \"' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='\" + bg + \"' stop-opacity='0.55'/><stop offset='0.4' stop-color='\" + bg + \"' stop-opacity='0.16'/><stop offset='1' stop-color='\" + bg + \"' stop-opacity='0.88'/></linearGradient></defs><rect width='1080' height='1920' fill='url(#btvScrim\" + i + \")'/></svg>\",\n    });\n    // Point card: kicker + short headline, held over the footage.\n    const labelSize = label.length <= 34 ? 40 : label.length <= 52 ? 36 : 32;\n    visuals.push({\n      type: 'TEXT', x: 90, y: 1120, width: 900, anchor: 'top-left', track: 2, enterBegin: 0.25, enterEnd: 0.65, enterAnimation: 'smoothleft', exitEnd: dur,\n      style: { fontFamily: headlineFont, color: textColor },\n      html: \"<div style='display:inline-block; background:\" + cardBg + '; border-left:6px solid ' + accent + \"; border-radius:16px; padding:24px 34px; max-width:860px;'><div style='color:\" + accent + \"; font-size:25px; font-weight:800; letter-spacing:5px;'>POINT \" + num + \"</div><div style='margin-top:8px; color:\" + textColor + '; font-size:' + labelSize + \"px; line-height:1.22; font-weight:800; text-wrap:balance;'>\" + escapeHtml(label) + '</div></div>',\n    });\n  } else {\n    // No usable b-roll for this point. The scene is not a spare panel with the\n    // card floating on it: it becomes its own layout — the point label carried\n    // at headline size, a progress rail marking which point this is, brand\n    // geometry, and a slow light sweep so the frame keeps moving like the\n    // b-roll scenes do.\n    visuals.push({\n      type: 'SVG', width: 1080, height: 1920, track: 0, enterBegin: 0, exitEnd: dur,\n      svg: \"<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='btvPanel\" + i + \"' cx='0.72' cy='0.24' r='1.1'><stop offset='0' stop-color='\" + bgLift + \"'/><stop offset='1' stop-color='\" + bg + \"'/></radialGradient><pattern id='btvPanelDots\" + i + \"' width='44' height='44' patternUnits='userSpaceOnUse'><circle cx='3' cy='3' r='3' fill='\" + rgba(accent, 0.16) + \"'/></pattern></defs><rect width='1080' height='1920' fill='url(#btvPanel\" + i + \")'/><rect x='680' y='150' width='310' height='310' fill='url(#btvPanelDots\" + i + \")'/><path d='M90 1780 H430' stroke='\" + rgba(accent, 0.35) + \"' stroke-width='1.5'/></svg>\",\n    });\n    visuals.push({\n      type: 'TEXT', x: 540, y: 960, anchor: 'center-center', track: 1, enterBegin: 0, exitEnd: dur,\n      style: { fontFamily: uiFont, color: textColor },\n      html: \"<div class='btvw'><i class='lt'></i><i class='bm'></i><i class='rg'></i><i class='rg2'></i></div>\",\n      customCode: { animationDuration: Math.min(8, dur), css: slideCss },\n    });\n\n    // The label is the whole slide here, so it gets headline sizing and the\n    // block is centred on the canvas rather than pinned to the card slot.\n    const slideSize = label.length <= 30 ? 68 : label.length <= 46 ? 60 : label.length <= 68 ? 52 : 44;\n    const slideLines = wrapLines(label, slideSize, 856, 0.55);\n    const blockHeight = Math.round(44 + slideLines * slideSize * 1.14);\n    const blockY = Math.round(980 - blockHeight / 2);\n    visuals.push({\n      type: 'TEXT', x: 90, y: blockY, width: 900, anchor: 'top-left', track: 2, enterBegin: 0.25, enterEnd: 0.7, enterAnimation: 'smoothleft', exitEnd: dur,\n      style: { fontFamily: headlineFont, color: textColor },\n      html: \"<div style='display:inline-block; border-left:8px solid \" + accent + \"; padding-left:34px; max-width:856px;'><div style='color:\" + accent + \"; font-size:25px; font-weight:800; letter-spacing:5px;'>POINT \" + num + \"</div><div style='margin-top:14px; color:\" + textColor + '; font-size:' + slideSize + \"px; line-height:1.14; font-weight:800; letter-spacing:-0.5px; text-wrap:balance;'>\" + escapeHtml(label) + '</div></div>',\n    });\n    const railSegments = points\n      .map((_, n) => \"<span style='flex:1; height:6px; border-radius:3px; background:\" + (n === i ? accent : rgba(accent, 0.18)) + \";'></span>\")\n      .join('');\n    visuals.push({\n      type: 'TEXT', x: 90, y: blockY + blockHeight + 64, width: 900, anchor: 'top-left', track: 3, enterBegin: 0.7, enterEnd: 1.15, enterAnimation: 'wiperight', exitEnd: dur,\n      style: { fontFamily: uiFont, color: accent },\n      html: \"<div style='display:flex; gap:12px;'>\" + railSegments + '</div>',\n    });\n  }\n\n  scenes.push({\n    id: 'point-' + (i + 1),\n    duration: dur,\n    backgroundColor: bg,\n    ...(transition ? { transition, transitionDuration: tDur } : {}),\n    visuals,\n  });\n});\n\n// Outro: CTA + the blog's domain.\nconst ctaSpan = spans[spans.length - 1];\nconst outroDur = visibleOf(ctaSpan);\nconst ctaText = String(cfg.ctaText || 'Read the full post').replace(/\\s+/g, ' ').trim();\nconst ctaSize = ctaText.length <= 26 ? 64 : ctaText.length <= 40 ? 54 : 46;\n// The CTA is centred inside a FIXED-height band instead of being measured, so\n// the pill below it always sits the same distance away. Estimating the line\n// count here put the pill ~60 px low whenever the estimate over-predicted by\n// one line, which is exactly what a two-line-looking one-line CTA does.\nconst CTA_BAND = 200;\nconst ctaTop = 880;\nconst pillY = ctaTop + CTA_BAND + 40;\n// The pill prints the blog's domain, but a feed entry with no absolute link\n// leaves `domain` empty — and a filled accent pill with no text is just a blank\n// lozenge on screen. Fall back to the brand name (the same fallback the prompt\n// builder already uses for the spoken CTA) and drop the brand line underneath\n// when it would only repeat the pill.\nconst pillText = String(script.post.domain || '').trim() || brandName;\nconst brandLineHtml = pillText.toLowerCase() === brandName.toLowerCase()\n  ? ''\n  : \"<div style='margin-top:18px; text-align:center; color:\" + muted + \"; font-size:24px; font-weight:600; letter-spacing:5px;'>\" + escapeHtml(brandName.toUpperCase()) + '</div>';\nscenes.push({\n  id: 'outro',\n  duration: outroDur,\n  backgroundColor: bg,\n  visuals: [\n    {\n      type: 'SVG', width: 1080, height: 1920, track: 0, enterBegin: 0, exitEnd: outroDur,\n      svg: \"<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='btvEnd' cx='0.5' cy='0.38' r='0.95'><stop offset='0' stop-color='\" + bgLift + \"'/><stop offset='1' stop-color='\" + bg + \"'/></radialGradient></defs><rect width='1080' height='1920' fill='url(#btvEnd)'/><circle cx='540' cy='680' r='110' fill='none' stroke='\" + rgba(accent, 0.55) + \"' stroke-width='2.5'/><path d='M492 680 H580 M548 644 L588 680 L548 716' fill='none' stroke='\" + accent + \"' stroke-width='11' stroke-linecap='round' stroke-linejoin='round'/></svg>\",\n    },\n    glowVisual(outroDur, 1),\n    {\n      type: 'TEXT', x: 540, y: ctaTop, width: 920, anchor: 'top-center', track: 2, enterBegin: 0.25, enterEnd: 0.7, enterAnimation: 'smoothup', exitEnd: outroDur,\n      style: { fontFamily: headlineFont, color: textColor },\n      html: \"<div style='height:\" + CTA_BAND + \"px; display:flex; align-items:center; justify-content:center;'><div style='text-align:center; color:\" + textColor + '; font-size:' + ctaSize + \"px; line-height:1.15; font-weight:800; letter-spacing:-1px; text-wrap:balance;'>\" + escapeHtml(ctaText) + '</div></div>',\n    },\n    {\n      type: 'TEXT', x: 540, y: pillY, anchor: 'top-center', track: 3, enterBegin: 0.7, enterEnd: 1.1, enterAnimation: 'circleopen', exitEnd: outroDur,\n      style: { fontFamily: uiFont, color: accent },\n      html: \"<div style='display:inline-block; background:\" + accent + '; color:' + bg + \"; border-radius:999px; padding:22px 54px; font-size:32px; font-weight:800;'>\" + escapeHtml(pillText) + '</div>' + brandLineHtml,\n    },\n  ],\n});\n\nconst totalDuration = round(\n  scenes.reduce((sum, s) => sum + s.duration, 0) - tDur * Math.max(0, scenes.length - 1)\n);\n\n// ---- captions ------------------------------------------------------------\n// Free plans cap a project at 200 caption cues. At the default three words a\n// cue a 60-second script is nowhere near it, but a raised `targetSeconds`\n// breaches the cue cap long before it breaches the duration cap — so widen the\n// cue rather than dropping the tail. Every spoken word still gets captioned.\n// `maxWordsPerLine` is capped at 20 by the project schema, so clamp what the\n// user asked for instead of letting a typo (captionWordsPerCue: 30) fail\n// validation on every run.\nconst MAX_CAPTION_CUES = 200;\nconst MAX_WORDS_PER_LINE = 20;\nconst rawPerCue = Number(cfg.captionWordsPerCue == null ? 3 : cfg.captionWordsPerCue);\nconst requestedPerCue = Math.min(MAX_WORDS_PER_LINE, Math.max(1, Number.isFinite(rawPerCue) ? Math.round(rawPerCue) : 3));\nconst perCue = Math.max(requestedPerCue, Math.ceil(words.length / MAX_CAPTION_CUES));\nconst captions = [];\nfor (let i = 0; i < words.length; i += perCue) {\n  const chunk = words.slice(i, i + perCue);\n  captions.push({\n    start: chunk[0].start,\n    end: chunk[chunk.length - 1].end,\n    text: chunk.map((w) => w.text).join(' '),\n    words: chunk.map((w) => ({ start: w.start, end: w.end, text: w.text })),\n  });\n}\n\n// In box modes (\"highlight\") the chip behind the spoken word is drawn first\n// and the outline on top of it, so box modes get a thin outline plus padding;\n// every other mode keeps the heavy outline that stays readable on any b-roll.\nconst BOX_MODES = ['highlight'];\nconst animation = cfg.captionAnimation || 'karaoke';\nconst usesBox = BOX_MODES.includes(animation);\nconst strokeWidth = Math.max(0, Number(cfg.captionStrokeWidth == null ? 6 : cfg.captionStrokeWidth));\n\nconst subtitle = {\n  captions,\n  animation,\n  activeWord: usesBox\n    ? { color: cfg.captionActiveColor || bg, background: accent }\n    : { color: accent },\n  font: {\n    family: uiFont,\n    size: Number(cfg.captionSize == null ? 54 : cfg.captionSize),\n    color: '#ffffff',\n    bold: true,\n    transform: 'uppercase',\n  },\n  stroke: { color: '#000000', width: usesBox ? Math.min(strokeWidth, 2) : strokeWidth },\n  ...(usesBox ? { background: { padding: 14 } } : {}),\n  position: 'bottom',\n  margin: { x: 90, y: 300 },\n  maxWordsPerLine: Math.min(MAX_WORDS_PER_LINE, perCue),\n};\n\n// ---- global watermark + audio -------------------------------------------\n// A dark pill keeps the watermark readable over ANY footage — plain white\n// text washed out on bright clips (x/y because a `position` preset would\n// ignore them).\nconst visuals = [{\n  type: 'TEXT',\n  x: 540,\n  y: 84,\n  anchor: 'top-center',\n  track: 5,\n  opacity: 0.9,\n  style: { fontFamily: uiFont, color: '#ffffff' },\n  html: \"<div style='display:inline-block; background:\" + rgba(bg, 0.55) + \"; border:1px solid rgba(255,255,255,0.18); border-radius:999px; padding:10px 28px; color:#ffffff; font-size:25px; font-weight:700; letter-spacing:4px;'>\" + escapeHtml(brandName) + '</div>',\n}];\n\n// NOTE: no `track` on audios — the render API rejects audios[].track.\nconst audios = [{ src: upload.url, volume: 1, enter: 0 }];\nif (music) {\n  audios.push({ src: music.src, volume: Number(cfg.musicVolume == null ? 0.1 : cfg.musicVolume), enter: 0, exit: totalDuration });\n}\n\n// The render API only allows letters, digits, spaces, _ and - in `name`.\nconst name = ('blog-video-' + script.post.title).toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60) || 'blog-video';\n\nconst payload = {\n  name,\n  resolution: cfg.resolution || 'instagram-reel',\n  frameRate: Number(cfg.frameRate == null ? 30 : cfg.frameRate),\n  backgroundColor: bg,\n  outputFormat: 'mp4',\n  scenes,\n  visuals,\n  audios,\n  subtitle,\n};\n\nreturn [{\n  json: {\n    payload,\n    meta: {\n      postTitle: script.post.title,\n      videoTitle: script.title,\n      domain: script.post.domain,\n      link: script.post.link,\n      guid: script.post.guid,\n      published: script.post.published || null,\n      articleSource: script.articleSource,\n      pointCount: points.length,\n      narrationSeconds: round(audioDuration),\n      totalDuration,\n      sceneCount: scenes.length,\n      videoClips: sceneMedia.filter((m) => m && m.kind === 'video').length,\n      captionCount: captions.length,\n      captionWordsPerCue: perCue,\n      cutsAlignedToSpeech: useWordMap,\n      musicTrack: music ? music.description || music.src : null,\n    },\n  },\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        50,
+        1840
+      ],
+      "id": "zvid-bv-0023",
+      "name": "Build project JSON"
+    },
+    {
+      "parameters": {
+        "resource": "render",
+        "operation": "validate",
+        "source": "json",
+        "projectJson": "={{ JSON.stringify(({ payload: $json.payload }).payload) }}"
+      },
+      "type": "@zvid/n8n-nodes-zvid.zvid",
+      "typeVersion": 1,
+      "position": [
+        310,
+        1840
+      ],
+      "id": "zvid-bv-0024",
+      "name": "Validate project (free)"
+    },
+    {
+      "parameters": {
+        "jsCode": "// The free validate endpoint runs the exact pipeline a render submission runs,\n// so a failure here is a payload bug — surface the field list instead of a\n// generic HTTP error.\nconst res = $input.first().json;\nconst status = res.statusCode ?? (res.valid === true ? 200 : 400);\nconst body = res.body || { ...res, details: res.errors ?? res.details };\n\nif (status !== 200) {\n  const details = Array.isArray(body.details)\n    ? body.details.map((d) => '  - ' + d.field + ': ' + d.message).join('\\n')\n    : JSON.stringify(body).slice(0, 500);\n  throw new Error('Zvid rejected the project (HTTP ' + status + '): ' + (body.message || body.error) + '\\n' + details);\n}\n\nconst build = $('Build project JSON').first().json;\nreturn [{\n  json: {\n    ...build,\n    creditsRequired: body.creditsRequired,\n    warnings: body.warnings || [],\n    schemaVersion: body.schemaVersion,\n  },\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        570,
+        1840
+      ],
+      "id": "zvid-bv-0025",
+      "name": "Check validation"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "dry-run--cond",
+              "leftValue": "={{ $('Config').first().json.dryRun }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1050,
+        1840
+      ],
+      "id": "zvid-bv-0026",
+      "name": "Dry run?"
+    },
+    {
+      "parameters": {
+        "resource": "project",
+        "operation": "create",
+        "projectName": "={{ ({ name: $json.payload.name, payload: $json.payload }).name }}",
+        "projectJson": "={{ JSON.stringify(({ name: $json.payload.name, payload: $json.payload }).payload) }}"
+      },
+      "type": "@zvid/n8n-nodes-zvid.zvid",
+      "typeVersion": 1,
+      "position": [
+        1310,
+        1840
+      ],
+      "id": "zvid-bv-0027",
+      "name": "Save draft to editor",
+      "onError": "continueRegularOutput",
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "jsCode": "// Dry run: everything except the paid render. Open editorLink to preview the\n// exact video, then set dryRun to false in Config to go live. The last-guid\n// memory is NOT updated on a dry run, so the next real run renders this post.\nconst cfg = $('Config').first().json;\nconst d = $('Check validation').first().json;\n\n// The draft save is best-effort (onError: continue) so a hiccup there never\n// hides the rest of the dry-run report.\nlet editorLink = null;\nlet draftId = null;\ntry {\n  const project = $('Save draft to editor').first().json.project;\n  if (project && project.id) {\n    draftId = project.id;\n    editorLink = String(cfg.editorUrl || 'https://editor.zvid.io').replace(/\\/+$/, '') + '/?project=' + project.id;\n  }\n} catch (e) { /* draft step skipped or failed */ }\n\nreturn [{\n  json: {\n    dryRun: true,\n    postTitle: d.meta.postTitle,\n    videoTitle: d.meta.videoTitle,\n    domain: d.meta.domain,\n    points: d.meta.pointCount,\n    articleSource: d.meta.articleSource,\n    editorLink,\n    draftId,\n    creditsRequired: d.creditsRequired,\n    videoSeconds: d.meta.totalDuration,\n    narrationSeconds: d.meta.narrationSeconds,\n    cutsAlignedToSpeech: d.meta.cutsAlignedToSpeech,\n    captions: d.meta.captionCount,\n    musicTrack: d.meta.musicTrack,\n    warnings: d.warnings,\n    nextStep: editorLink\n      ? 'Open editorLink to preview the draft, then set dryRun to false in Config to render.'\n      : 'Set dryRun to false in Config to render this for real.',\n    payload: d.payload,\n  },\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1570,
+        1840
+      ],
+      "id": "zvid-bv-0028",
+      "name": "Dry run summary"
+    },
+    {
+      "parameters": {
+        "resource": "render",
+        "operation": "create",
+        "source": "json",
+        "projectJson": "={{ JSON.stringify(({ payload: $json.payload }).payload) }}",
+        "renderType": "video",
+        "waitForCompletion": false
+      },
+      "type": "@zvid/n8n-nodes-zvid.zvid",
+      "typeVersion": 1,
+      "position": [
+        2050,
+        1840
+      ],
+      "id": "zvid-bv-0029",
+      "name": "Submit render",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "amount": "={{ $('Config').first().json.pollSeconds }}",
+        "unit": "seconds"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2310,
+        1840
+      ],
+      "id": "zvid-bv-0030",
+      "name": "Wait",
+      "webhookId": "c7d2e9a4-3b61-4f8e-a5c2-9e0d4b7f1a36"
+    },
+    {
+      "parameters": {
+        "resource": "render",
+        "operation": "get",
+        "jobId": "={{ $('Submit render').first().json.jobId }}",
+        "waitForCompletion": false
+      },
+      "type": "@zvid/n8n-nodes-zvid.zvid",
+      "typeVersion": 1,
+      "position": [
+        2570,
+        1840
+      ],
+      "id": "zvid-bv-0031",
+      "name": "Get render status",
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "render-finished--cond",
+              "leftValue": "={{ $json.state === 'completed' }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2830,
+        1840
+      ],
+      "id": "zvid-bv-0032",
+      "name": "Render finished?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Fails fast on a failed render and stops the poll loop from running forever.\nconst cfg = $('Config').first().json;\nconst job = $input.first().json;\n\nif (job.state === 'failed') {\n  throw new Error('Render failed: ' + (job.failedReason || 'no reason given'));\n}\n\nconst maxPolls = Math.ceil((Number(cfg.timeoutMinutes || 20) * 60) / Number(cfg.pollSeconds || 10));\nif ($runIndex + 1 >= maxPolls) {\n  throw new Error('Render did not finish within ' + cfg.timeoutMinutes + ' minutes (job ' + job.id + ', state ' + job.state + ').');\n}\n\nreturn $input.all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2830,
+        2080
+      ],
+      "id": "zvid-bv-0033",
+      "name": "Still rendering?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Final report for a live run. The finished post's guid is remembered HERE —\n// only after a successful render — so a failed render is retried on the next\n// run, and dry runs never consume the post. (Static data only persists on\n// production executions; manual test runs re-render the newest post.)\nconst cfg = $('Config').first().json;\nconst build = $('Check validation').first().json;\nconst job = $('Get render status').first().json;\nconst url = typeof job.result === 'string' ? job.result : (job.result ? job.result.url : null);\n\nconst store = $getWorkflowStaticData('global');\nstore.lastGuid = build.meta.guid;\n\nreturn [{\n  json: {\n    rendered: true,\n    videoUrl: url,\n    jobId: job.id,\n    postTitle: build.meta.postTitle,\n    videoTitle: build.meta.videoTitle,\n    postLink: build.meta.link,\n    domain: build.meta.domain,\n    points: build.meta.pointCount,\n    articleSource: build.meta.articleSource,\n    videoSeconds: build.meta.totalDuration,\n    cutsAlignedToSpeech: build.meta.cutsAlignedToSpeech,\n    musicTrack: build.meta.musicTrack,\n    creditsCharged: build.creditsRequired,\n    brand: cfg.brandName,\n  },\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        50,
+        2760
+      ],
+      "id": "zvid-bv-0034",
+      "name": "Run summary"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.videoUrl }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file",
+              "outputPropertyName": "data"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        570,
+        2760
+      ],
+      "id": "zvid-bv-0035",
+      "name": "▶ Watch video",
+      "onError": "continueRegularOutput",
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "id": "zvid-watch-ready",
+      "name": "Video ready to watch?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        310,
+        2760
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "zvid-watch-ready-condition",
+              "leftValue": "={{ !$json.dryRun && /^https?:\\/\\//i.test(String(($json.videoUrl) || '')) }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "publication-overview-blog-to-video",
+      "name": "Workflow overview and setup",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -800,
+        0
+      ],
+      "parameters": {
+        "content": "## Turn a blog post into a video\n\n### How it works\nRead your RSS feed, find a new post, and fetch the article text. Generate narration and stock footage, then render a captioned vertical summary. The feed excerpt is a fallback when the article cannot be fetched.\n\n### Setup\n1. Install **`@zvid/n8n-nodes-zvid`** from **Settings → Community nodes** before credentials. A workspace owner/admin may need to install it.\n2. Create a **Zvid API** credential with [your API key](https://app.zvid.io/api-keys) and Base URL `https://api.zvid.io`. Select it on every Zvid node and upload step.\n3. Set feedUrl, brandName, colors and ctaText in Config.\n4. Connect OpenRouter to Write script and ElevenLabs Header Auth (xi-api-key) to Generate voiceover.\n5. **dryRun=false** renders and spends Zvid credits. Set it to **true** for an editor draft and quote. AI or transcription charges may still apply.\n6. Test manually and review the output before activating automatic runs.\n\n### Customization\nAdjust branding, media and timing in the configuration node. Multipart upload uses HTTP Request because the published Zvid node lacks that operation. [Detailed setup guide](https://github.com/Zvid-io/zvid-n8n/blob/master/workflows/blog-to-video.md).",
+        "color": 1,
+        "width": 720,
+        "height": 1160
+      }
+    },
+    {
+      "id": "publication-section-blog-to-video-configure",
+      "name": "1. Choose settings and an entry point",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "content": "## 1. Choose settings and an entry point\n\nComplete the overview setup first. Use the manual trigger for a test, then check the trigger settings and workflow timezone before activation.",
+        "color": 7,
+        "width": 880,
+        "height": 520
+      }
+    },
+    {
+      "id": "publication-section-blog-to-video-feed",
+      "name": "2. Find a new article",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        0
+      ],
+      "parameters": {
+        "content": "## 2. Find a new article\n\nRead the configured RSS feed and skip posts already completed in production. An empty or inaccessible feed needs attention.",
+        "color": 7,
+        "width": 1140,
+        "height": 520
+      }
+    },
+    {
+      "id": "publication-section-blog-to-video-article",
+      "name": "3. Read the article",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2260,
+        0
+      ],
+      "parameters": {
+        "content": "## 3. Read the article\n\nFetch the full page when available. The prompt falls back to feed text and should not invent missing facts.",
+        "color": 7,
+        "width": 620,
+        "height": 520
+      }
+    },
+    {
+      "id": "publication-section-blog-to-video-script",
+      "name": "4. Write and check the script",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3000,
+        0
+      ],
+      "parameters": {
+        "content": "## 4. Write and check the script\n\nGenerate concise copy from the supplied source. Review names, claims and attribution before sharing the finished video.",
+        "color": 7,
+        "width": 620,
+        "height": 520
+      }
+    },
+    {
+      "id": "publication-section-blog-to-video-footage",
+      "name": "5. Choose footage for each scene",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        680
+      ],
+      "parameters": {
+        "content": "## 5. Choose footage for each scene\n\nSearch Zvid’s stock library and match footage to each scene. Review selected clips for relevance and attribution.",
+        "color": 7,
+        "width": 880,
+        "height": 520
+      }
+    },
+    {
+      "id": "publication-section-blog-to-video-music",
+      "name": "6. Check the background music",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        680
+      ],
+      "parameters": {
+        "content": "## 6. Check the background music\n\nCheck the configured track or stock candidates before use. Follow the guard’s result when music is unavailable.",
+        "color": 7,
+        "width": 1140,
+        "height": 760
+      }
+    },
+    {
+      "id": "publication-section-blog-to-video-voice",
+      "name": "7. Create narration and timings",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2260,
+        680
+      ],
+      "parameters": {
+        "content": "## 7. Create narration and timings\n\nGenerate voice audio and caption timings. Multipart audio upload uses HTTP Request because the published Zvid node does not expose uploads.",
+        "color": 7,
+        "width": 880,
+        "height": 520
+      }
+    },
+    {
+      "id": "publication-section-blog-to-video-validate",
+      "name": "8. Build and validate the design",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        1600
+      ],
+      "parameters": {
+        "content": "## 8. Build and validate the design\n\nPrepare the media and video design, then validate the payload and credit quote. Resolve validation errors before submitting a render.",
+        "color": 7,
+        "width": 880,
+        "height": 520
+      }
+    },
+    {
+      "id": "publication-section-blog-to-video-preview",
+      "name": "9. Choose an optional editor preview",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        1600
+      ],
+      "parameters": {
+        "content": "## 9. Choose an optional editor preview\n\ndryRun=true returns an editor draft and credit quote. The default false branch renders and spends Zvid credits; upstream AI services may charge separately.",
+        "color": 7,
+        "width": 880,
+        "height": 520
+      }
+    },
+    {
+      "id": "publication-section-blog-to-video-render",
+      "name": "10. Render and wait for completion",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2000,
+        1600
+      ],
+      "parameters": {
+        "content": "## 10. Render and wait for completion\n\nSubmit the render, then check its status until completion or timeout. Keep each result paired with its source item. Check Zvid before retrying a timed-out job.",
+        "color": 7,
+        "width": 1140,
+        "height": 760
+      }
+    },
+    {
+      "id": "zvid-watch-instructions",
+      "name": "11. Review the finished media",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        2520
+      ],
+      "parameters": {
+        "content": "## 11. Review the finished media\n\nOpen Watch video → Binary → data → View. Select each output item for batches; image outputs open as images. Empty links and preview results skip the download.",
+        "color": 7,
+        "width": 880,
+        "height": 520
+      }
+    }
+  ],
+  "connections": {
+    "Every day at 9am": {
+      "main": [
+        [
+          {
+            "node": "Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Test manually": {
+      "main": [
+        [
+          {
+            "node": "Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Config": {
+      "main": [
+        [
+          {
+            "node": "Read blog feed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read blog feed": {
+      "main": [
+        [
+          {
+            "node": "Pick newest post",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pick newest post": {
+      "main": [
+        [
+          {
+            "node": "New post?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "New post?": {
+      "main": [
+        [
+          {
+            "node": "Fetch post page",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Nothing new today",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch post page": {
+      "main": [
+        [
+          {
+            "node": "Prepare prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare prompt": {
+      "main": [
+        [
+          {
+            "node": "Write script",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write script": {
+      "main": [
+        [
+          {
+            "node": "Parse script",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse script": {
+      "main": [
+        [
+          {
+            "node": "Expand points",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Expand points": {
+      "main": [
+        [
+          {
+            "node": "Search stock clips",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search stock clips": {
+      "main": [
+        [
+          {
+            "node": "Pick scene clip",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pick scene clip": {
+      "main": [
+        [
+          {
+            "node": "Music queries",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Music queries": {
+      "main": [
+        [
+          {
+            "node": "Find background music",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Find background music": {
+      "main": [
+        [
+          {
+            "node": "Shortlist music",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Shortlist music": {
+      "main": [
+        [
+          {
+            "node": "Check music asset",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check music asset": {
+      "main": [
+        [
+          {
+            "node": "Pick music",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pick music": {
+      "main": [
+        [
+          {
+            "node": "Generate voiceover",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate voiceover": {
+      "main": [
+        [
+          {
+            "node": "Voice + timings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Voice + timings": {
+      "main": [
+        [
+          {
+            "node": "Upload voiceover",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload voiceover": {
+      "main": [
+        [
+          {
+            "node": "Build project JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build project JSON": {
+      "main": [
+        [
+          {
+            "node": "Validate project (free)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate project (free)": {
+      "main": [
+        [
+          {
+            "node": "Check validation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check validation": {
+      "main": [
+        [
+          {
+            "node": "Dry run?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Dry run?": {
+      "main": [
+        [
+          {
+            "node": "Save draft to editor",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Submit render",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save draft to editor": {
+      "main": [
+        [
+          {
+            "node": "Dry run summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Submit render": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Get render status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get render status": {
+      "main": [
+        [
+          {
+            "node": "Render finished?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Render finished?": {
+      "main": [
+        [
+          {
+            "node": "Run summary",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Still rendering?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Still rendering?": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run summary": {
+      "main": [
+        [
+          {
+            "node": "Video ready to watch?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Video ready to watch?": {
+      "main": [
+        [
+          {
+            "node": "▶ Watch video",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

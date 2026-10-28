@@ -1,0 +1,31 @@
+{
+  "renderedAt": "2026-10-28",
+  "input": "data/edition.json",
+  "project": "assets/sample-project.json",
+  "width": 1080,
+  "height": 1920,
+  "frameRate": 30,
+  "durationSeconds": 51.1,
+  "creditsQuoted": 52,
+  "quoteCheckedAt": "2026-10-28T17:38:58.765Z",
+  "generationCalls": 0,
+  "apiRenderSubmitted": false,
+  "renderer": "Local @zvid-io/zvid CLI; no API render charge",
+  "reproductionCommands": [
+    "npm ci",
+    "npm run check",
+    "npm test",
+    "npm run offline",
+    "npm run sample -- --validate",
+    "npm run sample -- --max-credits 60"
+  ],
+  "historicalSourceDate": "2026-09-20",
+  "sampleNotice": "Historical, unverified demonstration. Check every claim against its linked source before publishing.",
+  "timingCorrection": "Historical word timestamps rounded to0.1s, minimum word duration0.1s for frame-safe scene boundaries. Transcript and audio unchanged; canonical live builder unchanged.",
+  "mediaCorrection": "One reported30s clip measured29.92s. Fixture uses measured duration.",
+  "videoSha256": "1f0f9cdec62c63cc4e4c5f75c4285bb153148936be26100c93b7d338024dd598",
+  "projectSha256": "12ee3a44e1b2fd9631951cb35b92add9c27e14553294691a9f4b26a8a75e5c96",
+  "posterSha256": "4284bf6319933628cfdd2777e69407b50fd8895af9851bac1c7e300170c7ac1e",
+  "inputSha256": "e60d311b2ead26b0eb5fd4a25eec6021d68e95f5a30a85675a03745d5bf4417f",
+  "workflowSha256": "bdc4dcad814400067921c49941812993597b252fadc7ef48ba960dbb00c0ed0c"
+}

@@ -1,0 +1,337 @@
+{
+  "name": "new-arrival-demo-lip-color-kit",
+  "resolution": "instagram-reel",
+  "frameRate": 30,
+  "backgroundColor": "#141A20",
+  "outputFormat": "mp4",
+  "scenes": [
+    {
+      "id": "hook",
+      "duration": 5.1,
+      "backgroundColor": "#141A20",
+      "transition": "smoothup",
+      "transitionId": "offer",
+      "transitionDuration": 0.6,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 5.1,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='sppGlow' cx='0.5' cy='0.4' r='0.75'><stop offset='0' stop-color='#E1623C' stop-opacity='0.42'/><stop offset='0.52' stop-color='#E1623C' stop-opacity='0.12'/><stop offset='1' stop-color='#141A20' stop-opacity='0'/></radialGradient></defs><rect width='1080' height='1920' fill='#141A20'/><rect width='1080' height='1920' fill='url(#sppGlow)'/><rect x='54' y='54' width='972' height='1812' rx='44' fill='none' stroke='rgba(246,242,234,0.18)' stroke-width='1.5'/><path d='M112 320 L112 214 L218 214' fill='none' stroke='#E1623C' stroke-width='8' stroke-linecap='square'/><path d='M968 1606 L968 1712 L862 1712' fill='none' stroke='#E1623C' stroke-width='8' stroke-linecap='square'/><rect x='104' y='424' width='872' height='992' rx='58' fill='rgba(246,242,234,0.07)'/><rect x='120' y='440' width='840' height='960' rx='48' fill='#F6F2EA'/><circle cx='858' cy='1786' r='6' fill='#E1623C'/><circle cx='894' cy='1786' r='6' fill='rgba(246,242,234,0.4)'/><circle cx='930' cy='1786' r='6' fill='rgba(246,242,234,0.4)'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 920,
+          "anchor": "center-center",
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 5.1,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#F6F2EA"
+          },
+          "customCode": {
+            "animationDuration": 5.1,
+            "css": ".kbox{width:728px; height:848px; display:flex; align-items:center; justify-content:center; overflow:hidden}.kbi{display:inline-block; line-height:0; border:1px solid rgba(20,26,32,0.16); animation:sppKbRise 5.1s linear 1 both}@keyframes sppKbRise{0%{opacity:0; transform:translate3d(0,46px,0) scale(0.86); animation-timing-function:cubic-bezier(0.22,0.61,0.36,1)}13%{opacity:1; transform:translate3d(0,0,0) scale(0.9); animation-timing-function:linear}100%{opacity:1; transform:translate3d(0,0,0) scale(1)}}"
+          },
+          "html": "<div class='kbox'><span class='kbi'><img src='https://cdn.zvid.io/blog/shopify-product-promo/8325081194e6/product-photo.jpg' alt='' style='max-width:726px; max-height:846px; display:block;'/></span></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 150,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.1,
+          "enterEnd": 0.5,
+          "enterAnimation": "fade",
+          "exitEnd": 5.1,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#F6F2EA",
+            "borderRadius": "999px",
+            "border": "1.5px solid rgba(246,242,234,0.55)"
+          },
+          "html": "<div style='display:inline-block; padding:15px 40px; font-size:25px; font-weight:700; letter-spacing:7px;'>NORTHBOUND</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1408,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.45,
+          "enterEnd": 0.85,
+          "enterAnimation": "smoothright",
+          "exitEnd": 5.1,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#111111",
+            "backgroundColor": "#E1623C",
+            "borderRadius": "8px"
+          },
+          "html": "<div style='display:inline-block; padding:12px 26px; font-size:25px; font-weight:800; letter-spacing:6px;'>NEW ARRIVAL</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1478,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 0.7,
+          "enterEnd": 1.2,
+          "enterAnimation": "smoothup",
+          "exitEnd": 5.1,
+          "style": {
+            "fontFamily": "Fraunces",
+            "color": "#F6F2EA"
+          },
+          "html": "<div style='color:#F6F2EA; font-size:92px; line-height:1.08; font-weight:700; letter-spacing:-1px;'>Demo Lip Color Kit</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1770,
+          "anchor": "top-left",
+          "track": 5,
+          "enterBegin": 1.1,
+          "enterEnd": 1.45,
+          "enterAnimation": "fade",
+          "exitEnd": 5.1,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "rgba(246,242,234,0.62)"
+          },
+          "html": "<div style='color:rgba(246,242,234,0.62); font-size:25px; font-weight:600; letter-spacing:4px;'>NORTHBOUND-SUPPLY.MYSHOPIFY.COM</div>"
+        }
+      ]
+    },
+    {
+      "id": "offer",
+      "duration": 5.75,
+      "backgroundColor": "#F6F2EA",
+      "transition": "fade",
+      "transitionId": "cta",
+      "transitionDuration": 0.55,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 5.75,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='sppCard' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#242a30'/><stop offset='1' stop-color='#141A20'/></linearGradient></defs><rect width='1080' height='1920' fill='#F6F2EA'/><circle cx='980' cy='190' r='250' fill='rgba(225,98,60,0.12)'/><circle cx='120' cy='1780' r='170' fill='rgba(225,98,60,0.1)'/><rect x='110' y='232' width='860' height='886' rx='48' fill='url(#sppCard)'/><path d='M110 1198 H970' stroke='rgba(20,26,32,0.16)' stroke-width='2'/><rect x='110' y='1198' width='150' height='5' rx='2.5' fill='#E1623C'/><circle cx='930' cy='1802' r='6' fill='rgba(20,26,32,0.35)'/><circle cx='894' cy='1802' r='6' fill='rgba(20,26,32,0.35)'/><circle cx='858' cy='1802' r='6' fill='#E1623C'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 675,
+          "anchor": "center-center",
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 5.75,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#141A20"
+          },
+          "customCode": {
+            "animationDuration": 5.75,
+            "css": ".kbox{width:748px; height:774px; display:flex; align-items:center; justify-content:center; overflow:hidden}.kbi{display:inline-block; line-height:0; border:1px solid rgba(246,242,234,0.2); animation:sppKbDraw 5.75s linear 1 both}@keyframes sppKbDraw{0%{opacity:0; transform:translate3d(-54px,0,0) scale(0.86); animation-timing-function:cubic-bezier(0.22,0.61,0.36,1)}12%{opacity:1; transform:translate3d(-10px,0,0) scale(0.94); animation-timing-function:linear}100%{opacity:1; transform:translate3d(16px,0,0) scale(0.88)}}"
+          },
+          "html": "<div class='kbox'><span class='kbi'><img src='https://cdn.zvid.io/blog/shopify-product-promo/8325081194e6/product-photo.jpg' alt='' style='max-width:746px; max-height:772px; display:block;'/></span></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1452,
+          "anchor": "top-left",
+          "track": 5,
+          "enterBegin": 0.95,
+          "enterEnd": 1.35,
+          "enterAnimation": "smoothup",
+          "exitEnd": 5.75,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#141A20"
+          },
+          "html": "<div style='white-space:nowrap;'><span style='color:#141A20; font-size:96px; line-height:1.1; font-weight:800; letter-spacing:-2px;'>$29</span><span style='margin-left:28px; color:rgba(20,26,32,0.45); font-size:46px; font-weight:600; text-decoration:line-through;'>$39</span></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1790,
+          "anchor": "top-left",
+          "track": 7,
+          "enterBegin": 1.35,
+          "enterEnd": 1.7,
+          "enterAnimation": "fade",
+          "exitEnd": 5.75,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "rgba(20,26,32,0.55)"
+          },
+          "html": "<div style='color:rgba(20,26,32,0.55); font-size:25px; font-weight:600; letter-spacing:4px;'>NORTHBOUND</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1256,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 0.6,
+          "enterEnd": 1.05,
+          "enterAnimation": "smoothup",
+          "exitEnd": 5.75,
+          "style": {
+            "fontFamily": "Fraunces",
+            "color": "#141A20"
+          },
+          "html": "<div style='color:#141A20; font-size:46px; line-height:1.34; font-weight:600; font-style:italic;'>Demo product for the workflow tutorial</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 852,
+          "y": 268,
+          "anchor": "center-center",
+          "angle": -8,
+          "track": 3,
+          "enterBegin": 0.75,
+          "enterEnd": 1.15,
+          "enterAnimation": "circleopen",
+          "exitEnd": 5.75,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#111111",
+            "backgroundColor": "#E1623C",
+            "borderRadius": "999px"
+          },
+          "html": "<div style='display:inline-block; padding:20px 34px; text-align:center; font-size:40px; line-height:1; font-weight:800; letter-spacing:-1px;'>SAVE 26%</div>"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "duration": 4.6,
+      "backgroundColor": "#141A20",
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 4.6,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='sppCta' cx='0.5' cy='0.34' r='0.85'><stop offset='0' stop-color='#2e343a'/><stop offset='1' stop-color='#141A20'/></radialGradient></defs><rect width='1080' height='1920' fill='url(#sppCta)'/><rect x='54' y='54' width='972' height='1812' rx='44' fill='none' stroke='rgba(225,98,60,0.4)' stroke-width='1.5'/><circle cx='540' cy='656' r='178' fill='none' stroke='rgba(225,98,60,0.45)' stroke-width='2'/><circle cx='540' cy='656' r='148' fill='#E1623C'/><path d='M112 1606 L112 1712 L218 1712' fill='none' stroke='rgba(246,242,234,0.5)' stroke-width='8' stroke-linecap='square'/><path d='M968 320 L968 214 L862 214' fill='none' stroke='rgba(246,242,234,0.5)' stroke-width='8' stroke-linecap='square'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 656,
+          "anchor": "center-center",
+          "track": 1,
+          "enterBegin": 0.15,
+          "enterEnd": 0.55,
+          "enterAnimation": "fade",
+          "exitEnd": 4.6,
+          "style": {
+            "fontFamily": "Fraunces",
+            "color": "#111111",
+            "backgroundColor": "#E1623C",
+            "borderRadius": "999px"
+          },
+          "html": "<div style='text-align:center; padding:0 30px; font-size:126px; line-height:1.1; font-weight:700;'>N</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 952,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.35,
+          "enterEnd": 0.7,
+          "enterAnimation": "fade",
+          "exitEnd": 4.6,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "rgba(246,242,234,0.7)"
+          },
+          "html": "<div style='text-align:center; color:rgba(246,242,234,0.7); font-size:26px; font-weight:700; letter-spacing:9px;'>NORTHBOUND</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1034,
+          "width": 860,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 0.55,
+          "enterEnd": 0.95,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.6,
+          "style": {
+            "fontFamily": "Fraunces",
+            "color": "#F6F2EA"
+          },
+          "html": "<div style='text-align:center; color:#F6F2EA; font-size:58px; line-height:1.12; font-weight:700;'>Demo Lip Color Kit</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1251,
+          "anchor": "top-center",
+          "track": 5,
+          "enterBegin": 1,
+          "enterEnd": 1.45,
+          "enterAnimation": "circleopen",
+          "exitEnd": 4.6,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#111111",
+            "backgroundColor": "#E1623C",
+            "borderRadius": "999px"
+          },
+          "html": "<div style='display:inline-block; padding:28px 66px; font-size:40px; font-weight:800;'>Shop the drop</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1407,
+          "anchor": "top-center",
+          "track": 6,
+          "enterBegin": 1.35,
+          "enterEnd": 1.7,
+          "enterAnimation": "fade",
+          "exitEnd": 4.6,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "rgba(246,242,234,0.6)"
+          },
+          "html": "<div style='text-align:center; color:rgba(246,242,234,0.6); font-size:28px; font-weight:600; letter-spacing:3px;'>northbound-supply.myshopify.com</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1133,
+          "anchor": "top-center",
+          "track": 4,
+          "enterBegin": 0.8,
+          "enterEnd": 1.2,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.6,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#e1623c"
+          },
+          "html": "<div style='text-align:center; color:#e1623c; font-size:44px; font-weight:800; letter-spacing:1px;'>$29<span style='margin-left:18px; color:rgba(246,242,234,0.45); font-size:30px; font-weight:600; text-decoration:line-through;'>$39</span></div>"
+        }
+      ]
+    }
+  ]
+}

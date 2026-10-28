@@ -1,0 +1,1623 @@
+{
+  "name": "weekly-roundup-ai-and-tech-sep-20",
+  "resolution": "instagram-reel",
+  "frameRate": 30,
+  "backgroundColor": "#0D1117",
+  "outputFormat": "mp4",
+  "scenes": [
+    {
+      "id": "intro",
+      "duration": 5.9,
+      "backgroundColor": "#0D1117",
+      "transition": "smoothleft",
+      "transitionDuration": 0.4,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 5.9,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='wnrIntro' cx='0.3' cy='0.22' r='1.15'><stop offset='0' stop-color='#FFC24B' stop-opacity='0.14'/><stop offset='1' stop-color='#FFC24B' stop-opacity='0'/></radialGradient></defs><rect width='1080' height='1920' fill='#0D1117'/><rect width='1080' height='1920' fill='url(#wnrIntro)'/><rect x='48' y='48' width='984' height='1824' fill='none' stroke='rgba(255,194,75,0.26)' stroke-width='1.5'/><path d='M872 1440 L936 1440 L836 1644 L772 1644 Z' fill='rgba(255,194,75,0.5)'/><path d='M956 1440 L992 1440 L892 1644 L856 1644 Z' fill='rgba(255,194,75,0.28)'/><path d='M90 1770 H990' stroke='rgba(255,194,75,0.24)' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 170,
+          "width": 900,
+          "anchor": "top-center",
+          "track": 1,
+          "enterBegin": 0.1,
+          "enterEnd": 0.5,
+          "enterAnimation": "fade",
+          "exitEnd": 5.9,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFC24B"
+          },
+          "html": "<div style=\"text-align:center;\"><span style=\"display:inline-block; background:#FFC24B; color:#0D1117; padding:12px 30px; font-size:26px; font-weight:900; letter-spacing:6px; border-radius:6px;\">THE WEEKLY SIGNAL</span></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 480,
+          "width": 900,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.35,
+          "enterEnd": 0.9,
+          "enterAnimation": "smoothup",
+          "exitEnd": 5.9,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style=\"text-align:center; color:#9AA3B2; font-size:30px; font-weight:800; letter-spacing:12px;\">THE WEEK IN</div><div style=\"margin-top:22px; text-align:center; color:#FFFFFF; font-size:108px; line-height:1.06; font-weight:900; letter-spacing:-1px;\">AI AND TECH</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 704,
+          "width": 900,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 0.7,
+          "enterEnd": 1.15,
+          "enterAnimation": "fade",
+          "exitEnd": 5.9,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFC24B"
+          },
+          "html": "<div style=\"text-align:center;\"><span style=\"display:inline-block; border:1.5px solid rgba(255,194,75,0.55); color:#FFC24B; padding:10px 24px; font-size:26px; font-weight:800; letter-spacing:4px; border-radius:6px;\">WEEK OF SEP 14 – SEP 20</span></div><div style=\"margin-top:26px; text-align:center; color:#9AA3B2; font-size:26px; font-weight:700; letter-spacing:5px;\">THE FIVE STORIES THAT MATTERED</div>"
+        }
+      ]
+    },
+    {
+      "id": "story-5",
+      "duration": 8.4,
+      "backgroundColor": "#0D1117",
+      "transition": "smoothleft",
+      "transitionDuration": 0.4,
+      "visuals": [
+        {
+          "type": "VIDEO",
+          "src": "https://cdn.zvid.io/blog/weekly-news-roundup-video/795cf0e1df6e/story-1.mp4",
+          "resize": "cover",
+          "position": "center-center",
+          "anchor": "center-center",
+          "volume": 0,
+          "videoBegin": 0,
+          "videoEnd": 8,
+          "zoom": {
+            "depth": 1.12
+          },
+          "track": 0
+        },
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 8.4,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='wnrScrim' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#0D1117' stop-opacity='0.62'/><stop offset='0.34' stop-color='#0D1117' stop-opacity='0.12'/><stop offset='0.62' stop-color='#0D1117' stop-opacity='0.3'/><stop offset='1' stop-color='#0D1117' stop-opacity='0.94'/></linearGradient></defs><rect width='1080' height='1920' fill='url(#wnrScrim)'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 96,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.1,
+          "enterEnd": 0.45,
+          "enterAnimation": "fade",
+          "exitEnd": 8.4,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFC24B"
+          },
+          "html": "<div style=\"display:inline-block; background:#FFC24B; color:#0D1117; padding:10px 20px; font-size:22px; font-weight:900; letter-spacing:4px; border-radius:5px;\">THE WEEKLY SIGNAL</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 990,
+          "y": 104,
+          "anchor": "top-right",
+          "track": 3,
+          "enterBegin": 0.15,
+          "enterEnd": 0.5,
+          "enterAnimation": "fade",
+          "exitEnd": 8.4,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style=\"color:rgba(255,255,255,0.78); font-size:22px; font-weight:700; letter-spacing:3px; text-shadow:0 2px 10px rgba(0,0,0,0.6);\">WEEK OF SEP 14 – SEP 20</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 84,
+          "y": 214,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 0.1,
+          "enterEnd": 0.55,
+          "enterAnimation": "smoothright",
+          "exitEnd": 8.4,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFC24B"
+          },
+          "html": "<div style=\"color:#FFC24B; font-size:250px; line-height:0.9; font-weight:900; letter-spacing:-6px; text-shadow:0 10px 60px rgba(0,0,0,0.55);\">5</div><div style=\"width:120px; height:8px; background:#FFC24B; margin-top:12px; border-radius:4px;\"></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1519,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 5,
+          "enterBegin": 0.3,
+          "enterEnd": 0.8,
+          "enterAnimation": "smoothup",
+          "exitEnd": 8.4,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style=\"background:rgba(13,17,23,0.86); border-left:8px solid #FFC24B; border-radius:8px; padding:30px 36px 34px 36px;\"><div style=\"display:inline-block; color:#FFC24B; border:1.5px solid rgba(255,194,75,0.5); border-radius:5px; padding:6px 14px; font-size:22px; font-weight:800; letter-spacing:3px;\">THEVERGE.COM</div><div style=\"margin-top:18px; color:#FFFFFF; font-size:56px; line-height:1.12; font-weight:900; letter-spacing:-1px;\">Gemini AI Hacked Three Companies in Secret Tests</div></div>"
+        }
+      ]
+    },
+    {
+      "id": "story-4",
+      "duration": 9.2,
+      "backgroundColor": "#0D1117",
+      "transition": "smoothleft",
+      "transitionDuration": 0.4,
+      "visuals": [
+        {
+          "type": "VIDEO",
+          "src": "https://cdn.zvid.io/blog/weekly-news-roundup-video/ecd8d9481c45/story-2.mp4",
+          "resize": "cover",
+          "position": "center-center",
+          "anchor": "center-center",
+          "volume": 0,
+          "videoBegin": 0,
+          "videoEnd": 8.8,
+          "zoom": {
+            "depth": 1.12
+          },
+          "track": 0
+        },
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 9.2,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='wnrScrim' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#0D1117' stop-opacity='0.62'/><stop offset='0.34' stop-color='#0D1117' stop-opacity='0.12'/><stop offset='0.62' stop-color='#0D1117' stop-opacity='0.3'/><stop offset='1' stop-color='#0D1117' stop-opacity='0.94'/></linearGradient></defs><rect width='1080' height='1920' fill='url(#wnrScrim)'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 96,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.1,
+          "enterEnd": 0.45,
+          "enterAnimation": "fade",
+          "exitEnd": 9.2,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFC24B"
+          },
+          "html": "<div style=\"display:inline-block; background:#FFC24B; color:#0D1117; padding:10px 20px; font-size:22px; font-weight:900; letter-spacing:4px; border-radius:5px;\">THE WEEKLY SIGNAL</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 990,
+          "y": 104,
+          "anchor": "top-right",
+          "track": 3,
+          "enterBegin": 0.15,
+          "enterEnd": 0.5,
+          "enterAnimation": "fade",
+          "exitEnd": 9.2,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style=\"color:rgba(255,255,255,0.78); font-size:22px; font-weight:700; letter-spacing:3px; text-shadow:0 2px 10px rgba(0,0,0,0.6);\">WEEK OF SEP 14 – SEP 20</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 84,
+          "y": 214,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 0.1,
+          "enterEnd": 0.55,
+          "enterAnimation": "smoothright",
+          "exitEnd": 9.2,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFC24B"
+          },
+          "html": "<div style=\"color:#FFC24B; font-size:250px; line-height:0.9; font-weight:900; letter-spacing:-6px; text-shadow:0 10px 60px rgba(0,0,0,0.55);\">4</div><div style=\"width:120px; height:8px; background:#FFC24B; margin-top:12px; border-radius:4px;\"></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1476,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 5,
+          "enterBegin": 0.3,
+          "enterEnd": 0.8,
+          "enterAnimation": "smoothup",
+          "exitEnd": 9.2,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style=\"background:rgba(13,17,23,0.86); border-left:8px solid #FFC24B; border-radius:8px; padding:30px 36px 34px 36px;\"><div style=\"display:inline-block; color:#FFC24B; border:1.5px solid rgba(255,194,75,0.5); border-radius:5px; padding:6px 14px; font-size:22px; font-weight:800; letter-spacing:3px;\">TECHCRUNCH.COM</div><div style=\"margin-top:18px; color:#FFFFFF; font-size:50px; line-height:1.12; font-weight:900; letter-spacing:-1px;\">AI Hallucination Almost Triggers a US Military Operation</div></div>"
+        }
+      ]
+    },
+    {
+      "id": "story-3",
+      "duration": 9.1,
+      "backgroundColor": "#0D1117",
+      "transition": "smoothleft",
+      "transitionDuration": 0.4,
+      "visuals": [
+        {
+          "type": "VIDEO",
+          "src": "https://cdn.zvid.io/blog/weekly-news-roundup-video/bb3d94f30a1f/story-3.mp4",
+          "resize": "cover",
+          "position": "center-center",
+          "anchor": "center-center",
+          "volume": 0,
+          "videoBegin": 0,
+          "videoEnd": 8.7,
+          "zoom": {
+            "depth": 1.12
+          },
+          "track": 0
+        },
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 9.1,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='wnrScrim' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#0D1117' stop-opacity='0.62'/><stop offset='0.34' stop-color='#0D1117' stop-opacity='0.12'/><stop offset='0.62' stop-color='#0D1117' stop-opacity='0.3'/><stop offset='1' stop-color='#0D1117' stop-opacity='0.94'/></linearGradient></defs><rect width='1080' height='1920' fill='url(#wnrScrim)'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 96,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.1,
+          "enterEnd": 0.45,
+          "enterAnimation": "fade",
+          "exitEnd": 9.1,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFC24B"
+          },
+          "html": "<div style=\"display:inline-block; background:#FFC24B; color:#0D1117; padding:10px 20px; font-size:22px; font-weight:900; letter-spacing:4px; border-radius:5px;\">THE WEEKLY SIGNAL</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 990,
+          "y": 104,
+          "anchor": "top-right",
+          "track": 3,
+          "enterBegin": 0.15,
+          "enterEnd": 0.5,
+          "enterAnimation": "fade",
+          "exitEnd": 9.1,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style=\"color:rgba(255,255,255,0.78); font-size:22px; font-weight:700; letter-spacing:3px; text-shadow:0 2px 10px rgba(0,0,0,0.6);\">WEEK OF SEP 14 – SEP 20</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 84,
+          "y": 214,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 0.1,
+          "enterEnd": 0.55,
+          "enterAnimation": "smoothright",
+          "exitEnd": 9.1,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFC24B"
+          },
+          "html": "<div style=\"color:#FFC24B; font-size:250px; line-height:0.9; font-weight:900; letter-spacing:-6px; text-shadow:0 10px 60px rgba(0,0,0,0.55);\">3</div><div style=\"width:120px; height:8px; background:#FFC24B; margin-top:12px; border-radius:4px;\"></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1476,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 5,
+          "enterBegin": 0.3,
+          "enterEnd": 0.8,
+          "enterAnimation": "smoothup",
+          "exitEnd": 9.1,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style=\"background:rgba(13,17,23,0.86); border-left:8px solid #FFC24B; border-radius:8px; padding:30px 36px 34px 36px;\"><div style=\"display:inline-block; color:#FFC24B; border:1.5px solid rgba(255,194,75,0.5); border-radius:5px; padding:6px 14px; font-size:22px; font-weight:800; letter-spacing:3px;\">TECHCRUNCH.COM</div><div style=\"margin-top:18px; color:#FFFFFF; font-size:50px; line-height:1.12; font-weight:900; letter-spacing:-1px;\">New AI Model Offers Faster and Cheaper Software Intelligence</div></div>"
+        }
+      ]
+    },
+    {
+      "id": "story-2",
+      "duration": 7.7,
+      "backgroundColor": "#0D1117",
+      "transition": "smoothleft",
+      "transitionDuration": 0.4,
+      "visuals": [
+        {
+          "type": "VIDEO",
+          "src": "https://cdn.zvid.io/blog/weekly-news-roundup-video/0b0176d3db6b/story-4.mp4",
+          "resize": "cover",
+          "position": "center-center",
+          "anchor": "center-center",
+          "volume": 0,
+          "videoBegin": 0,
+          "videoEnd": 7.3,
+          "zoom": {
+            "depth": 1.12
+          },
+          "track": 0
+        },
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 7.7,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='wnrScrim' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#0D1117' stop-opacity='0.62'/><stop offset='0.34' stop-color='#0D1117' stop-opacity='0.12'/><stop offset='0.62' stop-color='#0D1117' stop-opacity='0.3'/><stop offset='1' stop-color='#0D1117' stop-opacity='0.94'/></linearGradient></defs><rect width='1080' height='1920' fill='url(#wnrScrim)'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 96,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.1,
+          "enterEnd": 0.45,
+          "enterAnimation": "fade",
+          "exitEnd": 7.7,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFC24B"
+          },
+          "html": "<div style=\"display:inline-block; background:#FFC24B; color:#0D1117; padding:10px 20px; font-size:22px; font-weight:900; letter-spacing:4px; border-radius:5px;\">THE WEEKLY SIGNAL</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 990,
+          "y": 104,
+          "anchor": "top-right",
+          "track": 3,
+          "enterBegin": 0.15,
+          "enterEnd": 0.5,
+          "enterAnimation": "fade",
+          "exitEnd": 7.7,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style=\"color:rgba(255,255,255,0.78); font-size:22px; font-weight:700; letter-spacing:3px; text-shadow:0 2px 10px rgba(0,0,0,0.6);\">WEEK OF SEP 14 – SEP 20</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 84,
+          "y": 214,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 0.1,
+          "enterEnd": 0.55,
+          "enterAnimation": "smoothright",
+          "exitEnd": 7.7,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFC24B"
+          },
+          "html": "<div style=\"color:#FFC24B; font-size:250px; line-height:0.9; font-weight:900; letter-spacing:-6px; text-shadow:0 10px 60px rgba(0,0,0,0.55);\">2</div><div style=\"width:120px; height:8px; background:#FFC24B; margin-top:12px; border-radius:4px;\"></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1519,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 5,
+          "enterBegin": 0.3,
+          "enterEnd": 0.8,
+          "enterAnimation": "smoothup",
+          "exitEnd": 7.7,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style=\"background:rgba(13,17,23,0.86); border-left:8px solid #FFC24B; border-radius:8px; padding:30px 36px 34px 36px;\"><div style=\"display:inline-block; color:#FFC24B; border:1.5px solid rgba(255,194,75,0.5); border-radius:5px; padding:6px 14px; font-size:22px; font-weight:800; letter-spacing:3px;\">TECHCRUNCH.COM</div><div style=\"margin-top:18px; color:#FFFFFF; font-size:56px; line-height:1.12; font-weight:900; letter-spacing:-1px;\">Trump Pushes to Rebrand AI and Forms AI Force</div></div>"
+        }
+      ]
+    },
+    {
+      "id": "story-1",
+      "duration": 7.5,
+      "backgroundColor": "#0D1117",
+      "transition": "smoothleft",
+      "transitionDuration": 0.4,
+      "visuals": [
+        {
+          "type": "VIDEO",
+          "src": "https://cdn.zvid.io/blog/weekly-news-roundup-video/18de62c24d80/story-5.mp4",
+          "resize": "cover",
+          "position": "center-center",
+          "anchor": "center-center",
+          "volume": 0,
+          "videoBegin": 0,
+          "videoEnd": 7.1,
+          "zoom": {
+            "depth": 1.12
+          },
+          "track": 0
+        },
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 7.5,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='wnrScrim' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#0D1117' stop-opacity='0.62'/><stop offset='0.34' stop-color='#0D1117' stop-opacity='0.12'/><stop offset='0.62' stop-color='#0D1117' stop-opacity='0.3'/><stop offset='1' stop-color='#0D1117' stop-opacity='0.94'/></linearGradient></defs><rect width='1080' height='1920' fill='url(#wnrScrim)'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 96,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.1,
+          "enterEnd": 0.45,
+          "enterAnimation": "fade",
+          "exitEnd": 7.5,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFC24B"
+          },
+          "html": "<div style=\"display:inline-block; background:#FFC24B; color:#0D1117; padding:10px 20px; font-size:22px; font-weight:900; letter-spacing:4px; border-radius:5px;\">THE WEEKLY SIGNAL</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 990,
+          "y": 104,
+          "anchor": "top-right",
+          "track": 3,
+          "enterBegin": 0.15,
+          "enterEnd": 0.5,
+          "enterAnimation": "fade",
+          "exitEnd": 7.5,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style=\"color:rgba(255,255,255,0.78); font-size:22px; font-weight:700; letter-spacing:3px; text-shadow:0 2px 10px rgba(0,0,0,0.6);\">WEEK OF SEP 14 – SEP 20</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 84,
+          "y": 214,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 0.1,
+          "enterEnd": 0.55,
+          "enterAnimation": "smoothright",
+          "exitEnd": 7.5,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFC24B"
+          },
+          "html": "<div style=\"color:#FFC24B; font-size:250px; line-height:0.9; font-weight:900; letter-spacing:-6px; text-shadow:0 10px 60px rgba(0,0,0,0.55);\">1</div><div style=\"width:120px; height:8px; background:#FFC24B; margin-top:12px; border-radius:4px;\"></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1519,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 5,
+          "enterBegin": 0.3,
+          "enterEnd": 0.8,
+          "enterAnimation": "smoothup",
+          "exitEnd": 7.5,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style=\"background:rgba(13,17,23,0.86); border-left:8px solid #FFC24B; border-radius:8px; padding:30px 36px 34px 36px;\"><div style=\"display:inline-block; color:#FFC24B; border:1.5px solid rgba(255,194,75,0.5); border-radius:5px; padding:6px 14px; font-size:22px; font-weight:800; letter-spacing:3px;\">TECHCRUNCH.COM</div><div style=\"margin-top:18px; color:#FFFFFF; font-size:56px; line-height:1.12; font-weight:900; letter-spacing:-1px;\">Flock Tries Employee Buyouts to Avoid Layoffs</div></div>"
+        }
+      ]
+    },
+    {
+      "id": "outro",
+      "duration": 5.7,
+      "backgroundColor": "#0D1117",
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 5.7,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='wnrOutro' cx='0.3' cy='0.22' r='1.15'><stop offset='0' stop-color='#FFC24B' stop-opacity='0.14'/><stop offset='1' stop-color='#FFC24B' stop-opacity='0'/></radialGradient></defs><rect width='1080' height='1920' fill='#0D1117'/><rect width='1080' height='1920' fill='url(#wnrOutro)'/><rect x='48' y='48' width='984' height='1824' fill='none' stroke='rgba(255,194,75,0.26)' stroke-width='1.5'/><path d='M872 1440 L936 1440 L836 1644 L772 1644 Z' fill='rgba(255,194,75,0.5)'/><path d='M956 1440 L992 1440 L892 1644 L856 1644 Z' fill='rgba(255,194,75,0.28)'/><path d='M90 1770 H990' stroke='rgba(255,194,75,0.24)' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 520,
+          "width": 900,
+          "anchor": "top-center",
+          "track": 1,
+          "enterBegin": 0.2,
+          "enterEnd": 0.7,
+          "enterAnimation": "smoothup",
+          "exitEnd": 5.7,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style=\"text-align:center; color:#9AA3B2; font-size:28px; font-weight:800; letter-spacing:8px;\">THAT IS YOUR WEEK</div><div style=\"margin:24px auto 0; max-width:900px; text-align:center; color:#FFFFFF; font-size:76px; line-height:1.08; font-weight:900; letter-spacing:-1px;\">THE WEEKLY SIGNAL</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1230,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.6,
+          "enterEnd": 1.05,
+          "enterAnimation": "circleopen",
+          "exitEnd": 5.7,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFC24B"
+          },
+          "html": "<div style=\"display:inline-block; background:#FFC24B; color:#0D1117; border-radius:999px; padding:22px 54px; font-size:28px; font-weight:800;\">Follow for next week&#39;s five</div><div style=\"margin-top:22px; text-align:center; color:#9AA3B2; font-size:24px; font-weight:700; letter-spacing:4px;\">NEW ROUNDUP EVERY WEEK</div>"
+        }
+      ]
+    }
+  ],
+  "audios": [
+    {
+      "src": "https://cdn.zvid.io/blog/weekly-news-roundup-video/66610aa391df/voiceover.mp3",
+      "volume": 1,
+      "enter": 0
+    },
+    {
+      "src": "https://cdn.zvid.io/blog/weekly-news-roundup-video/67fb43d184de/music.mp3",
+      "volume": 0.11,
+      "enter": 0,
+      "exit": 51.1
+    }
+  ],
+  "subtitle": {
+    "captions": [
+      {
+        "start": 0,
+        "end": 0.6,
+        "text": "Welcome to this",
+        "words": [
+          {
+            "start": 0,
+            "end": 0.4,
+            "text": "Welcome"
+          },
+          {
+            "start": 0.4,
+            "end": 0.5,
+            "text": "to"
+          },
+          {
+            "start": 0.5,
+            "end": 0.6,
+            "text": "this"
+          }
+        ]
+      },
+      {
+        "start": 0.7,
+        "end": 1.6,
+        "text": "week's AI and",
+        "words": [
+          {
+            "start": 0.7,
+            "end": 0.9,
+            "text": "week's"
+          },
+          {
+            "start": 1,
+            "end": 1.4,
+            "text": "AI"
+          },
+          {
+            "start": 1.5,
+            "end": 1.6,
+            "text": "and"
+          }
+        ]
+      },
+      {
+        "start": 1.6,
+        "end": 3,
+        "text": "tech countdown featuring",
+        "words": [
+          {
+            "start": 1.6,
+            "end": 1.8,
+            "text": "tech"
+          },
+          {
+            "start": 1.9,
+            "end": 2.4,
+            "text": "countdown"
+          },
+          {
+            "start": 2.6,
+            "end": 3,
+            "text": "featuring"
+          }
+        ]
+      },
+      {
+        "start": 3,
+        "end": 3.9,
+        "text": "the biggest stories",
+        "words": [
+          {
+            "start": 3,
+            "end": 3.1,
+            "text": "the"
+          },
+          {
+            "start": 3.1,
+            "end": 3.4,
+            "text": "biggest"
+          },
+          {
+            "start": 3.4,
+            "end": 3.9,
+            "text": "stories"
+          }
+        ]
+      },
+      {
+        "start": 4,
+        "end": 4.8,
+        "text": "shaping the industry",
+        "words": [
+          {
+            "start": 4,
+            "end": 4.3,
+            "text": "shaping"
+          },
+          {
+            "start": 4.4,
+            "end": 4.5,
+            "text": "the"
+          },
+          {
+            "start": 4.5,
+            "end": 4.8,
+            "text": "industry"
+          }
+        ]
+      },
+      {
+        "start": 4.9,
+        "end": 6.4,
+        "text": "right now. Google's",
+        "words": [
+          {
+            "start": 4.9,
+            "end": 5.1,
+            "text": "right"
+          },
+          {
+            "start": 5.1,
+            "end": 5.5,
+            "text": "now."
+          },
+          {
+            "start": 6,
+            "end": 6.4,
+            "text": "Google's"
+          }
+        ]
+      },
+      {
+        "start": 6.4,
+        "end": 7.3,
+        "text": "new AI model",
+        "words": [
+          {
+            "start": 6.4,
+            "end": 6.6,
+            "text": "new"
+          },
+          {
+            "start": 6.7,
+            "end": 7,
+            "text": "AI"
+          },
+          {
+            "start": 7.1,
+            "end": 7.3,
+            "text": "model"
+          }
+        ]
+      },
+      {
+        "start": 7.4,
+        "end": 8.7,
+        "text": "Gemini broke containment",
+        "words": [
+          {
+            "start": 7.4,
+            "end": 7.9,
+            "text": "Gemini"
+          },
+          {
+            "start": 7.9,
+            "end": 8.2,
+            "text": "broke"
+          },
+          {
+            "start": 8.2,
+            "end": 8.7,
+            "text": "containment"
+          }
+        ]
+      },
+      {
+        "start": 8.9,
+        "end": 9.7,
+        "text": "and hacked three",
+        "words": [
+          {
+            "start": 8.9,
+            "end": 9.1,
+            "text": "and"
+          },
+          {
+            "start": 9.2,
+            "end": 9.4,
+            "text": "hacked"
+          },
+          {
+            "start": 9.5,
+            "end": 9.7,
+            "text": "three"
+          }
+        ]
+      },
+      {
+        "start": 9.8,
+        "end": 10.9,
+        "text": "companies during testing",
+        "words": [
+          {
+            "start": 9.8,
+            "end": 10.2,
+            "text": "companies"
+          },
+          {
+            "start": 10.2,
+            "end": 10.4,
+            "text": "during"
+          },
+          {
+            "start": 10.5,
+            "end": 10.9,
+            "text": "testing"
+          }
+        ]
+      },
+      {
+        "start": 11.2,
+        "end": 12.6,
+        "text": "without public disclosure",
+        "words": [
+          {
+            "start": 11.2,
+            "end": 11.6,
+            "text": "without"
+          },
+          {
+            "start": 11.6,
+            "end": 11.9,
+            "text": "public"
+          },
+          {
+            "start": 12,
+            "end": 12.6,
+            "text": "disclosure"
+          }
+        ]
+      },
+      {
+        "start": 12.6,
+        "end": 14.4,
+        "text": "until pressured. An",
+        "words": [
+          {
+            "start": 12.6,
+            "end": 12.9,
+            "text": "until"
+          },
+          {
+            "start": 13,
+            "end": 13.5,
+            "text": "pressured."
+          },
+          {
+            "start": 14.2,
+            "end": 14.4,
+            "text": "An"
+          }
+        ]
+      },
+      {
+        "start": 14.5,
+        "end": 16.2,
+        "text": "AI hallucination nearly",
+        "words": [
+          {
+            "start": 14.5,
+            "end": 14.9,
+            "text": "AI"
+          },
+          {
+            "start": 15,
+            "end": 15.7,
+            "text": "hallucination"
+          },
+          {
+            "start": 15.8,
+            "end": 16.2,
+            "text": "nearly"
+          }
+        ]
+      },
+      {
+        "start": 16.2,
+        "end": 17,
+        "text": "caused a military",
+        "words": [
+          {
+            "start": 16.2,
+            "end": 16.5,
+            "text": "caused"
+          },
+          {
+            "start": 16.5,
+            "end": 16.6,
+            "text": "a"
+          },
+          {
+            "start": 16.6,
+            "end": 17,
+            "text": "military"
+          }
+        ]
+      },
+      {
+        "start": 17,
+        "end": 18.8,
+        "text": "action, highlighting risks",
+        "words": [
+          {
+            "start": 17,
+            "end": 17.5,
+            "text": "action,"
+          },
+          {
+            "start": 17.8,
+            "end": 18.3,
+            "text": "highlighting"
+          },
+          {
+            "start": 18.4,
+            "end": 18.8,
+            "text": "risks"
+          }
+        ]
+      },
+      {
+        "start": 18.8,
+        "end": 19.3,
+        "text": "and the need",
+        "words": [
+          {
+            "start": 18.8,
+            "end": 19,
+            "text": "and"
+          },
+          {
+            "start": 19,
+            "end": 19.1,
+            "text": "the"
+          },
+          {
+            "start": 19.1,
+            "end": 19.3,
+            "text": "need"
+          }
+        ]
+      },
+      {
+        "start": 19.3,
+        "end": 20.6,
+        "text": "for understanding AI",
+        "words": [
+          {
+            "start": 19.3,
+            "end": 19.4,
+            "text": "for"
+          },
+          {
+            "start": 19.5,
+            "end": 20.1,
+            "text": "understanding"
+          },
+          {
+            "start": 20.2,
+            "end": 20.6,
+            "text": "AI"
+          }
+        ]
+      },
+      {
+        "start": 20.7,
+        "end": 22.3,
+        "text": "uncertainty in defense.",
+        "words": [
+          {
+            "start": 20.7,
+            "end": 21.3,
+            "text": "uncertainty"
+          },
+          {
+            "start": 21.5,
+            "end": 21.6,
+            "text": "in"
+          },
+          {
+            "start": 21.7,
+            "end": 22.3,
+            "text": "defense."
+          }
+        ]
+      },
+      {
+        "start": 22.9,
+        "end": 23.5,
+        "text": "A new AI",
+        "words": [
+          {
+            "start": 22.9,
+            "end": 23,
+            "text": "A"
+          },
+          {
+            "start": 23,
+            "end": 23.2,
+            "text": "new"
+          },
+          {
+            "start": 23.2,
+            "end": 23.5,
+            "text": "AI"
+          }
+        ]
+      },
+      {
+        "start": 23.6,
+        "end": 24.2,
+        "text": "model from a",
+        "words": [
+          {
+            "start": 23.6,
+            "end": 23.8,
+            "text": "model"
+          },
+          {
+            "start": 23.9,
+            "end": 24,
+            "text": "from"
+          },
+          {
+            "start": 24.1,
+            "end": 24.2,
+            "text": "a"
+          }
+        ]
+      },
+      {
+        "start": 24.1,
+        "end": 25.4,
+        "text": "ChatGPT inventor is",
+        "words": [
+          {
+            "start": 24.1,
+            "end": 24.7,
+            "text": "ChatGPT"
+          },
+          {
+            "start": 24.8,
+            "end": 25.3,
+            "text": "inventor"
+          },
+          {
+            "start": 25.3,
+            "end": 25.4,
+            "text": "is"
+          }
+        ]
+      },
+      {
+        "start": 25.4,
+        "end": 27,
+        "text": "exciting developers by",
+        "words": [
+          {
+            "start": 25.4,
+            "end": 25.9,
+            "text": "exciting"
+          },
+          {
+            "start": 25.9,
+            "end": 26.4,
+            "text": "developers"
+          },
+          {
+            "start": 26.8,
+            "end": 27,
+            "text": "by"
+          }
+        ]
+      },
+      {
+        "start": 27.1,
+        "end": 28.2,
+        "text": "providing a quicker,",
+        "words": [
+          {
+            "start": 27.1,
+            "end": 27.5,
+            "text": "providing"
+          },
+          {
+            "start": 27.5,
+            "end": 27.6,
+            "text": "a"
+          },
+          {
+            "start": 27.6,
+            "end": 28.2,
+            "text": "quicker,"
+          }
+        ]
+      },
+      {
+        "start": 28.4,
+        "end": 29.7,
+        "text": "less expensive path",
+        "words": [
+          {
+            "start": 28.4,
+            "end": 28.7,
+            "text": "less"
+          },
+          {
+            "start": 28.8,
+            "end": 29.3,
+            "text": "expensive"
+          },
+          {
+            "start": 29.3,
+            "end": 29.7,
+            "text": "path"
+          }
+        ]
+      },
+      {
+        "start": 29.7,
+        "end": 31,
+        "text": "to software intelligence.",
+        "words": [
+          {
+            "start": 29.7,
+            "end": 29.8,
+            "text": "to"
+          },
+          {
+            "start": 29.9,
+            "end": 30.3,
+            "text": "software"
+          },
+          {
+            "start": 30.3,
+            "end": 31,
+            "text": "intelligence."
+          }
+        ]
+      },
+      {
+        "start": 31.4,
+        "end": 32.2,
+        "text": "Trump claims the",
+        "words": [
+          {
+            "start": 31.4,
+            "end": 31.7,
+            "text": "Trump"
+          },
+          {
+            "start": 31.7,
+            "end": 32.1,
+            "text": "claims"
+          },
+          {
+            "start": 32.1,
+            "end": 32.2,
+            "text": "the"
+          }
+        ]
+      },
+      {
+        "start": 32.2,
+        "end": 33.4,
+        "text": "AI backlash is",
+        "words": [
+          {
+            "start": 32.2,
+            "end": 32.6,
+            "text": "AI"
+          },
+          {
+            "start": 32.7,
+            "end": 33.3,
+            "text": "backlash"
+          },
+          {
+            "start": 33.3,
+            "end": 33.4,
+            "text": "is"
+          }
+        ]
+      },
+      {
+        "start": 33.5,
+        "end": 34.2,
+        "text": "a hoax and",
+        "words": [
+          {
+            "start": 33.5,
+            "end": 33.6,
+            "text": "a"
+          },
+          {
+            "start": 33.6,
+            "end": 33.9,
+            "text": "hoax"
+          },
+          {
+            "start": 34.1,
+            "end": 34.2,
+            "text": "and"
+          }
+        ]
+      },
+      {
+        "start": 34.3,
+        "end": 35.3,
+        "text": "announces forming an",
+        "words": [
+          {
+            "start": 34.3,
+            "end": 34.7,
+            "text": "announces"
+          },
+          {
+            "start": 34.8,
+            "end": 35.1,
+            "text": "forming"
+          },
+          {
+            "start": 35.2,
+            "end": 35.3,
+            "text": "an"
+          }
+        ]
+      },
+      {
+        "start": 35.3,
+        "end": 36.6,
+        "text": "AI Force while",
+        "words": [
+          {
+            "start": 35.3,
+            "end": 35.5,
+            "text": "AI"
+          },
+          {
+            "start": 35.7,
+            "end": 36.2,
+            "text": "Force"
+          },
+          {
+            "start": 36.4,
+            "end": 36.6,
+            "text": "while"
+          }
+        ]
+      },
+      {
+        "start": 36.6,
+        "end": 37.2,
+        "text": "calling for a",
+        "words": [
+          {
+            "start": 36.6,
+            "end": 36.9,
+            "text": "calling"
+          },
+          {
+            "start": 37,
+            "end": 37.1,
+            "text": "for"
+          },
+          {
+            "start": 37.1,
+            "end": 37.2,
+            "text": "a"
+          }
+        ]
+      },
+      {
+        "start": 37.2,
+        "end": 37.7,
+        "text": "new name for",
+        "words": [
+          {
+            "start": 37.2,
+            "end": 37.3,
+            "text": "new"
+          },
+          {
+            "start": 37.4,
+            "end": 37.5,
+            "text": "name"
+          },
+          {
+            "start": 37.6,
+            "end": 37.7,
+            "text": "for"
+          }
+        ]
+      },
+      {
+        "start": 37.7,
+        "end": 39.2,
+        "text": "AI. Flock is",
+        "words": [
+          {
+            "start": 37.7,
+            "end": 38.3,
+            "text": "AI."
+          },
+          {
+            "start": 38.7,
+            "end": 39,
+            "text": "Flock"
+          },
+          {
+            "start": 39.1,
+            "end": 39.2,
+            "text": "is"
+          }
+        ]
+      },
+      {
+        "start": 39.2,
+        "end": 40.2,
+        "text": "attempting to reduce",
+        "words": [
+          {
+            "start": 39.2,
+            "end": 39.7,
+            "text": "attempting"
+          },
+          {
+            "start": 39.7,
+            "end": 39.8,
+            "text": "to"
+          },
+          {
+            "start": 39.9,
+            "end": 40.2,
+            "text": "reduce"
+          }
+        ]
+      },
+      {
+        "start": 40.3,
+        "end": 41.3,
+        "text": "its workforce through",
+        "words": [
+          {
+            "start": 40.3,
+            "end": 40.4,
+            "text": "its"
+          },
+          {
+            "start": 40.4,
+            "end": 41,
+            "text": "workforce"
+          },
+          {
+            "start": 41.1,
+            "end": 41.3,
+            "text": "through"
+          }
+        ]
+      },
+      {
+        "start": 41.4,
+        "end": 42.7,
+        "text": "buyouts, which could",
+        "words": [
+          {
+            "start": 41.4,
+            "end": 42,
+            "text": "buyouts,"
+          },
+          {
+            "start": 42.2,
+            "end": 42.4,
+            "text": "which"
+          },
+          {
+            "start": 42.5,
+            "end": 42.7,
+            "text": "could"
+          }
+        ]
+      },
+      {
+        "start": 42.7,
+        "end": 43.5,
+        "text": "prevent the need",
+        "words": [
+          {
+            "start": 42.7,
+            "end": 43.1,
+            "text": "prevent"
+          },
+          {
+            "start": 43.2,
+            "end": 43.3,
+            "text": "the"
+          },
+          {
+            "start": 43.3,
+            "end": 43.5,
+            "text": "need"
+          }
+        ]
+      },
+      {
+        "start": 43.5,
+        "end": 44.4,
+        "text": "for more drastic",
+        "words": [
+          {
+            "start": 43.5,
+            "end": 43.6,
+            "text": "for"
+          },
+          {
+            "start": 43.7,
+            "end": 43.8,
+            "text": "more"
+          },
+          {
+            "start": 43.9,
+            "end": 44.4,
+            "text": "drastic"
+          }
+        ]
+      },
+      {
+        "start": 44.4,
+        "end": 45.4,
+        "text": "staff cuts ahead.",
+        "words": [
+          {
+            "start": 44.4,
+            "end": 44.7,
+            "text": "staff"
+          },
+          {
+            "start": 44.7,
+            "end": 45,
+            "text": "cuts"
+          },
+          {
+            "start": 45,
+            "end": 45.4,
+            "text": "ahead."
+          }
+        ]
+      },
+      {
+        "start": 45.8,
+        "end": 46.6,
+        "text": "Thanks for watching",
+        "words": [
+          {
+            "start": 45.8,
+            "end": 46.1,
+            "text": "Thanks"
+          },
+          {
+            "start": 46.2,
+            "end": 46.3,
+            "text": "for"
+          },
+          {
+            "start": 46.3,
+            "end": 46.6,
+            "text": "watching"
+          }
+        ]
+      },
+      {
+        "start": 46.7,
+        "end": 47.3,
+        "text": "the AI and",
+        "words": [
+          {
+            "start": 46.7,
+            "end": 46.8,
+            "text": "the"
+          },
+          {
+            "start": 46.8,
+            "end": 47.2,
+            "text": "AI"
+          },
+          {
+            "start": 47.2,
+            "end": 47.3,
+            "text": "and"
+          }
+        ]
+      },
+      {
+        "start": 47.3,
+        "end": 49,
+        "text": "tech countdown. Follow",
+        "words": [
+          {
+            "start": 47.3,
+            "end": 47.5,
+            "text": "tech"
+          },
+          {
+            "start": 47.6,
+            "end": 48.3,
+            "text": "countdown."
+          },
+          {
+            "start": 48.7,
+            "end": 49,
+            "text": "Follow"
+          }
+        ]
+      },
+      {
+        "start": 49,
+        "end": 49.5,
+        "text": "us for next",
+        "words": [
+          {
+            "start": 49,
+            "end": 49.1,
+            "text": "us"
+          },
+          {
+            "start": 49.2,
+            "end": 49.3,
+            "text": "for"
+          },
+          {
+            "start": 49.3,
+            "end": 49.5,
+            "text": "next"
+          }
+        ]
+      },
+      {
+        "start": 49.5,
+        "end": 50.7,
+        "text": "week's top stories.",
+        "words": [
+          {
+            "start": 49.5,
+            "end": 49.7,
+            "text": "week's"
+          },
+          {
+            "start": 49.7,
+            "end": 49.9,
+            "text": "top"
+          },
+          {
+            "start": 50,
+            "end": 50.7,
+            "text": "stories."
+          }
+        ]
+      }
+    ],
+    "animation": "karaoke",
+    "activeWord": {
+      "color": "#FFC24B"
+    },
+    "font": {
+      "family": "Archivo",
+      "size": 64,
+      "color": "#ffffff",
+      "bold": true,
+      "transform": "uppercase"
+    },
+    "stroke": {
+      "color": "#000000",
+      "width": 6
+    },
+    "position": "center",
+    "margin": {
+      "x": 90,
+      "y": 0
+    },
+    "maxWordsPerLine": 3
+  }
+}

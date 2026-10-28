@@ -39,6 +39,9 @@ Local checks and tests do not spend render credits. Preview options, live API ca
 
 | Workflow | Use case |
 | --- | --- |
+| [Blog post video summaries](workflows/blog-to-video/) | Turn an RSS article into a narrated vertical summary for review and sharing. |
+| [Weekly niche-news roundups](workflows/weekly-news-roundup/) | Curate RSS headlines into a narrated countdown video. |
+| [Shopify product promos](workflows/shopify-product-promo/) | Turn a product record and photos into a vertical promo for manual review and delivery. |
 | [Daily motivational quote videos](workflows/daily-quote-reels/) | Create branded vertical videos from a queue of quotes. |
 | [Shopify catalog videos](workflows/shopify-catalog-videos/) | Render eligible product videos in a batch, review them, and optionally attach them to Shopify products. |
 | [Shopify product video ads](workflows/shopify-product-ad-variants/) | Turn product photos and descriptions into creative variants, then review the rendered batch. |

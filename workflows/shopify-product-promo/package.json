@@ -1,0 +1,20 @@
+{
+  "name": "shopify-product-promo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Create one product promo from a local product row or the newest Shopify product.",
+  "engines": { "node": ">=20.12" },
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/Zvid-io/workflow-examples.git", "directory": "workflows/shopify-product-promo" },
+  "bugs": { "url": "https://zvid.io/contact" },
+  "scripts": {
+    "start": "node src/index.js",
+    "check": "node src/check.js",
+    "test": "node --test tests/*.test.js",
+    "offline": "node src/index.js --input data/product.json --offline --out out/sample",
+    "dry-run": "node src/index.js --input data/product.json --dry-run --out out/sample",
+    "sample": "node src/index.js --input data/product.json --out out/sample"
+  },
+  "dependencies": { "@zvid/sdk": "0.2.0" }
+}

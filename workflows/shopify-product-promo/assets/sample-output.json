@@ -1,0 +1,46 @@
+{
+  "renderedAt": "2026-10-28",
+  "renderer": "local @zvid-io/zvid 0.2.11 CLI",
+  "paidApiRender": false,
+  "creditsConsumed": 0,
+  "input": "data/product.json",
+  "project": "assets/sample-project.json",
+  "width": 1080,
+  "height": 1920,
+  "durationSeconds": 14.3,
+  "frameRate": 30,
+  "audio": "silent",
+  "validation": {
+    "checkedAt": "2026-10-28",
+    "remote": true,
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "creditsQuoted": 15,
+    "scope": "Free live API validation of this exact project; local rendering consumed no API credits"
+  },
+  "reproduction": {
+    "offline": "npm run offline",
+    "validation": "npm run dry-run",
+    "paidApiRender": "npm run sample -- --max-credits 20"
+  },
+  "canonicalWorkflow": "zvid-integrations/n8n/workflows/zvid-shopify-product-promo.json",
+  "canonicalWorkflowSha256": "36d1ac35a66a0868ede4cf99e68f13c772414e7f62a1af6e24f10b64e59d80f4",
+  "videoSha256": "ab4081fb3ecbaa8b79b67f38f5075862ed5317e1ac9df30def4e2f815ba1166f",
+  "workflowSha256": "36d1ac35a66a0868ede4cf99e68f13c772414e7f62a1af6e24f10b64e59d80f4",
+  "provenance": "Rebuilt from canonical mapper/builder and the retained fictional tutorial row. Product photo mirrored unchanged. This exact project generated the included local silent sample. Historical n8n screenshots show the same product design with optional music; no claim of byte-identical historical output.",
+  "hashes": {
+    "data/product.json": "9d86a37955ff6d71ac039b5ba07ec2a61d7ceb7a8ef223493443b9aba00b8caa",
+    "assets/sample-project.json": "5e132a4b1c04a5e31ad786f911ee500b93c33c2d3ead2770269e0a2451163184",
+    "assets/sample-output.mp4": "ab4081fb3ecbaa8b79b67f38f5075862ed5317e1ac9df30def4e2f815ba1166f",
+    "assets/sample-output.jpg": "f8e33c1f2dc03ca5b2877859343ab762c7bb03d174ce6c7c1f569e9126d69856",
+    "assets/workflow.png": "bb5278b592f4e65f755e88194611db020aa0d383c11ad5d7413c293825ac2198",
+    "n8n/workflow.json": "36d1ac35a66a0868ede4cf99e68f13c772414e7f62a1af6e24f10b64e59d80f4"
+  },
+  "publicAssets": {
+    "video": "https://cdn.zvid.io/blog/shopify-product-promo/ab4081fb3ecb/sample-output.mp4",
+    "poster": "https://cdn.zvid.io/blog/shopify-product-promo/f8e33c1f2dc0/sample-output.jpg",
+    "productPhoto": "https://cdn.zvid.io/blog/shopify-product-promo/8325081194e6/product-photo.jpg",
+    "workflow": "https://cdn.zvid.io/blog/shopify-product-promo/bb5278b592f4/workflow.png"
+  }
+}
