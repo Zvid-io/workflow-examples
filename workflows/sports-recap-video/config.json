@@ -1,0 +1,10 @@
+{
+  "sportsDbKey": "123",
+  "leagueId": "9001",
+  "musicUrl": "",
+  "maxMusicBytes": 5242880,
+  "dryRun": false,
+  "pollSeconds": 10,
+  "timeoutMinutes": 20,
+  "maxCreditsPerVideo": 35
+}

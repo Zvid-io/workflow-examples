@@ -58,6 +58,9 @@ Local checks and tests do not spend render credits. Preview options, live API ca
 | [Podcast audiogram clips](workflows/podcast-audiogram-clips/) | Turn an RSS audio sample into captioned portrait clips. |
 | [Long-video Shorts](workflows/video-to-shorts/) | Select captioned vertical highlights from a directly downloadable video. |
 | [Monthly testimonial compilations](workflows/testimonial-compilation/) | Compile approved quote rows into one square video. |
+| [Sports match recap videos](workflows/sports-recap-video/) | Turn reviewed final match results into approved recaps and correction editions. |
+| [Birthday and anniversary greetings](workflows/birthday-greetings/) | Create consented annual greetings with private review and duplicate-run tracking. |
+| [Chat-to-video agent](workflows/chat-video-agent/) | Prepare a video draft from a brief, review a signed quote and explicitly approve rendering. |
 
 Open a workflow's folder for its tutorial, screenshots, sample output, and complete setup instructions.
 

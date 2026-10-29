@@ -1,0 +1,18 @@
+import { readFileSync } from 'node:fs';
+import { spawnSync } from 'node:child_process';
+import assert from 'node:assert/strict';
+const workflow = JSON.parse(readFileSync('n8n/workflow.json', 'utf8'));
+const cfg = JSON.parse(workflow.nodes.find(n => n.name === 'Config').parameters.jsonOutput);
+assert.equal(cfg.maxRenderCredits, 25);
+assert.equal(cfg.allowSameMessageApproval, false);
+assert.deepEqual(cfg.allowedChatIds, []);
+assert.equal(cfg.manualPreviewJobId, '');
+assert(workflow.nodes.some(n => n.type === '@zvid/n8n-nodes-zvid.zvid'));
+assert(workflow.nodes.some(n => n.type === '@n8n/n8n-nodes-langchain.mcpClientTool'));
+assert(!JSON.stringify(workflow).includes('zvidAgentTools'));
+const project = JSON.parse(readFileSync('data/project.json', 'utf8'));
+const seconds = project.scenes.reduce((total, scene, index) => total + scene.duration - (index < project.scenes.length - 1 ? scene.transitionDuration || 0 : 0), 0);
+assert.equal(Math.round(seconds * 100) / 100, 12);
+assert.equal(project.resolution, 'instagram-reel');
+for (const file of ['src/index.js', 'src/agent.js']) assert.equal(spawnSync(process.execPath, ['--check', file]).status, 0);
+console.log('Synchronized n8n defaults, sample duration and JavaScript syntax verified. No API calls or paid operations.');

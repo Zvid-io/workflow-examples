@@ -1,0 +1,17 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {review, project} from '../src/workflow.js';
+import {run} from '../src/run.js';
+const read = p => JSON.parse(readFileSync(new URL(p, import.meta.url), 'utf8'));
+const config = read('../config.json'), fixture = read('../data/match.json');
+const copy = () => structuredClone(fixture);
+const client = () => ({authoring: {validate: async () => ({valid: true, creditsRequired: 12})}, renders: {create: async () => ({jobId: 'test-job'})}, jobs: {wait: async () => ({state: 'completed', result: {url: 'https://cdn.zvid.io/test.mp4'}})}});
+test('an unapproved final produces a review snapshot but no video project', () => {const input = copy(); input.request.Approval = ''; const p = review(config, input); assert.equal(p.ready, false); assert.equal(p.status, 'awaiting_approval'); assert.throws(() => project(config, p), /No approved/);});
+test('a changed score invalidates the previous exact approval', () => {const input = copy(); input.response.body.events[0].intAwayScore = '1'; assert.equal(review(config, input).ready, false);});
+test('nonfinal matches stop before rendering', () => {const input = copy(); input.response.body.events[0].strStatus = '1H'; assert.throws(() => review(config, input), /not a verified final/);});
+test('correction requires a new edition and retains previous result', () => {const input = copy(), first = review(config, input); input.history = [{RenderKey: first.renderKey, Status: 'completed', PlanJson: JSON.stringify({...first, snapshotVersion: 1}), VideoUrl: 'https://cdn.zvid.io/previous.mp4'}]; input.response.body.events[0].intHomeScore = '4'; const pending = review(config, input); assert.equal(pending.edition, 2); assert.equal(pending.correction, true); assert.equal(pending.ready, false); input.request.ApprovedSnapshot = pending.reviewSnapshot; const p = review(config, input); assert.equal(p.ready, true); assert.equal(project(config, p).scenes.length, 3);});
+test('credit ceiling stops a paid submission', async () => {const c = client(); c.renders.create = () => {throw Error('must not submit');}; await assert.rejects(run({config, input: copy(), client: c, render: true, maxCredits: 11}), /exceeds/);});
+test('dry run validates but never submits', async () => {const c = client(); c.renders.create = () => {throw Error('must not submit');}; assert.equal((await run({config, input: copy(), client: c})).state, 'validated');});
+test('saved ID survives an interrupted wait and resume never submits', async () => {const c = client(), saved = []; c.jobs.wait = async () => {throw Error('timeout');}; await assert.rejects(run({config, input: copy(), client: c, render: true, maxCredits: 35, save: s => saved.push(structuredClone(s))}), /timeout/); assert.equal(saved.at(-1).jobId, 'test-job'); const resume = client(); resume.renders.create = () => {throw Error('must not submit');}; const result = await run({config, client: resume, prior: saved.at(-1)}); assert.equal(result.state, 'completed'); assert.equal(result.completedHistoryRow.Status, 'completed');});
+test('uncertain submission keeps pending intent', async () => {const c = client(), saved = []; c.renders.create = async () => {throw Error('connection lost');}; await assert.rejects(run({config, input: copy(), client: c, render: true, maxCredits: 35, save: s => saved.push(structuredClone(s))}), /connection lost/); assert.equal(saved.at(-1).state, 'submission-pending');});

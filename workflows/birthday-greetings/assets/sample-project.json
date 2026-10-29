@@ -1,0 +1,245 @@
+{
+  "name": "happy-birthday-ava",
+  "resolution": "instagram-reel",
+  "frameRate": 30,
+  "backgroundColor": "#1A0C11",
+  "outputFormat": "mp4",
+  "scenes": [
+    {
+      "id": "reveal",
+      "duration": 5.2,
+      "backgroundColor": "#1A0C11",
+      "transition": "fade",
+      "transitionId": "message",
+      "transitionDuration": 0.55,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 5.2,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='ga' cx='0.5' cy='0.24' r='0.75'><stop offset='0' stop-color='#FF6F91' stop-opacity='0.34'/><stop offset='1' stop-color='#FF6F91' stop-opacity='0'/></radialGradient><radialGradient id='gb' cx='0.15' cy='0.92' r='0.7'><stop offset='0' stop-color='#FFB86B' stop-opacity='0.2'/><stop offset='1' stop-color='#FFB86B' stop-opacity='0'/></radialGradient><linearGradient id='gd' x1='0' y1='0' x2='0' y2='1'><stop offset='0.55' stop-color='#000000' stop-opacity='0'/><stop offset='1' stop-color='#000000' stop-opacity='0.4'/></linearGradient></defs><rect width='1080' height='1920' fill='#1A0C11'/><rect width='1080' height='1920' fill='url(#ga)'/><rect width='1080' height='1920' fill='url(#gb)'/><rect width='1080' height='1920' fill='url(#gd)'/><circle cx='150' cy='320' r='5' fill='#FFB86B' fill-opacity='0.35'/><circle cx='930' cy='420' r='4' fill='#FFB86B' fill-opacity='0.3'/><circle cx='210' cy='1520' r='4' fill='#FFB86B' fill-opacity='0.25'/><circle cx='880' cy='1460' r='6' fill='#FFB86B' fill-opacity='0.3'/><circle cx='540' cy='210' r='3' fill='#FFB86B' fill-opacity='0.3'/><circle cx='120' cy='980' r='3' fill='#FFB86B' fill-opacity='0.22'/><circle cx='960' cy='1040' r='3' fill='#FFB86B' fill-opacity='0.22'/><rect x='40' y='40' width='1000' height='1840' rx='46' fill='none' stroke='#FFFFFF' stroke-opacity='0.08' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "html": "<div class='fx'><i></i><i></i><i></i><i></i><i></i><i></i></div>",
+          "x": 540,
+          "y": 960,
+          "anchor": "center-center",
+          "track": 1,
+          "opacity": 0.55,
+          "enterBegin": 0,
+          "exitEnd": 5.2,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FBEDE9"
+          },
+          "customCode": {
+            "animationDuration": 5.2,
+            "css": ".fx{position:relative;width:1080px;height:1920px;overflow:hidden}.fx i{position:absolute;bottom:-220px;display:block;border-radius:50%;animation:rise 9s linear infinite}.fx i:nth-child(1){left:6%;width:150px;height:150px;background:radial-gradient(circle,rgba(255,111,145,0.4) 0%,rgba(255,111,145,0) 70%);animation-delay:-1.5s}.fx i:nth-child(2){left:78%;width:110px;height:110px;background:radial-gradient(circle,rgba(255,184,107,0.38) 0%,rgba(255,184,107,0) 70%);animation-delay:-4s;animation-duration:11s}.fx i:nth-child(3){left:30%;width:80px;height:80px;background:radial-gradient(circle,rgba(255,184,107,0.32) 0%,rgba(255,184,107,0) 70%);animation-delay:-7s;animation-duration:8s}.fx i:nth-child(4){left:58%;width:180px;height:180px;background:radial-gradient(circle,rgba(255,111,145,0.3) 0%,rgba(255,111,145,0) 70%);animation-delay:-6s;animation-duration:13s}.fx i:nth-child(5){left:14%;width:90px;height:90px;background:radial-gradient(circle,rgba(255,111,145,0.34) 0%,rgba(255,111,145,0) 70%);animation-delay:-3s;animation-duration:10s}.fx i:nth-child(6){left:88%;width:70px;height:70px;background:radial-gradient(circle,rgba(255,184,107,0.3) 0%,rgba(255,184,107,0) 70%);animation-delay:-8s;animation-duration:9s}@keyframes rise{0%{transform:translateY(0);opacity:0}12%{opacity:.75}75%{opacity:.4}100%{transform:translateY(-2100px);opacity:0}}"
+          }
+        },
+        {
+          "type": "SVG",
+          "x": 390,
+          "y": 380,
+          "width": 300,
+          "height": 280,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.15,
+          "enterEnd": 0.6,
+          "enterAnimation": "fade",
+          "exitEnd": 5.2,
+          "svg": "<svg width='300' height='280' viewBox='0 0 300 280' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='hh' cx='0.5' cy='0.5' r='0.5'><stop offset='0.6' stop-color='#FF6F91' stop-opacity='0'/><stop offset='1' stop-color='#FF6F91' stop-opacity='0.28'/></radialGradient><linearGradient id='ht' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#FFB86B'/><stop offset='1' stop-color='#FF6F91'/></linearGradient></defs><circle cx='150' cy='140' r='134' fill='url(#hh)'/><path d='M150 226 C50 160 60 74 122 74 C146 74 150 104 150 104 C150 104 154 74 178 74 C240 74 250 160 150 226 Z' fill='url(#ht)'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 740,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 0.3,
+          "enterEnd": 0.75,
+          "enterAnimation": "fade",
+          "exitEnd": 5.2,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFB86B"
+          },
+          "html": "<div style='display:inline-block; background:rgba(255,184,107,0.1); border:1.5px solid rgba(255,184,107,0.55); color:#FFB86B; border-radius:999px; padding:14px 40px; font-size:26px; font-weight:800; letter-spacing:6px;'>HAPPY BIRTHDAY</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 70,
+          "y": 860,
+          "width": 940,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 0.55,
+          "enterEnd": 1.05,
+          "enterAnimation": "circleopen",
+          "exitEnd": 5.2,
+          "style": {
+            "fontFamily": "Playfair Display",
+            "color": "#FBEDE9"
+          },
+          "html": "<div style='text-align:center; color:#FBEDE9; font-size:132px; line-height:1.12; font-weight:700; letter-spacing:-1px;'>Ava</div>"
+        },
+        {
+          "type": "SVG",
+          "x": 490,
+          "y": 1088,
+          "width": 100,
+          "height": 20,
+          "anchor": "top-left",
+          "track": 5,
+          "enterBegin": 0.95,
+          "enterEnd": 1.35,
+          "enterAnimation": "fade",
+          "exitEnd": 5.2,
+          "svg": "<svg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'><line x1='0' y1='10' x2='38' y2='10' stroke='#FF6F91' stroke-opacity='0.6' stroke-width='1.4'/><line x1='62' y1='10' x2='100' y2='10' stroke='#FF6F91' stroke-opacity='0.6' stroke-width='1.4'/><circle cx='50' cy='10' r='4' fill='#FF6F91'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1700,
+          "anchor": "top-center",
+          "track": 7,
+          "enterBegin": 1.3,
+          "enterEnd": 1.7,
+          "enterAnimation": "fade",
+          "exitEnd": 5.2,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#C29A97"
+          },
+          "html": "<div style='text-align:center; color:rgba(194,154,151,0.7); font-size:26px; font-weight:700; letter-spacing:5px;'>NORTHWIND</div>"
+        }
+      ]
+    },
+    {
+      "id": "message",
+      "duration": 5.6,
+      "backgroundColor": "#1A0C11",
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 5.6,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='ga' cx='0.5' cy='0.4' r='0.75'><stop offset='0' stop-color='#FF6F91' stop-opacity='0.34'/><stop offset='1' stop-color='#FF6F91' stop-opacity='0'/></radialGradient><radialGradient id='gb' cx='0.15' cy='0.92' r='0.7'><stop offset='0' stop-color='#FFB86B' stop-opacity='0.2'/><stop offset='1' stop-color='#FFB86B' stop-opacity='0'/></radialGradient><linearGradient id='gd' x1='0' y1='0' x2='0' y2='1'><stop offset='0.55' stop-color='#000000' stop-opacity='0'/><stop offset='1' stop-color='#000000' stop-opacity='0.4'/></linearGradient></defs><rect width='1080' height='1920' fill='#1A0C11'/><rect width='1080' height='1920' fill='url(#ga)'/><rect width='1080' height='1920' fill='url(#gb)'/><rect width='1080' height='1920' fill='url(#gd)'/><circle cx='150' cy='320' r='5' fill='#FFB86B' fill-opacity='0.35'/><circle cx='930' cy='420' r='4' fill='#FFB86B' fill-opacity='0.3'/><circle cx='210' cy='1520' r='4' fill='#FFB86B' fill-opacity='0.25'/><circle cx='880' cy='1460' r='6' fill='#FFB86B' fill-opacity='0.3'/><circle cx='540' cy='210' r='3' fill='#FFB86B' fill-opacity='0.3'/><circle cx='120' cy='980' r='3' fill='#FFB86B' fill-opacity='0.22'/><circle cx='960' cy='1040' r='3' fill='#FFB86B' fill-opacity='0.22'/><rect x='40' y='40' width='1000' height='1840' rx='46' fill='none' stroke='#FFFFFF' stroke-opacity='0.08' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "html": "<div class='fx'><i></i><i></i><i></i><i></i><i></i><i></i></div>",
+          "x": 540,
+          "y": 960,
+          "anchor": "center-center",
+          "track": 1,
+          "opacity": 0.55,
+          "enterBegin": 0,
+          "exitEnd": 5.6,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FBEDE9"
+          },
+          "customCode": {
+            "animationDuration": 5.6,
+            "css": ".fx{position:relative;width:1080px;height:1920px;overflow:hidden}.fx i{position:absolute;bottom:-220px;display:block;border-radius:50%;animation:rise 9s linear infinite}.fx i:nth-child(1){left:6%;width:150px;height:150px;background:radial-gradient(circle,rgba(255,111,145,0.4) 0%,rgba(255,111,145,0) 70%);animation-delay:-1.5s}.fx i:nth-child(2){left:78%;width:110px;height:110px;background:radial-gradient(circle,rgba(255,184,107,0.38) 0%,rgba(255,184,107,0) 70%);animation-delay:-4s;animation-duration:11s}.fx i:nth-child(3){left:30%;width:80px;height:80px;background:radial-gradient(circle,rgba(255,184,107,0.32) 0%,rgba(255,184,107,0) 70%);animation-delay:-7s;animation-duration:8s}.fx i:nth-child(4){left:58%;width:180px;height:180px;background:radial-gradient(circle,rgba(255,111,145,0.3) 0%,rgba(255,111,145,0) 70%);animation-delay:-6s;animation-duration:13s}.fx i:nth-child(5){left:14%;width:90px;height:90px;background:radial-gradient(circle,rgba(255,111,145,0.34) 0%,rgba(255,111,145,0) 70%);animation-delay:-3s;animation-duration:10s}.fx i:nth-child(6){left:88%;width:70px;height:70px;background:radial-gradient(circle,rgba(255,184,107,0.3) 0%,rgba(255,184,107,0) 70%);animation-delay:-8s;animation-duration:9s}@keyframes rise{0%{transform:translateY(0);opacity:0}12%{opacity:.75}75%{opacity:.4}100%{transform:translateY(-2100px);opacity:0}}"
+          }
+        },
+        {
+          "type": "SVG",
+          "x": 470,
+          "y": 517,
+          "width": 140,
+          "height": 130,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.15,
+          "enterEnd": 0.55,
+          "enterAnimation": "fade",
+          "exitEnd": 5.6,
+          "svg": "<svg width='140' height='130' viewBox='0 0 240 220' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='ht' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#FFB86B'/><stop offset='1' stop-color='#FF6F91'/></linearGradient></defs><path d='M120 196 C20 130 30 44 92 44 C116 44 120 74 120 74 C120 74 124 44 148 44 C210 44 220 130 120 196 Z' fill='url(#ht)'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 140,
+          "y": 777,
+          "width": 800,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.35,
+          "enterEnd": 0.85,
+          "enterAnimation": "smoothup",
+          "exitEnd": 5.6,
+          "text": "Wishing you a wonderful year ahead, filled with good moments and new adventures.",
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "fontSize": "42px",
+            "fontWeight": "400",
+            "lineHeight": "1.55",
+            "color": "#C29A97",
+            "textAlign": "center"
+          }
+        },
+        {
+          "type": "SVG",
+          "x": 490,
+          "y": 1063,
+          "width": 100,
+          "height": 20,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 0.75,
+          "enterEnd": 1.15,
+          "enterAnimation": "fade",
+          "exitEnd": 5.6,
+          "svg": "<svg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'><line x1='0' y1='10' x2='38' y2='10' stroke='#FF6F91' stroke-opacity='0.6' stroke-width='1.4'/><line x1='62' y1='10' x2='100' y2='10' stroke='#FF6F91' stroke-opacity='0.6' stroke-width='1.4'/><circle cx='50' cy='10' r='4' fill='#FF6F91'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1163,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 5,
+          "enterBegin": 0.95,
+          "enterEnd": 1.4,
+          "enterAnimation": "fade",
+          "exitEnd": 5.6,
+          "text": "With warm wishes, the Northwind team",
+          "style": {
+            "fontFamily": "Playfair Display",
+            "fontSize": "46px",
+            "fontWeight": "500",
+            "fontStyle": "italic",
+            "color": "#FBEDE9",
+            "textAlign": "center"
+          }
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1700,
+          "anchor": "top-center",
+          "track": 6,
+          "enterBegin": 0.2,
+          "enterEnd": 0.6,
+          "enterAnimation": "fade",
+          "exitEnd": 5.6,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#C29A97"
+          },
+          "html": "<div style='text-align:center; color:rgba(194,154,151,0.7); font-size:26px; font-weight:700; letter-spacing:5px;'>NORTHWIND</div>"
+        }
+      ]
+    }
+  ]
+}

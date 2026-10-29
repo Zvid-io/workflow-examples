@@ -1,0 +1,17 @@
+{
+  "name": "sports-recap-video",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Review one match result, approve its exact facts and render a sports report with Zvid.",
+  "license": "MIT",
+  "engines": { "node": ">=20.12" },
+  "scripts": {
+    "start": "node src/index.js",
+    "offline": "node src/index.js --offline --out out/offline",
+    "dry-run": "node src/index.js --dry-run",
+    "check": "node src/check.js",
+    "test": "node --test"
+  },
+  "dependencies": { "@zvid/sdk": "0.2.0" }
+}

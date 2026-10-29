@@ -1,0 +1,16 @@
+[
+  {
+    "CelebrationKey": "ava-birthday-demo",
+    "Name": "Ava",
+    "Type": "birthday",
+    "Date": "2000-10-29",
+    "Approval": "approved",
+    "GreetingConsent": true,
+    "DoNotContact": false,
+    "ShowAge": false,
+    "Message": "Wishing you a wonderful year ahead, filled with good moments and new adventures.",
+    "Email": "",
+    "EmailApproval": "",
+    "LastSentYear": ""
+  }
+]

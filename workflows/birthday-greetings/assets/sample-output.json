@@ -1,0 +1,21 @@
+{
+  "renderedAt": "2026-10-29",
+  "evidence": "Rendered locally with the existing Zvid engine from the exact sample project. Connected remote validation passed with no warnings; no paid API render was performed.",
+  "input": "data/celebrations.json",
+  "config": "config.json",
+  "project": "assets/sample-project.json",
+  "demonstrationDate": "2026-10-29",
+  "width": 1080,
+  "height": 1920,
+  "durationSeconds": 10.266667,
+  "designedDurationSeconds": 10.25,
+  "audio": false,
+  "creditsQuoted": 11,
+  "quoteSource": "Zvid connected remote validation on 2026-10-29",
+  "creditsSpent": 0,
+  "reproductionCommand": "npm start -- --date 2026-10-29 --max-credits 15",
+  "videoSha256": "39015c51a48f66399e4fdd042daf69fc45393b992a74e69b408258720937c8c1",
+  "posterSha256": "d4cfd00f72a195bbe0fdec169b74f815d508c11f30271ee58b01aab00622e5f2",
+  "projectSha256": "ea522675919aaa8b47955fd05df301416d947f32d8d024de02d2e7b4fed0483f",
+  "workflowSha256": "9c7322c54b36764b0aaa5731d17579dca288ce1b0d3a523a000ddf2a47aed01c"
+}
