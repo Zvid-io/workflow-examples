@@ -58,6 +58,9 @@ Local checks and tests do not spend render credits. Preview options, live API ca
 | [Podcast audiogram clips](workflows/podcast-audiogram-clips/) | Turn an RSS audio sample into captioned portrait clips. |
 | [Long-video Shorts](workflows/video-to-shorts/) | Select captioned vertical highlights from a directly downloadable video. |
 | [Monthly testimonial compilations](workflows/testimonial-compilation/) | Compile approved quote rows into one square video. |
+| [Three-round quiz Shorts](workflows/quiz-shorts/) | Turn approved easy, medium and hard questions into one quiz episode with an answer-and-source pack. |
+| [Weekly KPI report videos](workflows/kpi-report-video/) | Turn a checked reporting snapshot into a briefing video and action register, with optional Slack delivery in n8n. |
+| [Weather-based outdoor booking videos](workflows/daily-weather-video/) | Plan approved sessions around weather and reservations, then create a call-sheet video and tentative calendar proposals. |
 
 Open a workflow's folder for its tutorial, screenshots, sample output, and complete setup instructions.
 

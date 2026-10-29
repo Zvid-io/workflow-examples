@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Zvid//Outdoor Booking Proposals//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:weather-bookings-Lisbon%2520studio%2520call%2520sheet-2026-10-29-1-po
+ rtrait-1@zvid.io
+DTSTAMP:20261029T080000Z
+DTSTART:20261029T090000Z
+DTEND:20261029T100000Z
+SUMMARY:PROPOSED: Team portraits
+DESCRIPTION:Tentative proposal\; coordinator must confirm. Priority-first
+  scheduling\; not a global optimum. Forecast guidance is not an official
+  weather warning. Confirm proposals before inviting attendees.
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:weather-bookings-Lisbon%2520studio%2520call%2520sheet-2026-10-29-1-pr
+ oduct-1@zvid.io
+DTSTAMP:20261029T080000Z
+DTSTART:20261029T110000Z
+DTEND:20261029T120000Z
+SUMMARY:PROPOSED: Product shoot
+DESCRIPTION:Tentative proposal\; coordinator must confirm. Priority-first
+  scheduling\; not a global optimum. Forecast guidance is not an official
+  weather warning. Confirm proposals before inviting attendees.
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,205 @@
+{
+  "name": "weather-brief-2026-10-29-1",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "scenes": [
+    {
+      "id": "call-sheet",
+      "duration": 5,
+      "backgroundColor": "#102B36",
+      "visuals": [
+        {
+          "type": "TEXT",
+          "text": "Lisbon studio call sheet · 2026-10-29",
+          "x": 80,
+          "y": 240,
+          "width": 920,
+          "anchor": "top-left",
+          "style": {
+            "fontFamily": "Arial",
+            "fontSize": "58px",
+            "fontWeight": "600",
+            "color": "#FFFFFF"
+          }
+        },
+        {
+          "type": "TEXT",
+          "text": "2 of 3 outdoor bookings have a tentative slot.\nAll slots are proposals; confirm before booking.",
+          "x": 80,
+          "y": 520,
+          "width": 920,
+          "anchor": "top-left",
+          "style": {
+            "fontFamily": "Arial",
+            "fontSize": "46px",
+            "fontWeight": "600",
+            "color": "#FFFFFF"
+          }
+        },
+        {
+          "type": "TEXT",
+          "text": "Open-Meteo · Europe/Lisbon",
+          "x": 80,
+          "y": 1530,
+          "width": 920,
+          "anchor": "top-left",
+          "style": {
+            "fontFamily": "Arial",
+            "fontSize": "27px",
+            "fontWeight": "600",
+            "color": "#BCD6E4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "booking-0",
+      "duration": 6,
+      "backgroundColor": "#102B36",
+      "visuals": [
+        {
+          "type": "TEXT",
+          "text": "KEEP · Team portraits",
+          "x": 80,
+          "y": 240,
+          "width": 920,
+          "anchor": "top-left",
+          "style": {
+            "fontFamily": "Arial",
+            "fontSize": "58px",
+            "fontWeight": "600",
+            "color": "#FFFFFF"
+          }
+        },
+        {
+          "type": "TEXT",
+          "text": "09:00–10:00\nRain 10% · Wind 12 km/h",
+          "x": 80,
+          "y": 520,
+          "width": 920,
+          "anchor": "top-left",
+          "style": {
+            "fontFamily": "Arial",
+            "fontSize": "46px",
+            "fontWeight": "600",
+            "color": "#FFFFFF"
+          }
+        },
+        {
+          "type": "TEXT",
+          "text": "Booking portrait-1 · priority 9 · Europe/Lisbon",
+          "x": 80,
+          "y": 1530,
+          "width": 920,
+          "anchor": "top-left",
+          "style": {
+            "fontFamily": "Arial",
+            "fontSize": "27px",
+            "fontWeight": "600",
+            "color": "#BCD6E4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "booking-1",
+      "duration": 6,
+      "backgroundColor": "#102B36",
+      "visuals": [
+        {
+          "type": "TEXT",
+          "text": "RESCHEDULE · Product shoot",
+          "x": 80,
+          "y": 240,
+          "width": 920,
+          "anchor": "top-left",
+          "style": {
+            "fontFamily": "Arial",
+            "fontSize": "58px",
+            "fontWeight": "600",
+            "color": "#FFFFFF"
+          }
+        },
+        {
+          "type": "TEXT",
+          "text": "11:00–12:00\nRain 10% · Wind 12 km/h",
+          "x": 80,
+          "y": 520,
+          "width": 920,
+          "anchor": "top-left",
+          "style": {
+            "fontFamily": "Arial",
+            "fontSize": "46px",
+            "fontWeight": "600",
+            "color": "#FFFFFF"
+          }
+        },
+        {
+          "type": "TEXT",
+          "text": "Booking product-1 · priority 5 · Europe/Lisbon",
+          "x": 80,
+          "y": 1530,
+          "width": 920,
+          "anchor": "top-left",
+          "style": {
+            "fontFamily": "Arial",
+            "fontSize": "27px",
+            "fontWeight": "600",
+            "color": "#BCD6E4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "booking-2",
+      "duration": 6,
+      "backgroundColor": "#102B36",
+      "visuals": [
+        {
+          "type": "TEXT",
+          "text": "DEFER · Outdoor reel",
+          "x": 80,
+          "y": 240,
+          "width": 920,
+          "anchor": "top-left",
+          "style": {
+            "fontFamily": "Arial",
+            "fontSize": "58px",
+            "fontWeight": "600",
+            "color": "#FFFFFF"
+          }
+        },
+        {
+          "type": "TEXT",
+          "text": "weather: 1 blocked slots",
+          "x": 80,
+          "y": 520,
+          "width": 920,
+          "anchor": "top-left",
+          "style": {
+            "fontFamily": "Arial",
+            "fontSize": "46px",
+            "fontWeight": "600",
+            "color": "#FFFFFF"
+          }
+        },
+        {
+          "type": "TEXT",
+          "text": "Booking reel-1 · priority 2 · Europe/Lisbon",
+          "x": 80,
+          "y": 1530,
+          "width": 920,
+          "anchor": "top-left",
+          "style": {
+            "fontFamily": "Arial",
+            "fontSize": "27px",
+            "fontWeight": "600",
+            "color": "#BCD6E4"
+          }
+        }
+      ]
+    }
+  ],
+  "audios": []
+}

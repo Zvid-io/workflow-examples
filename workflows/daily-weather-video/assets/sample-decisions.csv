@@ -1,0 +1,4 @@
+"BookingId","Title","Priority","Decision","PreferredStart","Start","End","RainProbability","WindKmh","Reason"
+"portrait-1","Team portraits","9","keep","2026-10-29T09:00:00.000Z","2026-10-29T09:00:00.000Z","2026-10-29T10:00:00.000Z","10","12","Tentative proposal; coordinator must confirm."
+"product-1","Product shoot","5","reschedule","2026-10-29T10:00:00.000Z","2026-10-29T11:00:00.000Z","2026-10-29T12:00:00.000Z","10","12","Tentative proposal; coordinator must confirm."
+"reel-1","Outdoor reel","2","defer","2026-10-29T15:00:00.000Z","","","","","weather: 1 blocked slots"

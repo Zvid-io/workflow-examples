@@ -1,0 +1,33 @@
+{
+  "apiUrl": "https://api.zvid.io",
+  "brandName": "BRAINWAVE",
+  "channelHandle": "@brainwavequiz",
+  "kicker": "🧠 DAILY QUIZ",
+  "timerHint": "You've got 3 seconds. Lock it in!",
+  "countdownLabel": "TIME'S TICKING",
+  "ctaText": "Follow for a new quiz every day",
+  "accentColor": "#7C6BFF",
+  "bgColor": "#151533",
+  "bgDeepColor": "#0E0E24",
+  "countdownColors": [
+    "#7C6BFF",
+    "#FFB01F",
+    "#FF5C5C"
+  ],
+  "questionSeconds": 6,
+  "countdownSeconds": 3.6,
+  "revealSeconds": 5.8,
+  "musicUrl": "",
+  "musicVolume": 0.16,
+  "maxMusicBytes": 5242880,
+  "resolution": "youtube-short",
+  "frameRate": 30,
+  "dryRun": false,
+  "pollSeconds": 10,
+  "timeoutMinutes": 20,
+  "timezone": "UTC",
+  "episodeRevision": 1,
+  "rotationEpisodes": 7,
+  "topic": "",
+  "maxCreditsPerVideo": 60
+}

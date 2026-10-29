@@ -1,0 +1,37 @@
+{
+  "renderedAt": "2026-10-29",
+  "input": "data/sample-metrics.json",
+  "deterministicAsOf": "2026-10-29T09:00:00.000Z",
+  "periodStart": "2026-10-22",
+  "periodEnd": "2026-10-28",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "durationSeconds": 20.4,
+  "frameRate": 30,
+  "audio": false,
+  "quotedCredits": 21,
+  "quoteValidatedAt": "2026-10-29",
+  "quoteMeaning": "Live Zvid validation quote, not an audited billing total.",
+  "renderMethod": "Local Zvid render engine using the exact checked-in sample project; no paid API render was submitted.",
+  "reproduceProject": "npm ci && npm run sample",
+  "sampleProject": "assets/sample-project.json",
+  "sourceWorkflow": "zvid-integrations/n8n/workflows/zvid-kpi-report-video.json",
+  "sourceUpstreamCommit": "30e27fa6118c564f702c0b60401d91eedd86aa83",
+  "sourceChange": "Unused titleVideoUrl cleared in the Config node and KPI generator default; render builder already forced it empty.",
+  "sha256": {
+    "assets/sample-output.mp4": "0c371c63e97860681aea795e4c345f29ac3772aad7b0524d73bec94788d3d327",
+    "assets/sample-output.jpg": "edcbcc5adadc0ebf1c96f24f549c00ef5047dc150239d61635322dc199ef502e",
+    "assets/sample-project.json": "8b77e087abe98859d748cb6634e935878053beac75d782d84e378d81e749bd7e",
+    "assets/sample-plan.json": "bfa16b8f212359d153593b24074519907963eeabebe8494afaff841de5793e3a",
+    "data/sample-metrics.json": "e9b06e89341c87378f5ed20803bd9a00ded9649ab9d5f44b602b0400ae08f77a",
+    "data/sample-review.csv": "1905453384f6943f791fac668fe861d1f25c2768fb1e564cc810450fd128ae9f",
+    "assets/workflow.png": "c43a48b99f3c139eeeb2471962bc5ba4fd63b052d1ab90dcbd1eeecd434524ae",
+    "n8n/workflow.json": "ff01e28f88a75955ef96b2ad84eb9e70b33710d0b7e5741fd85e4b8b3973f470"
+  },
+  "mediaInspection": "Representative frames from all five scenes and transitions inspected; full browser playback is recorded in the article review evidence.",
+  "reproductionNote": "The sample command reproduces source and project bytes. To render with the public SDK, follow README instructions and explicitly authorize your own paid render with --render and --max-credits.",
+  "videoSha256": "0c371c63e97860681aea795e4c345f29ac3772aad7b0524d73bec94788d3d327",
+  "workflowSha256": "ff01e28f88a75955ef96b2ad84eb9e70b33710d0b7e5741fd85e4b8b3973f470"
+}

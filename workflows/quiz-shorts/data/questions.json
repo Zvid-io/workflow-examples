@@ -1,0 +1,41 @@
+[
+  {
+    "QuestionKey": "solar-mars",
+    "Question": "Which planet is known as the Red Planet?",
+    "OptionA": "Mars",
+    "OptionB": "Venus",
+    "OptionC": "Neptune",
+    "CorrectLetter": "A",
+    "FunFact": "Iron minerals in the Martian soil oxidize, giving the surface its reddish color.",
+    "Topic": "Space",
+    "Difficulty": "easy",
+    "SourceUrl": "https://science.nasa.gov/mars/facts/",
+    "Approval": "approved"
+  },
+  {
+    "QuestionKey": "octopus-hearts",
+    "Question": "How many hearts does an octopus have?",
+    "OptionA": "One",
+    "OptionB": "Two",
+    "OptionC": "Three",
+    "CorrectLetter": "C",
+    "FunFact": "Two hearts pump blood to the gills. A third heart sends it around the body.",
+    "Topic": "Nature",
+    "Difficulty": "medium",
+    "SourceUrl": "https://www.nhm.ac.uk/discover/octopuses-keep-surprising-us-here-are-eight-examples-how.html",
+    "Approval": "approved"
+  },
+  {
+    "QuestionKey": "tungsten-symbol",
+    "Question": "Which chemical element has the symbol W?",
+    "OptionA": "Tungsten",
+    "OptionB": "Tin",
+    "OptionC": "Titanium",
+    "CorrectLetter": "A",
+    "FunFact": "The symbol W comes from wolfram, another name for tungsten.",
+    "Topic": "Chemistry",
+    "Difficulty": "hard",
+    "SourceUrl": "https://periodic-table.rsc.org/element/74/tungsten",
+    "Approval": "approved"
+  }
+]

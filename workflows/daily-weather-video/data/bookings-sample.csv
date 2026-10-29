@@ -1,0 +1,5 @@
+BookingId,Date,Title,Status,Approval,EarliestStart,LatestEnd,PreferredStart,DurationMinutes,Priority,Start,End
+"portrait-1","2026-10-29","Team portraits","requested","approved","2026-10-29T09:00:00Z","2026-10-29T12:00:00Z","2026-10-29T09:00:00Z","60","9","",""
+"product-1","2026-10-29","Product shoot","requested","approved","2026-10-29T09:00:00Z","2026-10-29T13:00:00Z","2026-10-29T10:00:00Z","60","5","",""
+"reel-1","2026-10-29","Outdoor reel","requested","approved","2026-10-29T15:00:00Z","2026-10-29T16:00:00Z","2026-10-29T15:00:00Z","60","2","",""
+"reserved-1","2026-10-29","Confirmed interview","confirmed","","","","","","","2026-10-29T10:00:00Z","2026-10-29T11:00:00Z"

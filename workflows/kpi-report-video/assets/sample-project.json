@@ -1,0 +1,430 @@
+{
+  "name": "kpi-report-sample-data-example-team-2026-10-22-to-2026-10-28",
+  "resolution": "full-hd",
+  "frameRate": 30,
+  "backgroundColor": "#0B1220",
+  "outputFormat": "mp4",
+  "scenes": [
+    {
+      "id": "title",
+      "duration": 4.65,
+      "backgroundColor": "#0B1220",
+      "transition": "smoothleft",
+      "transitionDuration": 0.45,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1920,
+          "height": 1080,
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 4.65,
+          "svg": "<svg width='1920' height='1080' viewBox='0 0 1920 1080' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='krIntro' x1='0' y1='0' x2='1' y2='0'><stop offset='0' stop-color='#0B1220' stop-opacity='0.97'/><stop offset='0.55' stop-color='#0B1220' stop-opacity='0.78'/><stop offset='1' stop-color='#0B1220' stop-opacity='0.4'/></linearGradient></defs><rect width='1920' height='1080' fill='url(#krIntro)'/><rect x='110' y='150' width='1700' height='780' rx='34' fill='none' stroke='rgba(56,225,255,0.18)' stroke-width='1.5'/><path d='M130 700 H370' stroke='#38E1FF' stroke-width='6' stroke-linecap='round'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 130,
+          "y": 250,
+          "width": 1250,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.25,
+          "enterEnd": 0.75,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.65,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='color:#38E1FF; font-size:27px; font-weight:700; letter-spacing:7px;'>SAMPLE DATA - TEST ONLY</div><div style='margin-top:26px; color:#FFFFFF; font-size:112px; line-height:1.02; font-weight:700; letter-spacing:-3px;'>Example KPI briefing</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 130,
+          "y": 770,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.6,
+          "enterEnd": 1.1,
+          "enterAnimation": "fade",
+          "exitEnd": 4.65,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='color:#FFFFFF; font-size:31px; font-weight:700; letter-spacing:2px;'>SAMPLE DATA - Example team<span style='color:rgba(157,176,204,0.85); font-weight:500;'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;2026-10-22 to 2026-10-28</span></div>"
+        }
+      ]
+    },
+    {
+      "id": "metric-1",
+      "duration": 4.05,
+      "backgroundColor": "#0B1220",
+      "transition": "smoothleft",
+      "transitionDuration": 0.45,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1920,
+          "height": 1080,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 4.05,
+          "svg": "<svg width='1920' height='1080' viewBox='0 0 1920 1080' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='krCard0' cx='0.3' cy='0.35' r='0.95'><stop offset='0' stop-color='rgb(25,32,46)'/><stop offset='1' stop-color='#0B1220'/></radialGradient></defs><rect width='1920' height='1080' fill='url(#krCard0)'/><rect x='120' y='150' width='1680' height='780' rx='40' fill='rgba(255,255,255,0.028)' stroke='rgba(56,225,255,0.28)' stroke-width='1.5'/><line x1='1120' y1='250' x2='1120' y2='830' stroke='rgba(255,255,255,0.08)' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 210,
+          "y": 208,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0,
+          "exitEnd": 4.05,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='color:rgba(157,176,204,0.75); font-size:22px; font-weight:700; letter-spacing:4px;'>SAMPLE DATA - EXAMPLE TEAM &middot; 2026-10-22 TO 2026-10-28</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 1710,
+          "y": 208,
+          "anchor": "top-right",
+          "track": 3,
+          "enterBegin": 0,
+          "exitEnd": 4.05,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='color:rgba(157,176,204,0.6); font-size:22px; font-weight:700; letter-spacing:4px; text-align:right;'>01 / 03</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 210,
+          "y": 330,
+          "width": 860,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 0.25,
+          "enterEnd": 0.7,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.05,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='text-align:left; color:rgba(157,176,204,0.95); font-size:30px; font-weight:700; letter-spacing:5px;'>EXAMPLE RESPONSE TIME</div><div style='text-align:left; margin-top:22px; color:#FFFFFF; font-size:134px; line-height:0.95; font-weight:700; letter-spacing:-5px;'>3.4 hours</div><div style='margin-top:32px; text-align:left;'><span style='display:inline-block; background:rgba(255,107,120,0.13); border:1.5px solid rgba(255,107,120,0.5); color:#FF6B78; border-radius:999px; padding:12px 30px; font-size:29px; font-weight:700;'>▲ 61.9% vs last week</span></div><div style='margin-top:22px; text-align:left; color:rgba(157,176,204,0.8); font-size:24px; font-weight:500;'>Lower is better for this one.</div>"
+        },
+        {
+          "type": "SVG",
+          "width": 1920,
+          "height": 1080,
+          "track": 1,
+          "enterBegin": 0.45,
+          "enterEnd": 0.95,
+          "enterAnimation": "fade",
+          "exitEnd": 4.05,
+          "svg": "<svg width='1920' height='1080' viewBox='0 0 1920 1080' xmlns='http://www.w3.org/2000/svg'><line x1='1190' y1='400' x2='1700' y2='400' stroke='rgba(255,255,255,0.08)' stroke-width='1.5'/><line x1='1190' y1='560' x2='1700' y2='560' stroke='rgba(255,255,255,0.08)' stroke-width='1.5'/><line x1='1190' y1='720' x2='1700' y2='720' stroke='rgba(255,255,255,0.08)' stroke-width='1.5'/><polygon points='1190,611.69 1445,694.4 1700,425.6 1700,720 1190,720' fill='rgba(255,107,120,0.12)'/><polyline points='1190,611.69 1445,694.4 1700,425.6' fill='none' stroke='#FF6B78' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/><circle cx='1700' cy='425.6' r='14' fill='rgba(255,107,120,0.25)'/><circle cx='1700' cy='425.6' r='7' fill='#FF6B78'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 1190,
+          "y": 334,
+          "anchor": "top-left",
+          "track": 5,
+          "enterBegin": 0.45,
+          "enterEnd": 0.95,
+          "enterAnimation": "fade",
+          "exitEnd": 4.05,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='color:rgba(157,176,204,0.65); font-size:22px; font-weight:700; letter-spacing:4px;'>TREND &middot; LAST 3 PERIODS</div>"
+        }
+      ]
+    },
+    {
+      "id": "metric-2",
+      "duration": 4.05,
+      "backgroundColor": "#0B1220",
+      "transition": "smoothleft",
+      "transitionDuration": 0.45,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1920,
+          "height": 1080,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 4.05,
+          "svg": "<svg width='1920' height='1080' viewBox='0 0 1920 1080' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='krCard1' cx='0.3' cy='0.35' r='0.95'><stop offset='0' stop-color='rgb(25,32,46)'/><stop offset='1' stop-color='#0B1220'/></radialGradient></defs><rect width='1920' height='1080' fill='url(#krCard1)'/><rect x='120' y='150' width='1680' height='780' rx='40' fill='rgba(255,255,255,0.028)' stroke='rgba(56,225,255,0.28)' stroke-width='1.5'/><line x1='1120' y1='250' x2='1120' y2='830' stroke='rgba(255,255,255,0.08)' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 210,
+          "y": 208,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0,
+          "exitEnd": 4.05,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='color:rgba(157,176,204,0.75); font-size:22px; font-weight:700; letter-spacing:4px;'>SAMPLE DATA - EXAMPLE TEAM &middot; 2026-10-22 TO 2026-10-28</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 1710,
+          "y": 208,
+          "anchor": "top-right",
+          "track": 3,
+          "enterBegin": 0,
+          "exitEnd": 4.05,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='color:rgba(157,176,204,0.6); font-size:22px; font-weight:700; letter-spacing:4px; text-align:right;'>02 / 03</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 210,
+          "y": 330,
+          "width": 860,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 0.25,
+          "enterEnd": 0.7,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.05,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='text-align:left; color:rgba(157,176,204,0.95); font-size:30px; font-weight:700; letter-spacing:5px;'>EXAMPLE REVENUE</div><div style='text-align:left; margin-top:22px; color:#FFFFFF; font-size:110px; line-height:0.95; font-weight:700; letter-spacing:-5px;'>120,000 USD</div><div style='margin-top:32px; text-align:left;'><span style='display:inline-block; background:rgba(255,107,120,0.13); border:1.5px solid rgba(255,107,120,0.5); color:#FF6B78; border-radius:999px; padding:12px 30px; font-size:29px; font-weight:700;'>▼ 20% vs last week</span></div>"
+        },
+        {
+          "type": "SVG",
+          "width": 1920,
+          "height": 1080,
+          "track": 1,
+          "enterBegin": 0.45,
+          "enterEnd": 0.95,
+          "enterAnimation": "fade",
+          "exitEnd": 4.05,
+          "svg": "<svg width='1920' height='1080' viewBox='0 0 1920 1080' xmlns='http://www.w3.org/2000/svg'><line x1='1190' y1='400' x2='1700' y2='400' stroke='rgba(255,255,255,0.08)' stroke-width='1.5'/><line x1='1190' y1='560' x2='1700' y2='560' stroke='rgba(255,255,255,0.08)' stroke-width='1.5'/><line x1='1190' y1='720' x2='1700' y2='720' stroke='rgba(255,255,255,0.08)' stroke-width='1.5'/><polygon points='1190,515.2 1445,425.6 1700,694.4 1700,720 1190,720' fill='rgba(255,107,120,0.12)'/><polyline points='1190,515.2 1445,425.6 1700,694.4' fill='none' stroke='#FF6B78' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/><circle cx='1700' cy='694.4' r='14' fill='rgba(255,107,120,0.25)'/><circle cx='1700' cy='694.4' r='7' fill='#FF6B78'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 1190,
+          "y": 334,
+          "anchor": "top-left",
+          "track": 5,
+          "enterBegin": 0.45,
+          "enterEnd": 0.95,
+          "enterAnimation": "fade",
+          "exitEnd": 4.05,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='color:rgba(157,176,204,0.65); font-size:22px; font-weight:700; letter-spacing:4px;'>TREND &middot; LAST 3 PERIODS</div>"
+        }
+      ]
+    },
+    {
+      "id": "metric-3",
+      "duration": 4.05,
+      "backgroundColor": "#0B1220",
+      "transition": "smoothup",
+      "transitionDuration": 0.45,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1920,
+          "height": 1080,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 4.05,
+          "svg": "<svg width='1920' height='1080' viewBox='0 0 1920 1080' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='krCard2' cx='0.3' cy='0.35' r='0.95'><stop offset='0' stop-color='rgb(25,32,46)'/><stop offset='1' stop-color='#0B1220'/></radialGradient></defs><rect width='1920' height='1080' fill='url(#krCard2)'/><rect x='120' y='150' width='1680' height='780' rx='40' fill='rgba(255,255,255,0.028)' stroke='rgba(56,225,255,0.28)' stroke-width='1.5'/><line x1='1120' y1='250' x2='1120' y2='830' stroke='rgba(255,255,255,0.08)' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 210,
+          "y": 208,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0,
+          "exitEnd": 4.05,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='color:rgba(157,176,204,0.75); font-size:22px; font-weight:700; letter-spacing:4px;'>SAMPLE DATA - EXAMPLE TEAM &middot; 2026-10-22 TO 2026-10-28</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 1710,
+          "y": 208,
+          "anchor": "top-right",
+          "track": 3,
+          "enterBegin": 0,
+          "exitEnd": 4.05,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='color:rgba(157,176,204,0.6); font-size:22px; font-weight:700; letter-spacing:4px; text-align:right;'>03 / 03</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 210,
+          "y": 330,
+          "width": 860,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 0.25,
+          "enterEnd": 0.7,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.05,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='text-align:left; color:rgba(157,176,204,0.95); font-size:30px; font-weight:700; letter-spacing:5px;'>EXAMPLE CONVERSION RATE</div><div style='text-align:left; margin-top:22px; color:#FFFFFF; font-size:184px; line-height:0.95; font-weight:700; letter-spacing:-5px;'>4.2%</div><div style='margin-top:32px; text-align:left;'><span style='display:inline-block; background:rgba(52,211,153,0.13); border:1.5px solid rgba(52,211,153,0.5); color:#34D399; border-radius:999px; padding:12px 30px; font-size:29px; font-weight:700;'>▲ 16.7% vs last week</span></div>"
+        },
+        {
+          "type": "SVG",
+          "width": 1920,
+          "height": 1080,
+          "track": 1,
+          "enterBegin": 0.45,
+          "enterEnd": 0.95,
+          "enterAnimation": "fade",
+          "exitEnd": 4.05,
+          "svg": "<svg width='1920' height='1080' viewBox='0 0 1920 1080' xmlns='http://www.w3.org/2000/svg'><line x1='1190' y1='400' x2='1700' y2='400' stroke='rgba(255,255,255,0.08)' stroke-width='1.5'/><line x1='1190' y1='560' x2='1700' y2='560' stroke='rgba(255,255,255,0.08)' stroke-width='1.5'/><line x1='1190' y1='720' x2='1700' y2='720' stroke='rgba(255,255,255,0.08)' stroke-width='1.5'/><polygon points='1190,694.4 1445,627.2 1700,425.6 1700,720 1190,720' fill='rgba(52,211,153,0.12)'/><polyline points='1190,694.4 1445,627.2 1700,425.6' fill='none' stroke='#34D399' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/><circle cx='1700' cy='425.6' r='14' fill='rgba(52,211,153,0.25)'/><circle cx='1700' cy='425.6' r='7' fill='#34D399'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 1190,
+          "y": 334,
+          "anchor": "top-left",
+          "track": 5,
+          "enterBegin": 0.45,
+          "enterEnd": 0.95,
+          "enterAnimation": "fade",
+          "exitEnd": 4.05,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='color:rgba(157,176,204,0.65); font-size:22px; font-weight:700; letter-spacing:4px;'>TREND &middot; LAST 3 PERIODS</div>"
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "duration": 5.4,
+      "backgroundColor": "#0B1220",
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1920,
+          "height": 1080,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 5.4,
+          "svg": "<svg width='1920' height='1080' viewBox='0 0 1920 1080' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='krSum' cx='0.5' cy='0.25' r='1'><stop offset='0' stop-color='rgb(23,30,44)'/><stop offset='1' stop-color='#0B1220'/></radialGradient></defs><rect width='1920' height='1080' fill='url(#krSum)'/><rect x='120' y='400' width='520' height='240' rx='26' fill='rgba(255,255,255,0.03)' stroke='rgba(56,225,255,0.28)' stroke-width='1.5'/><rect x='120' y='400' width='520' height='5' rx='2.5' fill='#38E1FF'/><rect x='700' y='400' width='520' height='240' rx='26' fill='rgba(255,255,255,0.03)' stroke='rgba(56,225,255,0.28)' stroke-width='1.5'/><rect x='700' y='400' width='520' height='5' rx='2.5' fill='#38E1FF'/><rect x='1280' y='400' width='520' height='240' rx='26' fill='rgba(255,255,255,0.03)' stroke='rgba(56,225,255,0.28)' stroke-width='1.5'/><rect x='1280' y='400' width='520' height='5' rx='2.5' fill='#38E1FF'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 960,
+          "y": 170,
+          "anchor": "top-center",
+          "track": 1,
+          "enterBegin": 0.2,
+          "enterEnd": 0.6,
+          "enterAnimation": "smoothdown",
+          "exitEnd": 5.4,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='text-align:center; color:rgba(157,176,204,0.9); font-size:26px; font-weight:700; letter-spacing:6px;'>THE WEEK AT A GLANCE &middot; 2026-10-22 TO 2026-10-28</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 160,
+          "y": 444,
+          "width": 440,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.35,
+          "enterEnd": 0.75,
+          "enterAnimation": "smoothup",
+          "exitEnd": 5.4,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='color:rgba(157,176,204,0.85); font-size:20px; font-weight:700; letter-spacing:2px;'>EXAMPLE RESPONSE TIME</div><div style='margin-top:14px; color:#FFFFFF; font-size:54px; line-height:1; font-weight:700; letter-spacing:-2px;'>3.4 hours</div><div style='margin-top:16px; color:#FF6B78; font-size:24px; font-weight:700;'>▲ 61.9%</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 740,
+          "y": 444,
+          "width": 440,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.47,
+          "enterEnd": 0.87,
+          "enterAnimation": "smoothup",
+          "exitEnd": 5.4,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='color:rgba(157,176,204,0.85); font-size:20px; font-weight:700; letter-spacing:2px;'>EXAMPLE REVENUE</div><div style='margin-top:14px; color:#FFFFFF; font-size:46px; line-height:1; font-weight:700; letter-spacing:-2px;'>120,000 USD</div><div style='margin-top:16px; color:#FF6B78; font-size:24px; font-weight:700;'>▼ 20%</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 1320,
+          "y": 444,
+          "width": 440,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 0.59,
+          "enterEnd": 0.99,
+          "enterAnimation": "smoothup",
+          "exitEnd": 5.4,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='color:rgba(157,176,204,0.85); font-size:20px; font-weight:700; letter-spacing:2px;'>EXAMPLE CONVERSION RATE</div><div style='margin-top:14px; color:#FFFFFF; font-size:64px; line-height:1; font-weight:700; letter-spacing:-2px;'>4.2%</div><div style='margin-top:16px; color:#34D399; font-size:24px; font-weight:700;'>▲ 16.7%</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 960,
+          "y": 690,
+          "width": 1400,
+          "anchor": "top-center",
+          "track": 7,
+          "enterBegin": 0.9,
+          "enterEnd": 1.3,
+          "enterAnimation": "fade",
+          "exitEnd": 5.4,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='text-align:center; color:rgba(157,176,204,0.95); font-size:26px; line-height:1.4; font-weight:500;'>SAMPLE DATA - TEST ONLY. 2 metrics need review for 2026-10-22 to 2026-10-28. Review the owner action register.</div><div style='margin-top:20px; text-align:center; color:rgba(157,176,204,0.55); font-size:22px; font-weight:700; letter-spacing:4px;'>SAMPLE DATA - EXAMPLE TEAM &middot; 2026-10-22 TO 2026-10-28</div>"
+        }
+      ]
+    }
+  ]
+}

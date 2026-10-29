@@ -1,0 +1,18 @@
+{
+  "cityName": "Lisbon",
+  "musicUrl": "",
+  "dryRun": false,
+  "pollSeconds": 10,
+  "timeoutMinutes": 20,
+  "countryCode": "PT",
+  "admin1": "Lisbon District",
+  "forecastRevision": 1,
+  "maxRainProbability": 30,
+  "maxWindKmh": 25,
+  "maxCreditsPerVideo": 35,
+  "timezone": "Europe/Lisbon",
+  "planningDate": "2026-10-29",
+  "calendarLabel": "Lisbon studio call sheet",
+  "minTemperatureC": 8,
+  "maxTemperatureC": 32
+}
