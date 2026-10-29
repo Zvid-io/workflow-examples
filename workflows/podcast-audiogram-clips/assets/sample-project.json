@@ -1,0 +1,713 @@
+{
+  "name": "podcast-clip-1-make-it-easy-to-book-again",
+  "resolution": "custom",
+  "width": 1080,
+  "height": 1920,
+  "frameRate": 30,
+  "backgroundColor": "#0B0A12",
+  "outputFormat": "mp4",
+  "scenes": [
+    {
+      "id": "clip",
+      "duration": 23.76,
+      "backgroundColor": "#17141F",
+      "visuals": [
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 960,
+          "width": 1080,
+          "height": 1920,
+          "anchor": "center-center",
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 23.76,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#F2EFFA"
+          },
+          "html": "<div style='width:1080px; height:1920px; overflow:hidden;'><img src='https://cdn.zvid.io/blog/podcast-audiogram-clips/d4d4efaa0620/customer-notes-cover.png' alt='' style='display:block; width:1240px; height:2200px; margin:-140px -80px; object-fit:cover; filter:blur(40px) saturate(0.42) brightness(0.44);'></div>"
+        },
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "x": 540,
+          "y": 960,
+          "anchor": "center-center",
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 23.76,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='pacShade' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#0B0A12' stop-opacity='0.86'/><stop offset='0.42' stop-color='#0B0A12' stop-opacity='0.66'/><stop offset='1' stop-color='#0B0A12' stop-opacity='0.95'/></linearGradient><radialGradient id='pacGlow' cx='0.5' cy='0.25' r='0.62'><stop offset='0' stop-color='#2DD4BF' stop-opacity='0.20'/><stop offset='1' stop-color='#2DD4BF' stop-opacity='0'/></radialGradient></defs><rect width='1080' height='1920' fill='url(#pacShade)'/><rect width='1080' height='1920' fill='url(#pacGlow)'/><rect x='44' y='44' width='992' height='1832' rx='34' fill='none' stroke='rgba(242,239,250,0.09)' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 470,
+          "width": 700,
+          "height": 700,
+          "anchor": "center-center",
+          "track": 2,
+          "enterBegin": 0,
+          "enterEnd": 0.7,
+          "enterAnimation": "fade",
+          "exitEnd": 23.76,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#F2EFFA"
+          },
+          "html": "<div style='width:700px; height:700px; display:flex; align-items:center; justify-content:center; background:radial-gradient(circle 350px at 50% 50%, rgba(45,212,191,0.34) 0px, rgba(45,212,191,0.34) 119px, rgba(45,212,191,0) 350px);'><div style='width:480px; height:480px; border-radius:44px; overflow:hidden; border:2px solid rgba(45,212,191,0.55); box-shadow:0 34px 90px rgba(0,0,0,0.72);'><img src='https://cdn.zvid.io/blog/podcast-audiogram-clips/d4d4efaa0620/customer-notes-cover.png' alt='' style='display:block; width:100%; height:100%; object-fit:cover;'></div></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 70,
+          "y": 148,
+          "anchor": "center-left",
+          "track": 3,
+          "enterBegin": 0.15,
+          "enterEnd": 0.6,
+          "enterAnimation": "fade",
+          "exitEnd": 23.76,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#2DD4BF"
+          },
+          "html": "<div style='display:inline-block; background:rgba(45,212,191,0.13); border:1.5px solid rgba(45,212,191,0.5); border-radius:999px; padding:14px 26px; white-space:nowrap; color:#2DD4BF; font-size:26px; font-weight:700; letter-spacing:4px;'><span style='display:inline-block; width:11px; height:11px; border-radius:99px; background:#2DD4BF; margin-right:14px;'></span>CUSTOMER NOTES DEMO</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 1010,
+          "y": 148,
+          "anchor": "center-right",
+          "track": 3,
+          "enterBegin": 0.25,
+          "enterEnd": 0.7,
+          "enterAnimation": "fade",
+          "exitEnd": 23.76,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#8E88A6"
+          },
+          "html": "<div style='display:inline-block; background:rgba(242,239,250,0.07); border:1px solid rgba(242,239,250,0.16); border-radius:999px; padding:14px 24px; white-space:nowrap; color:#8E88A6; font-size:22px; font-weight:700; letter-spacing:3px;'>EP 1 - 19 OCT</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 872,
+          "width": 720,
+          "height": 96,
+          "anchor": "center-center",
+          "track": 3,
+          "enterBegin": 0,
+          "exitEnd": 23.76,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#2DD4BF"
+          },
+          "html": "<div class='eq'><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>",
+          "customCode": {
+            "animationDuration": 2.4,
+            "css": ".eq{display:flex;align-items:flex-end;justify-content:center;gap:19px;width:720px;height:96px}.eq i{display:block;width:10px;border-radius:6px;background:linear-gradient(180deg,rgba(45,212,191,1) 0%,rgba(45,212,191,0.35) 100%);transform-origin:50% 100%;animation-name:eqb;animation-timing-function:ease-in-out;animation-iteration-count:infinite}@keyframes eqb{0%,100%{transform:scaleY(0.16)}50%{transform:scaleY(1)}}.eq i:nth-child(1){height:30px;animation-duration:1.2s;animation-delay:-0s}.eq i:nth-child(2){height:52px;animation-duration:0.8s;animation-delay:-0.17s}.eq i:nth-child(3){height:40px;animation-duration:0.6s;animation-delay:-0.34s}.eq i:nth-child(4){height:78px;animation-duration:1.2s;animation-delay:-0.51s}.eq i:nth-child(5){height:58px;animation-duration:0.8s;animation-delay:-0.68s}.eq i:nth-child(6){height:96px;animation-duration:2.4s;animation-delay:-0.85s}.eq i:nth-child(7){height:44px;animation-duration:0.6s;animation-delay:-1.02s}.eq i:nth-child(8){height:68px;animation-duration:1.2s;animation-delay:-1.19s}.eq i:nth-child(9){height:34px;animation-duration:0.8s;animation-delay:-1.36s}.eq i:nth-child(10){height:88px;animation-duration:2.4s;animation-delay:-1.53s}.eq i:nth-child(11){height:56px;animation-duration:0.6s;animation-delay:-1.7s}.eq i:nth-child(12){height:96px;animation-duration:1.2s;animation-delay:-1.87s}.eq i:nth-child(13){height:72px;animation-duration:0.8s;animation-delay:-2.04s}.eq i:nth-child(14){height:46px;animation-duration:0.6s;animation-delay:-2.21s}.eq i:nth-child(15){height:90px;animation-duration:2.4s;animation-delay:-2.38s}.eq i:nth-child(16){height:62px;animation-duration:1.2s;animation-delay:-0.15s}.eq i:nth-child(17){height:38px;animation-duration:0.8s;animation-delay:-0.32s}.eq i:nth-child(18){height:84px;animation-duration:2.4s;animation-delay:-0.49s}.eq i:nth-child(19){height:50px;animation-duration:0.6s;animation-delay:-0.66s}.eq i:nth-child(20){height:96px;animation-duration:1.2s;animation-delay:-0.83s}.eq i:nth-child(21){height:42px;animation-duration:0.8s;animation-delay:-1s}.eq i:nth-child(22){height:66px;animation-duration:0.6s;animation-delay:-1.17s}.eq i:nth-child(23){height:36px;animation-duration:1.2s;animation-delay:-1.34s}.eq i:nth-child(24){height:54px;animation-duration:0.8s;animation-delay:-1.51s}.eq i:nth-child(25){height:32px;animation-duration:0.6s;animation-delay:-1.68s}"
+          }
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1140,
+          "width": 920,
+          "anchor": "center-center",
+          "track": 4,
+          "enterBegin": 0.45,
+          "enterEnd": 1.15,
+          "enterAnimation": "smoothup",
+          "exitEnd": 23.76,
+          "style": {
+            "fontFamily": "DM Serif Display",
+            "color": "#F2EFFA"
+          },
+          "html": "<div style='text-align:center; color:#F2EFFA; font-size:72px; line-height:1.16; letter-spacing:-0.005em; text-shadow:0 6px 30px rgba(11,10,18,0.7);'>Turn missed appointments into personal reminders</div>"
+        },
+        {
+          "type": "SVG",
+          "width": 120,
+          "height": 4,
+          "x": 540,
+          "y": 1330,
+          "anchor": "center-center",
+          "track": 4,
+          "enterBegin": 0.9,
+          "enterEnd": 1.4,
+          "enterAnimation": "circleopen",
+          "exitEnd": 23.76,
+          "svg": "<svg width='120' height='4' viewBox='0 0 120 4' xmlns='http://www.w3.org/2000/svg'><rect width='120' height='4' rx='2' fill='#2DD4BF' fill-opacity='0.75'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1600,
+          "width": 1040,
+          "anchor": "center-center",
+          "track": 5,
+          "enterBegin": 1.2,
+          "enterEnd": 1.7,
+          "enterAnimation": "fade",
+          "exitEnd": 23.76,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#8E88A6"
+          },
+          "html": "<div style='display:flex; justify-content:space-between; width:1040px; color:#8E88A6; font-size:23px; font-weight:600; letter-spacing:3px;'><span>0:00</span><span>0:27</span></div>"
+        },
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 6,
+          "x": 540,
+          "y": 1650,
+          "anchor": "center-center",
+          "track": 5,
+          "enterBegin": 0,
+          "exitEnd": 23.76,
+          "svg": "<svg width='1080' height='6' viewBox='0 0 1080 6' xmlns='http://www.w3.org/2000/svg'><rect width='1080' height='6' fill='rgba(242,239,250,0.14)'/></svg>"
+        },
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 6,
+          "x": 540,
+          "y": 1650,
+          "anchor": "center-center",
+          "track": 6,
+          "enterBegin": 0,
+          "enterEnd": 23.76,
+          "enterAnimation": "wiperight",
+          "exitEnd": 23.76,
+          "svg": "<svg width='1080' height='6' viewBox='0 0 1080 6' xmlns='http://www.w3.org/2000/svg'><rect width='1080' height='6' fill='#2DD4BF'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1706,
+          "width": 960,
+          "anchor": "top-center",
+          "track": 5,
+          "enterBegin": 1.1,
+          "enterEnd": 1.6,
+          "enterAnimation": "fade",
+          "exitEnd": 23.76,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#8E88A6"
+          },
+          "html": "<div style='text-align:center; line-height:1.5; color:#8E88A6; letter-spacing:2px;'><span style='color:#F2EFFA; font-size:28px; font-weight:700;'>@cedarline.demo</span><span style='color:rgba(242,239,250,0.32);'> &#183; </span><span style='color:#8E88A6; font-size:24px; font-weight:500;'>A fictional example episode</span></div>"
+        }
+      ]
+    }
+  ],
+  "audios": [
+    {
+      "src": "https://cdn.zvid.io/blog/podcast-audiogram-clips/67dae9f72c60/customer-notes-demo.mp3",
+      "volume": 1,
+      "enter": 0,
+      "exit": 23.76,
+      "audioBegin": 0.14,
+      "audioEnd": 23.9
+    }
+  ],
+  "subtitle": {
+    "captions": [
+      {
+        "start": 0,
+        "end": 1.54,
+        "text": "Missing an appointment happens.",
+        "words": [
+          {
+            "start": 0,
+            "end": 0.28,
+            "text": "Missing"
+          },
+          {
+            "start": 0.3,
+            "end": 0.36,
+            "text": "an"
+          },
+          {
+            "start": 0.4,
+            "end": 0.84,
+            "text": "appointment"
+          },
+          {
+            "start": 0.96,
+            "end": 1.54,
+            "text": "happens."
+          }
+        ]
+      },
+      {
+        "start": 1.94,
+        "end": 2.98,
+        "text": "The follow-up doesn't need",
+        "words": [
+          {
+            "start": 1.94,
+            "end": 2.02,
+            "text": "The"
+          },
+          {
+            "start": 2.08,
+            "end": 2.5,
+            "text": "follow-up"
+          },
+          {
+            "start": 2.54,
+            "end": 2.8,
+            "text": "doesn't"
+          },
+          {
+            "start": 2.84,
+            "end": 2.98,
+            "text": "need"
+          }
+        ]
+      },
+      {
+        "start": 3.02,
+        "end": 3.68,
+        "text": "to feel like a",
+        "words": [
+          {
+            "start": 3.02,
+            "end": 3.16,
+            "text": "to"
+          },
+          {
+            "start": 3.2,
+            "end": 3.4,
+            "text": "feel"
+          },
+          {
+            "start": 3.44,
+            "end": 3.58,
+            "text": "like"
+          },
+          {
+            "start": 3.62,
+            "end": 3.68,
+            "text": "a"
+          }
+        ]
+      },
+      {
+        "start": 3.74,
+        "end": 5.68,
+        "text": "telling off. This workflow",
+        "words": [
+          {
+            "start": 3.74,
+            "end": 4,
+            "text": "telling"
+          },
+          {
+            "start": 4.08,
+            "end": 4.34,
+            "text": "off."
+          },
+          {
+            "start": 5.02,
+            "end": 5.18,
+            "text": "This"
+          },
+          {
+            "start": 5.24,
+            "end": 5.68,
+            "text": "workflow"
+          }
+        ]
+      },
+      {
+        "start": 5.78,
+        "end": 7.24,
+        "text": "creates a short personal",
+        "words": [
+          {
+            "start": 5.78,
+            "end": 6.08,
+            "text": "creates"
+          },
+          {
+            "start": 6.14,
+            "end": 6.22,
+            "text": "a"
+          },
+          {
+            "start": 6.3,
+            "end": 6.64,
+            "text": "short"
+          },
+          {
+            "start": 6.82,
+            "end": 7.24,
+            "text": "personal"
+          }
+        ]
+      },
+      {
+        "start": 7.32,
+        "end": 8.66,
+        "text": "video that reminds someone",
+        "words": [
+          {
+            "start": 7.32,
+            "end": 7.64,
+            "text": "video"
+          },
+          {
+            "start": 7.72,
+            "end": 7.82,
+            "text": "that"
+          },
+          {
+            "start": 7.86,
+            "end": 8.26,
+            "text": "reminds"
+          },
+          {
+            "start": 8.34,
+            "end": 8.66,
+            "text": "someone"
+          }
+        ]
+      },
+      {
+        "start": 8.72,
+        "end": 9.66,
+        "text": "what the session covered",
+        "words": [
+          {
+            "start": 8.72,
+            "end": 8.84,
+            "text": "what"
+          },
+          {
+            "start": 8.88,
+            "end": 8.96,
+            "text": "the"
+          },
+          {
+            "start": 9,
+            "end": 9.26,
+            "text": "session"
+          },
+          {
+            "start": 9.36,
+            "end": 9.66,
+            "text": "covered"
+          }
+        ]
+      },
+      {
+        "start": 9.98,
+        "end": 10.58,
+        "text": "and gives them a",
+        "words": [
+          {
+            "start": 9.98,
+            "end": 10.06,
+            "text": "and"
+          },
+          {
+            "start": 10.14,
+            "end": 10.32,
+            "text": "gives"
+          },
+          {
+            "start": 10.36,
+            "end": 10.44,
+            "text": "them"
+          },
+          {
+            "start": 10.48,
+            "end": 10.58,
+            "text": "a"
+          }
+        ]
+      },
+      {
+        "start": 10.66,
+        "end": 11.54,
+        "text": "simple way to book",
+        "words": [
+          {
+            "start": 10.66,
+            "end": 11,
+            "text": "simple"
+          },
+          {
+            "start": 11.04,
+            "end": 11.24,
+            "text": "way"
+          },
+          {
+            "start": 11.28,
+            "end": 11.38,
+            "text": "to"
+          },
+          {
+            "start": 11.42,
+            "end": 11.54,
+            "text": "book"
+          }
+        ]
+      },
+      {
+        "start": 11.6,
+        "end": 13.14,
+        "text": "again. We'll start with",
+        "words": [
+          {
+            "start": 11.6,
+            "end": 11.94,
+            "text": "again."
+          },
+          {
+            "start": 12.48,
+            "end": 12.62,
+            "text": "We'll"
+          },
+          {
+            "start": 12.7,
+            "end": 12.92,
+            "text": "start"
+          },
+          {
+            "start": 12.96,
+            "end": 13.14,
+            "text": "with"
+          }
+        ]
+      },
+      {
+        "start": 13.18,
+        "end": 14.6,
+        "text": "one test record, make",
+        "words": [
+          {
+            "start": 13.18,
+            "end": 13.34,
+            "text": "one"
+          },
+          {
+            "start": 13.44,
+            "end": 13.66,
+            "text": "test"
+          },
+          {
+            "start": 13.72,
+            "end": 14.1,
+            "text": "record,"
+          },
+          {
+            "start": 14.44,
+            "end": 14.6,
+            "text": "make"
+          }
+        ]
+      },
+      {
+        "start": 14.64,
+        "end": 15.46,
+        "text": "the wording our own,",
+        "words": [
+          {
+            "start": 14.64,
+            "end": 14.72,
+            "text": "the"
+          },
+          {
+            "start": 14.76,
+            "end": 15.04,
+            "text": "wording"
+          },
+          {
+            "start": 15.08,
+            "end": 15.22,
+            "text": "our"
+          },
+          {
+            "start": 15.28,
+            "end": 15.46,
+            "text": "own,"
+          }
+        ]
+      },
+      {
+        "start": 15.78,
+        "end": 16.56,
+        "text": "and check the video",
+        "words": [
+          {
+            "start": 15.78,
+            "end": 15.9,
+            "text": "and"
+          },
+          {
+            "start": 15.96,
+            "end": 16.14,
+            "text": "check"
+          },
+          {
+            "start": 16.18,
+            "end": 16.26,
+            "text": "the"
+          },
+          {
+            "start": 16.3,
+            "end": 16.56,
+            "text": "video"
+          }
+        ]
+      },
+      {
+        "start": 16.64,
+        "end": 17.92,
+        "text": "before turning on any",
+        "words": [
+          {
+            "start": 16.64,
+            "end": 17,
+            "text": "before"
+          },
+          {
+            "start": 17.06,
+            "end": 17.34,
+            "text": "turning"
+          },
+          {
+            "start": 17.38,
+            "end": 17.64,
+            "text": "on"
+          },
+          {
+            "start": 17.72,
+            "end": 17.92,
+            "text": "any"
+          }
+        ]
+      },
+      {
+        "start": 18.04,
+        "end": 20,
+        "text": "email. One detail matters",
+        "words": [
+          {
+            "start": 18.04,
+            "end": 18.4,
+            "text": "email."
+          },
+          {
+            "start": 18.98,
+            "end": 19.14,
+            "text": "One"
+          },
+          {
+            "start": 19.24,
+            "end": 19.58,
+            "text": "detail"
+          },
+          {
+            "start": 19.7,
+            "end": 20,
+            "text": "matters"
+          }
+        ]
+      },
+      {
+        "start": 20.02,
+        "end": 21.42,
+        "text": "at the start. This",
+        "words": [
+          {
+            "start": 20.02,
+            "end": 20.1,
+            "text": "at"
+          },
+          {
+            "start": 20.14,
+            "end": 20.22,
+            "text": "the"
+          },
+          {
+            "start": 20.32,
+            "end": 20.66,
+            "text": "start."
+          },
+          {
+            "start": 21.22,
+            "end": 21.42,
+            "text": "This"
+          }
+        ]
+      },
+      {
+        "start": 21.48,
+        "end": 23.06,
+        "text": "workflow receives a recorded",
+        "words": [
+          {
+            "start": 21.48,
+            "end": 21.94,
+            "text": "workflow"
+          },
+          {
+            "start": 21.98,
+            "end": 22.34,
+            "text": "receives"
+          },
+          {
+            "start": 22.4,
+            "end": 22.45,
+            "text": "a"
+          },
+          {
+            "start": 22.48,
+            "end": 23.06,
+            "text": "recorded"
+          }
+        ]
+      },
+      {
+        "start": 23.24,
+        "end": 23.76,
+        "text": "no-show.",
+        "words": [
+          {
+            "start": 23.24,
+            "end": 23.76,
+            "text": "no-show."
+          }
+        ]
+      }
+    ],
+    "animation": "karaoke",
+    "activeWord": {
+      "color": "#2DD4BF"
+    },
+    "font": {
+      "family": "Inter",
+      "size": 62,
+      "color": "#FFFFFF",
+      "bold": true,
+      "transform": "uppercase"
+    },
+    "stroke": {
+      "color": "#000000",
+      "width": 6
+    },
+    "position": "bottom-center",
+    "margin": {
+      "x": 90,
+      "y": 450
+    },
+    "maxWordsPerLine": 4
+  }
+}

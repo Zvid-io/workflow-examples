@@ -1,0 +1,14 @@
+{
+  "name": "podcast-audiogram-clips", "version": "1.0.0", "private": true,
+  "type": "module", "description": "Turn an RSS podcast sample into captioned audiograms with the official Zvid SDK.",
+  "engines": {"node": ">=20.12"}, "license": "MIT",
+  "repository": {"type":"git","url":"git+https://github.com/Zvid-io/workflow-examples.git","directory":"workflows/podcast-audiogram-clips"},
+  "bugs": {"url":"https://zvid.io/contact"},
+  "scripts": {
+    "start":"node src/index.js", "offline":"node src/index.js --offline --out out/sample",
+    "sample":"node src/index.js --sample --out out/sample", "validate":"node src/index.js --validate",
+    "prepare-podcast":"node src/index.js --prepare --allow-upstream-costs",
+    "check":"node src/check.js", "test":"node --test tests/*.test.js"
+  },
+  "dependencies": {"@zvid/sdk":"0.2.0","rss-parser":"3.13.0"}
+}

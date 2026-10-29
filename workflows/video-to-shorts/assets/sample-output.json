@@ -1,0 +1,20 @@
+{
+  "created": "2026-10-20",
+  "title": "AI news in under thirty seconds",
+  "description": "Illustrative archival news excerpt; highlight range manually reviewed before rendering.",
+  "width": 1080,
+  "height": 1920,
+  "duration": 22.87,
+  "quotedCredits": 23,
+  "workflowSourceCommit": "30e27fa6118c564f702c0b60401d91eedd86aa83",
+  "workflowSourceNote": "workflowSourceCommit identifies the upstream base revision. The synchronized export then changes only the supplied manual sample URL to a byte-identical Zvid CDN copy. workflowSha256 identifies that exact included export.",
+  "workflowSha256": "9b876bd95e071875309a264ff6a483b3e8de200dff5778e860b5d67fb92727f8",
+  "videoSha256": "794a436078e3703545c249ef1f2082506d502f34ab645ac95797d72f7ec602e5",
+  "projectSha256": "24e93a9d8c1d52b2f3c4a58b176acd8938b4d5769fc3e4d172d399c6687c1ac4",
+  "reproductionCommands": [
+    "npm ci",
+    "npm run sample",
+    "npm run render-prepared -- --out out/sample --max-credits 23"
+  ],
+  "sourceUrl": "https://cdn.zvid.io/tutorials/n8n-days-17-19-2026-10-20/weekly-news-clean-source.acd95626ffee.mp4"
+}
