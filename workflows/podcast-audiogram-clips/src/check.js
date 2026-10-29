@@ -1,0 +1,12 @@
+import {readFileSync} from 'node:fs';
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {workflow,buildClips} from './workflow.js';
+const read=path=>JSON.parse(readFileSync(path,'utf8'));
+const sample=read('data/sample.json');const projects=buildClips(sample);
+assert.deepEqual(projects[0].payload,read('assets/sample-project.json'),'Sample must match the canonical builder');
+const meta=read('assets/sample-output.json');
+assert.equal(meta.canonicalWorkflowSha256,createHash('sha256').update(readFileSync('n8n/workflow.json')).digest('hex'));
+assert.equal(workflow.active,false);assert.ok(!workflow.nodes.some(n=>n.credentials));
+for(const n of workflow.nodes)if(n.type.includes('n8n-nodes-zvid'))assert.match(n.type,/^@zvid\/n8n-nodes-zvid\.(zvid|zvidTrigger)$/);
+console.log(`Canonical sample and workflow checks passed (${projects.length} clip).`);

@@ -1,0 +1,970 @@
+{
+  "config": {
+    "apiUrl": "https://api.zvid.io",
+    "editorUrl": "https://editor.zvid.io",
+    "feedUrl": "https://cdn.zvid.io/blog/podcast-audiogram-clips/2f65fb3c348c/podcast.xml",
+    "clipCount": 1,
+    "clipSeconds": 30,
+    "minClipSeconds": 18,
+    "skipIntroSeconds": 0,
+    "clipWindowSeconds": 300,
+    "maxTranscribeMB": 4,
+    "sttModel": "scribe_v1",
+    "llmModel": "openai/gpt-4.1-mini",
+    "showNameOverride": "Customer Notes Demo",
+    "coverImageOverride": "https://cdn.zvid.io/blog/podcast-audiogram-clips/d4d4efaa0620/customer-notes-cover.png",
+    "handle": "@cedarline.demo",
+    "listenLine": "A fictional example episode",
+    "hookFont": "DM Serif Display",
+    "uiFont": "Space Grotesk",
+    "captionFont": "Inter",
+    "inkColor": "#0B0A12",
+    "panelColor": "#17141F",
+    "textColor": "#F2EFFA",
+    "mutedColor": "#8E88A6",
+    "brandAccent": "#2DD4BF",
+    "captionAnimation": "karaoke",
+    "captionSize": 62,
+    "captionWordsPerCue": 4,
+    "captionStrokeWidth": 6,
+    "frameRate": 30,
+    "dryRun": false,
+    "pollSeconds": 10,
+    "timeoutMinutes": 20,
+    "maxAudioBytes": 5242880
+  },
+  "episode": {
+    "found": true,
+    "showName": "Customer Notes Demo",
+    "episodeTitle": "Make it easy to book again",
+    "episodeChip": "EP 1 - 19 OCT",
+    "episodeLink": "https://cedarline.example/podcast/make-it-easy",
+    "coverUrl": "https://cdn.zvid.io/blog/podcast-audiogram-clips/d4d4efaa0620/customer-notes-cover.png",
+    "audioUrl": "https://cdn.zvid.io/blog/podcast-audiogram-clips/67dae9f72c60/customer-notes-demo.mp3",
+    "episodeSeconds": 27,
+    "rangeHeader": "bytes=0-4194303",
+    "maxBytes": 4194304,
+    "episodesChecked": 1
+  },
+  "transcript": {
+    "text": "Missing an appointment happens. The follow-up doesn't need to feel like a telling off. This workflow creates a short personal video that reminds someone what the session covered and gives them a simple way to book again. We'll start with one test record, make the wording our own, and check the video before turning on any email. One detail matters at the start. This workflow receives a recorded no-show. It doesn't decide who attended your meeting",
+    "words": [
+      {
+        "text": "Missing",
+        "start": 0.14,
+        "end": 0.42,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 0.42,
+        "end": 0.44,
+        "type": "spacing"
+      },
+      {
+        "text": "an",
+        "start": 0.44,
+        "end": 0.5,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 0.5,
+        "end": 0.54,
+        "type": "spacing"
+      },
+      {
+        "text": "appointment",
+        "start": 0.54,
+        "end": 0.98,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 0.98,
+        "end": 1.1,
+        "type": "spacing"
+      },
+      {
+        "text": "happens.",
+        "start": 1.1,
+        "end": 1.68,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 1.68,
+        "end": 2.08,
+        "type": "spacing"
+      },
+      {
+        "text": "The",
+        "start": 2.08,
+        "end": 2.16,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 2.16,
+        "end": 2.22,
+        "type": "spacing"
+      },
+      {
+        "text": "follow-up",
+        "start": 2.22,
+        "end": 2.64,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 2.64,
+        "end": 2.68,
+        "type": "spacing"
+      },
+      {
+        "text": "doesn't",
+        "start": 2.68,
+        "end": 2.94,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 2.94,
+        "end": 2.98,
+        "type": "spacing"
+      },
+      {
+        "text": "need",
+        "start": 2.98,
+        "end": 3.12,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 3.12,
+        "end": 3.16,
+        "type": "spacing"
+      },
+      {
+        "text": "to",
+        "start": 3.16,
+        "end": 3.3,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 3.3,
+        "end": 3.34,
+        "type": "spacing"
+      },
+      {
+        "text": "feel",
+        "start": 3.34,
+        "end": 3.54,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 3.54,
+        "end": 3.58,
+        "type": "spacing"
+      },
+      {
+        "text": "like",
+        "start": 3.58,
+        "end": 3.72,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 3.72,
+        "end": 3.76,
+        "type": "spacing"
+      },
+      {
+        "text": "a",
+        "start": 3.76,
+        "end": 3.82,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 3.82,
+        "end": 3.88,
+        "type": "spacing"
+      },
+      {
+        "text": "telling",
+        "start": 3.88,
+        "end": 4.14,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 4.14,
+        "end": 4.22,
+        "type": "spacing"
+      },
+      {
+        "text": "off.",
+        "start": 4.22,
+        "end": 4.48,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 4.48,
+        "end": 4.48,
+        "type": "spacing"
+      },
+      {
+        "text": "This",
+        "start": 5.16,
+        "end": 5.32,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 5.32,
+        "end": 5.38,
+        "type": "spacing"
+      },
+      {
+        "text": "workflow",
+        "start": 5.38,
+        "end": 5.82,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 5.82,
+        "end": 5.92,
+        "type": "spacing"
+      },
+      {
+        "text": "creates",
+        "start": 5.92,
+        "end": 6.22,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 6.22,
+        "end": 6.28,
+        "type": "spacing"
+      },
+      {
+        "text": "a",
+        "start": 6.28,
+        "end": 6.36,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 6.36,
+        "end": 6.44,
+        "type": "spacing"
+      },
+      {
+        "text": "short",
+        "start": 6.44,
+        "end": 6.78,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 6.78,
+        "end": 6.96,
+        "type": "spacing"
+      },
+      {
+        "text": "personal",
+        "start": 6.96,
+        "end": 7.38,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 7.38,
+        "end": 7.46,
+        "type": "spacing"
+      },
+      {
+        "text": "video",
+        "start": 7.46,
+        "end": 7.78,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 7.78,
+        "end": 7.86,
+        "type": "spacing"
+      },
+      {
+        "text": "that",
+        "start": 7.86,
+        "end": 7.96,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 7.96,
+        "end": 8,
+        "type": "spacing"
+      },
+      {
+        "text": "reminds",
+        "start": 8,
+        "end": 8.4,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 8.4,
+        "end": 8.48,
+        "type": "spacing"
+      },
+      {
+        "text": "someone",
+        "start": 8.48,
+        "end": 8.8,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 8.8,
+        "end": 8.86,
+        "type": "spacing"
+      },
+      {
+        "text": "what",
+        "start": 8.86,
+        "end": 8.98,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 8.98,
+        "end": 9.02,
+        "type": "spacing"
+      },
+      {
+        "text": "the",
+        "start": 9.02,
+        "end": 9.1,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 9.1,
+        "end": 9.14,
+        "type": "spacing"
+      },
+      {
+        "text": "session",
+        "start": 9.14,
+        "end": 9.4,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 9.4,
+        "end": 9.5,
+        "type": "spacing"
+      },
+      {
+        "text": "covered",
+        "start": 9.5,
+        "end": 9.8,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 9.8,
+        "end": 10.12,
+        "type": "spacing"
+      },
+      {
+        "text": "and",
+        "start": 10.12,
+        "end": 10.2,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 10.2,
+        "end": 10.28,
+        "type": "spacing"
+      },
+      {
+        "text": "gives",
+        "start": 10.28,
+        "end": 10.46,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 10.46,
+        "end": 10.5,
+        "type": "spacing"
+      },
+      {
+        "text": "them",
+        "start": 10.5,
+        "end": 10.58,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 10.58,
+        "end": 10.62,
+        "type": "spacing"
+      },
+      {
+        "text": "a",
+        "start": 10.62,
+        "end": 10.72,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 10.72,
+        "end": 10.8,
+        "type": "spacing"
+      },
+      {
+        "text": "simple",
+        "start": 10.8,
+        "end": 11.14,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 11.14,
+        "end": 11.18,
+        "type": "spacing"
+      },
+      {
+        "text": "way",
+        "start": 11.18,
+        "end": 11.38,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 11.38,
+        "end": 11.42,
+        "type": "spacing"
+      },
+      {
+        "text": "to",
+        "start": 11.42,
+        "end": 11.52,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 11.52,
+        "end": 11.54,
+        "type": "spacing"
+      },
+      {
+        "text": "book",
+        "start": 11.56,
+        "end": 11.68,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 11.68,
+        "end": 11.74,
+        "type": "spacing"
+      },
+      {
+        "text": "again.",
+        "start": 11.74,
+        "end": 12.08,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 12.08,
+        "end": 12.62,
+        "type": "spacing"
+      },
+      {
+        "text": "We'll",
+        "start": 12.62,
+        "end": 12.76,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 12.76,
+        "end": 12.84,
+        "type": "spacing"
+      },
+      {
+        "text": "start",
+        "start": 12.84,
+        "end": 13.06,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 13.06,
+        "end": 13.1,
+        "type": "spacing"
+      },
+      {
+        "text": "with",
+        "start": 13.1,
+        "end": 13.28,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 13.28,
+        "end": 13.32,
+        "type": "spacing"
+      },
+      {
+        "text": "one",
+        "start": 13.32,
+        "end": 13.48,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 13.48,
+        "end": 13.58,
+        "type": "spacing"
+      },
+      {
+        "text": "test",
+        "start": 13.58,
+        "end": 13.8,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 13.8,
+        "end": 13.86,
+        "type": "spacing"
+      },
+      {
+        "text": "record,",
+        "start": 13.86,
+        "end": 14.24,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 14.24,
+        "end": 14.58,
+        "type": "spacing"
+      },
+      {
+        "text": "make",
+        "start": 14.58,
+        "end": 14.74,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 14.74,
+        "end": 14.78,
+        "type": "spacing"
+      },
+      {
+        "text": "the",
+        "start": 14.78,
+        "end": 14.86,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 14.86,
+        "end": 14.9,
+        "type": "spacing"
+      },
+      {
+        "text": "wording",
+        "start": 14.9,
+        "end": 15.18,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 15.18,
+        "end": 15.22,
+        "type": "spacing"
+      },
+      {
+        "text": "our",
+        "start": 15.22,
+        "end": 15.36,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 15.36,
+        "end": 15.42,
+        "type": "spacing"
+      },
+      {
+        "text": "own,",
+        "start": 15.42,
+        "end": 15.6,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 15.6,
+        "end": 15.92,
+        "type": "spacing"
+      },
+      {
+        "text": "and",
+        "start": 15.92,
+        "end": 16.04,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 16.04,
+        "end": 16.1,
+        "type": "spacing"
+      },
+      {
+        "text": "check",
+        "start": 16.1,
+        "end": 16.28,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 16.28,
+        "end": 16.32,
+        "type": "spacing"
+      },
+      {
+        "text": "the",
+        "start": 16.32,
+        "end": 16.4,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 16.4,
+        "end": 16.44,
+        "type": "spacing"
+      },
+      {
+        "text": "video",
+        "start": 16.44,
+        "end": 16.7,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 16.7,
+        "end": 16.78,
+        "type": "spacing"
+      },
+      {
+        "text": "before",
+        "start": 16.78,
+        "end": 17.14,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 17.14,
+        "end": 17.2,
+        "type": "spacing"
+      },
+      {
+        "text": "turning",
+        "start": 17.2,
+        "end": 17.48,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 17.48,
+        "end": 17.52,
+        "type": "spacing"
+      },
+      {
+        "text": "on",
+        "start": 17.52,
+        "end": 17.78,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 17.78,
+        "end": 17.86,
+        "type": "spacing"
+      },
+      {
+        "text": "any",
+        "start": 17.86,
+        "end": 18.06,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 18.06,
+        "end": 18.18,
+        "type": "spacing"
+      },
+      {
+        "text": "email.",
+        "start": 18.18,
+        "end": 18.54,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 18.54,
+        "end": 18.54,
+        "type": "spacing"
+      },
+      {
+        "text": "One",
+        "start": 19.12,
+        "end": 19.28,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 19.28,
+        "end": 19.38,
+        "type": "spacing"
+      },
+      {
+        "text": "detail",
+        "start": 19.38,
+        "end": 19.72,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 19.72,
+        "end": 19.84,
+        "type": "spacing"
+      },
+      {
+        "text": "matters",
+        "start": 19.84,
+        "end": 20.14,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 20.14,
+        "end": 20.16,
+        "type": "spacing"
+      },
+      {
+        "text": "at",
+        "start": 20.16,
+        "end": 20.24,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 20.24,
+        "end": 20.28,
+        "type": "spacing"
+      },
+      {
+        "text": "the",
+        "start": 20.28,
+        "end": 20.36,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 20.36,
+        "end": 20.46,
+        "type": "spacing"
+      },
+      {
+        "text": "start.",
+        "start": 20.46,
+        "end": 20.8,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 20.8,
+        "end": 21.36,
+        "type": "spacing"
+      },
+      {
+        "text": "This",
+        "start": 21.36,
+        "end": 21.56,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 21.56,
+        "end": 21.62,
+        "type": "spacing"
+      },
+      {
+        "text": "workflow",
+        "start": 21.62,
+        "end": 22.08,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 22.08,
+        "end": 22.12,
+        "type": "spacing"
+      },
+      {
+        "text": "receives",
+        "start": 22.12,
+        "end": 22.48,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 22.48,
+        "end": 22.54,
+        "type": "spacing"
+      },
+      {
+        "text": "a",
+        "start": 22.54,
+        "end": 22.58,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 22.58,
+        "end": 22.62,
+        "type": "spacing"
+      },
+      {
+        "text": "recorded",
+        "start": 22.62,
+        "end": 23.2,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 23.2,
+        "end": 23.38,
+        "type": "spacing"
+      },
+      {
+        "text": "no-show.",
+        "start": 23.38,
+        "end": 23.9,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 23.9,
+        "end": 24.38,
+        "type": "spacing"
+      },
+      {
+        "text": "It",
+        "start": 24.38,
+        "end": 24.48,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 24.48,
+        "end": 24.52,
+        "type": "spacing"
+      },
+      {
+        "text": "doesn't",
+        "start": 24.52,
+        "end": 24.76,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 24.76,
+        "end": 24.8,
+        "type": "spacing"
+      },
+      {
+        "text": "decide",
+        "start": 24.8,
+        "end": 25.28,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 25.28,
+        "end": 25.34,
+        "type": "spacing"
+      },
+      {
+        "text": "who",
+        "start": 25.34,
+        "end": 25.54,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 25.54,
+        "end": 25.6,
+        "type": "spacing"
+      },
+      {
+        "text": "attended",
+        "start": 25.6,
+        "end": 26,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 26,
+        "end": 26.04,
+        "type": "spacing"
+      },
+      {
+        "text": "your",
+        "start": 26.04,
+        "end": 26.14,
+        "type": "word"
+      },
+      {
+        "text": " ",
+        "start": 26.14,
+        "end": 26.18,
+        "type": "spacing"
+      },
+      {
+        "text": "meeting",
+        "start": 26.18,
+        "end": 26.52,
+        "type": "word"
+      }
+    ]
+  },
+  "selection": {
+    "choices": [
+      {
+        "message": {
+          "content": "{\"clips\":[{\"startWord\":0,\"endWord\":80,\"hook\":\"Turn missed appointments into personal reminders\",\"whyItSlaps\":\"It shows a compassionate way to handle no-shows with personalized video follow-ups.\"}]}"
+        }
+      }
+    ]
+  },
+  "audioUrl": "https://cdn.zvid.io/blog/podcast-audiogram-clips/67dae9f72c60/customer-notes-demo.mp3"
+}

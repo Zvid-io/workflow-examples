@@ -55,6 +55,9 @@ Local checks and tests do not spend render credits. Preview options, live API ca
 | [Proposal recap videos](workflows/proposal-recap-video/) | Turn a confirmed proposal-stage deal into a personal recap and next-step video. |
 | [No-show rebooking videos](workflows/no-show-reengagement/) | Create a personal session recap and rebooking invitation from a recorded no-show. |
 | [Customer month-in-review videos](workflows/month-in-review-stats/) | Turn one customer's prepared monthly metrics into a vertical recap. |
+| [Podcast audiogram clips](workflows/podcast-audiogram-clips/) | Turn an RSS audio sample into captioned portrait clips. |
+| [Long-video Shorts](workflows/video-to-shorts/) | Select captioned vertical highlights from a directly downloadable video. |
+| [Monthly testimonial compilations](workflows/testimonial-compilation/) | Compile approved quote rows into one square video. |
 
 Open a workflow's folder for its tutorial, screenshots, sample output, and complete setup instructions.
 
