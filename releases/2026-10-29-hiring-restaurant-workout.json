@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-29",
+  "sourceCommit": "193a416e3cb16eb6999ee02c2595d077448ac21d",
+  "verification": "Public folders verified without authentication; GitHub CI succeeded; each exact-commit subtree archive extracted, installed, checked, tested and run offline; B2 and CDN bytes match.",
+  "examples": [
+    {
+      "slug": "were-hiring-video",
+      "sourceCommit": "193a416e3cb16eb6999ee02c2595d077448ac21d",
+      "sourceUrl": "https://github.com/Zvid-io/workflow-examples/tree/193a416e3cb16eb6999ee02c2595d077448ac21d/workflows/were-hiring-video",
+      "zipUrl": "https://cdn.zvid.io/blog/were-hiring-video/95ec9f660b5c/were-hiring-video.zip",
+      "zipSha256": "95ec9f660b5c2f8697d3330a76a11e27bb43fa35f52cf2c37ef674e4279c424f",
+      "zipBytes": 1323048,
+      "verifiedAt": "2026-10-29T15:20:05.322Z",
+      "ciUrl": "https://github.com/Zvid-io/workflow-examples/actions/runs/40900212949",
+      "ciConclusion": "success"
+    },
+    {
+      "slug": "restaurant-weekly-specials",
+      "sourceCommit": "193a416e3cb16eb6999ee02c2595d077448ac21d",
+      "sourceUrl": "https://github.com/Zvid-io/workflow-examples/tree/193a416e3cb16eb6999ee02c2595d077448ac21d/workflows/restaurant-weekly-specials",
+      "zipUrl": "https://cdn.zvid.io/blog/restaurant-weekly-specials/e7b96cbe72c4/restaurant-weekly-specials.zip",
+      "zipSha256": "e7b96cbe72c4815868913a227e984aee7daf999e3653bd749cd6e1718a243fd7",
+      "zipBytes": 4158728,
+      "verifiedAt": "2026-10-29T15:20:21.657Z",
+      "ciUrl": "https://github.com/Zvid-io/workflow-examples/actions/runs/40900212949",
+      "ciConclusion": "success"
+    },
+    {
+      "slug": "workout-of-the-day",
+      "sourceCommit": "193a416e3cb16eb6999ee02c2595d077448ac21d",
+      "sourceUrl": "https://github.com/Zvid-io/workflow-examples/tree/193a416e3cb16eb6999ee02c2595d077448ac21d/workflows/workout-of-the-day",
+      "zipUrl": "https://cdn.zvid.io/blog/workout-of-the-day/2d7f2530f0df/workout-of-the-day.zip",
+      "zipSha256": "2d7f2530f0dfb6f22e21a2572dfbe682728c152175802b737db820a249cde2d9",
+      "zipBytes": 3335567,
+      "verifiedAt": "2026-10-29T15:20:41.581Z",
+      "ciUrl": "https://github.com/Zvid-io/workflow-examples/actions/runs/40900212949",
+      "ciConclusion": "success"
+    }
+  ]
+}
