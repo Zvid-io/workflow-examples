@@ -1,0 +1,408 @@
+{
+  "name": "flash-sale-39-off-demo-studio-headphones",
+  "resolution": "instagram-reel",
+  "frameRate": 30,
+  "backgroundColor": "#0D0D0D",
+  "outputFormat": "mp4",
+  "scenes": [
+    {
+      "id": "hook",
+      "duration": 3.65,
+      "backgroundColor": "#E11D2E",
+      "transition": "slideup",
+      "transitionId": "drop",
+      "transitionDuration": 0.45,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 3.65,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='fsHook' cx='0.5' cy='0.42' r='0.85'><stop offset='0' stop-color='#FFFFFF' stop-opacity='0.16'/><stop offset='1' stop-color='#FFFFFF' stop-opacity='0'/></radialGradient><linearGradient id='fsHookFloor' x1='0' y1='0' x2='0' y2='1'><stop offset='0.72' stop-color='#0D0D0D' stop-opacity='0'/><stop offset='1' stop-color='#0D0D0D' stop-opacity='0.4'/></linearGradient></defs><rect width='1080' height='1920' fill='#E11D2E'/><rect width='1080' height='1920' fill='url(#fsHook)'/><path d='M-200 392 L1280 320 L1280 720 L-200 792 Z' fill='#0D0D0D' opacity='0.17'/><path d='M-200 380 L1280 308 L1280 326 L-200 398 Z' fill='#FFD54A' opacity='0.92'/><path d='M-200 792 L1280 720 L1280 738 L-200 810 Z' fill='#FFD54A' opacity='0.92'/><rect width='1080' height='1920' fill='url(#fsHookFloor)'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 960,
+          "anchor": "center-center",
+          "track": 1,
+          "opacity": 0.85,
+          "enterBegin": 0,
+          "exitEnd": 3.65,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div class='sw'><i></i><i></i></div>",
+          "customCode": {
+            "animationDuration": 3.65,
+            "css": ".sw{position:relative;width:1080px;height:1920px;overflow:hidden}.sw i{position:absolute;top:-500px;left:-900px;display:block;width:420px;height:3000px;background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0.16) 50%,rgba(255,255,255,0) 100%);transform:rotate(18deg);animation:swp 3.6s ease-in-out infinite}.sw i:nth-child(2){animation-delay:-1.8s;width:220px;opacity:0.7}@keyframes swp{0%{transform:translateX(0) rotate(18deg)}100%{transform:translateX(2400px) rotate(18deg)}}"
+          }
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 132,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.1,
+          "enterEnd": 0.5,
+          "enterAnimation": "fade",
+          "exitEnd": 3.65,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='display:inline-block; border:2px solid rgba(255,255,255,0.6); color:#FFFFFF; border-radius:999px; padding:14px 40px; font-size:26px; font-weight:800; letter-spacing:7px;'>KICKLAB</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 430,
+          "width": 1000,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 0.15,
+          "enterEnd": 0.6,
+          "enterAnimation": "circleopen",
+          "exitEnd": 3.65,
+          "style": {
+            "fontFamily": "Anton",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='text-align:center; color:#FFFFFF; font-size:150px; line-height:0.92; letter-spacing:1px;'>FLASH<br><span style='color:#FFD54A;'>SALE</span></div>"
+        },
+        {
+          "type": "SVG",
+          "x": 540,
+          "y": 1180,
+          "width": 680,
+          "height": 830,
+          "anchor": "center-center",
+          "track": 4,
+          "enterBegin": 0.35,
+          "enterEnd": 0.85,
+          "enterAnimation": "smoothup",
+          "exitEnd": 3.65,
+          "svg": "<svg width='680' height='830' viewBox='0 0 680 830' xmlns='http://www.w3.org/2000/svg'><rect x='2' y='2' width='676' height='826' rx='44' fill='rgba(13,13,13,0.26)' stroke='rgba(255,255,255,0.55)' stroke-width='3'/><rect x='20' y='20' width='640' height='790' rx='30' fill='none' stroke='rgba(255,255,255,0.2)' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "IMAGE",
+          "src": "https://cdn.zvid.io/blog/flash-sale-alert-videos/93a5b0ec9720/headphones.jpg",
+          "x": 540,
+          "y": 1180,
+          "width": 600,
+          "height": 750,
+          "anchor": "center-center",
+          "radius": {
+            "tl": 30,
+            "tr": 30,
+            "bl": 30,
+            "br": 30
+          },
+          "track": 5,
+          "enterBegin": 0.45,
+          "enterEnd": 0.95,
+          "enterAnimation": "smoothup",
+          "exitEnd": 3.65
+        },
+        {
+          "type": "SVG",
+          "x": 846,
+          "y": 866,
+          "width": 280,
+          "height": 280,
+          "anchor": "center-center",
+          "track": 6,
+          "enterBegin": 0.95,
+          "enterEnd": 1.35,
+          "enterAnimation": "circleopen",
+          "exitEnd": 3.65,
+          "svg": "<svg width='280' height='280' viewBox='0 0 280 280' xmlns='http://www.w3.org/2000/svg'><circle cx='140' cy='140' r='134' fill='rgba(13,13,13,0.35)'/><circle cx='140' cy='140' r='118' fill='#FFD54A'/><circle cx='140' cy='140' r='106' fill='none' stroke='rgba(13,13,13,0.35)' stroke-width='2' stroke-dasharray='7 9'/><text x='140' y='150' font-family='Anton, Impact, Arial' font-size='76' fill='#0D0D0D' text-anchor='middle' letter-spacing='-2'>-39%</text><text x='140' y='196' font-family='Space Grotesk, Arial' font-size='24' font-weight='700' fill='#0D0D0D' text-anchor='middle' letter-spacing='8'>OFF</text></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1660,
+          "width": 900,
+          "anchor": "top-center",
+          "track": 7,
+          "enterBegin": 1.25,
+          "enterEnd": 1.7,
+          "enterAnimation": "smoothup",
+          "exitEnd": 3.65,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='text-align:center; color:#FFFFFF; font-size:56px; line-height:1.2; font-weight:700; letter-spacing:-0.5px;'>Demo Studio Headphones</div>"
+        }
+      ]
+    },
+    {
+      "id": "drop",
+      "duration": 6.25,
+      "backgroundColor": "#0D0D0D",
+      "transition": "slideleft",
+      "transitionId": "cta",
+      "transitionDuration": 0.45,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 6.25,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='fsDrop' cx='0.5' cy='0.26' r='0.85'><stop offset='0' stop-color='#E11D2E' stop-opacity='0.38'/><stop offset='1' stop-color='#E11D2E' stop-opacity='0'/></radialGradient><linearGradient id='fsDropFloor' x1='0' y1='0' x2='0' y2='1'><stop offset='0.55' stop-color='#0D0D0D' stop-opacity='0'/><stop offset='1' stop-color='#0D0D0D' stop-opacity='0.85'/></linearGradient></defs><rect width='1080' height='1920' fill='#0D0D0D'/><rect width='1080' height='1920' fill='url(#fsDrop)'/><rect width='1080' height='1920' fill='url(#fsDropFloor)'/><circle cx='540' cy='530' r='240' fill='none' stroke='rgba(255,213,74,0.24)' stroke-width='2'/><circle cx='540' cy='530' r='276' fill='none' stroke='rgba(255,213,74,0.11)' stroke-width='1.5'/><path d='M0 74 L1080 74' stroke='#E11D2E' stroke-width='40'/><path d='M0 1846 L1080 1846' stroke='#E11D2E' stroke-width='40'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 74,
+          "anchor": "center-center",
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 6.25,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='color:#FFFFFF; font-size:26px; font-weight:800; letter-spacing:7px;'>KICKLAB &middot; PRICE DROP</div>"
+        },
+        {
+          "type": "SVG",
+          "x": 540,
+          "y": 530,
+          "width": 340,
+          "height": 425,
+          "anchor": "center-center",
+          "track": 2,
+          "enterBegin": 0.2,
+          "enterEnd": 0.6,
+          "enterAnimation": "fade",
+          "exitEnd": 6.25,
+          "svg": "<svg width='340' height='425' viewBox='0 0 340 425' xmlns='http://www.w3.org/2000/svg'><rect x='1.5' y='1.5' width='337' height='422' rx='28' fill='rgba(255,255,255,0.05)' stroke='rgba(255,213,74,0.55)' stroke-width='3'/></svg>"
+        },
+        {
+          "type": "IMAGE",
+          "src": "https://cdn.zvid.io/blog/flash-sale-alert-videos/93a5b0ec9720/headphones.jpg",
+          "x": 540,
+          "y": 530,
+          "width": 300,
+          "height": 375,
+          "anchor": "center-center",
+          "radius": {
+            "tl": 20,
+            "tr": 20,
+            "bl": 20,
+            "br": 20
+          },
+          "track": 3,
+          "enterBegin": 0.3,
+          "enterEnd": 0.75,
+          "enterAnimation": "circleopen",
+          "exitEnd": 6.25
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 830,
+          "width": 900,
+          "anchor": "top-center",
+          "track": 4,
+          "enterBegin": 0.55,
+          "enterEnd": 1,
+          "enterAnimation": "smoothup",
+          "exitEnd": 6.25,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='text-align:center; color:#FFFFFF; font-size:50px; line-height:1.2; font-weight:700;'>Demo Studio Headphones</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1010,
+          "width": 900,
+          "anchor": "top-center",
+          "track": 5,
+          "enterBegin": 0.9,
+          "enterEnd": 1.35,
+          "enterAnimation": "smoothup",
+          "exitBegin": 2.4,
+          "exitEnd": 2.8,
+          "exitAnimation": "slideleft",
+          "style": {
+            "fontFamily": "Anton",
+            "color": "#9CA3AF"
+          },
+          "html": "<div style='text-align:center; color:#9CA3AF; font-size:150px; line-height:1; text-decoration:line-through; text-decoration-thickness:8px;'>$89</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 982,
+          "width": 960,
+          "anchor": "top-center",
+          "track": 6,
+          "enterBegin": 2.8,
+          "enterEnd": 3.2,
+          "enterAnimation": "circleopen",
+          "exitEnd": 6.25,
+          "style": {
+            "fontFamily": "Anton",
+            "color": "#FFD54A"
+          },
+          "html": "<div style='text-align:center;'><div style='color:#9CA3AF; font-size:52px; line-height:1.1; text-decoration:line-through; text-decoration-thickness:4px;'>$89</div><div style='margin-top:10px; color:#FFD54A; font-size:184px; line-height:1; letter-spacing:-2px;'>$54</div></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1330,
+          "anchor": "top-center",
+          "track": 7,
+          "enterBegin": 3.35,
+          "enterEnd": 3.75,
+          "enterAnimation": "smoothup",
+          "exitEnd": 6.25,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='display:inline-block; background:rgba(255,213,74,0.14); border:2px solid rgba(255,213,74,0.6); color:#FFD54A; border-radius:999px; padding:18px 46px; font-size:38px; font-weight:800; letter-spacing:1px;'>YOU SAVE $35 &middot; 39%</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1520,
+          "anchor": "top-center",
+          "track": 8,
+          "enterBegin": 3.75,
+          "enterEnd": 4.15,
+          "enterAnimation": "smoothleft",
+          "exitEnd": 6.25,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='display:inline-block; background:#E11D2E; color:#FFFFFF; border-radius:14px; padding:18px 44px; font-size:34px; font-weight:800; letter-spacing:3px;'>ENDS SUNDAY 11:59 PM</div>"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "duration": 4.4,
+      "backgroundColor": "#0D0D0D",
+      "visuals": [
+        {
+          "type": "IMAGE",
+          "src": "https://cdn.zvid.io/blog/flash-sale-alert-videos/93a5b0ec9720/headphones.jpg",
+          "width": 1080,
+          "height": 1920,
+          "position": "center-center",
+          "resize": "cover",
+          "opacity": 0.45,
+          "zoom": true,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 4.4
+        },
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 4.4,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='fsCtaShade' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#0D0D0D' stop-opacity='0.55'/><stop offset='0.55' stop-color='#0D0D0D' stop-opacity='0.8'/><stop offset='1' stop-color='#0D0D0D' stop-opacity='0.9'/></linearGradient><radialGradient id='fsCtaGlow' cx='0.5' cy='0.46' r='0.7'><stop offset='0' stop-color='#FFD54A' stop-opacity='0.16'/><stop offset='1' stop-color='#FFD54A' stop-opacity='0'/></radialGradient></defs><rect width='1080' height='1920' fill='url(#fsCtaShade)'/><rect width='1080' height='1920' fill='url(#fsCtaGlow)'/><rect x='84' y='620' width='912' height='656' rx='48' fill='rgba(13,13,13,0.72)' stroke='rgba(255,213,74,0.55)' stroke-width='2.5'/><path d='M84 1274 H996' stroke='#E11D2E' stroke-width='6' stroke-linecap='round'/><path d='M-200 1608 L1280 1412 L1280 1434 L-200 1630 Z' fill='#E11D2E' opacity='0.75'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 470,
+          "anchor": "top-center",
+          "track": 6,
+          "enterBegin": 0.05,
+          "enterEnd": 0.45,
+          "enterAnimation": "fade",
+          "exitEnd": 4.4,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='display:inline-block; background:#E11D2E; color:#FFFFFF; border-radius:999px; padding:16px 44px; font-size:28px; font-weight:800; letter-spacing:7px;'>LAST CHANCE</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 700,
+          "width": 840,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.2,
+          "enterEnd": 0.65,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.4,
+          "style": {
+            "fontFamily": "Anton",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='text-align:center; color:#FFFFFF; font-size:98px; line-height:1.02; letter-spacing:0.5px;'>SAVE 39%<br><span style='color:#FFD54A;'>BEFORE IT&#39;S GONE</span></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 960,
+          "anchor": "top-center",
+          "track": 7,
+          "enterBegin": 0.6,
+          "enterEnd": 1,
+          "enterAnimation": "fade",
+          "exitEnd": 4.4,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#FFD54A"
+          },
+          "html": "<div style='display:inline-block; border:2px solid rgba(255,213,74,0.55); border-radius:16px; padding:16px 40px; color:#FFD54A; font-size:44px; font-weight:800;'><span style='color:#9CA3AF; text-decoration:line-through; text-decoration-thickness:3px;'>$89</span> &nbsp;&rarr;&nbsp; $54</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1106,
+          "anchor": "top-center",
+          "track": 4,
+          "enterBegin": 0.95,
+          "enterEnd": 1.4,
+          "enterAnimation": "circleopen",
+          "exitEnd": 4.4,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#0D0D0D"
+          },
+          "html": "<div style='display:inline-block; background:#FFD54A; color:#0D0D0D; border-radius:999px; padding:28px 72px; font-size:44px; font-weight:800;'>Shop the sale &rarr;</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1386,
+          "width": 900,
+          "anchor": "top-center",
+          "track": 5,
+          "enterBegin": 1.35,
+          "enterEnd": 1.75,
+          "enterAnimation": "fade",
+          "exitEnd": 4.4,
+          "style": {
+            "fontFamily": "Space Grotesk",
+            "color": "#9CA3AF"
+          },
+          "html": "<div style='text-align:center; color:#9CA3AF; font-size:30px; font-weight:700; letter-spacing:5px;'>KICKLAB.EXAMPLE</div>"
+        }
+      ]
+    }
+  ]
+}
