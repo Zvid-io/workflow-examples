@@ -1,0 +1,17 @@
+{
+  "renderedAt": "2026-10-19",
+  "evidence": "Historical completed render reused for this example; no new paid render.",
+  "input": "data/signup.json",
+  "config": "config.json",
+  "project": "assets/sample-project.json",
+  "width": 1920,
+  "height": 1080,
+  "durationSeconds": 14.566667,
+  "audio": false,
+  "creditsQuoted": 15,
+  "reproductionCommand": "npm start -- --max-credits 15",
+  "videoSha256": "d18474dd3c2aa2e6470cea4207b5907f05b2698c57b06cebbb026ffce9ded130",
+  "posterSha256": "d1473ff7f2c499b7294bab57726ffd7a5bfa62e1e9ad2b81419d3e1b6c5f2162",
+  "projectSha256": "67a3278ac8edd28679fa4e51779bfae5e57f4f5de9e2254677948c3ce4ff3f73",
+  "workflowSha256": "65968fd0dfa3aad0a6996611d9548ef28aeb3da9668d0022c3788238fe0ae711"
+}

@@ -1,0 +1,276 @@
+{
+  "name": "welcome-maya-cedar-grove-demo",
+  "resolution": "full-hd",
+  "frameRate": 30,
+  "backgroundColor": "#0B1020",
+  "outputFormat": "mp4",
+  "scenes": [
+    {
+      "id": "welcome",
+      "duration": 4.6,
+      "backgroundColor": "#0B1020",
+      "transition": "smoothleft",
+      "transitionId": "steps",
+      "transitionDuration": 0.55,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1920,
+          "height": 1080,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 4.6,
+          "svg": "<svg width='1920' height='1080' viewBox='0 0 1920 1080' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='wvBg' cx='0.5' cy='0.36' r='1'><stop offset='0' stop-color='#1B2450'/><stop offset='1' stop-color='#0B1020'/></radialGradient></defs><rect width='1920' height='1080' fill='url(#wvBg)'/><circle cx='1730' cy='140' r='260' fill='rgba(108,140,255,0.1)'/><circle cx='180' cy='960' r='210' fill='rgba(108,140,255,0.07)'/><rect x='40' y='40' width='1840' height='1000' rx='40' fill='none' stroke='rgba(108,140,255,0.35)' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 100,
+          "y": 84,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0,
+          "exitEnd": 4.6,
+          "style": {
+            "fontFamily": "Outfit",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='display:flex; align-items:center; gap:22px;'><div style='width:72px; height:72px; border-radius:20px; background:#6C8CFF; color:#0B1020; font-size:40px; font-weight:800; display:flex; align-items:center; justify-content:center;'>C</div><div style='font-size:36px; font-weight:800; letter-spacing:2px; color:#FFFFFF;'>Cedarline Demo</div></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 960,
+          "y": 300,
+          "anchor": "top-center",
+          "track": 4,
+          "enterBegin": 0.2,
+          "enterEnd": 0.6,
+          "enterAnimation": "fade",
+          "exitEnd": 4.6,
+          "style": {
+            "fontFamily": "Outfit",
+            "color": "#6C8CFF"
+          },
+          "html": "<div style='display:inline-block; border:1.5px solid rgba(108,140,255,0.6); border-radius:999px; padding:14px 36px; color:#6C8CFF; font-size:26px; font-weight:700; letter-spacing:5px;'>PRO TRIAL</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 960,
+          "y": 405,
+          "width": 1640,
+          "anchor": "top-center",
+          "track": 5,
+          "enterBegin": 0.45,
+          "enterEnd": 0.95,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.6,
+          "style": {
+            "fontFamily": "Outfit",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='text-align:center; color:#FFFFFF; font-size:124px; line-height:1.06; font-weight:800; letter-spacing:-2px;'>Welcome, Maya.</div><div style='margin-top:30px; text-align:center; color:#AEB8D6; font-size:34px; line-height:1.45; font-weight:400;'>Your Cedarline Demo workspace for Cedar Grove Demo is ready. Here&#39;s how to make week one count.</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 960,
+          "y": 952,
+          "anchor": "top-center",
+          "track": 6,
+          "enterBegin": 0.9,
+          "enterEnd": 1.3,
+          "enterAnimation": "fade",
+          "exitEnd": 4.6,
+          "style": {
+            "fontFamily": "Outfit",
+            "color": "#AEB8D6"
+          },
+          "html": "<div style='color:rgba(255,255,255,0.5); font-size:23px; font-weight:600; letter-spacing:4px;'>APP.CEDARLINE.EXAMPLE</div>"
+        }
+      ]
+    },
+    {
+      "id": "steps",
+      "duration": 6.4,
+      "backgroundColor": "#0B1020",
+      "transition": "smoothleft",
+      "transitionId": "cta",
+      "transitionDuration": 0.5,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1920,
+          "height": 1080,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 6.4,
+          "svg": "<svg width='1920' height='1080' viewBox='0 0 1920 1080' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='wvSt' cx='0.32' cy='0.22' r='1.15'><stop offset='0' stop-color='#1B2450'/><stop offset='1' stop-color='#0B1020'/></radialGradient></defs><rect width='1920' height='1080' fill='url(#wvSt)'/><rect x='40' y='40' width='1840' height='1000' rx='40' fill='none' stroke='rgba(108,140,255,0.35)' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 960,
+          "y": 108,
+          "anchor": "top-center",
+          "track": 1,
+          "enterBegin": 0.1,
+          "enterEnd": 0.5,
+          "enterAnimation": "fade",
+          "exitEnd": 6.4,
+          "style": {
+            "fontFamily": "Outfit",
+            "color": "#6C8CFF"
+          },
+          "html": "<div style='color:#6C8CFF; font-size:25px; font-weight:700; letter-spacing:6px;'>GETTING STARTED &middot; CEDARLINE DEMO</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 960,
+          "y": 158,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.2,
+          "enterEnd": 0.65,
+          "enterAnimation": "smoothup",
+          "exitEnd": 6.4,
+          "style": {
+            "fontFamily": "Outfit",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='color:#FFFFFF; font-size:64px; font-weight:800; letter-spacing:-1px;'>What to do first</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 165,
+          "y": 300,
+          "width": 520,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.35,
+          "enterEnd": 0.85,
+          "enterAnimation": "smoothup",
+          "exitEnd": 6.4,
+          "style": {
+            "fontFamily": "Outfit",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='box-sizing:border-box; width:500px; height:560px; background:rgba(255,255,255,0.04); border:1.5px solid rgba(108,140,255,0.4); border-radius:36px; padding:44px;'><div style='width:84px; height:84px; border-radius:999px; background:rgba(108,140,255,0.14); border:2px solid #6C8CFF; color:#6C8CFF; font-size:40px; font-weight:800; display:flex; align-items:center; justify-content:center;'>1</div><div style='margin-top:36px; color:#FFFFFF; font-size:40px; line-height:1.12; font-weight:800; letter-spacing:-1px;'>Create a project</div><div style='margin-top:18px; color:#AEB8D6; font-size:26px; line-height:1.5; font-weight:400;'>Give your first project a name and choose a starting template.</div></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 710,
+          "y": 300,
+          "width": 520,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 0.6499999999999999,
+          "enterEnd": 1.15,
+          "enterAnimation": "smoothup",
+          "exitEnd": 6.4,
+          "style": {
+            "fontFamily": "Outfit",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='box-sizing:border-box; width:500px; height:560px; background:rgba(255,255,255,0.04); border:1.5px solid rgba(108,140,255,0.4); border-radius:36px; padding:44px;'><div style='width:84px; height:84px; border-radius:999px; background:rgba(108,140,255,0.14); border:2px solid #6C8CFF; color:#6C8CFF; font-size:40px; font-weight:800; display:flex; align-items:center; justify-content:center;'>2</div><div style='margin-top:36px; color:#FFFFFF; font-size:40px; line-height:1.12; font-weight:800; letter-spacing:-1px;'>Invite a teammate</div><div style='margin-top:18px; color:#AEB8D6; font-size:26px; line-height:1.5; font-weight:400;'>Add someone you want to work with on this project.</div></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 1255,
+          "y": 300,
+          "width": 520,
+          "anchor": "top-left",
+          "track": 5,
+          "enterBegin": 0.95,
+          "enterEnd": 1.45,
+          "enterAnimation": "smoothup",
+          "exitEnd": 6.4,
+          "style": {
+            "fontFamily": "Outfit",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='box-sizing:border-box; width:500px; height:560px; background:rgba(255,255,255,0.04); border:1.5px solid rgba(108,140,255,0.4); border-radius:36px; padding:44px;'><div style='width:84px; height:84px; border-radius:999px; background:rgba(108,140,255,0.14); border:2px solid #6C8CFF; color:#6C8CFF; font-size:40px; font-weight:800; display:flex; align-items:center; justify-content:center;'>3</div><div style='margin-top:36px; color:#FFFFFF; font-size:40px; line-height:1.12; font-weight:800; letter-spacing:-1px;'>Open the starter guide</div><div style='margin-top:18px; color:#AEB8D6; font-size:26px; line-height:1.5; font-weight:400;'>Follow the guide when you are ready for the next step.</div></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 960,
+          "y": 925,
+          "width": 1500,
+          "anchor": "top-center",
+          "track": 6,
+          "enterBegin": 1.5,
+          "enterEnd": 1.9,
+          "enterAnimation": "fade",
+          "exitEnd": 6.4,
+          "style": {
+            "fontFamily": "Outfit",
+            "color": "#AEB8D6"
+          },
+          "html": "<div style='text-align:center; color:#AEB8D6; font-size:29px; font-weight:500;'>Start with one step, Maya.</div>"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "duration": 4.6,
+      "backgroundColor": "#0B1020",
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1920,
+          "height": 1080,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 4.6,
+          "svg": "<svg width='1920' height='1080' viewBox='0 0 1920 1080' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='wvEnd' cx='0.5' cy='0.38' r='0.95'><stop offset='0' stop-color='#1B2450'/><stop offset='1' stop-color='#0B1020'/></radialGradient></defs><rect width='1920' height='1080' fill='url(#wvEnd)'/><rect x='40' y='40' width='1840' height='1000' rx='40' fill='none' stroke='rgba(108,140,255,0.4)' stroke-width='1.5'/><circle cx='960' cy='285' r='105' fill='rgba(108,140,255,0.12)' stroke='rgba(108,140,255,0.75)' stroke-width='3'/><path d='M908 285 L946 326 L1016 242' fill='none' stroke='#6C8CFF' stroke-width='13' stroke-linecap='round' stroke-linejoin='round'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 960,
+          "y": 455,
+          "width": 1560,
+          "anchor": "top-center",
+          "track": 1,
+          "enterBegin": 0.3,
+          "enterEnd": 0.8,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.6,
+          "style": {
+            "fontFamily": "Outfit",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='text-align:center; color:#FFFFFF; font-size:92px; line-height:1.06; font-weight:800; letter-spacing:-2px;'>You&#39;re all set, Maya.</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 960,
+          "y": 645,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.75,
+          "enterEnd": 1.15,
+          "enterAnimation": "circleopen",
+          "exitEnd": 4.6,
+          "style": {
+            "fontFamily": "Outfit",
+            "color": "#6C8CFF"
+          },
+          "html": "<div style='display:inline-block; background:#6C8CFF; color:#0B1020; border-radius:999px; padding:26px 64px; font-size:36px; font-weight:800;'>Open your workspace &rarr;</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 960,
+          "y": 815,
+          "width": 1400,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 1.15,
+          "enterEnd": 1.55,
+          "enterAnimation": "fade",
+          "exitEnd": 4.6,
+          "style": {
+            "fontFamily": "Outfit",
+            "color": "#AEB8D6"
+          },
+          "html": "<div style='text-align:center; color:#AEB8D6; font-size:25px; line-height:1.5; font-weight:500;'>Need a hand? Open the help page in your workspace.</div><div style='margin-top:22px; text-align:center; color:rgba(255,255,255,0.5); font-size:23px; font-weight:600; letter-spacing:4px;'>APP.CEDARLINE.EXAMPLE</div>"
+        }
+      ]
+    }
+  ]
+}

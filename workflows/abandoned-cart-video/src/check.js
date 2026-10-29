@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { build } from './workflow.js';
+const json = file => JSON.parse(readFileSync(new URL(file, import.meta.url), 'utf8'));
+const built = build(json('../data/cart.json'), json('../config.json'));
+assert.equal(built.meta.firstName, 'Alex');
+assert.equal(built.meta.itemCount, 1);
+assert.equal(built.meta.totalDisplay, '$54.00');
+assert.equal(built.meta.totalSeconds, 13.8);
+assert.equal(built.payload.scenes.length, 3);
+console.log('Canonical cart selection and three-scene build passed; no network or rendering.');

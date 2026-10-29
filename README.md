@@ -46,6 +46,9 @@ Local checks and tests do not spend render credits. Preview options, live API ca
 | [Shopify catalog videos](workflows/shopify-catalog-videos/) | Render eligible product videos in a batch, review them, and optionally attach them to Shopify products. |
 | [Shopify product video ads](workflows/shopify-product-ad-variants/) | Turn product photos and descriptions into creative variants, then review the rendered batch. |
 | [Shopify abandoned checkout videos](workflows/shopify-abandoned-checkout-videos/) | Create personalized recovery videos with explicit, reviewed email delivery. |
+| [Abandoned-cart personalized videos](workflows/abandoned-cart-video/) | Turn one cart into a personal recovery video, then review and hand off its link. |
+| [Personalized cold-outreach videos](workflows/cold-outreach-videos/) | Create lead-specific videos from a small queue and save the results for review. |
+| [Trial signup welcome videos](workflows/welcome-video-on-signup/) | Turn a signup record into a personal onboarding video. |
 | [Proposal recap videos](workflows/proposal-recap-video/) | Turn a confirmed proposal-stage deal into a personal recap and next-step video. |
 | [No-show rebooking videos](workflows/no-show-reengagement/) | Create a personal session recap and rebooking invitation from a recorded no-show. |
 | [Customer month-in-review videos](workflows/month-in-review-stats/) | Turn one customer's prepared monthly metrics into a vertical recap. |
