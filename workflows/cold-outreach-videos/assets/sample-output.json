@@ -1,0 +1,18 @@
+{
+  "renderDate": "2026-10-19",
+  "input": "data/leads.json",
+  "config": "config.json",
+  "width": 1920,
+  "height": 1080,
+  "duration": 11.75,
+  "quotedCredits": 12,
+  "reproductionCommand": "npm start -- --out out/sample --max-credits 12",
+  "source": "Historical n8n execution with matching fictional input and configuration; Node.js orchestration is independently tested offline.",
+  "workflowSha256": "dd13a6eb9442419a7589576af8de38061a0144b4913616f88d3531ad9b694eea",
+  "hashes": {
+    "video": "fe0e0bef815863285f75ec39cab44e05269f8a657f2e7387b288e94f2af1c1ac",
+    "poster": "e584be3a6c9dcdc57c73eb00ea2a7dc4fe789803699a55cea868e40956129806",
+    "project": "3a17db0279512385c4f9c1334ac3c137fe6245bc0a6b67a480a413b2b5db2aa9"
+  },
+  "videoSha256": "fe0e0bef815863285f75ec39cab44e05269f8a657f2e7387b288e94f2af1c1ac"
+}

@@ -1,0 +1,39 @@
+{
+  "apiUrl": "https://api.zvid.io",
+  "editorUrl": "https://editor.zvid.io",
+  "brandName": "Cedarline Demo",
+  "brandLogoUrl": "",
+  "brandBackground": "#0B1020",
+  "brandGlow": "#1B2450",
+  "brandAccent": "#6C8CFF",
+  "font": "Outfit",
+  "welcomeSub": "Here's how to make week one count.",
+  "cards": [
+    {
+      "title": "Create a project",
+      "detail": "Give your first project a name and choose a starting template."
+    },
+    {
+      "title": "Invite a teammate",
+      "detail": "Add someone you want to work with on this project."
+    },
+    {
+      "title": "Open the starter guide",
+      "detail": "Follow the guide when you are ready for the next step."
+    }
+  ],
+  "stepsFootnote": "Start with one step, {firstName}.",
+  "ctaHeadline": "You're all set, {firstName}.",
+  "ctaText": "Open your workspace",
+  "ctaUrl": "app.cedarline.example",
+  "supportNote": "Need a hand? Open the help page in your workspace.",
+  "musicUrl": "",
+  "musicVolume": 0.15,
+  "frameRate": 30,
+  "sendEmail": false,
+  "emailFrom": "welcome@cedarline.example",
+  "emailSubject": "Welcome to {brand}, {firstName}!",
+  "dryRun": false,
+  "pollSeconds": 10,
+  "timeoutMinutes": 20
+}

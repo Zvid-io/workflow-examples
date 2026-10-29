@@ -1,0 +1,29 @@
+{
+  "name": "zvid-cold-outreach-videos",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Create personalized outreach videos from a local lead queue with Zvid.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "offline": "node src/index.js --offline --out out/offline",
+    "dry-run": "node src/index.js --dry-run --out out/preview",
+    "check": "node src/check.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "@zvid/sdk": "0.2.0"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://zvid.io/contact"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zvid-io/workflow-examples.git",
+    "directory": "workflows/cold-outreach-videos"
+  }
+}

@@ -1,0 +1,19 @@
+[
+  {
+    "row_number": 2,
+    "Email": "",
+    "FirstName": "Alex",
+    "Item1": "Demo Studio Headphones",
+    "Item1Image": "https://cdn.zvid.io/blog/abandoned-cart-video/93a5b0ec9720/studio-headphones.jpg",
+    "Item1Price": "54.00",
+    "Item2": "",
+    "Item2Image": "",
+    "Item2Price": "",
+    "Item3": "",
+    "Item3Image": "",
+    "Item3Price": "",
+    "CheckoutUrl": "https://shop.example/checkout/demo",
+    "Status": "",
+    "VideoUrl": ""
+  }
+]

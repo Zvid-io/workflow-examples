@@ -1,0 +1,15 @@
+{
+  "renderDate": "2026-10-13",
+  "historical": true,
+  "input": "Fictional Alex, Demo Studio Headphones, $54.00, one item",
+  "width": 1080,
+  "height": 1920,
+  "durationSeconds": 13.8,
+  "creditsQuoted": 14,
+  "reproductionCommand": "npm run sample -- --max-credits 20",
+  "sourceNote": "Retained actual live tutorial output. Source project retains original wording; media references are republished CDN copies. Current config changes hookNote punctuation. Current offline tests are not a fresh live render.",
+  "videoSha256": "ba1132c5f1d87ada4a4a681bb5dc656ca6c2b35e637f1c668cdcf6458f835735",
+  "posterSha256": "2aef80df7a8655bc7d77abc02290ef52ff62179d52bb2160bc0089b48558d645",
+  "projectSha256": "34b5a211a6fe0d8d507bc044476a255d7015cb7bffc70ddf929c5cf4ed6a75b5",
+  "workflowSha256": "dff3c1a261959234256826752a2ff62f08fb5e82bbbc1d3c3dd467794f953618"
+}
