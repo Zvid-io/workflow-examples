@@ -1,0 +1,18 @@
+{
+  "renderedAt": "2026-10-29",
+  "method": "Local Zvid engine 0.2.11",
+  "input": "data/reviews.json",
+  "configuration": "config.json",
+  "project": "assets/sample-project.json",
+  "width": 1080,
+  "height": 1920,
+  "durationSeconds": 14.933333,
+  "audio": false,
+  "quotedCredits": 15,
+  "quoteKind": "Live API validation; not a paid-render charge",
+  "reproductionCommand": "npm start -- --input data/reviews.json --render --max-credits 15 --out out/alex",
+  "videoSha256": "751ebbb30aa1ae3717b56cb41a1dfff42791e1d2467d3bc0f42ebbd0a040694a",
+  "workflowSha256": "a257af017c9fe03bf69b9cf88ff60756be5cf1334e0779f7eca67fdc1758849e",
+  "projectSha256": "79ed722c968d4c3ada23899f6ae9dde2f7bec0aeae11ac7293e29db46794d070",
+  "sampleDisclosure": "Fictional reviewer and product; on-screen illustrative review label"
+}

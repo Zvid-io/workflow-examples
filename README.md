@@ -49,6 +49,9 @@ Local checks and tests do not spend render credits. Preview options, live API ca
 | [Abandoned-cart personalized videos](workflows/abandoned-cart-video/) | Turn one cart into a personal recovery video, then review and hand off its link. |
 | [Personalized cold-outreach videos](workflows/cold-outreach-videos/) | Create lead-specific videos from a small queue and save the results for review. |
 | [Trial signup welcome videos](workflows/welcome-video-on-signup/) | Turn a signup record into a personal onboarding video. |
+| [Bulk catalog videos](workflows/bulk-catalog-videos/) | Turn catalog rows into one video per product and preserve completed links. |
+| [Flash-sale videos and banners](workflows/flash-sale-alert/) | Create a matching sale video and banner from an approved price drop. |
+| [Five-star review videos](workflows/review-testimonial-video/) | Turn an approved review into a testimonial video with rating and quote checks. |
 
 Open a workflow's folder for its tutorial, screenshots, sample output, and complete setup instructions.
 

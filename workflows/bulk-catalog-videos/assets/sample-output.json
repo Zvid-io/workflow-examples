@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-10-29",
+  "input": "data/catalog.json",
+  "project": "assets/sample-project.json",
+  "method": "Local Zvid renderer using the canonical workflow builder and template resolver",
+  "width": 1080,
+  "height": 1920,
+  "durationSeconds": 11.366667,
+  "audio": false,
+  "quotedCredits": 12,
+  "quoteSource": "Live Zvid validation on 2026-10-29; valid, zero errors and zero warnings",
+  "creditsSpent": 0,
+  "reproductionCommand": "npm run dry-run; npm start -- --max-credits 12",
+  "videoSha256": "f7aaba05f6cb02e3c1300a927ff5b36448230657a29ad8fd09aaf782f307b242",
+  "posterSha256": "c2cba889bdac86dc58acc0500dda849e71723b14ebcbae729d217b8a2b93d98d",
+  "projectSha256": "fd0598cbb922e48235361386f4ea371454ad4a44f8b7dd176ed11db5c7570505",
+  "workflowSha256": "20e98d5f2b82a83489183cf02c284bbbd94a763dbc65cea57fb91e34c8f78de3"
+}

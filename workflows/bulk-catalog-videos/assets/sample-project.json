@@ -1,0 +1,247 @@
+{
+  "name": "Aurora Ceramic Pour-Over Set",
+  "resolution": "instagram-reel",
+  "frameRate": 30,
+  "backgroundColor": "#2A1E16",
+  "outputFormat": "mp4",
+  "scenes": [
+    {
+      "id": "hero",
+      "duration": 3.6,
+      "backgroundColor": "#2A1E16",
+      "transition": "smoothup",
+      "transitionId": "features",
+      "transitionDuration": 0.55,
+      "visuals": [
+        {
+          "type": "IMAGE",
+          "src": "https://cdn.zvid.io/blog/bulk-catalog-videos/967ce328206a/product-hero.jpg",
+          "width": 1080,
+          "height": 1920,
+          "position": "center-center",
+          "resize": "cover",
+          "zoom": true,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 3.6
+        },
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 3.6,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='bcShade' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#2A1E16' stop-opacity='0.5'/><stop offset='0.4' stop-color='#2A1E16' stop-opacity='0.05'/><stop offset='0.58' stop-color='#2A1E16' stop-opacity='0.45'/><stop offset='0.78' stop-color='#2A1E16' stop-opacity='0.85'/><stop offset='1' stop-color='#2A1E16' stop-opacity='0.96'/></linearGradient></defs><rect width='1080' height='1920' fill='url(#bcShade)'/><path d='M84 296 L84 116 L264 116' fill='none' stroke='#F6EFE7' stroke-width='9' stroke-opacity='0.9'/><path d='M996 1624 L996 1804 L816 1804' fill='none' stroke='#E8A075' stroke-width='9'/><path d='M920 240 L920 288 M896 264 L944 264' stroke='rgba(246,239,231,0.75)' stroke-width='6' stroke-linecap='round'/><circle cx='950' cy='1180' r='9' fill='#E8A075'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 130,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.15,
+          "enterEnd": 0.55,
+          "enterAnimation": "fade",
+          "exitEnd": 3.6,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#F6EFE7"
+          },
+          "html": "<div style='display:inline-block; border:1.5px solid rgba(246,239,231,0.55); border-radius:999px; padding:14px 34px; color:#F6EFE7; font-size:26px; font-weight:800; letter-spacing:8px;'>ATELIER AURA</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1330,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.5,
+          "enterEnd": 0.95,
+          "enterAnimation": "smoothup",
+          "exitEnd": 3.6,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#F6EFE7"
+          },
+          "html": "<div style='color:#E8A075; font-size:26px; font-weight:800; letter-spacing:6px;'>JUST DROPPED</div><div style='margin-top:20px; color:#F6EFE7; font-size:80px; line-height:1.06; font-weight:900; letter-spacing:-2px;'>Aurora Ceramic Pour-Over Set</div><div style='margin-top:26px; width:130px; height:6px; border-radius:3px; background:#E8A075;'></div>"
+        }
+      ]
+    },
+    {
+      "id": "features",
+      "duration": 4.6,
+      "backgroundColor": "#F6EFE7",
+      "transition": "fade",
+      "transitionId": "cta",
+      "transitionDuration": 0.5,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 4.6,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><rect width='1080' height='1920' fill='#F6EFE7'/><path d='M186 880 L186 524 A354 354 0 0 1 894 524 L894 880' fill='none' stroke='#B4552D' stroke-width='3'/><path d='M120 880 L960 880' stroke='rgba(42,30,22,0.22)' stroke-width='2'/><circle cx='828' cy='170' r='4' fill='rgba(180,85,45,0.35)'/><circle cx='888' cy='170' r='4' fill='rgba(180,85,45,0.35)'/><circle cx='948' cy='170' r='4' fill='rgba(180,85,45,0.35)'/><circle cx='828' cy='230' r='4' fill='rgba(180,85,45,0.35)'/><circle cx='888' cy='230' r='4' fill='rgba(180,85,45,0.35)'/><circle cx='948' cy='230' r='4' fill='rgba(180,85,45,0.35)'/><path d='M96 200 q26 -34 52 0 q26 34 52 0' fill='none' stroke='#B4552D' stroke-width='6' stroke-linecap='round'/><path d='M970 480 L970 524 M948 502 L992 502' stroke='rgba(180,85,45,0.6)' stroke-width='6' stroke-linecap='round'/><polygon points='120,560 160,560 140,524' fill='#E8A075'/></svg>"
+        },
+        {
+          "type": "IMAGE",
+          "src": "https://cdn.zvid.io/blog/bulk-catalog-videos/967ce328206a/product-hero.jpg",
+          "x": 210,
+          "y": 170,
+          "width": 660,
+          "height": 680,
+          "anchor": "top-left",
+          "zoom": true,
+          "radius": {
+            "tl": 330,
+            "tr": 330,
+            "bl": 0,
+            "br": 0
+          },
+          "track": 1,
+          "enterBegin": 0,
+          "enterEnd": 0.55,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.6
+        },
+        {
+          "type": "TEXT",
+          "x": 830,
+          "y": 812,
+          "anchor": "center-center",
+          "angle": -8,
+          "track": 4,
+          "enterBegin": 0.75,
+          "enterEnd": 1.1,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.6,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#F6EFE7"
+          },
+          "html": "<div style='display:inline-block; background:#B4552D; color:#F6EFE7; border-radius:999px; padding:16px 34px; font-size:38px; font-weight:800;'>$68</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 110,
+          "y": 985,
+          "width": 860,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.45,
+          "enterEnd": 0.9,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.6,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#2A1E16"
+          },
+          "html": "<div style='color:#B4552D; font-size:25px; font-weight:800; letter-spacing:5px;'>WHY YOU'LL LOVE IT</div><div style='margin-top:26px; border-top:1.5px solid rgba(42,30,22,0.16); padding-top:24px;'><div style='color:#B4552D; font-size:24px; font-weight:800; letter-spacing:3px;'>01</div><div style='margin-top:8px; color:#2A1E16; font-size:34px; line-height:1.32; font-weight:600;'>Hand-glazed stoneware</div></div><div style='margin-top:26px; border-top:1.5px solid rgba(42,30,22,0.16); padding-top:24px;'><div style='color:#B4552D; font-size:24px; font-weight:800; letter-spacing:3px;'>02</div><div style='margin-top:8px; color:#2A1E16; font-size:34px; line-height:1.32; font-weight:600;'>Pours at the ideal 3-minute rate</div></div><div style='margin-top:26px; border-top:1.5px solid rgba(42,30,22,0.16); padding-top:24px;'><div style='color:#B4552D; font-size:24px; font-weight:800; letter-spacing:3px;'>03</div><div style='margin-top:8px; color:#2A1E16; font-size:34px; line-height:1.32; font-weight:600;'>Dishwasher safe</div></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1810,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 0.3,
+          "enterEnd": 0.7,
+          "enterAnimation": "fade",
+          "exitEnd": 4.6,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#2A1E16"
+          },
+          "html": "<div style='color:rgba(42,30,22,0.55); font-size:24px; font-weight:700; letter-spacing:6px;'>ATELIER AURA · ATELIERAURA.EXAMPLE</div>"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "duration": 4.2,
+      "backgroundColor": "#B4552D",
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 4.2,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><rect width='1080' height='1920' fill='#B4552D'/><path d='M84 296 L84 116 L264 116' fill='none' stroke='#F6EFE7' stroke-width='9' stroke-opacity='0.9'/><path d='M996 1624 L996 1804 L816 1804' fill='none' stroke='#F6EFE7' stroke-width='9' stroke-opacity='0.9'/><path d='M120 1560 q30 -38 60 0 q30 38 60 0 q30 -38 60 0' fill='none' stroke='rgba(246,239,231,0.8)' stroke-width='7' stroke-linecap='round'/><path d='M170 340 L170 384 M148 362 L192 362' stroke='rgba(246,239,231,0.6)' stroke-width='6' stroke-linecap='round'/><circle cx='902' cy='420' r='7' fill='rgba(246,239,231,0.55)'/><polygon points='930,1500 970,1500 950,1464' fill='rgba(246,239,231,0.7)'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 130,
+          "anchor": "top-center",
+          "track": 1,
+          "enterBegin": 0.15,
+          "enterEnd": 0.5,
+          "enterAnimation": "fade",
+          "exitEnd": 4.2,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#F6EFE7"
+          },
+          "html": "<div style='color:#F6EFE7; font-size:28px; font-weight:800; letter-spacing:10px;'>ATELIER AURA</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 490,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.25,
+          "enterEnd": 0.65,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.2,
+          "style": {
+            "fontFamily": "Fraunces",
+            "color": "#F6EFE7"
+          },
+          "html": "<div style='color:#F6EFE7; font-size:64px; line-height:1.15; font-style:italic; font-weight:500;'>Made to be used every day.</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 720,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.45,
+          "enterEnd": 0.85,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.2,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#F6EFE7"
+          },
+          "html": "<div style='color:rgba(246,239,231,0.75); font-size:26px; font-weight:800; letter-spacing:6px;'>FOR A LIMITED TIME</div><div style='margin-top:24px;'><span style='color:#F6EFE7; font-size:150px; font-weight:900; letter-spacing:-4px;'>$68</span><span style='margin-left:28px; color:rgba(246,239,231,0.65); font-size:54px; font-weight:700; text-decoration:line-through;'>$84</span></div><div style='margin-top:22px; display:inline-block; border:1.5px solid rgba(246,239,231,0.6); border-radius:999px; padding:14px 32px; color:#F6EFE7; font-size:28px; font-weight:700;'>You save $16</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1180,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 0.65,
+          "enterEnd": 1.05,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.2,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#F6EFE7"
+          },
+          "html": "<div style='color:rgba(246,239,231,0.85); font-size:34px; line-height:1.35; font-weight:600;'>Aurora Ceramic Pour-Over Set</div><div style='margin-top:36px; display:inline-block; background:#F6EFE7; color:#2A1E16; border-radius:999px; padding:26px 62px; font-size:40px; font-weight:800;'>Shop the set</div><div style='margin-top:24px; color:rgba(246,239,231,0.7); font-size:26px; letter-spacing:2px; font-weight:600;'>atelieraura.example</div>"
+        }
+      ]
+    }
+  ],
+  "audios": []
+}
