@@ -1,0 +1,26 @@
+{
+  "userName": "Maya",
+  "monthLabel": "September 2026",
+  "highlight": "A month of steady progress.",
+  "stats": [
+    {
+      "label": "Projects completed",
+      "value": "12",
+      "delta": "3 more than last month"
+    },
+    {
+      "label": "Videos created",
+      "value": "24",
+      "delta": "6 more than last month"
+    },
+    {
+      "label": "Top project",
+      "value": "Welcome series"
+    },
+    {
+      "label": "Time saved",
+      "value": "4 hours",
+      "delta": "Your reported estimate"
+    }
+  ]
+}

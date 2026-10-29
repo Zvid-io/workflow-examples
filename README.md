@@ -46,6 +46,9 @@ Local checks and tests do not spend render credits. Preview options, live API ca
 | [Shopify catalog videos](workflows/shopify-catalog-videos/) | Render eligible product videos in a batch, review them, and optionally attach them to Shopify products. |
 | [Shopify product video ads](workflows/shopify-product-ad-variants/) | Turn product photos and descriptions into creative variants, then review the rendered batch. |
 | [Shopify abandoned checkout videos](workflows/shopify-abandoned-checkout-videos/) | Create personalized recovery videos with explicit, reviewed email delivery. |
+| [Proposal recap videos](workflows/proposal-recap-video/) | Turn a confirmed proposal-stage deal into a personal recap and next-step video. |
+| [No-show rebooking videos](workflows/no-show-reengagement/) | Create a personal session recap and rebooking invitation from a recorded no-show. |
+| [Customer month-in-review videos](workflows/month-in-review-stats/) | Turn one customer's prepared monthly metrics into a vertical recap. |
 
 Open a workflow's folder for its tutorial, screenshots, sample output, and complete setup instructions.
 

@@ -1,0 +1,31 @@
+{
+  "name": "proposal-recap-video",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Build a proposal recap from one deal using the official Zvid SDK.",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zvid-io/workflow-examples.git",
+    "directory": "workflows/proposal-recap-video"
+  },
+  "bugs": {
+    "url": "https://zvid.io/contact"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "check": "node src/check.js",
+    "test": "node --test tests/*.test.js",
+    "offline": "node src/index.js",
+    "validate": "node src/index.js --validate",
+    "render": "node src/index.js --render",
+    "resume": "node src/index.js --resume"
+  },
+  "dependencies": {
+    "@zvid/sdk": "0.2.0"
+  }
+}

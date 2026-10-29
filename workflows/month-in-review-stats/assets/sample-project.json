@@ -1,0 +1,490 @@
+{
+  "name": "september-2026-in-review-maya",
+  "resolution": "instagram-reel",
+  "frameRate": 30,
+  "backgroundColor": "#F3F0EA",
+  "outputFormat": "mp4",
+  "scenes": [
+    {
+      "id": "intro",
+      "duration": 3.4,
+      "backgroundColor": "#F3F0EA",
+      "transition": "smoothleft",
+      "transitionId": "stat-1",
+      "transitionDuration": 0.45,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 3.4,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='mirIntro' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#F3F0EA' stop-opacity='0.9'/><stop offset='0.5' stop-color='#F3F0EA' stop-opacity='0.55'/><stop offset='1' stop-color='#F3F0EA' stop-opacity='0.95'/></linearGradient></defs><rect width='1080' height='1920' fill='url(#mirIntro)'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 740,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.2,
+          "enterEnd": 0.65,
+          "enterAnimation": "fade",
+          "exitEnd": 3.4,
+          "style": {
+            "fontFamily": "Space Grotesk"
+          },
+          "html": "<div style='display:inline-block; background:rgba(14,159,142,0.14); color:#0E9F8E; border-radius:999px; padding:12px 32px; font-size:26px; font-weight:700; letter-spacing:4px;'>CEDARLINE DEMO · MONTH IN REVIEW</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 850,
+          "width": 900,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 0.45,
+          "enterEnd": 0.95,
+          "enterAnimation": "smoothup",
+          "exitEnd": 3.4,
+          "style": {
+            "fontFamily": "Outfit"
+          },
+          "html": "<div style='text-align:center; color:#1E241F; font-size:96px; line-height:1; font-weight:800; letter-spacing:-3px;'>September 2026</div><div style='margin-top:24px; text-align:center; color:#6B6459; font-size:34px; font-weight:500;'>Made for Maya</div>"
+        }
+      ]
+    },
+    {
+      "id": "stat-1",
+      "duration": 2.8,
+      "backgroundColor": "#F3F0EA",
+      "transition": "smoothleft",
+      "transitionId": "stat-2",
+      "transitionDuration": 0.45,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 2.8,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><rect width='1080' height='1920' fill='#F3F0EA'/><circle cx='880' cy='300' r='140' fill='rgba(242,106,75,0.1)'/><circle cx='170' cy='1560' r='180' fill='rgba(14,159,142,0.1)'/></svg>"
+        },
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 1,
+          "enterBegin": 0.45,
+          "enterEnd": 0.95,
+          "enterAnimation": "fade",
+          "exitEnd": 2.8,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><rect x='150' y='1160' width='780' height='52' rx='26' fill='rgba(30,36,31,0.08)'/><rect x='150' y='1160' width='328' height='52' rx='26' fill='#0E9F8E'/><rect x='150' y='1160' width='328' height='26' rx='13' fill='rgba(255,255,255,0.25)'/><circle cx='478' cy='1186' r='36' fill='#0E9F8E' stroke='#F3F0EA' stroke-width='6'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 380,
+          "width": 920,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.1,
+          "enterEnd": 0.5,
+          "enterAnimation": "fade",
+          "exitEnd": 2.8,
+          "style": {
+            "fontFamily": "Space Grotesk"
+          },
+          "html": "<div style='text-align:center; color:#6B6459; font-size:26px; line-height:1.5; font-weight:700; letter-spacing:5px;'>MAYA · SEPTEMBER 2026</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 560,
+          "width": 880,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 0.2,
+          "enterEnd": 0.65,
+          "enterAnimation": "circleopen",
+          "exitEnd": 2.8,
+          "style": {
+            "fontFamily": "Outfit"
+          },
+          "html": "<div style='text-align:center; color:#F26A4B; font-size:31px; line-height:1.35; font-weight:700; letter-spacing:4px;'>PROJECTS COMPLETED</div><div style='margin-top:14px; text-align:center; color:#1E241F; font-size:230px; line-height:0.95; font-weight:800; letter-spacing:-8px;'>12</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1005,
+          "anchor": "top-center",
+          "track": 4,
+          "enterBegin": 0.5,
+          "enterEnd": 0.95,
+          "enterAnimation": "smoothright",
+          "exitEnd": 2.8,
+          "style": {
+            "fontFamily": "Space Grotesk"
+          },
+          "html": "<div style='display:inline-block; background:#F26A4B; color:#FFFFFF; border-radius:999px; padding:14px 34px; font-size:29px; font-weight:800;'>3 more than last month</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1300,
+          "anchor": "top-center",
+          "track": 5,
+          "enterBegin": 0.55,
+          "enterEnd": 0.95,
+          "enterAnimation": "fade",
+          "exitEnd": 2.8,
+          "style": {
+            "fontFamily": "Space Grotesk"
+          },
+          "html": "<div style='text-align:center; color:rgba(30,36,31,0.45); font-size:27px; font-weight:700; letter-spacing:6px;'>01 / 04</div>"
+        }
+      ]
+    },
+    {
+      "id": "stat-2",
+      "duration": 2.8,
+      "backgroundColor": "#F3F0EA",
+      "transition": "smoothleft",
+      "transitionId": "stat-3",
+      "transitionDuration": 0.45,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 2.8,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><rect width='1080' height='1920' fill='#F3F0EA'/><circle cx='200' cy='280' r='150' fill='rgba(14,159,142,0.1)'/><circle cx='900' cy='1600' r='170' fill='rgba(242,106,75,0.1)'/></svg>"
+        },
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 1,
+          "enterBegin": 0.45,
+          "enterEnd": 0.95,
+          "enterAnimation": "fade",
+          "exitEnd": 2.8,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><rect x='150' y='1160' width='780' height='52' rx='26' fill='rgba(30,36,31,0.08)'/><rect x='150' y='1160' width='468' height='52' rx='26' fill='#0E9F8E'/><rect x='150' y='1160' width='468' height='26' rx='13' fill='rgba(255,255,255,0.25)'/><circle cx='618' cy='1186' r='36' fill='#0E9F8E' stroke='#F3F0EA' stroke-width='6'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 380,
+          "width": 920,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.1,
+          "enterEnd": 0.5,
+          "enterAnimation": "fade",
+          "exitEnd": 2.8,
+          "style": {
+            "fontFamily": "Space Grotesk"
+          },
+          "html": "<div style='text-align:center; color:#6B6459; font-size:26px; line-height:1.5; font-weight:700; letter-spacing:5px;'>MAYA · SEPTEMBER 2026</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 560,
+          "width": 880,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 0.2,
+          "enterEnd": 0.65,
+          "enterAnimation": "circleopen",
+          "exitEnd": 2.8,
+          "style": {
+            "fontFamily": "Outfit"
+          },
+          "html": "<div style='text-align:center; color:#F26A4B; font-size:31px; line-height:1.35; font-weight:700; letter-spacing:4px;'>VIDEOS CREATED</div><div style='margin-top:14px; text-align:center; color:#1E241F; font-size:230px; line-height:0.95; font-weight:800; letter-spacing:-8px;'>24</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1005,
+          "anchor": "top-center",
+          "track": 4,
+          "enterBegin": 0.5,
+          "enterEnd": 0.95,
+          "enterAnimation": "smoothright",
+          "exitEnd": 2.8,
+          "style": {
+            "fontFamily": "Space Grotesk"
+          },
+          "html": "<div style='display:inline-block; background:#F26A4B; color:#FFFFFF; border-radius:999px; padding:14px 34px; font-size:29px; font-weight:800;'>6 more than last month</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1300,
+          "anchor": "top-center",
+          "track": 5,
+          "enterBegin": 0.55,
+          "enterEnd": 0.95,
+          "enterAnimation": "fade",
+          "exitEnd": 2.8,
+          "style": {
+            "fontFamily": "Space Grotesk"
+          },
+          "html": "<div style='text-align:center; color:rgba(30,36,31,0.45); font-size:27px; font-weight:700; letter-spacing:6px;'>02 / 04</div>"
+        }
+      ]
+    },
+    {
+      "id": "stat-3",
+      "duration": 2.8,
+      "backgroundColor": "#F3F0EA",
+      "transition": "smoothleft",
+      "transitionId": "stat-4",
+      "transitionDuration": 0.45,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 2.8,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><rect width='1080' height='1920' fill='#F3F0EA'/><circle cx='880' cy='300' r='140' fill='rgba(242,106,75,0.1)'/><circle cx='170' cy='1560' r='180' fill='rgba(14,159,142,0.1)'/></svg>"
+        },
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 1,
+          "enterBegin": 0.45,
+          "enterEnd": 0.95,
+          "enterAnimation": "fade",
+          "exitEnd": 2.8,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><rect x='150' y='1160' width='780' height='52' rx='26' fill='rgba(30,36,31,0.08)'/><rect x='150' y='1160' width='601' height='52' rx='26' fill='#0E9F8E'/><rect x='150' y='1160' width='601' height='26' rx='13' fill='rgba(255,255,255,0.25)'/><circle cx='751' cy='1186' r='36' fill='#0E9F8E' stroke='#F3F0EA' stroke-width='6'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 380,
+          "width": 920,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.1,
+          "enterEnd": 0.5,
+          "enterAnimation": "fade",
+          "exitEnd": 2.8,
+          "style": {
+            "fontFamily": "Space Grotesk"
+          },
+          "html": "<div style='text-align:center; color:#6B6459; font-size:26px; line-height:1.5; font-weight:700; letter-spacing:5px;'>MAYA · SEPTEMBER 2026</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 560,
+          "width": 880,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 0.2,
+          "enterEnd": 0.65,
+          "enterAnimation": "circleopen",
+          "exitEnd": 2.8,
+          "style": {
+            "fontFamily": "Outfit"
+          },
+          "html": "<div style='text-align:center; color:#F26A4B; font-size:31px; line-height:1.35; font-weight:700; letter-spacing:4px;'>TOP PROJECT</div><div style='margin-top:24px; text-align:center; color:#1E241F; font-size:104px; line-height:1; font-weight:800; letter-spacing:-2px;'>Welcome series</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1300,
+          "anchor": "top-center",
+          "track": 5,
+          "enterBegin": 0.55,
+          "enterEnd": 0.95,
+          "enterAnimation": "fade",
+          "exitEnd": 2.8,
+          "style": {
+            "fontFamily": "Space Grotesk"
+          },
+          "html": "<div style='text-align:center; color:rgba(30,36,31,0.45); font-size:27px; font-weight:700; letter-spacing:6px;'>03 / 04</div>"
+        }
+      ]
+    },
+    {
+      "id": "stat-4",
+      "duration": 2.8,
+      "backgroundColor": "#F3F0EA",
+      "transition": "smoothup",
+      "transitionId": "outro",
+      "transitionDuration": 0.45,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 2.8,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><rect width='1080' height='1920' fill='#F3F0EA'/><circle cx='200' cy='280' r='150' fill='rgba(14,159,142,0.1)'/><circle cx='900' cy='1600' r='170' fill='rgba(242,106,75,0.1)'/></svg>"
+        },
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 1,
+          "enterBegin": 0.45,
+          "enterEnd": 0.95,
+          "enterAnimation": "fade",
+          "exitEnd": 2.8,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><rect x='150' y='1160' width='780' height='52' rx='26' fill='rgba(30,36,31,0.08)'/><rect x='150' y='1160' width='741' height='52' rx='26' fill='#0E9F8E'/><rect x='150' y='1160' width='741' height='26' rx='13' fill='rgba(255,255,255,0.25)'/><circle cx='891' cy='1186' r='36' fill='#0E9F8E' stroke='#F3F0EA' stroke-width='6'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 380,
+          "width": 920,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.1,
+          "enterEnd": 0.5,
+          "enterAnimation": "fade",
+          "exitEnd": 2.8,
+          "style": {
+            "fontFamily": "Space Grotesk"
+          },
+          "html": "<div style='text-align:center; color:#6B6459; font-size:26px; line-height:1.5; font-weight:700; letter-spacing:5px;'>MAYA · SEPTEMBER 2026</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 560,
+          "width": 880,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 0.2,
+          "enterEnd": 0.65,
+          "enterAnimation": "circleopen",
+          "exitEnd": 2.8,
+          "style": {
+            "fontFamily": "Outfit"
+          },
+          "html": "<div style='text-align:center; color:#F26A4B; font-size:31px; line-height:1.35; font-weight:700; letter-spacing:4px;'>TIME SAVED</div><div style='margin-top:18px; text-align:center; color:#1E241F; font-size:148px; line-height:0.95; font-weight:800; letter-spacing:-4px;'>4 hours</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1005,
+          "anchor": "top-center",
+          "track": 4,
+          "enterBegin": 0.5,
+          "enterEnd": 0.95,
+          "enterAnimation": "smoothright",
+          "exitEnd": 2.8,
+          "style": {
+            "fontFamily": "Space Grotesk"
+          },
+          "html": "<div style='display:inline-block; background:#F26A4B; color:#FFFFFF; border-radius:999px; padding:14px 34px; font-size:29px; font-weight:800;'>Your reported estimate</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1300,
+          "anchor": "top-center",
+          "track": 5,
+          "enterBegin": 0.55,
+          "enterEnd": 0.95,
+          "enterAnimation": "fade",
+          "exitEnd": 2.8,
+          "style": {
+            "fontFamily": "Space Grotesk"
+          },
+          "html": "<div style='text-align:center; color:rgba(30,36,31,0.45); font-size:27px; font-weight:700; letter-spacing:6px;'>04 / 04</div>"
+        }
+      ]
+    },
+    {
+      "id": "outro",
+      "duration": 4,
+      "backgroundColor": "#0a7266",
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 4,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='mirEnd' cx='0.5' cy='0.4' r='0.95'><stop offset='0' stop-color='#2bab9c'/><stop offset='1' stop-color='#0a7266'/></radialGradient></defs><rect width='1080' height='1920' fill='url(#mirEnd)'/><circle cx='540' cy='600' r='140' fill='none' stroke='rgba(255,255,255,0.6)' stroke-width='3'/><path d='M540 500 L563 577 L640 600 L563 623 L540 700 L517 623 L440 600 L517 577 Z' fill='#FFFFFF'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 850,
+          "width": 920,
+          "anchor": "top-center",
+          "track": 1,
+          "enterBegin": 0.25,
+          "enterEnd": 0.75,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4,
+          "style": {
+            "fontFamily": "Outfit"
+          },
+          "html": "<div style='text-align:center; color:#FFFFFF; font-size:84px; line-height:1.08; font-weight:800; letter-spacing:-2px;'>That&#39;s a wrap,<br>Maya.</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1100,
+          "width": 860,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.55,
+          "enterEnd": 1,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4,
+          "style": {
+            "fontFamily": "Outfit"
+          },
+          "html": "<div style='text-align:center; color:rgba(255,255,255,0.92); font-size:38px; line-height:1.45; font-weight:500;'>A month of steady progress.</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1420,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 0.8,
+          "enterEnd": 1.25,
+          "enterAnimation": "circleopen",
+          "exitEnd": 4,
+          "style": {
+            "fontFamily": "Space Grotesk"
+          },
+          "html": "<div style='display:inline-block; background:#FFFFFF; color:#0a7266; border-radius:999px; padding:24px 58px; font-size:36px; font-weight:800;'>Plan your next project</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1580,
+          "anchor": "top-center",
+          "track": 4,
+          "enterBegin": 1.1,
+          "enterEnd": 1.5,
+          "enterAnimation": "fade",
+          "exitEnd": 4,
+          "style": {
+            "fontFamily": "Space Grotesk"
+          },
+          "html": "<div style='text-align:center; color:rgba(255,255,255,0.75); font-size:26px; font-weight:700; letter-spacing:5px;'>CEDARLINE DEMO</div>"
+        }
+      ]
+    }
+  ]
+}
