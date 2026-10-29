@@ -1,0 +1,11 @@
+import { readFileSync } from 'node:fs';
+import { buildProject } from './build-project.js';
+import { normalizeDeal } from './normalize.js';
+const read = file => JSON.parse(readFileSync(file, 'utf8'));
+const config = read('config.json');
+const { payload, meta } = buildProject(config, normalizeDeal(read('data/deal.json'), config), {});
+if (payload.width !== 1920 || payload.height !== 1080 || meta.amountText !== '$12,400' || meta.totalSeconds !== 24.8) throw new Error('Unexpected sample dimensions, amount or duration');
+const workflow = read('n8n/workflow.json');
+if (workflow.nodes.some(node => node.type.includes('n8n-nodes-zvid') && !node.type.startsWith('@zvid/n8n-nodes-zvid.'))) throw new Error('Invalid Zvid community node prefix');
+if (workflow.nodes.some(node => node.credentials)) throw new Error('The export contains credential references');
+console.log('Sample mapping and portable workflow checked locally; no API calls or render credits.');

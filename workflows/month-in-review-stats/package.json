@@ -1,0 +1,29 @@
+{
+  "name": "month-in-review-stats",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Turn one customer metrics record into a monthly recap with the official Zvid SDK.",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zvid-io/workflow-examples.git",
+    "directory": "workflows/month-in-review-stats"
+  },
+  "bugs": {
+    "url": "https://zvid.io/contact"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "offline": "node src/index.js --offline",
+    "validate": "node src/index.js --dry-run",
+    "check": "node src/check.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "@zvid/sdk": "0.2.0"
+  }
+}

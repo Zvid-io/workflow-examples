@@ -52,6 +52,9 @@ Local checks and tests do not spend render credits. Preview options, live API ca
 | [Bulk catalog videos](workflows/bulk-catalog-videos/) | Turn catalog rows into one video per product and preserve completed links. |
 | [Flash-sale videos and banners](workflows/flash-sale-alert/) | Create a matching sale video and banner from an approved price drop. |
 | [Five-star review videos](workflows/review-testimonial-video/) | Turn an approved review into a testimonial video with rating and quote checks. |
+| [Proposal recap videos](workflows/proposal-recap-video/) | Turn a confirmed proposal-stage deal into a personal recap and next-step video. |
+| [No-show rebooking videos](workflows/no-show-reengagement/) | Create a personal session recap and rebooking invitation from a recorded no-show. |
+| [Customer month-in-review videos](workflows/month-in-review-stats/) | Turn one customer's prepared monthly metrics into a vertical recap. |
 
 Open a workflow's folder for its tutorial, screenshots, sample output, and complete setup instructions.
 
