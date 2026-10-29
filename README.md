@@ -55,6 +55,9 @@ Local checks and tests do not spend render credits. Preview options, live API ca
 | [Proposal recap videos](workflows/proposal-recap-video/) | Turn a confirmed proposal-stage deal into a personal recap and next-step video. |
 | [No-show rebooking videos](workflows/no-show-reengagement/) | Create a personal session recap and rebooking invitation from a recorded no-show. |
 | [Customer month-in-review videos](workflows/month-in-review-stats/) | Turn one customer's prepared monthly metrics into a vertical recap. |
+| [Blog content kits](workflows/blog-content-kit/) | Turn one RSS article into a square video, landscape teaser and share image. |
+| [Event countdown videos](workflows/event-countdown-videos/) | Create event announcements and date-based reminder videos. |
+| [Property listing videos](workflows/real-estate-listing-video/) | Turn factual listing data and authorized photos into a vertical property tour. |
 
 Open a workflow's folder for its tutorial, screenshots, sample output, and complete setup instructions.
 

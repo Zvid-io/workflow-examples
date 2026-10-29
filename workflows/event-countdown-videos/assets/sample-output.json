@@ -1,0 +1,20 @@
+{
+  "renderDate": "2026-10-21",
+  "input": "data/events.json",
+  "config": "config.json",
+  "sourceProject": "assets/sample-project.json",
+  "width": 1080,
+  "height": 1920,
+  "duration": 13.6,
+  "audio": false,
+  "creditsQuoted": 14,
+  "reproductionCommand": "npm start -- --max-credits 14",
+  "workflowSha256": "23b801f0133264a6cc2fd8b74fe97fa8fc6655d49184e842065d94ac57e97d27",
+  "videoSha256": "0f98584459acb35c2d6469dfc61becb4973146058e50c2a2fda937337b89b723",
+  "sha256": {
+    "video": "0f98584459acb35c2d6469dfc61becb4973146058e50c2a2fda937337b89b723",
+    "poster": "3cdde6505388f9dc00badc87ae05f84eadda56263b2ed191b81210aed6355b33",
+    "project": "9d99fa10391b7836bb725a004587645d7b1b760adbdcdb8311338734b81065d5"
+  },
+  "notes": "Fictional event. Existing rendered sample reused; current builder parity is checked by npm test."
+}
