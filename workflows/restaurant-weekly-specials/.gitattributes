@@ -1,0 +1,5 @@
+* text=auto eol=lf
+n8n/workflow.json -text
+*.png binary
+*.jpg binary
+*.mp4 binary
