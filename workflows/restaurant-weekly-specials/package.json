@@ -1,0 +1,28 @@
+{
+  "name": "zvid-restaurant-weekly-specials-example",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Plan an approved weekly menu and create a video and caption handoff with Zvid.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "check": "node src/check.js",
+    "test": "node --test tests/*.test.js",
+    "offline": "node src/index.js --input data/menu.json --date 2026-10-22 --offline --out out/sample"
+  },
+  "dependencies": {
+    "@zvid/sdk": "0.2.0"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://zvid.io/contact"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zvid-io/workflow-examples.git",
+    "directory": "workflows/restaurant-weekly-specials"
+  }
+}

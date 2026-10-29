@@ -1,0 +1,29 @@
+{
+  "name": "were-hiring-video",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Create recruiter-requested hiring spotlights and roundups from approved job records with Zvid.",
+  "engines": {
+    "node": ">=22.9"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zvid-io/workflow-examples.git",
+    "directory": "workflows/were-hiring-video"
+  },
+  "bugs": {
+    "url": "https://zvid.io/contact"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/index.js",
+    "offline": "node src/index.js --offline --as-of 2026-10-25",
+    "sample": "node --env-file-if-exists=.env src/index.js --dry-run --as-of 2026-10-25",
+    "check": "node src/check.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "@zvid/sdk": "0.2.0"
+  }
+}

@@ -1,0 +1,33 @@
+[
+  {
+    "WorkoutKey": "wod-20261001",
+    "Date": "2026-10-01",
+    "Approval": "approved",
+    "WorkoutName": "Strength",
+    "Ex1": "Squat x 5x5",
+    "Ex2": "",
+    "Ex3": "",
+    "Ex4": "",
+    "Ex5": "",
+    "Focus": "",
+    "CoachNote": "",
+    "ScaledEx1": "Box squat x 3x8",
+    "ScaledEx2": "",
+    "ScaledEx3": "",
+    "ScaledEx4": "",
+    "ScaledEx5": "",
+    "ScaledCoachNote": "",
+    "StandardStatus": "",
+    "StandardJobId": "",
+    "StandardCredits": "",
+    "StandardVideoUrl": "",
+    "StandardCaption": "",
+    "StandardRenderedAt": "",
+    "ScaledStatus": "",
+    "ScaledJobId": "",
+    "ScaledCredits": "",
+    "ScaledVideoUrl": "",
+    "ScaledCaption": "",
+    "ScaledRenderedAt": ""
+  }
+]

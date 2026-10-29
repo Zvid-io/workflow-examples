@@ -1,0 +1,14 @@
+{
+  "renderedAt": "2026-10-22T11:28:14.204Z",
+  "input": "data/menu.json",
+  "sampleDate": "2026-10-22",
+  "width": 1080,
+  "height": 1920,
+  "duration": 12.9,
+  "hasAudio": false,
+  "creditsQuoted": 13,
+  "reproductionCommand": "npm start -- --input data/menu.json --date 2026-10-22 --render --max-credits 30 --out out/sample-render",
+  "videoSha256": "c5074992a156f9dee3ab7b3a418e8d8cae7630a48dbead94d6a601eb377b2a1c",
+  "workflowSha256": "f7cac1e736513870476df5b6340baeae8bbc7a7d59c1a0e6cb58b43bf2fd124e",
+  "note": "Historical completed example. Source media is rehosted to the Zvid CDN without changing the design. Quote is not a billing receipt."
+}

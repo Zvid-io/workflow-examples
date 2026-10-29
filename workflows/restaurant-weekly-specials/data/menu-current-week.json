@@ -1,0 +1,44 @@
+[
+  {
+    "DishKey": "DEMO-PASTA",
+    "Dish": "Tomato pasta (Sample)",
+    "Category": "Main",
+    "Price": "$19",
+    "PhotoUrl": "https://cdn.zvid.io/blog/restaurant-weekly-specials/c46051eab362/bundled-dish-1.jpg",
+    "ThisWeek": true,
+    "InStock": true,
+    "Approval": "approved",
+    "Description": "Sample offer: ribbon pasta with cherry tomatoes.",
+    "Priority": 3,
+    "AvailableFrom": "",
+    "AvailableUntil": ""
+  },
+  {
+    "DishKey": "DEMO-BOWL",
+    "Dish": "Harvest grain bowl (Sample)",
+    "Category": "Bowl",
+    "Price": "$15",
+    "PhotoUrl": "https://cdn.zvid.io/blog/restaurant-weekly-specials/02006cf40c4c/bundled-dish-3.jpg",
+    "ThisWeek": true,
+    "InStock": true,
+    "Approval": "approved",
+    "Description": "Sample offer: grain bowl with chickpeas, avocado and greens.",
+    "Priority": 2,
+    "AvailableFrom": "",
+    "AvailableUntil": ""
+  },
+  {
+    "DishKey": "DEMO-DESSERT",
+    "Dish": "Strawberry dessert (Sample)",
+    "Category": "Dessert",
+    "Price": "$11",
+    "PhotoUrl": "https://cdn.zvid.io/blog/restaurant-weekly-specials/3d72be4426ea/bundled-dish-4.jpg",
+    "ThisWeek": true,
+    "InStock": true,
+    "Approval": "approved",
+    "Description": "Sample offer: plated strawberry dessert.",
+    "Priority": 1,
+    "AvailableFrom": "",
+    "AvailableUntil": ""
+  }
+]

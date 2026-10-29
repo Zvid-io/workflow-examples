@@ -1,0 +1,17 @@
+[
+  {
+    "JobKey": "DEMO-ENG-01",
+    "Role": "Platform Engineer (Demo)",
+    "Approval": "approved",
+    "ApplyUrl": "https://example.com/?role=demo-platform-engineer",
+    "Team": "Engineering",
+    "Location": "Remote (Demo)",
+    "SalaryRange": "Demo salary: $90k to $110k",
+    "Perk1": "Fictional learning budget",
+    "Perk2": "Flexible working hours",
+    "Perk3": "Demo team meetups",
+    "OpensOn": "2026-10-01",
+    "ClosesOn": "2026-12-15",
+    "Priority": "1"
+  }
+]

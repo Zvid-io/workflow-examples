@@ -61,6 +61,9 @@ Local checks and tests do not spend render credits. Preview options, live API ca
 | [Sports match recap videos](workflows/sports-recap-video/) | Turn reviewed final match results into approved recaps and correction editions. |
 | [Birthday and anniversary greetings](workflows/birthday-greetings/) | Create consented annual greetings with private review and duplicate-run tracking. |
 | [Chat-to-video agent](workflows/chat-video-agent/) | Prepare a video draft from a brief, review a signed quote and explicitly approve rendering. |
+| [Recruiter hiring campaigns](workflows/were-hiring-video/) | Turn approved job records and a recruiter brief into a spotlight or roundup video. |
+| [Restaurant weekly specials](workflows/restaurant-weekly-specials/) | Plan a balanced menu campaign and create its video and posting captions. |
+| [Workout-of-the-day videos](workflows/workout-of-the-day/) | Turn coach-supplied standard and scaled workout plans into daily videos. |
 
 Open a workflow's folder for its tutorial, screenshots, sample output, and complete setup instructions.
 

@@ -1,0 +1,21 @@
+{
+  "renderedAt": "2026-10-22",
+  "input": "data/workouts.json",
+  "configuration": "config.json",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "durationSeconds": 12.566667,
+  "creditsQuotedPerVideo": 13,
+  "reproduction": "npm start -- --max-credits 26",
+  "note": "Fictional software demonstration, not exercise advice or evidence of coach approval. Both variants retain the original 2026-10-01 date. Historical output is silent.",
+  "canonicalWorkflowSha256": "fd066b6be02843d83905494cf5cde3f482c4eb58b48a67f76eab44fe5e9bf183",
+  "workflowSha256": "fd066b6be02843d83905494cf5cde3f482c4eb58b48a67f76eab44fe5e9bf183",
+  "videoSha256": "28ce83708234150dc67f52427dc933c2c0a4e2ef0cfb591dab45de338a6c1669",
+  "files": {
+    "sample-output.mp4": "28ce83708234150dc67f52427dc933c2c0a4e2ef0cfb591dab45de338a6c1669",
+    "sample-scaled.mp4": "8b3765ef462a97bccf4d7a94244d70638362a4cc7133f8e9423aef3a045ca97d"
+  },
+  "mediaHostingNote": "Original media bytes rehosted to verified Zvid CDN URLs on 2026-10-29; composition and historical sample bytes unchanged."
+}

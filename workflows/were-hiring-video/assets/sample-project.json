@@ -1,0 +1,575 @@
+{
+  "name": "hiring-cedarline-demo-platform-20261025-v2",
+  "resolution": "instagram-reel",
+  "frameRate": 30,
+  "outputFormat": "mp4",
+  "backgroundColor": "#F4F2E9",
+  "scenes": [
+    {
+      "id": "role-1",
+      "duration": 6,
+      "backgroundColor": "#F4F2E9",
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 6,
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1080\" height=\"1920\"><rect width=\"1080\" height=\"1920\" fill=\"#F4F2E9\"/><path d=\"M72 180H1008\" stroke=\"#163D35\" stroke-opacity=\".28\"/><path d=\"M72 1058L340 900L608 1058L340 1216Z\" fill=\"#D7F875\"/><path d=\"M72 1058V1190L340 1348V1216Z\" fill=\"#163D35\" opacity=\".92\"/><path d=\"M340 1216L608 1058V1190L340 1348Z\" fill=\"#163D35\" opacity=\".74\"/><path d=\"M340 900L608 742L876 900L608 1058Z\" fill=\"#D7F875\"/><path d=\"M340 900V1032L608 1190V1058Z\" fill=\"#163D35\" opacity=\".92\"/><path d=\"M608 1058L876 900V1032L608 1190Z\" fill=\"#163D35\" opacity=\".74\"/><path d=\"M608 742L876 584L1008 662L1008 820L876 900Z\" fill=\"#D7F875\"/><path d=\"M608 742V874L876 1032V900Z\" fill=\"#163D35\" opacity=\".92\"/><path d=\"M876 900L1008 820V952L876 1032Z\" fill=\"#163D35\" opacity=\".74\"/><rect x=\"72\" y=\"1390\" width=\"936\" height=\"280\" rx=\"24\" fill=\"#163D35\"/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 72,
+          "y": 88,
+          "width": 720,
+          "height": 54,
+          "anchor": "top-left",
+          "track": 1,
+          "enterBegin": 0,
+          "enterEnd": 0.45,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#163D35"
+          },
+          "html": "<div style=\"font-size:32px;line-height:1.08;font-weight:750;letter-spacing:0px;overflow-wrap:break-word;\">Cedarline Demo</div>",
+          "exitEnd": 6
+        },
+        {
+          "type": "TEXT",
+          "x": 866,
+          "y": 90,
+          "width": 140,
+          "height": 44,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0,
+          "enterEnd": 0.45,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#163D35"
+          },
+          "html": "<div style=\"font-size:25px;line-height:1.08;font-weight:600;letter-spacing:0px;overflow-wrap:break-word;\">THE ROLE</div>",
+          "exitEnd": 6
+        },
+        {
+          "type": "TEXT",
+          "x": 72,
+          "y": 232,
+          "width": 900,
+          "height": 60,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 0.1,
+          "enterEnd": 0.55,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#163D35"
+          },
+          "html": "<div style=\"font-size:28px;line-height:1.08;font-weight:750;letter-spacing:0px;overflow-wrap:break-word;\">WE\u2019RE HIRING / FICTIONAL DEMO</div>",
+          "exitEnd": 6
+        },
+        {
+          "type": "TEXT",
+          "x": 72,
+          "y": 326,
+          "width": 936,
+          "height": 330,
+          "anchor": "top-left",
+          "track": 5,
+          "enterBegin": 0.2,
+          "enterEnd": 0.65,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#163D35"
+          },
+          "html": "<div style=\"font-size:120px;line-height:1.08;font-weight:800;letter-spacing:-1px;overflow-wrap:break-word;\">Platform Engineer</div>",
+          "exitEnd": 6
+        },
+        {
+          "type": "TEXT",
+          "x": 72,
+          "y": 706,
+          "width": 510,
+          "height": 160,
+          "anchor": "top-left",
+          "track": 7,
+          "enterBegin": 0.45,
+          "enterEnd": 0.9,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#163D35"
+          },
+          "html": "<div style=\"font-size:42px;line-height:1.08;font-weight:700;letter-spacing:-1px;overflow-wrap:break-word;\">A NEW CHAPTER<br/>STARTS WITH YOU.</div>",
+          "exitEnd": 6
+        },
+        {
+          "type": "TEXT",
+          "x": 104,
+          "y": 1420,
+          "width": 420,
+          "height": 134,
+          "anchor": "top-left",
+          "track": 9,
+          "enterBegin": 0.65,
+          "enterEnd": 1.1,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#F4F2E9"
+          },
+          "html": "<div style=\"font-size:35px;line-height:1.08;font-weight:650;letter-spacing:-1px;overflow-wrap:break-word;\"><span style=\"font-size:22px;letter-spacing:2px;color:#BECBC2;\">TEAM</span><br/><span style=\"display:inline-block;margin-top:12px;\">Engineering</span></div>",
+          "exitEnd": 6
+        },
+        {
+          "type": "TEXT",
+          "x": 558,
+          "y": 1420,
+          "width": 420,
+          "height": 134,
+          "anchor": "top-left",
+          "track": 10,
+          "enterBegin": 0.77,
+          "enterEnd": 1.22,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#F4F2E9"
+          },
+          "html": "<div style=\"font-size:35px;line-height:1.08;font-weight:650;letter-spacing:-1px;overflow-wrap:break-word;\"><span style=\"font-size:22px;letter-spacing:2px;color:#BECBC2;\">WORKPLACE</span><br/><span style=\"display:inline-block;margin-top:12px;\">Remote (Demo)</span></div>",
+          "exitEnd": 6
+        },
+        {
+          "type": "TEXT",
+          "x": 104,
+          "y": 1572,
+          "width": 872,
+          "height": 76,
+          "anchor": "top-left",
+          "track": 11,
+          "enterBegin": 0.95,
+          "enterEnd": 1.4,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#D7F875"
+          },
+          "html": "<div style=\"font-size:32px;line-height:1.08;font-weight:600;letter-spacing:0px;overflow-wrap:break-word;\">Demo salary: $90k to $110k</div>",
+          "exitEnd": 6
+        },
+        {
+          "type": "TEXT",
+          "x": 72,
+          "y": 1756,
+          "width": 936,
+          "height": 55,
+          "anchor": "top-left",
+          "track": 12,
+          "enterBegin": 0.2,
+          "enterEnd": 0.65,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#163D35"
+          },
+          "html": "<div style=\"font-size:25px;line-height:1.08;font-weight:600;letter-spacing:0px;overflow-wrap:break-word;\">CAREERS / Cedarline Demo</div>",
+          "exitEnd": 6
+        }
+      ]
+    },
+    {
+      "id": "benefits",
+      "duration": 6,
+      "backgroundColor": "#163D35",
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 6,
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1080\" height=\"1920\"><rect width=\"1080\" height=\"1920\" fill=\"#163D35\"/><path d=\"M72 180H1008\" stroke=\"#F4F2E9\" stroke-opacity=\".28\"/><rect x=\"72\" y=\"748\" width=\"936\" height=\"218\" rx=\"24\" fill=\"#D7F875\"/><path d=\"M880 864H950M922 836L950 864L922 892\" stroke=\"#163D35\" stroke-width=\"4\" fill=\"none\"/><rect x=\"72\" y=\"1006\" width=\"936\" height=\"218\" rx=\"24\" fill=\"#F4F2E9\"/><path d=\"M880 1122H950M922 1094L950 1122L922 1150\" stroke=\"#163D35\" stroke-width=\"4\" fill=\"none\"/><rect x=\"72\" y=\"1264\" width=\"936\" height=\"218\" rx=\"24\" fill=\"#F4F2E9\"/><path d=\"M880 1380H950M922 1352L950 1380L922 1408\" stroke=\"#163D35\" stroke-width=\"4\" fill=\"none\"/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 72,
+          "y": 88,
+          "width": 720,
+          "height": 54,
+          "anchor": "top-left",
+          "track": 1,
+          "enterBegin": 0,
+          "enterEnd": 0.45,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#F4F2E9"
+          },
+          "html": "<div style=\"font-size:32px;line-height:1.08;font-weight:750;letter-spacing:0px;overflow-wrap:break-word;\">Cedarline Demo</div>",
+          "exitEnd": 6
+        },
+        {
+          "type": "TEXT",
+          "x": 866,
+          "y": 90,
+          "width": 140,
+          "height": 44,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0,
+          "enterEnd": 0.45,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#F4F2E9"
+          },
+          "html": "<div style=\"font-size:25px;line-height:1.08;font-weight:600;letter-spacing:0px;overflow-wrap:break-word;\">THE PERKS</div>",
+          "exitEnd": 6
+        },
+        {
+          "type": "TEXT",
+          "x": 72,
+          "y": 280,
+          "width": 930,
+          "height": 290,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 0.18,
+          "enterEnd": 0.63,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#F4F2E9"
+          },
+          "html": "<div style=\"font-size:102px;line-height:1.08;font-weight:800;letter-spacing:-1px;overflow-wrap:break-word;\">Room to<br/>do your best.</div>",
+          "exitEnd": 6
+        },
+        {
+          "type": "TEXT",
+          "x": 72,
+          "y": 624,
+          "width": 936,
+          "height": 60,
+          "anchor": "top-left",
+          "track": 5,
+          "enterBegin": 0.3,
+          "enterEnd": 0.75,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#D7F875"
+          },
+          "html": "<div style=\"font-size:27px;line-height:1.08;font-weight:750;letter-spacing:0px;overflow-wrap:break-word;\">WHAT YOU CAN EXPECT</div>",
+          "exitEnd": 6
+        },
+        {
+          "type": "TEXT",
+          "x": 104,
+          "y": 786,
+          "width": 100,
+          "height": 64,
+          "anchor": "top-left",
+          "track": 7,
+          "enterBegin": 0.55,
+          "enterEnd": 1,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#163D35"
+          },
+          "html": "<div style=\"font-size:30px;line-height:1.08;font-weight:750;letter-spacing:0px;overflow-wrap:break-word;\">01</div>",
+          "exitEnd": 6
+        },
+        {
+          "type": "TEXT",
+          "x": 232,
+          "y": 805,
+          "width": 610,
+          "height": 130,
+          "anchor": "top-left",
+          "track": 8,
+          "enterBegin": 0.6,
+          "enterEnd": 1.05,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#163D35"
+          },
+          "html": "<div style=\"font-size:44px;line-height:1.08;font-weight:750;letter-spacing:-1px;overflow-wrap:break-word;\">Fictional learning budget</div>",
+          "exitEnd": 6
+        },
+        {
+          "type": "TEXT",
+          "x": 104,
+          "y": 1044,
+          "width": 100,
+          "height": 64,
+          "anchor": "top-left",
+          "track": 10,
+          "enterBegin": 0.75,
+          "enterEnd": 1.2,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#163D35"
+          },
+          "html": "<div style=\"font-size:30px;line-height:1.08;font-weight:750;letter-spacing:0px;overflow-wrap:break-word;\">02</div>",
+          "exitEnd": 6
+        },
+        {
+          "type": "TEXT",
+          "x": 232,
+          "y": 1063,
+          "width": 610,
+          "height": 130,
+          "anchor": "top-left",
+          "track": 11,
+          "enterBegin": 0.8,
+          "enterEnd": 1.25,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#163D35"
+          },
+          "html": "<div style=\"font-size:44px;line-height:1.08;font-weight:750;letter-spacing:-1px;overflow-wrap:break-word;\">Flexible working hours</div>",
+          "exitEnd": 6
+        },
+        {
+          "type": "TEXT",
+          "x": 104,
+          "y": 1302,
+          "width": 100,
+          "height": 64,
+          "anchor": "top-left",
+          "track": 13,
+          "enterBegin": 0.9500000000000001,
+          "enterEnd": 1.4000000000000001,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#163D35"
+          },
+          "html": "<div style=\"font-size:30px;line-height:1.08;font-weight:750;letter-spacing:0px;overflow-wrap:break-word;\">03</div>",
+          "exitEnd": 6
+        },
+        {
+          "type": "TEXT",
+          "x": 232,
+          "y": 1321,
+          "width": 610,
+          "height": 130,
+          "anchor": "top-left",
+          "track": 14,
+          "enterBegin": 1,
+          "enterEnd": 1.45,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#163D35"
+          },
+          "html": "<div style=\"font-size:44px;line-height:1.08;font-weight:750;letter-spacing:-1px;overflow-wrap:break-word;\">Demo team meetups</div>",
+          "exitEnd": 6
+        },
+        {
+          "type": "TEXT",
+          "x": 72,
+          "y": 1600,
+          "width": 936,
+          "height": 70,
+          "anchor": "top-left",
+          "track": 15,
+          "enterBegin": 1.25,
+          "enterEnd": 1.7,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#BECBC2"
+          },
+          "html": "<div style=\"font-size:30px;line-height:1.08;font-weight:500;letter-spacing:0px;overflow-wrap:break-word;\">See the role page for full details.</div>",
+          "exitEnd": 6
+        },
+        {
+          "type": "TEXT",
+          "x": 72,
+          "y": 1756,
+          "width": 936,
+          "height": 55,
+          "anchor": "top-left",
+          "track": 16,
+          "enterBegin": 0.2,
+          "enterEnd": 0.65,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#F4F2E9"
+          },
+          "html": "<div style=\"font-size:25px;line-height:1.08;font-weight:600;letter-spacing:0px;overflow-wrap:break-word;\">CAREERS / Cedarline Demo</div>",
+          "exitEnd": 6
+        }
+      ]
+    },
+    {
+      "id": "apply",
+      "duration": 5,
+      "backgroundColor": "#F4F2E9",
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 5,
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1080\" height=\"1920\"><rect width=\"1080\" height=\"1920\" fill=\"#F4F2E9\"/><path d=\"M72 180H1008\" stroke=\"#163D35\" stroke-opacity=\".28\"/><rect x=\"72\" y=\"284\" width=\"936\" height=\"1118\" rx=\"32\" fill=\"#D7F875\"/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 72,
+          "y": 88,
+          "width": 720,
+          "height": 54,
+          "anchor": "top-left",
+          "track": 1,
+          "enterBegin": 0,
+          "enterEnd": 0.45,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#163D35"
+          },
+          "html": "<div style=\"font-size:32px;line-height:1.08;font-weight:750;letter-spacing:0px;overflow-wrap:break-word;\">Cedarline Demo</div>",
+          "exitEnd": 5
+        },
+        {
+          "type": "TEXT",
+          "x": 866,
+          "y": 90,
+          "width": 140,
+          "height": 44,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0,
+          "enterEnd": 0.45,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#163D35"
+          },
+          "html": "<div style=\"font-size:25px;line-height:1.08;font-weight:600;letter-spacing:0px;overflow-wrap:break-word;\">YOUR MOVE</div>",
+          "exitEnd": 5
+        },
+        {
+          "type": "SVG",
+          "x": 636,
+          "y": 356,
+          "width": 300,
+          "height": 300,
+          "anchor": "top-left",
+          "track": 5,
+          "enterBegin": 0.2,
+          "enterEnd": 0.7,
+          "enterAnimation": "fade",
+          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"300\" height=\"300\" viewBox=\"0 0 300 300\"><path d=\"M30 250L250 30M30 30H250V250\" fill=\"none\" stroke=\"#163D35\" stroke-width=\"30\" stroke-linecap=\"square\"/></svg>",
+          "exitEnd": 5
+        },
+        {
+          "type": "TEXT",
+          "x": 112,
+          "y": 756,
+          "width": 840,
+          "height": 432,
+          "anchor": "top-left",
+          "track": 6,
+          "enterBegin": 0.2,
+          "enterEnd": 0.65,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#163D35"
+          },
+          "html": "<div style=\"font-size:102px;line-height:1.08;font-weight:800;letter-spacing:-1px;overflow-wrap:break-word;\">Your next<br/>chapter<br/>starts here.</div>",
+          "exitEnd": 5
+        },
+        {
+          "type": "TEXT",
+          "x": 112,
+          "y": 1278,
+          "width": 836,
+          "height": 72,
+          "anchor": "top-left",
+          "track": 7,
+          "enterBegin": 0.45,
+          "enterEnd": 0.9,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#163D35"
+          },
+          "html": "<div style=\"font-size:28px;line-height:1.08;font-weight:750;letter-spacing:0px;overflow-wrap:break-word;\">EXPLORE THE ROLE</div>",
+          "exitEnd": 5
+        },
+        {
+          "type": "TEXT",
+          "x": 72,
+          "y": 1476,
+          "width": 936,
+          "height": 142,
+          "anchor": "top-left",
+          "track": 8,
+          "enterBegin": 0.5,
+          "enterEnd": 0.95,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#163D35"
+          },
+          "html": "<div style=\"font-size:48px;line-height:1.08;font-weight:700;letter-spacing:-1px;overflow-wrap:break-word;\">Apply using the role<br/>link in the caption.</div>",
+          "exitEnd": 5
+        },
+        {
+          "type": "TEXT",
+          "x": 72,
+          "y": 1660,
+          "width": 936,
+          "height": 60,
+          "anchor": "top-left",
+          "track": 9,
+          "enterBegin": 0.65,
+          "enterEnd": 1.1,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#163D35"
+          },
+          "html": "<div style=\"font-size:25px;line-height:1.08;font-weight:650;letter-spacing:0px;overflow-wrap:break-word;\">APPLY BY 2026-12-15</div>",
+          "exitEnd": 5
+        },
+        {
+          "type": "TEXT",
+          "x": 72,
+          "y": 1756,
+          "width": 936,
+          "height": 55,
+          "anchor": "top-left",
+          "track": 10,
+          "enterBegin": 0.2,
+          "enterEnd": 0.65,
+          "enterAnimation": "smoothup",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#163D35"
+          },
+          "html": "<div style=\"font-size:25px;line-height:1.08;font-weight:600;letter-spacing:0px;overflow-wrap:break-word;\">CAREERS / Cedarline Demo</div>",
+          "exitEnd": 5
+        }
+      ]
+    }
+  ]
+}

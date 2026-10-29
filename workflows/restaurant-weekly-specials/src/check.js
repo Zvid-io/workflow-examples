@@ -1,0 +1,10 @@
+import {readFileSync} from 'node:fs';
+import assert from 'node:assert/strict';
+import {prepare} from './workflow.js';
+const json=p=>JSON.parse(readFileSync(p,'utf8'));
+const built=prepare(json('data/menu.json'),json('config.json'),[],new Date('2026-10-22T12:00:00Z'));
+assert.equal(built.meta.dishCount,3);
+assert.equal(built.meta.totalDuration,12.9);
+assert.deepEqual(built.payload,json('assets/sample-project.json'));
+assert.equal(built.posts.length,3);
+console.log('Three dishes, 12.9 seconds, matching retained sample design, three dated caption rows; no API calls');
