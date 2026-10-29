@@ -1,0 +1,62 @@
+{
+  "name": "blog-kit-og-a-calmer-weekly-content-review",
+  "type": "image",
+  "resolution": "custom",
+  "width": 1200,
+  "height": 630,
+  "backgroundColor": "#0B0F1A",
+  "outputFormat": "png",
+  "visuals": [
+    {
+      "type": "SVG",
+      "width": 1200,
+      "height": 630,
+      "track": 0,
+      "svg": "<svg width='1200' height='630' viewBox='0 0 1200 630' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='ogG' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='rgb(25,29,40)'/><stop offset='0.55' stop-color='#0B0F1A'/><stop offset='1' stop-color='rgb(7,11,22)'/></linearGradient><radialGradient id='ogR' cx='0.82' cy='0.84' r='0.72'><stop offset='0' stop-color='#FFB454' stop-opacity='0.22'/><stop offset='1' stop-color='#FFB454' stop-opacity='0'/></radialGradient></defs><rect width='1200' height='630' fill='url(#ogG)'/><rect width='1200' height='630' fill='url(#ogR)'/><rect x='24' y='24' width='1152' height='582' rx='26' fill='none' stroke='rgba(255,255,255,0.09)' stroke-width='1.5'/></svg>"
+    },
+    {
+      "type": "SVG",
+      "width": 1200,
+      "height": 630,
+      "track": 1,
+      "svg": "<svg width='1200' height='630' viewBox='0 0 1200 630' xmlns='http://www.w3.org/2000/svg'><line x1='72' y1='158' x2='762' y2='158' stroke='rgba(255,255,255,0.09)' stroke-width='1.5'/><line x1='806' y1='72' x2='806' y2='558' stroke='rgba(255,255,255,0.10)' stroke-width='1.5'/><circle cx='1000' cy='272' r='128' fill='none' stroke='rgba(255,180,84,0.3)' stroke-width='2'/><circle cx='1000' cy='272' r='90' fill='none' stroke='rgba(255,180,84,0.16)' stroke-width='1.5'/><path d='M1000 144 A128 128 0 0 1 1128 272 L1000 272 Z' fill='rgba(255,180,84,0.85)'/><rect x='898' y='438' width='204' height='7' rx='3.5' fill='rgba(255,180,84,0.85)'/><rect x='898' y='464' width='148' height='7' rx='3.5' fill='rgba(255,255,255,0.18)'/><rect x='898' y='490' width='96' height='7' rx='3.5' fill='rgba(255,255,255,0.10)'/><rect x='72' y='438' width='120' height='6' rx='3' fill='#FFB454'/></svg>"
+    },
+    {
+      "type": "TEXT",
+      "x": 72,
+      "y": 72,
+      "anchor": "top-left",
+      "track": 2,
+      "style": {
+        "fontFamily": "Space Grotesk",
+        "color": "#FFB454"
+      },
+      "html": "<div style='display:inline-block; background:rgba(255,180,84,0.14); border:1.5px solid rgba(255,180,84,0.55); color:#FFB454; border-radius:999px; padding:11px 26px; font-size:20px; font-weight:700; letter-spacing:4px;'>CONTENT MANAGEMENT</div>"
+    },
+    {
+      "type": "TEXT",
+      "x": 72,
+      "y": 412,
+      "width": 690,
+      "anchor": "bottom-left",
+      "track": 3,
+      "style": {
+        "fontFamily": "Instrument Serif",
+        "color": "#F2F5FB"
+      },
+      "html": "<div style='color:#F2F5FB; font-size:70px; line-height:1.08; font-weight:400; letter-spacing:-0.01em;'>Master the Weekly Content Review</div>"
+    },
+    {
+      "type": "TEXT",
+      "x": 72,
+      "y": 492,
+      "anchor": "top-left",
+      "track": 4,
+      "style": {
+        "fontFamily": "Space Grotesk",
+        "color": "#F2F5FB"
+      },
+      "html": "<div style='color:#F2F5FB; font-size:27px; font-weight:700; letter-spacing:1px;'>Cedarline Demo<span style='color:rgba(141,153,180,0.9); font-weight:500;'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;cedarline.example</span></div>"
+    }
+  ]
+}

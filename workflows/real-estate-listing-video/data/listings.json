@@ -1,0 +1,20 @@
+[
+  {
+    "Address": "14 Cedar Lane (Demo)",
+    "City": "Demo City",
+    "Price": "425000",
+    "Beds": "3",
+    "Baths": "2",
+    "Sqft": "1800",
+    "Photo1": "https://cdn.zvid.io/tutorials/n8n-days-20-22-2026-10-21/property-exterior.fcaa9a3d0b0c.png",
+    "Photo2": "https://cdn.zvid.io/tutorials/n8n-days-20-22-2026-10-21/property-living-room.1f7393f5ff05.png",
+    "Photo3": "",
+    "Photo4": "",
+    "Photo5": "",
+    "AgentName": "Alex Morgan (Demo)",
+    "AgentPhone": "",
+    "AgentPhotoUrl": "",
+    "Status": "",
+    "VideoUrl": ""
+  }
+]

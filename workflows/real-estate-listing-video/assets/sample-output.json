@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "workflow": "real-estate-listing-video",
+  "renderedAt": "2026-10-21 09:37:33.469",
+  "input": "data/listings.json",
+  "config": "config.json",
+  "project": "assets/sample-project.json",
+  "output": "assets/sample-output.mp4",
+  "poster": "assets/sample-output.jpg",
+  "width": 1080,
+  "height": 1920,
+  "durationSeconds": 12.5,
+  "creditsQuoted": 13,
+  "creditEvidence": "Historical validation quote; not a billing audit",
+  "audio": false,
+  "fictional": true,
+  "reproductionCommand": "npm start -- --input data/listings.json --render --max-credits 13 --out out/cedar",
+  "reproductionNotes": "The historical sample was created by the n8n workflow. This companion uses its same normalization and builder, and verifies equality with the retained source project. A fresh render requires separate authorization.",
+  "canonicalWorkflowSha256": "3ad50f4cd2e1ef4bb2d3c9e48cf2acb54052704600585b5e8cf75bebd10a8c15",
+  "videoSha256": "569b02f9c99654f8429d88c628e8aedac13262dac79edf81dceb9e0111f45242",
+  "workflowSha256": "3ad50f4cd2e1ef4bb2d3c9e48cf2acb54052704600585b5e8cf75bebd10a8c15",
+  "sha256": {
+    "sample-output.mp4": "569b02f9c99654f8429d88c628e8aedac13262dac79edf81dceb9e0111f45242",
+    "sample-output.jpg": "b1ea2a27e11c50b087b84c18880dc98b882709d4cac188ac2c5009c9b99aa9e3",
+    "sample-project.json": "aaad1f2861d94f0c3b4595b276db8b751894fe6b14912e2038376dc5c2a4105b",
+    "workflow.png": "85e6f642aa774217179c883dd4f4c2cebbc12f7348dd56a90cea0f6f6a111b86"
+  }
+}

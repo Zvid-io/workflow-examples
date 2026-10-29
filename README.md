@@ -58,6 +58,9 @@ Local checks and tests do not spend render credits. Preview options, live API ca
 | [Podcast audiogram clips](workflows/podcast-audiogram-clips/) | Turn an RSS audio sample into captioned portrait clips. |
 | [Long-video Shorts](workflows/video-to-shorts/) | Select captioned vertical highlights from a directly downloadable video. |
 | [Monthly testimonial compilations](workflows/testimonial-compilation/) | Compile approved quote rows into one square video. |
+| [Blog content kits](workflows/blog-content-kit/) | Turn one RSS article into a square video, landscape teaser and share image. |
+| [Event countdown videos](workflows/event-countdown-videos/) | Create event announcements and date-based reminder videos. |
+| [Property listing videos](workflows/real-estate-listing-video/) | Turn factual listing data and authorized photos into a vertical property tour. |
 
 Open a workflow's folder for its tutorial, screenshots, sample output, and complete setup instructions.
 
