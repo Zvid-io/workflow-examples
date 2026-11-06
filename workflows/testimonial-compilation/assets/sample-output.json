@@ -1,0 +1,45 @@
+{
+  "renderDate": "2026-10-20",
+  "input": "data/testimonials.json",
+  "configuration": "config.json",
+  "sourceProject": "assets/sample-project.json",
+  "width": 1080,
+  "height": 1080,
+  "frameRate": 30,
+  "videoSeconds": 19.9,
+  "projectSeconds": 19.91,
+  "quotedCredits": 20,
+  "audio": "none",
+  "description": "Two fictional demonstration quotations; no real endorsement is implied.",
+  "reproductionCommand": "npm start -- --input data/testimonials.json --render --max-credits 20 --out out/compilation",
+  "canonicalWorkflowSha256": "a79e1dda2e8b60417004e90429ef06944493844cc702733e449a68a4ea6ab808",
+  "sourceNote": "Current canonical workflow with only its supplied music URL mirrored to the Zvid CDN. The sample configuration is silent.",
+  "files": {
+    "assets/sample-output.mp4": {
+      "sha256": "90edf10669f90fda12b1611f5c01f83b6dd80c98ada4812c3c02bdac2e84e6a3",
+      "bytes": 679933
+    },
+    "assets/sample-output.jpg": {
+      "sha256": "17781987bc2c956e54cd42e003f107e2ee2c40ee56465e957936860700f42c9f",
+      "bytes": 53066
+    },
+    "assets/sample-project.json": {
+      "sha256": "199ceefb883601319bee36b7cf8327e8af739f1b2b8a85b8aa597559179d8571",
+      "bytes": 21485
+    },
+    "assets/workflow.png": {
+      "sha256": "f46e7a8b26369f645c10ad301a9d9d1f33e90728a41e535dbf7d933a9ebd41bd",
+      "bytes": 570863
+    },
+    "data/testimonials.json": {
+      "sha256": "d79d59fbbfc447bc398206fc58ed08a47a7013f76527beb780c5cacf2fdd8bf1",
+      "bytes": 568
+    },
+    "config.json": {
+      "sha256": "1bf3db4fbdaf8825c144434837ba495292fa3c83ca5f5f443b3b20596a33093b",
+      "bytes": 1010
+    }
+  },
+  "videoSha256": "90edf10669f90fda12b1611f5c01f83b6dd80c98ada4812c3c02bdac2e84e6a3",
+  "workflowSha256": "a79e1dda2e8b60417004e90429ef06944493844cc702733e449a68a4ea6ab808"
+}

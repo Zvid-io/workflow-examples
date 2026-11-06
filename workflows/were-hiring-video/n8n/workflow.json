@@ -1,0 +1,1336 @@
+{
+  "name": "Build recruiter-requested spotlight and roundup hiring video campaigns",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        60,
+        620
+      ],
+      "id": "zvid-wh-0002",
+      "name": "Test the configured recruiter brief"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"maxRoles\": 2,\n  \"careersUrl\": \"https://example.com/careers\",\n  \"manualBrief\": {\n    \"CampaignKey\": \"recruitment-demo-01\",\n    \"Mode\": \"roundup\",\n    \"JobKeys\": \"\",\n    \"Team\": \"\",\n    \"Location\": \"\",\n    \"MaxRoles\": 2\n  },\n  \"apiUrl\": \"https://api.zvid.io\",\n  \"editorUrl\": \"https://editor.zvid.io\",\n  \"companyName\": \"Northwind\",\n  \"kicker\": \"WE'RE HIRING\",\n  \"ctaHeadline\": \"Your next role is right here.\",\n  \"ctaText\": \"Apply now\",\n  \"accentColor\": \"#D7F875\",\n  \"backgroundColor\": \"#163D35\",\n  \"font\": \"Manrope\",\n  \"resolution\": \"instagram-reel\",\n  \"frameRate\": 30,\n  \"dryRun\": false,\n  \"pollSeconds\": 10,\n  \"timeoutMinutes\": 20,\n  \"maxCreditsPerVideo\": 20,\n  \"timezone\": \"UTC\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        340,
+        500
+      ],
+      "id": "zvid-wh-0003",
+      "name": "Set recruitment campaign defaults"
+    },
+    {
+      "parameters": {
+        "resource": "sheet",
+        "operation": "read",
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        820,
+        500
+      ],
+      "id": "zvid-wh-0005",
+      "name": "Read approved job catalog",
+      "alwaysOutputData": true
+    },
+    {
+      "id": "zvid-watch-ready",
+      "name": "Completed campaign video URL available?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        7220,
+        500
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "zvid-watch-ready-condition",
+              "leftValue": "={{ !$json.dryRun && /^https?:\\/\\//i.test(String(($json.videoUrl) || '')) }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "none",
+        "requestMethod": "GET",
+        "url": "={{ $json.videoUrl }}",
+        "responseFormat": "file",
+        "dataPropertyName": "data",
+        "jsonParameters": false,
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        7500,
+        500
+      ],
+      "id": "zvid-wh-0028",
+      "name": "▶ Watch video — recruitment campaign",
+      "onError": "continueRegularOutput",
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "id": "campaign-v3-request",
+      "name": "Receive a recruiter campaign brief",
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [
+        60,
+        260
+      ],
+      "parameters": {
+        "authentication": "basicAuth",
+        "formTitle": "Recruitment video campaign",
+        "formDescription": "Create a role spotlight or a hiring roundup from your approved job catalog. Reuse a campaign key to recover an existing render. New campaigns spend Zvid credits unless dryRun is enabled in the workflow.",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "CampaignKey",
+              "fieldType": "text",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Mode",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "roundup"
+                  },
+                  {
+                    "option": "spotlight"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "JobKeys",
+              "fieldType": "text",
+              "placeholder": "One key for spotlight; optional comma-separated keys for roundup"
+            },
+            {
+              "fieldLabel": "Team",
+              "fieldType": "text"
+            },
+            {
+              "fieldLabel": "Location",
+              "fieldType": "text"
+            },
+            {
+              "fieldLabel": "MaxRoles",
+              "fieldType": "number",
+              "placeholder": "1–4, default from workflow (2)"
+            }
+          ]
+        },
+        "responseMode": "onReceived",
+        "options": {
+          "buttonLabel": "Request campaign",
+          "respondWith": "text",
+          "formSubmittedText": "Request received. Your n8n operator can review the video, campaign log and downloadable handoff in the execution."
+        }
+      },
+      "webhookId": "zvid-recruitment-campaign-brief"
+    },
+    {
+      "parameters": {
+        "resource": "sheet",
+        "operation": "read",
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Hiring Campaigns",
+          "mode": "name"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1100,
+        500
+      ],
+      "id": "campaign-v3-ledger",
+      "name": "Read recruitment campaign history",
+      "alwaysOutputData": true
+    },
+    {
+      "id": "campaign-v3-plan",
+      "name": "Match the hiring brief to open roles",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1380,
+        500
+      ],
+      "parameters": {
+        "jsCode": "function campaignState(key, ledger, dryRun) {\n  const records = ledger.filter(r => String(r.CampaignKey || '').trim() === key);\n  if (records.length > 1) throw new Error('Duplicate CampaignKey in campaign log: ' + key);\n  const record = records[0];\n  if (!record) return null;\n  const status = String(record.Status || '').toLowerCase();\n  const stop = reason => ({ ready: false, campaignKey: key, status: 'nothing_to_render', reason, videoUrl: record.VideoUrl || null });\n  if (record.VideoUrl || status === 'completed') return stop('This campaign is already complete. Use its saved video; create a new campaign key only for an intentional new campaign.');\n  if (['submitting', 'failed', 'timed_out', 'needs_review'].includes(status)) return stop('Inspect the saved campaign in Zvid before clearing its uncertain or failed state.');\n  if (record.JobId) {\n    if (dryRun) return stop('Preview skips an existing paid job. Set dryRun=false to resume it.');\n    let plan;\n    try { plan = JSON.parse(record.PlanJson); } catch { throw new Error('Saved campaign PlanJson is missing or invalid; inspect the existing job instead of resubmitting.'); }\n    if (!plan.payload || plan.campaignKey !== key) throw new Error('Saved campaign snapshot does not match its key.');\n    return { ...plan, ready: true, jobId: String(record.JobId), creditsRequired: Number(record.CreditsQuoted), resumed: true };\n  }\n  throw new Error('Campaign key already exists without a recoverable job. Inspect the log before deliberately clearing that row.');\n}\nfunction trackedLink(raw, campaign, content) {\n  const url = String(raw || '').trim();\n  if (!/^https:\\/\\/[a-z0-9.-]+(?::\\d+)?(?:[/?#][^\\s]*)?$/i.test(url)) throw new Error('A public HTTPS application or booking URL is required.');\n  const hash = url.indexOf('#'), fragment = hash < 0 ? '' : url.slice(hash), base = hash < 0 ? url : url.slice(0, hash);\n  const q = base.indexOf('?'), path = q < 0 ? base : base.slice(0, q);\n  const query = (q < 0 ? '' : base.slice(q + 1)).split('&').filter(Boolean).filter(p => !/^utm_(source|medium|campaign|content)=/i.test(p));\n  query.push('utm_source=social', 'utm_medium=video', 'utm_campaign=' + encodeURIComponent(campaign), 'utm_content=' + encodeURIComponent(content));\n  return path + '?' + query.join('&') + fragment;\n}\nfunction planHiring(cfg, brief, rows, ledger, now) {\n  const text = v => String(v ?? '').trim();\n  const key = text(brief.CampaignKey);\n  if (!/^[a-zA-Z0-9_-]{3,64}$/.test(key)) throw new Error('CampaignKey must be 3–64 letters, numbers, underscores or hyphens. Reuse it to resume; change it only for a new campaign.');\n  const previous = campaignState(key, ledger, cfg.dryRun === true);\n  if (previous) return previous;\n  const mode = text(brief.Mode).toLowerCase();\n  if (!['spotlight', 'roundup'].includes(mode)) throw new Error('Mode must be spotlight or roundup.');\n  const requested = text(brief.JobKeys).split(',').map(text).filter(Boolean);\n  if (mode === 'spotlight' && requested.length !== 1) throw new Error('Spotlight requires exactly one JobKey in the brief.');\n  const max = Math.floor(Number(brief.MaxRoles || cfg.maxRoles || 4));\n  if (!Number.isFinite(max) || max < 1 || max > 4) throw new Error('MaxRoles must be between 1 and 4.');\n  const today = new Intl.DateTimeFormat('en-CA', { timeZone: cfg.timezone || 'UTC', year: 'numeric', month: '2-digit', day: '2-digit' }).format(now);\n  const date = (v, name) => { const s = text(v); if (s && (!/^\\d{4}-\\d{2}-\\d{2}$/.test(s) || !Number.isFinite(Date.parse(s)) || new Date(s).toISOString().slice(0, 10) !== s)) throw new Error(name + ' must be a real YYYY-MM-DD date.'); return s; };\n  const seen = new Set(), skipped = [], eligible = [];\n  for (const row of rows.filter(r => text(r.JobKey) || text(r.Role))) {\n    const id = text(row.JobKey);\n    if (!id || seen.has(id)) throw new Error('Every catalog role needs a unique JobKey.');\n    seen.add(id);\n    let reason = '';\n    const opens = date(row.OpensOn, id + ' OpensOn'), closes = date(row.ClosesOn, id + ' ClosesOn');\n    if (opens && closes && opens > closes) throw new Error(id + ': OpensOn is after ClosesOn.');\n    if (requested.length && !requested.includes(id)) reason = 'outside_requested_job_keys';\n    else if (text(brief.Team) && text(row.Team).toLowerCase() !== text(brief.Team).toLowerCase()) reason = 'outside_team';\n    else if (text(brief.Location) && text(row.Location).toLowerCase() !== text(brief.Location).toLowerCase()) reason = 'outside_location';\n    else if (text(row.Approval).toLowerCase() !== 'approved') reason = 'awaiting_editorial_approval';\n    else if (opens && opens > today) reason = 'not_open_yet';\n    else if (closes && closes < today) reason = 'closed';\n    else if (!text(row.Role) || text(row.Role).length > 90) reason = 'role_title_missing_or_over_90_characters';\n    else if (text(row.Team).length > 80 || text(row.Location).length > 100 || text(row.SalaryRange).length > 80 || [row.Perk1,row.Perk2,row.Perk3].some(v=>text(v).length>160)) reason = 'role_details_exceed_card_limits';\n    let applyUrl;\n    if (!reason) { try { applyUrl = trackedLink(row.ApplyUrl, key, id); } catch { reason = 'missing_public_https_application_link'; } }\n    if (reason) { skipped.push({ key: id, reason }); continue; }\n    eligible.push({ jobKey: id, role: text(row.Role), team: text(row.Team), location: text(row.Location), salary: text(row.SalaryRange), perks: [row.Perk1, row.Perk2, row.Perk3].map(text).filter(Boolean), closesOn: closes, priority: Number(row.Priority) || 0, applyUrl });\n  }\n  const missing = requested.filter(k => !eligible.some(r => r.jobKey === k));\n  if (missing.length) return { ready: false, status: 'brief_needs_revision', campaignKey: key, missingJobKeys: missing, skipped, reason: 'Requested roles are missing, outside the brief, unapproved or closed. Nothing was rendered.' };\n  eligible.sort((a, b) => (a.closesOn || '9999').localeCompare(b.closesOn || '9999') || b.priority - a.priority || a.jobKey.localeCompare(b.jobKey));\n  if (requested.length > max) throw new Error('The brief requests more JobKeys than MaxRoles; narrow the brief rather than silently omitting requested roles.');\n  const roles = eligible.slice(0, mode === 'spotlight' ? 1 : max);\n  if (!roles.length) return { ready: false, status: 'nothing_to_render', campaignKey: key, skipped, reason: 'No approved open roles match this brief.' };\n  const careersUrl = mode === 'roundup' ? trackedLink(cfg.careersUrl, key, 'roundup') : roles[0].applyUrl;\n  const caption = [cfg.companyName + ' is hiring — ' + (mode === 'spotlight' ? roles[0].role : roles.length + ' open roles'), ...roles.map(r => [r.role, r.location, r.salary, r.closesOn ? 'Apply by ' + r.closesOn : '', r.applyUrl].filter(Boolean).join(' · ')), 'Application details and eligibility are listed on each role page.'].join('\\n\\n');\n  const referralMessage = ['Know someone who may be interested in joining ' + cfg.companyName + '?', ...roles.map(r => r.role + (r.location ? ' — ' + r.location : '') + '\\n' + r.applyUrl), 'Please share the relevant role page. Applications go directly to our hiring team.'].join('\\n\\n');\n  return { ready: true, campaignKey: key, mode, roles, careersUrl, caption, referralMessage, skipped, deferredJobKeys: eligible.slice(roles.length).map(r => r.jobKey), today, jobId: null, creditsRequired: 0 };\n}\nconst cfg=$('Set recruitment campaign defaults').first().json;\nconst brief=$('Receive a recruiter campaign brief').isExecuted ? $('Receive a recruiter campaign brief').first().json : cfg.manualBrief;\nreturn [{json:planHiring(cfg,brief,$('Read approved job catalog').all().map(i=>i.json),$input.all().map(i=>i.json),new Date())}];"
+      }
+    },
+    {
+      "id": "campaign-v3-ready",
+      "name": "Campaign has eligible content to process?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1660,
+        500
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ready-condition",
+              "leftValue": "={{ $json.ready === true }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "campaign-v3-no-work",
+      "name": "Explain campaign selection or recovery needs",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1660,
+        840
+      ],
+      "parameters": {
+        "jsCode": "return $input.all();"
+      }
+    },
+    {
+      "id": "campaign-v3-resume",
+      "name": "Resume the saved campaign render?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2140,
+        500
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "resume-condition",
+              "leftValue": "={{ Boolean($json.jobId) }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "campaign-v3-resume-context",
+      "name": "Restore the saved campaign snapshot",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2420,
+        260
+      ],
+      "parameters": {
+        "jsCode": "return $input.all();"
+      }
+    },
+    {
+      "id": "campaign-v3-format",
+      "name": "Recruiter requested a single-role spotlight?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2420,
+        500
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "format-condition",
+              "leftValue": "={{ $json.mode === 'spotlight' }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "campaign-v3-build",
+      "name": "Build the single-role spotlight with benefits",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2700,
+        400
+      ],
+      "parameters": {
+        "jsCode": "function buildHiringCampaign(cfg, plan) {\n  const esc = s => String(s ?? '').replace(/[&<>\"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',\"'\":'&#39;'}[c]));\n  const ink = /^#[\\da-f]{6}$/i.test(cfg.backgroundColor) ? cfg.backgroundColor : '#163D35';\n  const lime = /^#[\\da-f]{6}$/i.test(cfg.accentColor) ? cfg.accentColor : '#D7F875';\n  const paper = '#F4F2E9', muted = '#BECBC2', font = cfg.font || 'Manrope';\n  let track = 0;\n  const text = (html,x,y,w,h,size,color,delay=0.15,weight=600) => ({type:'TEXT',x,y,width:w,height:h,anchor:'top-left',track:++track,enterBegin:delay,enterEnd:delay+0.45,enterAnimation:'smoothup',style:{fontFamily:font,color},html:`<div style=\"font-size:${size}px;line-height:1.08;font-weight:${weight};letter-spacing:${size<=32?0:-1}px;overflow-wrap:break-word;\">${html}</div>`});\n  const svg = (body,w=1080,h=1920,x=0,y=0,delay=0) => ({type:'SVG',x,y,width:w,height:h,anchor:'top-left',track:++track,enterBegin:delay,enterEnd:delay+0.5,enterAnimation:'fade',svg:`<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"${w}\" height=\"${h}\" viewBox=\"0 0 ${w} ${h}\">${body}</svg>`});\n  const arrow = color => `<path d=\"M30 250L250 30M30 30H250V250\" fill=\"none\" stroke=\"${color}\" stroke-width=\"30\" stroke-linecap=\"square\"/>`;\n  const header = (color,chapter) => [text(esc(cfg.companyName),72,88,720,54,32,color,0,750),text(chapter,866,90,140,44,25,color,0,600),svg(`<path d=\"M72 180H1008\" stroke=\"${color}\" stroke-opacity=\".28\"/>`)];\n  const footer = color => text('CAREERS / '+esc(cfg.companyName),72,1756,936,55,25,color,0.2,600);\n  const scene = (id,duration,bg,visuals) => {\n    const backgrounds=visuals.filter(v=>v.type==='SVG'&&v.width===1080&&v.height===1920);\n    const backdrop={type:'SVG',width:1080,height:1920,track:0,enterBegin:0,exitEnd:duration,svg:`<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1080\" height=\"1920\"><rect width=\"1080\" height=\"1920\" fill=\"${bg}\"/>${backgrounds.map(v=>v.svg.replace(/^<svg[^>]*>|<\\/svg>$/g,'')).join('')}</svg>`};\n    return {id,duration,backgroundColor:bg,visuals:[backdrop,...visuals.filter(v=>!backgrounds.includes(v)).map(v=>({...v,exitEnd:duration}))]};\n  };\n  const scenes=[];\n  if (plan.mode==='roundup') {\n    track=0;\n    scenes.push(scene('campaign',3,paper,[...header(ink,'01 / JOIN'),text('MAKE YOUR<br/>NEXT MOVE.',72,320,930,360,112,ink,0.15,800),svg(arrow(ink),300,300,706,960,.35),text(String(plan.roles.length).padStart(2,'0'),72,950,600,410,340,ink,.25,800),text('OPEN ROLES',72,1420,880,90,52,ink,.45,750),footer(ink)]));\n  }\n  for(const r of plan.roles) {\n    track=0;\n    const demo=/\\s*\\(Demo\\)$/i.test(r.role), roleTitle=demo?r.role.replace(/\\s*\\(Demo\\)$/i,''):r.role;\n    const titleSize=roleTitle.length>48?72:roleTitle.length>30?88:120;\n    const facts=[['TEAM',r.team],['WORKPLACE',r.location]].filter(f=>f[1]);\n    const columns = `<path d=\"M72 1058L340 900L608 1058L340 1216Z\" fill=\"${lime}\"/><path d=\"M72 1058V1190L340 1348V1216Z\" fill=\"${ink}\" opacity=\".92\"/><path d=\"M340 1216L608 1058V1190L340 1348Z\" fill=\"${ink}\" opacity=\".74\"/><path d=\"M340 900L608 742L876 900L608 1058Z\" fill=\"${lime}\"/><path d=\"M340 900V1032L608 1190V1058Z\" fill=\"${ink}\" opacity=\".92\"/><path d=\"M608 1058L876 900V1032L608 1190Z\" fill=\"${ink}\" opacity=\".74\"/><path d=\"M608 742L876 584L1008 662L1008 820L876 900Z\" fill=\"${lime}\"/><path d=\"M608 742V874L876 1032V900Z\" fill=\"${ink}\" opacity=\".92\"/><path d=\"M876 900L1008 820V952L876 1032Z\" fill=\"${ink}\" opacity=\".74\"/>`;\n    const visuals=[...header(ink,'THE ROLE'),text('WE’RE HIRING'+(demo?' / FICTIONAL DEMO':''),72,232,900,60,28,ink,.1,750),text(esc(roleTitle),72,326,936,330,titleSize,ink,.2,800),svg(columns),text('A NEW CHAPTER<br/>STARTS WITH YOU.',72,706,510,160,42,ink,.45,700)];\n    visuals.push(svg(`<rect x=\"72\" y=\"1390\" width=\"936\" height=\"280\" rx=\"24\" fill=\"${ink}\"/>`));\n    facts.forEach((f,i)=>visuals.push(text(`<span style=\"font-size:22px;letter-spacing:2px;color:${muted};\">${f[0]}</span><br/><span style=\"display:inline-block;margin-top:12px;\">${esc(f[1])}</span>`,104+i*454,1420,420,134,f[1].length>30?24:35,paper,.65+i*.12,650)));\n    if(r.salary)visuals.push(text(esc(r.salary),104,1572,872,76,32,lime,.95,600));\n    visuals.push(footer(ink));\n    scenes.push(scene('role-'+(scenes.length+1),6,paper,visuals));\n    if(plan.mode==='spotlight' && r.perks.length) {\n      track=0;\n      const v=[...header(paper,'THE PERKS'),text('Room to<br/>do your best.',72,280,930,290,102,paper,.18,800),text('WHAT YOU CAN EXPECT',72,624,936,60,27,lime,.3,750)];\n      r.perks.forEach((p,i)=>{\n        const y=748+i*258;\n        v.push(svg(`<rect x=\"72\" y=\"${y}\" width=\"936\" height=\"218\" rx=\"24\" fill=\"${i===0?lime:paper}\"/><path d=\"M880 ${y+116}H950M922 ${y+88}L950 ${y+116}L922 ${y+144}\" stroke=\"${ink}\" stroke-width=\"4\" fill=\"none\"/>`,1080,1920,0,0,.45+i*.2));\n        v.push(text(String(i+1).padStart(2,'0'),104,y+38,100,64,30,ink,.55+i*.2,750));\n        const perkSize=p.length>100?26:p.length>60?30:p.length>38?34:44;\n        v.push(text(esc(p),232,y+57,610,130,perkSize,ink,.6+i*.2,750));\n      });\n      v.push(text('See the role page for full details.',72,1600,936,70,30,muted,1.25,500),footer(paper));\n      scenes.push(scene('benefits',6,ink,v));\n    }\n  }\n  track=0;\n  const r=plan.roles[0],single=plan.mode==='spotlight';\n  const cta=[...header(ink,'YOUR MOVE'),svg(`<rect x=\"72\" y=\"284\" width=\"936\" height=\"1118\" rx=\"32\" fill=\"${lime}\"/>`),svg(arrow(ink),300,300,636,356,.2),text('Your next<br/>chapter<br/>starts here.',112,756,840,432,102,ink,.2,800),text(single?'EXPLORE THE ROLE':'EXPLORE THE OPENINGS',112,1278,836,72,28,ink,.45,750),text(single?'Apply using the role<br/>link in the caption.':'Application links<br/>are in the caption.',72,1476,936,142,48,ink,.5,700)];\n  if(single && r.closesOn)cta.push(text('APPLY BY '+esc(r.closesOn),72,1660,936,60,25,ink,.65,650));\n  cta.push(footer(ink));\n  scenes.push(scene('apply',5,paper,cta));\n  return {...plan,payload:{name:('hiring-'+plan.campaignKey).slice(0,60),resolution:'instagram-reel',frameRate:30,outputFormat:'mp4',backgroundColor:paper,scenes},meta:{mode:plan.mode,roleCount:plan.roles.length,sceneCount:scenes.length}};\n}\nreturn [{json:buildHiringCampaign($('Set recruitment campaign defaults').first().json,$json)}];"
+      }
+    },
+    {
+      "id": "campaign-v3-build-roundup",
+      "name": "Build the multi-role recruitment roundup",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2700,
+        760
+      ],
+      "parameters": {
+        "jsCode": "function buildHiringCampaign(cfg, plan) {\n  const esc = s => String(s ?? '').replace(/[&<>\"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',\"'\":'&#39;'}[c]));\n  const ink = /^#[\\da-f]{6}$/i.test(cfg.backgroundColor) ? cfg.backgroundColor : '#163D35';\n  const lime = /^#[\\da-f]{6}$/i.test(cfg.accentColor) ? cfg.accentColor : '#D7F875';\n  const paper = '#F4F2E9', muted = '#BECBC2', font = cfg.font || 'Manrope';\n  let track = 0;\n  const text = (html,x,y,w,h,size,color,delay=0.15,weight=600) => ({type:'TEXT',x,y,width:w,height:h,anchor:'top-left',track:++track,enterBegin:delay,enterEnd:delay+0.45,enterAnimation:'smoothup',style:{fontFamily:font,color},html:`<div style=\"font-size:${size}px;line-height:1.08;font-weight:${weight};letter-spacing:${size<=32?0:-1}px;overflow-wrap:break-word;\">${html}</div>`});\n  const svg = (body,w=1080,h=1920,x=0,y=0,delay=0) => ({type:'SVG',x,y,width:w,height:h,anchor:'top-left',track:++track,enterBegin:delay,enterEnd:delay+0.5,enterAnimation:'fade',svg:`<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"${w}\" height=\"${h}\" viewBox=\"0 0 ${w} ${h}\">${body}</svg>`});\n  const arrow = color => `<path d=\"M30 250L250 30M30 30H250V250\" fill=\"none\" stroke=\"${color}\" stroke-width=\"30\" stroke-linecap=\"square\"/>`;\n  const header = (color,chapter) => [text(esc(cfg.companyName),72,88,720,54,32,color,0,750),text(chapter,866,90,140,44,25,color,0,600),svg(`<path d=\"M72 180H1008\" stroke=\"${color}\" stroke-opacity=\".28\"/>`)];\n  const footer = color => text('CAREERS / '+esc(cfg.companyName),72,1756,936,55,25,color,0.2,600);\n  const scene = (id,duration,bg,visuals) => {\n    const backgrounds=visuals.filter(v=>v.type==='SVG'&&v.width===1080&&v.height===1920);\n    const backdrop={type:'SVG',width:1080,height:1920,track:0,enterBegin:0,exitEnd:duration,svg:`<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1080\" height=\"1920\"><rect width=\"1080\" height=\"1920\" fill=\"${bg}\"/>${backgrounds.map(v=>v.svg.replace(/^<svg[^>]*>|<\\/svg>$/g,'')).join('')}</svg>`};\n    return {id,duration,backgroundColor:bg,visuals:[backdrop,...visuals.filter(v=>!backgrounds.includes(v)).map(v=>({...v,exitEnd:duration}))]};\n  };\n  const scenes=[];\n  if (plan.mode==='roundup') {\n    track=0;\n    scenes.push(scene('campaign',3,paper,[...header(ink,'01 / JOIN'),text('MAKE YOUR<br/>NEXT MOVE.',72,320,930,360,112,ink,0.15,800),svg(arrow(ink),300,300,706,960,.35),text(String(plan.roles.length).padStart(2,'0'),72,950,600,410,340,ink,.25,800),text('OPEN ROLES',72,1420,880,90,52,ink,.45,750),footer(ink)]));\n  }\n  for(const r of plan.roles) {\n    track=0;\n    const demo=/\\s*\\(Demo\\)$/i.test(r.role), roleTitle=demo?r.role.replace(/\\s*\\(Demo\\)$/i,''):r.role;\n    const titleSize=roleTitle.length>48?72:roleTitle.length>30?88:120;\n    const facts=[['TEAM',r.team],['WORKPLACE',r.location]].filter(f=>f[1]);\n    const columns = `<path d=\"M72 1058L340 900L608 1058L340 1216Z\" fill=\"${lime}\"/><path d=\"M72 1058V1190L340 1348V1216Z\" fill=\"${ink}\" opacity=\".92\"/><path d=\"M340 1216L608 1058V1190L340 1348Z\" fill=\"${ink}\" opacity=\".74\"/><path d=\"M340 900L608 742L876 900L608 1058Z\" fill=\"${lime}\"/><path d=\"M340 900V1032L608 1190V1058Z\" fill=\"${ink}\" opacity=\".92\"/><path d=\"M608 1058L876 900V1032L608 1190Z\" fill=\"${ink}\" opacity=\".74\"/><path d=\"M608 742L876 584L1008 662L1008 820L876 900Z\" fill=\"${lime}\"/><path d=\"M608 742V874L876 1032V900Z\" fill=\"${ink}\" opacity=\".92\"/><path d=\"M876 900L1008 820V952L876 1032Z\" fill=\"${ink}\" opacity=\".74\"/>`;\n    const visuals=[...header(ink,'THE ROLE'),text('WE’RE HIRING'+(demo?' / FICTIONAL DEMO':''),72,232,900,60,28,ink,.1,750),text(esc(roleTitle),72,326,936,330,titleSize,ink,.2,800),svg(columns),text('A NEW CHAPTER<br/>STARTS WITH YOU.',72,706,510,160,42,ink,.45,700)];\n    visuals.push(svg(`<rect x=\"72\" y=\"1390\" width=\"936\" height=\"280\" rx=\"24\" fill=\"${ink}\"/>`));\n    facts.forEach((f,i)=>visuals.push(text(`<span style=\"font-size:22px;letter-spacing:2px;color:${muted};\">${f[0]}</span><br/><span style=\"display:inline-block;margin-top:12px;\">${esc(f[1])}</span>`,104+i*454,1420,420,134,f[1].length>30?24:35,paper,.65+i*.12,650)));\n    if(r.salary)visuals.push(text(esc(r.salary),104,1572,872,76,32,lime,.95,600));\n    visuals.push(footer(ink));\n    scenes.push(scene('role-'+(scenes.length+1),6,paper,visuals));\n    if(plan.mode==='spotlight' && r.perks.length) {\n      track=0;\n      const v=[...header(paper,'THE PERKS'),text('Room to<br/>do your best.',72,280,930,290,102,paper,.18,800),text('WHAT YOU CAN EXPECT',72,624,936,60,27,lime,.3,750)];\n      r.perks.forEach((p,i)=>{\n        const y=748+i*258;\n        v.push(svg(`<rect x=\"72\" y=\"${y}\" width=\"936\" height=\"218\" rx=\"24\" fill=\"${i===0?lime:paper}\"/><path d=\"M880 ${y+116}H950M922 ${y+88}L950 ${y+116}L922 ${y+144}\" stroke=\"${ink}\" stroke-width=\"4\" fill=\"none\"/>`,1080,1920,0,0,.45+i*.2));\n        v.push(text(String(i+1).padStart(2,'0'),104,y+38,100,64,30,ink,.55+i*.2,750));\n        const perkSize=p.length>100?26:p.length>60?30:p.length>38?34:44;\n        v.push(text(esc(p),232,y+57,610,130,perkSize,ink,.6+i*.2,750));\n      });\n      v.push(text('See the role page for full details.',72,1600,936,70,30,muted,1.25,500),footer(paper));\n      scenes.push(scene('benefits',6,ink,v));\n    }\n  }\n  track=0;\n  const r=plan.roles[0],single=plan.mode==='spotlight';\n  const cta=[...header(ink,'YOUR MOVE'),svg(`<rect x=\"72\" y=\"284\" width=\"936\" height=\"1118\" rx=\"32\" fill=\"${lime}\"/>`),svg(arrow(ink),300,300,636,356,.2),text('Your next<br/>chapter<br/>starts here.',112,756,840,432,102,ink,.2,800),text(single?'EXPLORE THE ROLE':'EXPLORE THE OPENINGS',112,1278,836,72,28,ink,.45,750),text(single?'Apply using the role<br/>link in the caption.':'Application links<br/>are in the caption.',72,1476,936,142,48,ink,.5,700)];\n  if(single && r.closesOn)cta.push(text('APPLY BY '+esc(r.closesOn),72,1660,936,60,25,ink,.65,650));\n  cta.push(footer(ink));\n  scenes.push(scene('apply',5,paper,cta));\n  return {...plan,payload:{name:('hiring-'+plan.campaignKey).slice(0,60),resolution:'instagram-reel',frameRate:30,outputFormat:'mp4',backgroundColor:paper,scenes},meta:{mode:plan.mode,roleCount:plan.roles.length,sceneCount:scenes.length}};\n}\nreturn [{json:buildHiringCampaign($('Set recruitment campaign defaults').first().json,$json)}];"
+      }
+    },
+    {
+      "id": "campaign-v3-validate",
+      "name": "Validate campaign design and quote credits",
+      "type": "@zvid/n8n-nodes-zvid.zvid",
+      "typeVersion": 1,
+      "position": [
+        2980,
+        500
+      ],
+      "parameters": {
+        "resource": "render",
+        "operation": "validate",
+        "source": "json",
+        "projectJson": "={{ JSON.stringify($json.payload) }}"
+      }
+    },
+    {
+      "id": "campaign-v3-quote",
+      "name": "Enforce the campaign credit ceiling",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3260,
+        500
+      ],
+      "parameters": {
+        "jsCode": "function checkQuote(cfg, build, response) {\n  const body = response.body || response;\n  if (body.valid !== true) throw new Error('Zvid validation failed: '+JSON.stringify(body.errors || body.details || body).slice(0,1200));\n  const credits = Number(body.creditsRequired), ceiling = Number(cfg.maxCreditsPerVideo);\n  if (!Number.isFinite(credits) || credits < 0) throw new Error('Zvid did not return a valid credit quote.');\n  if (!Number.isFinite(ceiling) || ceiling <= 0) throw new Error('Set maxCreditsPerVideo to a positive number.');\n  if (credits > ceiling) throw new Error('Video needs '+credits+' credits; maxCreditsPerVideo is '+ceiling+'. No paid render submitted for this item.');\n  return {...build,creditsRequired:credits,warnings:body.warnings || []};\n}\nconst data=checkQuote($('Set recruitment campaign defaults').first().json,($('Build the single-role spotlight with benefits').isExecuted ? $('Build the single-role spotlight with benefits').first().json : $('Build the multi-role recruitment roundup').first().json),$json);\nif(JSON.stringify(data).length>45000)throw new Error('Campaign snapshot exceeds the Google Sheets cell budget. Shorten the source copy. No paid render was submitted.');\nreturn [{json:data}];"
+      }
+    },
+    {
+      "id": "campaign-v3-preview",
+      "name": "Return a preview without spending render credits?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3540,
+        500
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "preview-condition",
+              "leftValue": "={{ $('Set recruitment campaign defaults').first().json.dryRun === true }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "campaign-v3-preview-report",
+      "name": "Return campaign plan design and credit quote",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3540,
+        840
+      ],
+      "parameters": {
+        "jsCode": "return [{json:{...$json,status:'preview',dryRun:true,videoUrl:null,nextStep:'Review the plan, design JSON and credit quote. Preview does not write the campaign log or create an editor draft.'}}];"
+      }
+    },
+    {
+      "id": "campaign-v3-claim",
+      "name": "Reserve the campaign key before a paid request",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        4020,
+        500
+      ],
+      "parameters": {
+        "resource": "sheet",
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Hiring Campaigns",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "CampaignKey": "={{ $('Enforce the campaign credit ceiling').first().json.campaignKey }}",
+            "Status": "submitting",
+            "JobId": "",
+            "CreditsQuoted": "={{ $('Enforce the campaign credit ceiling').first().json.creditsRequired }}",
+            "Caption": "={{ $('Enforce the campaign credit ceiling').first().json.caption }}",
+            "PlanJson": "={{ JSON.stringify($('Enforce the campaign credit ceiling').first().json) }}",
+            "VideoUrl": "",
+            "CompletedAt": ""
+          },
+          "matchingColumns": [
+            "CampaignKey"
+          ],
+          "schema": [
+            {
+              "id": "CampaignKey",
+              "displayName": "CampaignKey",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "JobId",
+              "displayName": "JobId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "CreditsQuoted",
+              "displayName": "CreditsQuoted",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Caption",
+              "displayName": "Caption",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "PlanJson",
+              "displayName": "PlanJson",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "VideoUrl",
+              "displayName": "VideoUrl",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "CompletedAt",
+              "displayName": "CompletedAt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ]
+        },
+        "options": {
+          "cellFormat": "RAW"
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 2000
+    },
+    {
+      "id": "campaign-v3-submit",
+      "name": "Submit the new campaign video to Zvid",
+      "type": "@zvid/n8n-nodes-zvid.zvid",
+      "typeVersion": 1,
+      "position": [
+        4300,
+        500
+      ],
+      "parameters": {
+        "resource": "render",
+        "operation": "create",
+        "source": "json",
+        "projectJson": "={{ JSON.stringify($('Enforce the campaign credit ceiling').first().json.payload) }}",
+        "renderType": "video",
+        "waitForCompletion": false
+      },
+      "retryOnFail": false
+    },
+    {
+      "id": "campaign-v3-accepted",
+      "name": "Capture the accepted campaign job ID",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4580,
+        500
+      ],
+      "parameters": {
+        "jsCode": "function trackJob(context, response, now) {\n  const jobId=String(response.jobId || response.id || context.jobId || '').trim();\n  if (!jobId) throw new Error('No render job ID returned. The sheet stays submitting; inspect https://app.zvid.io before resetting it.');\n  return {...context,jobId,pollStartedAt:now};\n}\nreturn [{json:trackJob($('Enforce the campaign credit ceiling').first().json,$json,Date.now())}];"
+      }
+    },
+    {
+      "id": "campaign-v3-save-job",
+      "name": "Save the accepted campaign job for recovery",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        4860,
+        500
+      ],
+      "parameters": {
+        "resource": "sheet",
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Hiring Campaigns",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "CampaignKey": "={{ $('Capture the accepted campaign job ID').first().json.campaignKey }}",
+            "Status": "rendering",
+            "JobId": "={{ $('Capture the accepted campaign job ID').first().json.jobId }}"
+          },
+          "matchingColumns": [
+            "CampaignKey"
+          ],
+          "schema": [
+            {
+              "id": "CampaignKey",
+              "displayName": "CampaignKey",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "JobId",
+              "displayName": "JobId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ]
+        },
+        "options": {
+          "cellFormat": "RAW"
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 2000
+    },
+    {
+      "id": "campaign-v3-restore-new",
+      "name": "Restore the accepted campaign context",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        5140,
+        500
+      ],
+      "parameters": {
+        "jsCode": "return [{json:$('Capture the accepted campaign job ID').first().json}];"
+      }
+    },
+    {
+      "id": "campaign-v3-track",
+      "name": "Keep the campaign with its render job",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        5420,
+        260
+      ],
+      "parameters": {
+        "jsCode": "function trackJob(context, response, now) {\n  const jobId=String(response.jobId || response.id || context.jobId || '').trim();\n  if (!jobId) throw new Error('No render job ID returned. The sheet stays submitting; inspect https://app.zvid.io before resetting it.');\n  return {...context,jobId,pollStartedAt:now};\n}\nreturn [{json:trackJob($json,{},Date.now())}];"
+      }
+    },
+    {
+      "id": "campaign-v3-status",
+      "name": "Wait for the saved campaign render to complete",
+      "type": "@zvid/n8n-nodes-zvid.zvid",
+      "typeVersion": 1,
+      "position": [
+        5900,
+        500
+      ],
+      "parameters": {
+        "resource": "render",
+        "operation": "get",
+        "jobId": "={{ $json.jobId }}",
+        "waitForCompletion": true,
+        "waitOptions": {
+          "pollInterval": "={{ Number($('Set recruitment campaign defaults').first().json.pollSeconds) || 10 }}",
+          "maxWaitTime": "={{ (Number($('Set recruitment campaign defaults').first().json.timeoutMinutes) || 20)*60 }}"
+        }
+      },
+      "onError": "continueRegularOutput",
+      "retryOnFail": false
+    },
+    {
+      "id": "campaign-v3-classify",
+      "name": "Keep the completed URL or failed job for inspection",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        6180,
+        500
+      ],
+      "parameters": {
+        "jsCode": "function classifyJob(context, response, now, timeoutMinutes) {\n  const result=response.result;\n  const url=typeof result==='string'?result:result?.url || result?.videoUrl || '';\n  const state=String(response.state || response.status || '').toLowerCase();\n  if (state==='completed') {\n    if (!/^https:\\/\\/\\S+$/i.test(url)) return {...context,status:'needs_review',reason:'Completed job has no HTTPS media URL. Inspect Zvid; do not resubmit.',videoUrl:null};\n    return {...context,status:'completed',videoUrl:url,renderedAt:new Date(now).toISOString()};\n  }\n  if (['failed','cancelled','canceled'].includes(state)) return {...context,status:'failed',reason:String(response.failedReason || response.error || state),videoUrl:null};\n  if (now-context.pollStartedAt >= Number(timeoutMinutes || 20)*60000) return {...context,status:'timed_out',reason:'Polling deadline reached. Keep the job ID and check Zvid before resuming.',videoUrl:null};\n  if (!['waiting','queued','active','processing','rendering','pending'].includes(state)) return {...context,status:'needs_review',reason:'Unrecognized render state: '+state,videoUrl:null};\n  return {...context,status:'rendering',videoUrl:null};\n}\nconst context=$('Keep the campaign with its render job').first().json;\nlet response=$json;\nif(response.error){const message=typeof response.error==='string'?response.error:JSON.stringify(response.error);response={state:/did not finish within|timed? ?out/i.test(message)?'timed_out':/failed/i.test(message)?'failed':'needs_review',failedReason:message};}\nconst result=classifyJob(context,response,Date.now(),$('Set recruitment campaign defaults').first().json.timeoutMinutes);\nif(response.state==='timed_out')result.status='timed_out';\nreturn [{json:result}];"
+      }
+    },
+    {
+      "id": "campaign-v3-finish",
+      "name": "Save the campaign outcome and video URL",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        6460,
+        500
+      ],
+      "parameters": {
+        "resource": "sheet",
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Hiring Campaigns",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "CampaignKey": "={{ $('Keep the completed URL or failed job for inspection').first().json.campaignKey }}",
+            "Status": "={{ $('Keep the completed URL or failed job for inspection').first().json.status }}",
+            "JobId": "={{ $('Keep the completed URL or failed job for inspection').first().json.jobId }}",
+            "VideoUrl": "={{ $('Keep the completed URL or failed job for inspection').first().json.videoUrl || '' }}",
+            "CompletedAt": "={{ $('Keep the completed URL or failed job for inspection').first().json.renderedAt || '' }}"
+          },
+          "matchingColumns": [
+            "CampaignKey"
+          ],
+          "schema": [
+            {
+              "id": "CampaignKey",
+              "displayName": "CampaignKey",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "JobId",
+              "displayName": "JobId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "VideoUrl",
+              "displayName": "VideoUrl",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "CompletedAt",
+              "displayName": "CompletedAt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ]
+        },
+        "options": {
+          "cellFormat": "RAW"
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 2000
+    },
+    {
+      "id": "campaign-v3-report",
+      "name": "Prepare the recruiter referral and application pack",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        6940,
+        500
+      ],
+      "parameters": {
+        "jsCode": "const {payload,...result}=$('Keep the completed URL or failed job for inspection').first().json;\nreturn [{json:{...result,nextStep:'Review the completed video and handoff file before sharing. No posts or messages were sent.'}}];"
+      }
+    },
+    {
+      "id": "campaign-v3-handoff",
+      "name": "Prepare one application handoff row per role",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        7220,
+        840
+      ],
+      "parameters": {
+        "jsCode": "return $json.roles.map(r=>({json:{CampaignKey:$json.campaignKey,VideoUrl:$json.videoUrl || '',Role:r.role,Team:r.team,Location:r.location,ClosesOn:r.closesOn,ApplyUrl:r.applyUrl,ReferralMessage:$json.referralMessage}}));"
+      }
+    },
+    {
+      "id": "campaign-v3-download",
+      "name": "Download the recruiter handoff CSV",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        7500,
+        840
+      ],
+      "parameters": {
+        "jsCode": "const rows=$input.all().map(i=>i.json);\nconst keys=Object.keys(rows[0]||{});\nconst cell=value=>{let s=String(value??'');if(/^[=+@\\-\\t\\r]/.test(s))s=\"'\"+s;return '\"'+s.replace(/\"/g,'\"\"')+'\"';};\nconst csv=[keys.map(cell).join(','),...rows.map(row=>keys.map(k=>cell(row[k])).join(','))].join('\\r\\n');\nreturn [{json:{campaignKey:rows[0]?.CampaignKey,rowCount:rows.length},binary:{data:{data:Buffer.from(csv,'utf8').toString('base64'),mimeType:'text/csv',fileName:'campaign-handoff.csv'}}}];"
+      }
+    },
+    {
+      "id": "publication-overview-were-hiring-video",
+      "name": "Workflow overview and setup",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -800,
+        0
+      ],
+      "parameters": {
+        "content": "## Build a recruiter-requested hiring campaign\n\n### How it works\nA recruiter requests one role spotlight or a multi-role roundup using a form. The workflow matches the brief to approved open jobs, builds one campaign video, and prepares tracked application links and employee referral copy in a downloadable CSV. A campaign log prevents duplicate completed campaigns and resumes saved jobs using the original snapshot. Review all media and copy before sharing manually.\n\n### Setup\n1. Install **`@zvid/n8n-nodes-zvid`** from **Settings → Community nodes** before credentials. A workspace owner/admin may need to install it.\n2. Create a **Zvid API** credential with [your key](https://app.zvid.io/api-keys), Base URL `https://api.zvid.io`, and select it on every Zvid node.\n3. Connect Google Sheets nodes to one document: the job catalog plus Hiring Campaigns. Add the exact headers in the [setup guide](https://github.com/Zvid-io/zvid-n8n/blob/master/workflows/were-hiring-video.md).\n4. Supply JobKey, Role, Approval=approved and ApplyUrl. Set careersUrl and a manualBrief; configure a Basic Auth credential for the recruiter form.\n5. **dryRun=false spends credits.** true returns the plan, JSON and quote only; no editor draft or log writes.\n6. Test manually, inspect the video and handoff, then enable the protected form. Avoid overlapping runs; keep job IDs for recovery.\n\n### Customization\nReuse CampaignKey to resume; change it only for an intentional new campaign.",
+        "color": 1,
+        "width": 720,
+        "height": 1160
+      }
+    },
+    {
+      "id": "publication-section-were-hiring-video-brief",
+      "name": "1. Receive a recruiter brief",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "content": "## 1. Receive a recruiter brief\n\nChoose spotlight with one JobKey, or roundup filtered by Team, Location or JobKeys. Configure Basic Auth for the form. Manual tests use manualBrief.",
+        "color": 7,
+        "width": 660,
+        "height": 1120
+      }
+    },
+    {
+      "id": "publication-section-were-hiring-video-selection",
+      "name": "2. Match approved openings to the brief",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        760,
+        0
+      ],
+      "parameters": {
+        "content": "## 2. Match approved openings to the brief\n\nRead the job catalog and Hiring Campaigns log. Match explicit roles, check approval and open dates, then prioritize closing dates. Explain missing or ineligible selections before rendering.",
+        "color": 7,
+        "width": 1220,
+        "height": 1120
+      }
+    },
+    {
+      "id": "publication-section-were-hiring-video-design",
+      "name": "3. Compose spotlight or roundup and check cost",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2080,
+        0
+      ],
+      "parameters": {
+        "content": "## 3. Compose spotlight or roundup and check cost\n\nSaved jobs use their original campaign snapshot. New campaigns validate their design and credit ceiling. dryRun=true returns the full plan, design and quote without logging or rendering.",
+        "color": 7,
+        "width": 1780,
+        "height": 1120
+      }
+    },
+    {
+      "id": "publication-section-were-hiring-video-reserve",
+      "name": "4. Reserve the campaign and save its accepted job",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3960,
+        0
+      ],
+      "parameters": {
+        "content": "## 4. Reserve the campaign and save its accepted job\n\nSave submitting before the paid request, then persist the accepted job ID. No paid submission retries. Run one execution at a time; a Sheets log is not an atomic lock.",
+        "color": 7,
+        "width": 1780,
+        "height": 1120
+      }
+    },
+    {
+      "id": "publication-section-were-hiring-video-complete",
+      "name": "5. Wait for completion and record the outcome",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        5840,
+        0
+      ],
+      "parameters": {
+        "content": "## 5. Wait for completion and record the outcome\n\nZvid polls the saved job within the deadline. Inspect failed or uncertain jobs before resetting state. Log headers: CampaignKey, Status, JobId, CreditsQuoted, VideoUrl, Caption, PlanJson, CompletedAt.",
+        "color": 7,
+        "width": 940,
+        "height": 1120
+      }
+    },
+    {
+      "id": "zvid-watch-instructions",
+      "name": "6. Review the recruitment campaign handoff",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        6880,
+        0
+      ],
+      "parameters": {
+        "content": "## 6. Review the recruitment campaign handoff\n\nOpen Watch video → Binary → data → View. Download the CSV for role links and employee referral copy. Review and share manually; no applications are evaluated and no messages are sent.",
+        "color": 7,
+        "width": 940,
+        "height": 1120
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Receive a recruiter campaign brief": {
+      "main": [
+        [
+          {
+            "node": "Set recruitment campaign defaults",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Test the configured recruiter brief": {
+      "main": [
+        [
+          {
+            "node": "Set recruitment campaign defaults",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set recruitment campaign defaults": {
+      "main": [
+        [
+          {
+            "node": "Read approved job catalog",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read approved job catalog": {
+      "main": [
+        [
+          {
+            "node": "Read recruitment campaign history",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read recruitment campaign history": {
+      "main": [
+        [
+          {
+            "node": "Match the hiring brief to open roles",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Match the hiring brief to open roles": {
+      "main": [
+        [
+          {
+            "node": "Campaign has eligible content to process?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Campaign has eligible content to process?": {
+      "main": [
+        [
+          {
+            "node": "Resume the saved campaign render?",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Explain campaign selection or recovery needs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resume the saved campaign render?": {
+      "main": [
+        [
+          {
+            "node": "Restore the saved campaign snapshot",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Recruiter requested a single-role spotlight?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Restore the saved campaign snapshot": {
+      "main": [
+        [
+          {
+            "node": "Keep the campaign with its render job",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recruiter requested a single-role spotlight?": {
+      "main": [
+        [
+          {
+            "node": "Build the single-role spotlight with benefits",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Build the multi-role recruitment roundup",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build the multi-role recruitment roundup": {
+      "main": [
+        [
+          {
+            "node": "Validate campaign design and quote credits",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build the single-role spotlight with benefits": {
+      "main": [
+        [
+          {
+            "node": "Validate campaign design and quote credits",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate campaign design and quote credits": {
+      "main": [
+        [
+          {
+            "node": "Enforce the campaign credit ceiling",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enforce the campaign credit ceiling": {
+      "main": [
+        [
+          {
+            "node": "Return a preview without spending render credits?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Return a preview without spending render credits?": {
+      "main": [
+        [
+          {
+            "node": "Return campaign plan design and credit quote",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Reserve the campaign key before a paid request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Reserve the campaign key before a paid request": {
+      "main": [
+        [
+          {
+            "node": "Submit the new campaign video to Zvid",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Submit the new campaign video to Zvid": {
+      "main": [
+        [
+          {
+            "node": "Capture the accepted campaign job ID",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Capture the accepted campaign job ID": {
+      "main": [
+        [
+          {
+            "node": "Save the accepted campaign job for recovery",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save the accepted campaign job for recovery": {
+      "main": [
+        [
+          {
+            "node": "Restore the accepted campaign context",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Restore the accepted campaign context": {
+      "main": [
+        [
+          {
+            "node": "Keep the campaign with its render job",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Keep the campaign with its render job": {
+      "main": [
+        [
+          {
+            "node": "Wait for the saved campaign render to complete",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for the saved campaign render to complete": {
+      "main": [
+        [
+          {
+            "node": "Keep the completed URL or failed job for inspection",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Keep the completed URL or failed job for inspection": {
+      "main": [
+        [
+          {
+            "node": "Save the campaign outcome and video URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save the campaign outcome and video URL": {
+      "main": [
+        [
+          {
+            "node": "Prepare the recruiter referral and application pack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare the recruiter referral and application pack": {
+      "main": [
+        [
+          {
+            "node": "Completed campaign video URL available?",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Prepare one application handoff row per role",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Completed campaign video URL available?": {
+      "main": [
+        [
+          {
+            "node": "▶ Watch video — recruitment campaign",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Prepare one application handoff row per role": {
+      "main": [
+        [
+          {
+            "node": "Download the recruiter handoff CSV",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "f3a8b2c1-9d47-4e60-8a25-6c1b0d9e7f34",
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "reviewUpgradeVersion": 2,
+    "campaignReviewVersion": 3
+  },
+  "id": "ZvidWereHiring",
+  "tags": []
+}

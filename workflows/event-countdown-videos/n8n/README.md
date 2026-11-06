@@ -1,0 +1,19 @@
+# Run the event calendar in n8n
+
+1. Install **`@zvid/n8n-nodes-zvid`** from **Settings → Community nodes**. A workspace owner/admin may need to install it. Import `workflow.json`; keep it inactive.
+2. Create a **Zvid API** credential with your key from https://app.zvid.io/api-keys and base URL `https://api.zvid.io`. Select it on **Validate project (free)**, **Save draft to editor**, **Submit render**, and **Get render status**.
+3. **Save draft to editor** is an HTTP Request exception because published Zvid node 0.1.8 does not expose project creation. Its Authentication is **Predefined Credential Type**, its credential type is **Zvid API**, and its URL is `/api/projects` on the configured Zvid API origin. The checked-in request already sends `name` and `payload`. Supported rendering operations use native Zvid nodes.
+4. Create a Google Sheet with headers `EventName,DateISO,Venue,City,TicketUrl,ImageUrl,Status,PromoUrl,Video7d,Video1d`. Format `DateISO` as plain text. Copy the supplied `data/events.json` values into one row; leave the four output columns empty. Connect a Google Sheets OAuth2 credential with edit access to **Read events sheet** and **Update event row**, and select the same document and tab in both.
+5. Open **Config**. The export defaults to `dryRun:false` and `maxRendersPerRun:3`. For the sample, paste `config.json` into its JSON field, then change `dryRun` to `true`. This sets the fictional Cedarline branding, one-video limit, silent audio and `todayOverride:2026-10-21`.
+6. Choose **Test manually** and execute. Inspect **Dry run summary**, its credit quote and `editorLink`. Open the link and play the editor preview. No finished MP4 is produced and the sheet stays unchanged. If draft creation fails, inspect that node before proceeding; **Check validation** still contains the quote and payload.
+7. Set `dryRun:false`, execute once, and wait for completion. Use **Watch video → Binary → data → View**. The corresponding sheet URL column and `Status` are updated only after completion. Download from the binary panel or the returned URL.
+8. To rehearse reminders, keep earlier URLs and change `todayOverride` to `2026-11-07` for seven days or `2026-11-13` for one day. Each real render spends credits; use `dryRun:true` to inspect first.
+9. Before scheduling, clear `todayOverride`, choose the workflow timezone, set `timezoneOffsetHours` to the event calendar's current offset, and check **Every day at 8am**. Save and publish/activate only after a successful manual run.
+
+Google Cloud OAuth apps in External/Testing mode need reconnection after seven days. For self-hosted n8n, create a Google Cloud project, enable Sheets and Drive APIs, configure consent and test users, create a Web application OAuth client, copy n8n's redirect URI exactly, then place the client ID and secret in the n8n credential and sign in. See https://docs.n8n.io/integrations/builtin/credentials/google/oauth-single-service/.
+
+Eventbrite is optional: set `source:eventbrite`, enter `eventbriteOrgId`, and select a Bearer Auth credential on **Fetch Eventbrite events**. It reads the first 50 live events in start order with no pagination. Its completion memory is n8n workflow static data; test persistence in an active scheduled run before relying on it. The primary supplied example uses Sheets.
+
+The daily workflow does not update a previously rendered countdown. It creates a new video at an eligible milestone. It misses a milestone if no successful run processes that event on the exact day. Keep result cells, avoid overlapping executions and do not sort/delete rows during a run because write-back uses the captured row number. A timeout can leave an accepted render running; inspect its saved job ID before retrying. Posting and messaging are manual.
+
+Support: https://zvid.io/contact

@@ -1,0 +1,14 @@
+{
+  "minRating": 5,
+  "useLlm": false,
+  "brandName": "Northwind Goods",
+  "verifiedLabel": "Illustrative review",
+  "storeUrl": "https://northwindgoods.example",
+  "ctaText": "Read the reviews",
+  "musicUrl": "",
+  "maxQuoteChars": 220,
+  "pollSeconds": 10,
+  "timeoutMinutes": 20,
+  "brandKicker": "SAMPLE REVIEW",
+  "hookLine": "An illustrative customer story."
+}

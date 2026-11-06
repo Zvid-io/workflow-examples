@@ -1,0 +1,16 @@
+{
+  "renderedAt": "2026-10-19",
+  "input": "data/deal.json",
+  "config": "config.json",
+  "width": 1920,
+  "height": 1080,
+  "durationSeconds": 24.8,
+  "quotedCredits": 25,
+  "audio": false,
+  "source": "Historical successful n8n Google Sheets run; the Node companion uses the same builder and fictional deal.",
+  "reproductionCommand": "npm run render -- --max-credits 25 --out out/sample",
+  "videoSha256": "dbf46a71168c11a5c911b92b9a033355b5cd894e3b9a9f01255dc9786399fc5a",
+  "posterSha256": "0502ba6a25ba9b5655d26385b0e25151eb3ba5206db9f8cfdd051d35895f2f30",
+  "projectSha256": "efc81218537b8879fcc610b2f553b454b331290d6849ada30f1c7164103c93cb",
+  "workflowSha256": "4f46495a94c4f8da7875df09a2c240389802db31c35cd3db07aacd35241a34d7"
+}

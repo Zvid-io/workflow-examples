@@ -1,0 +1,43 @@
+{
+  "createdAt": "2026-10-29",
+  "input": "data/match.json",
+  "fixture": "Fictional Cedar FC 3-2 Harbor United; no real event or customer data.",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "durationSeconds": 12,
+  "frameRate": 30,
+  "audio": false,
+  "creditsQuoted": 12,
+  "quoteKind": "Authenticated remote validation of sample-project.json; no paid cloud render",
+  "renderMethod": "Local Zvid render engine from the exact sample project",
+  "reproductionCommand": "npm ci && npm run check && npm test && npm run offline",
+  "renderCommand": "npm start -- --render --max-credits 35",
+  "canonicalWorkflowSha256": "9294011bae8758994bf3d06f68edc5f4b9eb75d45e6c4e3c56b58a407ccb3e38",
+  "files": {
+    "sample-project.json": {
+      "sha256": "9d68036d98005054996cfb1bb29e6f96ff5e92a6d44b1e3e80ba64cb0535ace3",
+      "bytes": 2589
+    },
+    "sample-output.mp4": {
+      "sha256": "81e435fb3267737d36ce3eff874db1d4f3d86d9a91a8424ffc95800c86de4e5f",
+      "bytes": 81385
+    },
+    "sample-output.jpg": {
+      "sha256": "0d089299002a983f2e58da0251cc6c3ca7d1c55f2ab0e4dcf02f3a5e610c434e",
+      "bytes": 31847
+    },
+    "workflow.png": {
+      "sha256": "f82b09ad287903317757be6354e85286cc783e83c70a76114788e6ed3120869d",
+      "bytes": 37262
+    }
+  },
+  "screenshot": {
+    "kind": "Historical authentic n8n canvas",
+    "date": "2026-10-08",
+    "scope": "Editorial approval/correction revision; no claim of current live execution"
+  },
+  "videoSha256": "81e435fb3267737d36ce3eff874db1d4f3d86d9a91a8424ffc95800c86de4e5f",
+  "workflowSha256": "9294011bae8758994bf3d06f68edc5f4b9eb75d45e6c4e3c56b58a407ccb3e38"
+}

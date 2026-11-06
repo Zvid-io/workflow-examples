@@ -1,0 +1,28 @@
+{
+  "maxRoles": 2,
+  "careersUrl": "https://example.com/?careers=cedarline-demo",
+  "manualBrief": {
+    "CampaignKey": "cedarline-demo-platform-20261025-v2",
+    "Mode": "spotlight",
+    "JobKeys": "DEMO-ENG-01",
+    "Team": "",
+    "Location": "",
+    "MaxRoles": 2
+  },
+  "apiUrl": "https://api.zvid.io",
+  "editorUrl": "https://editor.zvid.io",
+  "companyName": "Cedarline Demo",
+  "kicker": "WE'RE HIRING",
+  "ctaHeadline": "Your next role is right here.",
+  "ctaText": "Apply now",
+  "accentColor": "#D7F875",
+  "backgroundColor": "#163D35",
+  "font": "Manrope",
+  "resolution": "instagram-reel",
+  "frameRate": 30,
+  "dryRun": false,
+  "pollSeconds": 10,
+  "timeoutMinutes": 20,
+  "maxCreditsPerVideo": 20,
+  "timezone": "Africa/Cairo"
+}

@@ -1,0 +1,399 @@
+{
+  "name": "no-show-maya-content-planning-demo",
+  "resolution": "instagram-reel",
+  "frameRate": 30,
+  "backgroundColor": "#FBF3EC",
+  "outputFormat": "mp4",
+  "scenes": [
+    {
+      "id": "missed",
+      "duration": 5.45,
+      "backgroundColor": "#FBF3EC",
+      "transition": "smoothup",
+      "transitionId": "recap",
+      "transitionDuration": 0.6,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 5.45,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='nsrHalo' cx='0.5' cy='0.42' r='0.62'><stop offset='0' stop-color='#B0472A' stop-opacity='0.13'/><stop offset='1' stop-color='#B0472A' stop-opacity='0'/></radialGradient></defs><rect width='1080' height='1920' fill='#FBF3EC'/><circle cx='1064' cy='120' r='250' fill='rgba(176,71,42,0.055)'/><circle cx='24' cy='1836' r='300' fill='rgba(176,71,42,0.05)'/><rect width='1080' height='1920' fill='url(#nsrHalo)'/><rect x='48' y='48' width='984' height='1824' rx='48' fill='none' stroke='rgba(36,28,21,0.1)' stroke-width='1.5'/><rect x='506' y='479' width='68' height='5' rx='2.5' fill='#B0472A'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 104,
+          "y": 124,
+          "width": 872,
+          "anchor": "top-left",
+          "track": 1,
+          "enterBegin": 0,
+          "exitBegin": 4.45,
+          "exitEnd": 4.83,
+          "exitAnimation": "fade",
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#241C15"
+          },
+          "html": "<div style='display:flex; align-items:center; gap:20px;'><div style='width:72px; height:72px; border-radius:22px; background:#B0472A; color:#FBF3EC; font-size:36px; font-weight:800; display:flex; align-items:center; justify-content:center;'>C</div><div style='color:#241C15; font-size:34px; font-weight:800; letter-spacing:1px;'>Cedarline Demo</div></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 515,
+          "width": 900,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0,
+          "exitEnd": 5.45,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#B0472A"
+          },
+          "html": "<div style='text-align:center; color:#B0472A; font-size:25px; font-weight:800; letter-spacing:7px;'>A NOTE FROM ALEX MORGAN</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 577,
+          "width": 900,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 0,
+          "exitEnd": 5.45,
+          "style": {
+            "fontFamily": "Fraunces",
+            "color": "#241C15"
+          },
+          "html": "<div style='text-align:center; color:#241C15; font-size:96px; line-height:104px; font-weight:700; letter-spacing:-1.5px;'>We missed you, Maya.</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 831,
+          "width": 840,
+          "anchor": "top-center",
+          "track": 4,
+          "enterBegin": 0.45,
+          "enterEnd": 1,
+          "enterAnimation": "fade",
+          "exitEnd": 5.45,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#786557"
+          },
+          "html": "<div style='text-align:center; color:#786557; font-size:34px; line-height:48px; font-weight:500;'>Content planning demo ran on Thu, Oct 15 · 2:00 PM UTC. No stress — here is the short version, and a new slot whenever you like.</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1330,
+          "width": 872,
+          "anchor": "top-center",
+          "track": 5,
+          "enterBegin": 1.05,
+          "enterEnd": 1.65,
+          "enterAnimation": "smoothup",
+          "exitEnd": 5.45,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#241C15"
+          },
+          "html": "<div style='box-sizing:border-box; width:872px; height:284px; padding:44px 48px; background:#FEFBF9; border:1.5px solid rgba(176,71,42,0.32); border-radius:40px;'><div style='color:#B0472A; font-size:22px; font-weight:800; letter-spacing:5px;'>THE SESSION YOU BOOKED</div><div style='margin-top:18px; color:#241C15; font-size:46px; line-height:57px; font-weight:800; letter-spacing:-0.5px;'>Content planning demo</div><div style='margin-top:28px; height:1px; background:rgba(36,28,21,0.14)'></div><div style='margin-top:27px; color:#786557; font-size:30px; font-weight:600;'>Thu, Oct 15 · 2:00 PM UTC</div></div>"
+        }
+      ]
+    },
+    {
+      "id": "recap",
+      "duration": 6.42,
+      "backgroundColor": "#FBF3EC",
+      "transition": "fade",
+      "transitionId": "rebook",
+      "transitionDuration": 0.6,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 6.42,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='nsrPaper2' cx='0.22' cy='0.12' r='1.05'><stop offset='0' stop-color='#F4E4DB'/><stop offset='1' stop-color='#FBF3EC'/></radialGradient></defs><rect width='1080' height='1920' fill='url(#nsrPaper2)'/><circle cx='1040' cy='1880' r='260' fill='rgba(176,71,42,0.05)'/><rect x='48' y='48' width='984' height='1824' rx='48' fill='none' stroke='rgba(36,28,21,0.1)' stroke-width='1.5'/><rect x='506' y='142' width='68' height='5' rx='2.5' fill='#B0472A'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 176,
+          "width": 880,
+          "anchor": "top-center",
+          "track": 1,
+          "enterBegin": 0.1,
+          "enterEnd": 0.5,
+          "enterAnimation": "fade",
+          "exitEnd": 6.42,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#B0472A"
+          },
+          "html": "<div style='text-align:center; color:#B0472A; font-size:25px; font-weight:800; letter-spacing:7px;'>CONTENT PLANNING DEMO</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 238,
+          "width": 880,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.25,
+          "enterEnd": 0.75,
+          "enterAnimation": "smoothup",
+          "exitEnd": 6.42,
+          "style": {
+            "fontFamily": "Fraunces",
+            "color": "#241C15"
+          },
+          "html": "<div style='text-align:center; color:#241C15; font-size:74px; line-height:81px; font-weight:700; letter-spacing:-1px;'>Here&#39;s what we covered</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 437,
+          "width": 872,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 0.65,
+          "enterEnd": 1.15,
+          "enterAnimation": "smoothleft",
+          "exitEnd": 6.42,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#241C15"
+          },
+          "html": "<div style='box-sizing:border-box; width:872px; height:196px; padding:0 44px; background:#FEFBF9; border:1.5px solid rgba(176,71,42,0.28); border-radius:34px; display:flex; align-items:center; gap:28px;'><div style='flex:0 0 auto; width:68px; height:68px; border-radius:999px; background:rgba(176,71,42,0.14); border:2px solid #B0472A; color:#B0472A; font-size:30px; font-weight:800; display:flex; align-items:center; justify-content:center;'>1</div><div style='flex:1 1 auto; color:#241C15; font-size:34px; line-height:49px; font-weight:600;'>Build a clear weekly content plan</div></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 677,
+          "width": 872,
+          "anchor": "top-center",
+          "track": 4,
+          "enterBegin": 0.91,
+          "enterEnd": 1.41,
+          "enterAnimation": "smoothleft",
+          "exitEnd": 6.42,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#241C15"
+          },
+          "html": "<div style='box-sizing:border-box; width:872px; height:196px; padding:0 44px; background:#FEFBF9; border:1.5px solid rgba(176,71,42,0.28); border-radius:34px; display:flex; align-items:center; gap:28px;'><div style='flex:0 0 auto; width:68px; height:68px; border-radius:999px; background:rgba(176,71,42,0.14); border:2px solid #B0472A; color:#B0472A; font-size:30px; font-weight:800; display:flex; align-items:center; justify-content:center;'>2</div><div style='flex:1 1 auto; color:#241C15; font-size:34px; line-height:49px; font-weight:600;'>Connect a lead list to a video workflow</div></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 917,
+          "width": 872,
+          "anchor": "top-center",
+          "track": 5,
+          "enterBegin": 1.17,
+          "enterEnd": 1.67,
+          "enterAnimation": "smoothleft",
+          "exitEnd": 6.42,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#241C15"
+          },
+          "html": "<div style='box-sizing:border-box; width:872px; height:196px; padding:0 44px; background:#FEFBF9; border:1.5px solid rgba(176,71,42,0.28); border-radius:34px; display:flex; align-items:center; gap:28px;'><div style='flex:0 0 auto; width:68px; height:68px; border-radius:999px; background:rgba(176,71,42,0.14); border:2px solid #B0472A; color:#B0472A; font-size:30px; font-weight:800; display:flex; align-items:center; justify-content:center;'>3</div><div style='flex:1 1 auto; color:#241C15; font-size:34px; line-height:49px; font-weight:600;'>Review each result before sharing</div></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1217,
+          "width": 800,
+          "anchor": "top-center",
+          "track": 7,
+          "enterBegin": 1.5,
+          "enterEnd": 1.9,
+          "enterAnimation": "fade",
+          "exitEnd": 6.42,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#786557"
+          },
+          "html": "<div style='text-align:center; color:#786557; font-size:22px; font-weight:800; letter-spacing:6px;'>HOSTED BY</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1273,
+          "width": 156,
+          "anchor": "top-center",
+          "track": 9,
+          "enterBegin": 1.6,
+          "enterEnd": 2.05,
+          "enterAnimation": "circleopen",
+          "exitEnd": 6.42,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#B0472A"
+          },
+          "html": "<div style='box-sizing:border-box; width:156px; height:156px; border-radius:999px; background:rgba(176,71,42,0.14); border:2.5px solid #B0472A; color:#B0472A; font-size:62px; font-weight:800; display:flex; align-items:center; justify-content:center;'>A</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1461,
+          "width": 860,
+          "anchor": "top-center",
+          "track": 10,
+          "enterBegin": 1.8,
+          "enterEnd": 2.2,
+          "enterAnimation": "smoothup",
+          "exitEnd": 6.42,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#241C15"
+          },
+          "html": "<div style='text-align:center; color:#241C15; font-size:42px; line-height:50px; font-weight:800; letter-spacing:-0.5px;'>Alex Morgan</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1517,
+          "width": 860,
+          "anchor": "top-center",
+          "track": 11,
+          "enterBegin": 1.95,
+          "enterEnd": 2.35,
+          "enterAnimation": "fade",
+          "exitEnd": 6.42,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#786557"
+          },
+          "html": "<div style='text-align:center; color:#786557; font-size:28px; line-height:38px; font-weight:600;'>Demo session host</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1625,
+          "width": 820,
+          "anchor": "top-center",
+          "track": 12,
+          "enterBegin": 2.2,
+          "enterEnd": 2.6,
+          "enterAnimation": "fade",
+          "exitEnd": 6.42,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#786557"
+          },
+          "html": "<div style='text-align:center; color:#786557; font-size:26px; line-height:38px; font-weight:500;'>A fresh chance to try the same ideas.</div>"
+        }
+      ]
+    },
+    {
+      "id": "rebook",
+      "duration": 4.4,
+      "backgroundColor": "#241C15",
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 4.4,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='nsrCta' cx='0.5' cy='0.3' r='0.95'><stop offset='0' stop-color='#43251A'/><stop offset='1' stop-color='#241C15'/></radialGradient></defs><rect width='1080' height='1920' fill='url(#nsrCta)'/><rect x='48' y='48' width='984' height='1824' rx='48' fill='none' stroke='rgba(251,243,236,0.16)' stroke-width='1.5'/><circle cx='540' cy='520' r='170' fill='none' stroke='rgba(210,148,129,0.22)' stroke-width='1.5'/><circle cx='540' cy='520' r='148' fill='none' stroke='rgba(210,148,129,0.75)' stroke-width='2.5'/><rect x='470' y='474' width='140' height='120' rx='20' fill='none' stroke='#D29481' stroke-width='6'/><path d='M502 456 V486 M578 456 V486' stroke='#D29481' stroke-width='9' stroke-linecap='round'/><path d='M470 516 H610' stroke='#D29481' stroke-width='5'/><path d='M504 550 L528 574 L578 528' fill='none' stroke='#D29481' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/><path d='M420 1560 H660' stroke='rgba(251,243,236,0.22)' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 830,
+          "width": 900,
+          "anchor": "top-center",
+          "track": 1,
+          "enterBegin": 0.3,
+          "enterEnd": 0.85,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.4,
+          "style": {
+            "fontFamily": "Fraunces",
+            "color": "#FBF3EC"
+          },
+          "html": "<div style='text-align:center; color:#FBF3EC; font-size:76px; line-height:82px; font-weight:700; letter-spacing:-1.5px;'>Ready when you are, Maya.</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1038,
+          "width": 820,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.7,
+          "enterEnd": 1.15,
+          "enterAnimation": "fade",
+          "exitEnd": 4.4,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#B6AEA7"
+          },
+          "html": "<div style='text-align:center; color:#B6AEA7; font-size:32px; line-height:46px; font-weight:500;'>Choose another time whenever you are ready.</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1176,
+          "width": 900,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 1.05,
+          "enterEnd": 1.5,
+          "enterAnimation": "circleopen",
+          "exitEnd": 4.4,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#FBF3EC"
+          },
+          "html": "<div style='text-align:center;'><div style='display:inline-block; background:#B0472A; color:#FBF3EC; border-radius:999px; padding:28px 68px; font-size:40px; font-weight:800; letter-spacing:-0.5px;'>Grab another slot</div></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1318,
+          "width": 900,
+          "anchor": "top-center",
+          "track": 4,
+          "enterBegin": 1.4,
+          "enterEnd": 1.8,
+          "enterAnimation": "fade",
+          "exitEnd": 4.4,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#B6AEA7"
+          },
+          "html": "<div style='text-align:center; color:#B6AEA7; font-size:28px; font-weight:700; letter-spacing:4px;'>CEDARLINE.EXAMPLE/BOOK</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1620,
+          "width": 900,
+          "anchor": "top-center",
+          "track": 5,
+          "enterBegin": 1.7,
+          "enterEnd": 2.1,
+          "enterAnimation": "fade",
+          "exitEnd": 4.4,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#B6AEA7"
+          },
+          "html": "<div style='text-align:center; color:#B6AEA7; font-size:27px; font-weight:600; letter-spacing:2px;'>&mdash; Alex Morgan · Cedarline Demo</div>"
+        }
+      ]
+    }
+  ]
+}

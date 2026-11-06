@@ -1,0 +1,21 @@
+{
+  "name": "daily-weather-video",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Plan outdoor bookings with hourly weather and render a call-sheet video.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "check": "node src/check.js",
+    "test": "node --test tests/*.test.js",
+    "sample": "node src/index.js --offline",
+    "preview": "node src/index.js --dry-run"
+  },
+  "dependencies": {
+    "@zvid/sdk": "0.2.0"
+  }
+}

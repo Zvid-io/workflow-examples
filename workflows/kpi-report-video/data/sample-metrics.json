@@ -1,0 +1,57 @@
+{
+  "sampleData": true,
+  "company": "SAMPLE DATA - Example team",
+  "generatedAt": "2026-10-29T09:00:00.000Z",
+  "periodStart": "2026-10-22",
+  "periodEnd": "2026-10-28",
+  "metrics": [
+    {
+      "id": "revenue",
+      "label": "Example revenue",
+      "value": 120000,
+      "previous": 150000,
+      "unit": "USD",
+      "lowerIsBetter": false,
+      "target": 160000,
+      "owner": "Example sales team",
+      "action": "Example: review the sales pipeline",
+      "history": [
+        140000,
+        150000,
+        120000
+      ]
+    },
+    {
+      "id": "conversion",
+      "label": "Example conversion rate",
+      "value": 4.2,
+      "previous": 3.6,
+      "unit": "%",
+      "lowerIsBetter": false,
+      "target": 4,
+      "owner": "Example growth team",
+      "action": "Example: review campaign performance",
+      "history": [
+        3.4,
+        3.6,
+        4.2
+      ]
+    },
+    {
+      "id": "response",
+      "label": "Example response time",
+      "value": 3.4,
+      "previous": 2.1,
+      "unit": "hours",
+      "lowerIsBetter": true,
+      "target": 2.5,
+      "owner": "Example support team",
+      "action": "Example: review queue coverage",
+      "history": [
+        2.5,
+        2.1,
+        3.4
+      ]
+    }
+  ]
+}

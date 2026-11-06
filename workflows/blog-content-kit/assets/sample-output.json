@@ -1,0 +1,22 @@
+{
+  "renderedAt": "2026-10-20 09:01:01.795",
+  "input": "data/sample-prepared.json",
+  "dimensions": "1080x1080",
+  "durationSeconds": 20,
+  "creditsQuoted": 20,
+  "kitCreditsQuoted": 29,
+  "reproduce": "npm run sample; npm start -- --render-prepared --out out/sample --max-credits 29",
+  "videoSha256": "d2793a6af14faebcba3e0c6466c7fab9cbaea73481a932e4cca0568a3df46e12",
+  "workflowSha256": "4efc3ef0c508b2c2f7db53cbadd5401ee313e6dabeb464990109b9327baf6ccc",
+  "otherOutputs": [
+    {
+      "file": "teaser-output.mp4",
+      "sha256": "7cd6573dc9760f77eaf2354ad1392aba3a8acbdc2df3af0fde07fd87937ba4bb"
+    },
+    {
+      "file": "og-output.png",
+      "sha256": "d6e66408c218d3fcecb6eadf0f21753eed13bed570cf23220ac784e2de79673f"
+    }
+  ],
+  "note": "Fictional Cedarline Demo article and retained reviewed copy from the October 2026 demonstration. The prepared sample avoids a fresh model call. Editor draft saving in the recorded run was unavailable because the saved-project allowance was full."
+}

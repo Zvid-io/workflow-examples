@@ -1,0 +1,28 @@
+{
+  "name": "zvid-testimonial-compilation-example",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Compile approved testimonial rows into a square video using the matching n8n design and the Zvid SDK.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "check": "node src/check.js",
+    "test": "node --test tests/*.test.js",
+    "offline": "node src/index.js --input data/testimonials.json --offline --out out/offline"
+  },
+  "dependencies": {
+    "@zvid/sdk": "0.2.0"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://zvid.io/contact"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zvid-io/workflow-examples.git",
+    "directory": "workflows/testimonial-compilation"
+  }
+}

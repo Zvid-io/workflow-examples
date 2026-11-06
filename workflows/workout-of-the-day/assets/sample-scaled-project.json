@@ -1,0 +1,238 @@
+{
+  "name": "workout-of-the-day-strength-scaled",
+  "resolution": "instagram-reel",
+  "frameRate": 30,
+  "backgroundColor": "#07080A",
+  "outputFormat": "mp4",
+  "scenes": [
+    {
+      "id": "hook",
+      "duration": 3.8,
+      "backgroundColor": "#07080A",
+      "transition": "smoothup",
+      "transitionId": "board",
+      "transitionDuration": 0.55,
+      "visuals": [
+        {
+          "type": "VIDEO",
+          "src": "https://cdn.zvid.io/blog/workout-of-the-day/2e856faee4f3/workout-hero.mp4",
+          "width": 1080,
+          "height": 1920,
+          "position": "center-center",
+          "resize": "cover",
+          "volume": 0,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 3.8
+        },
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 3.8,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='wodHook' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#07080A' stop-opacity='0.72'/><stop offset='0.42' stop-color='#07080A' stop-opacity='0.15'/><stop offset='1' stop-color='#07080A' stop-opacity='0.94'/></linearGradient></defs><rect width='1080' height='1920' fill='url(#wodHook)'/><rect x='0' y='1290' width='1080' height='8' fill='#C6FF3D'/><rect x='56' y='56' width='968' height='1808' rx='28' fill='none' stroke='rgba(198,255,61,0.28)' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 120,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.2,
+          "enterEnd": 0.65,
+          "enterAnimation": "smoothright",
+          "exitEnd": 3.8,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#C6FF3D"
+          },
+          "html": "<div style='display:inline-block; background:#C6FF3D; color:#07080A; padding:12px 26px; font-size:24px; font-weight:800; letter-spacing:5px;'>Cedarline Demo Gym</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1360,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.5,
+          "enterEnd": 1.05,
+          "enterAnimation": "smoothup",
+          "exitEnd": 3.8,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='color:#C6FF3D; font-size:26px; font-weight:800; letter-spacing:7px;'>WORKOUT OF THE DAY</div><div style='margin-top:14px; color:#FFFFFF; font-size:92px; line-height:0.92; font-weight:900; letter-spacing:-3px; text-transform:uppercase;'>Strength · Scaled</div><div style='margin-top:18px; color:rgba(255,255,255,0.5); font-size:24px; font-weight:700; letter-spacing:4px; text-transform:uppercase;'>THU, OCT 1 &#183; @cedarline.demo</div>"
+        }
+      ]
+    },
+    {
+      "id": "board",
+      "duration": 5.4,
+      "backgroundColor": "#07080A",
+      "transition": "smoothup",
+      "transitionId": "coach",
+      "transitionDuration": 0.5,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 5.4,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='wodItem' cx='0.5' cy='0.32' r='0.95'><stop offset='0' stop-color='#12160D'/><stop offset='1' stop-color='#07080A'/></radialGradient></defs><rect width='1080' height='1920' fill='url(#wodItem)'/><path d='M90 415 H990' stroke='rgba(255,255,255,0.14)' stroke-width='2'/><rect x='80' y='470' width='920' height='266' rx='36' fill='rgba(198,255,61,0.05)' stroke='rgba(198,255,61,0.4)' stroke-width='1.5'/><rect x='80' y='470' width='920' height='10' rx='5' fill='#C6FF3D'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 210,
+          "anchor": "top-left",
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 5.4,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#8C9196"
+          },
+          "html": "<div style='color:#8C9196; font-size:24px; font-weight:800; letter-spacing:6px; text-transform:uppercase;'>Cedarline Demo Gym &#183; WOD</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 268,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.15,
+          "enterEnd": 0.55,
+          "enterAnimation": "smoothright",
+          "exitEnd": 5.4,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='color:#FFFFFF; font-size:58px; line-height:1; font-weight:900; letter-spacing:-1px; text-transform:uppercase;'>Strength · Scaled</div><div style='margin-top:12px; color:#C6FF3D; font-size:26px; font-weight:800; letter-spacing:4px;'>THU, OCT 1</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 140,
+          "y": 540,
+          "width": 800,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.25,
+          "enterEnd": 0.65,
+          "enterAnimation": "smoothright",
+          "exitEnd": 5.4,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='display:flex; gap:30px; align-items:flex-start;'><div style='width:56px; flex:none; color:rgba(255,255,255,0.38); font-size:30px; font-weight:800; padding-top:6px;'>01</div><div style='flex:1;'><div style='color:#FFFFFF; font-size:46px; line-height:1.1; font-weight:800; text-transform:uppercase; letter-spacing:-1px;'>Box squat</div><div style='margin-top:8px; color:#C6FF3D; font-size:30px; font-weight:800; letter-spacing:1px; text-transform:uppercase;'>3x8</div></div></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 826,
+          "anchor": "top-center",
+          "track": 4,
+          "enterBegin": 0.59,
+          "enterEnd": 0.99,
+          "enterAnimation": "fade",
+          "exitEnd": 5.4,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#85898D"
+          },
+          "html": "<div style='text-align:center; color:#85898D; font-size:26px; font-weight:700; letter-spacing:3px;'>@cedarline.demo</div>"
+        }
+      ]
+    },
+    {
+      "id": "coach",
+      "duration": 4.4,
+      "backgroundColor": "#07080A",
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 4.4,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='wodEnd' cx='0.5' cy='0.36' r='0.95'><stop offset='0' stop-color='#141A0C'/><stop offset='1' stop-color='#07080A'/></radialGradient></defs><rect width='1080' height='1920' fill='url(#wodEnd)'/><circle cx='540' cy='900' r='430' fill='none' stroke='rgba(198,255,61,0.12)' stroke-width='2'/><rect x='56' y='56' width='968' height='1808' rx='28' fill='none' stroke='rgba(198,255,61,0.25)' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 500,
+          "width": 600,
+          "anchor": "top-center",
+          "track": 1,
+          "enterBegin": 0.2,
+          "enterEnd": 0.7,
+          "enterAnimation": "circleopen",
+          "exitEnd": 4.4,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#C6FF3D"
+          },
+          "html": "<div style='text-align:center; color:#C6FF3D; font-size:130px; line-height:0.6; font-weight:900;'>&#8220;</div><div style='margin-top:24px; text-align:center; color:#C6FF3D; font-size:26px; font-weight:800; letter-spacing:6px;'>COACH'S NOTE</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 880,
+          "width": 880,
+          "anchor": "center-center",
+          "track": 2,
+          "enterBegin": 0.45,
+          "enterEnd": 0.95,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.4,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#FFFFFF"
+          },
+          "html": "<div style='text-align:center; color:#FFFFFF; font-size:64px; line-height:1.18; font-weight:800;'>Log your lifts. Tag the gym.</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1230,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 0.85,
+          "enterEnd": 1.25,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.4,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#C6FF3D"
+          },
+          "html": "<div style='display:inline-block; background:#C6FF3D; color:#07080A; border-radius:999px; padding:24px 58px; font-size:34px; font-weight:900; letter-spacing:1px;'>@cedarline.demo</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1700,
+          "anchor": "top-center",
+          "track": 4,
+          "enterBegin": 1.15,
+          "enterEnd": 1.55,
+          "enterAnimation": "fade",
+          "exitEnd": 4.4,
+          "style": {
+            "fontFamily": "Archivo",
+            "color": "#85898D"
+          },
+          "html": "<div style='text-align:center; color:#85898D; font-size:24px; font-weight:700; letter-spacing:5px; text-transform:uppercase;'>Cedarline Demo Gym &#183; WORKOUT OF THE DAY</div>"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "feedUrl": "",
+  "showNameOverride": "",
+  "coverImageOverride": "",
+  "handle": "@yourshow",
+  "clipCount": 1,
+  "clipSeconds": 30,
+  "dryRun": false
+}

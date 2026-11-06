@@ -1,0 +1,6 @@
+* text=auto eol=lf
+n8n/workflow.json -text
+assets/sample-project.json -text
+*.png binary
+*.jpg binary
+*.mp4 binary

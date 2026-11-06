@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-29",
+  "commit": "3a694a6126e845dce312fff8a1b41bae1dce1658",
+  "pullRequest": "https://github.com/Zvid-io/workflow-examples/pull/2",
+  "ci": "https://github.com/Zvid-io/workflow-examples/actions/runs/40841468604",
+  "examples": [
+    {
+      "key": "blog-content-kit",
+      "articleKey": "blog-content-kit",
+      "commit": "3a694a6126e845dce312fff8a1b41bae1dce1658",
+      "source": "https://github.com/Zvid-io/workflow-examples/tree/3a694a6126e845dce312fff8a1b41bae1dce1658/workflows/blog-content-kit",
+      "zip": "https://cdn.zvid.io/blog/blog-content-kit/3eb5bcba0521/blog-content-kit-3a694a6.zip",
+      "sha256": "3eb5bcba0521df58504060f0e71d4a33fa62587260cf7e5bd1659feccb4fc9ab",
+      "bytes": 1444971,
+      "preview": "http://127.0.0.1:3024/blog-content-kit",
+      "article": "workspace/blog-rewrites/articles/blog-content-kit/revised.md"
+    },
+    {
+      "key": "event-countdown-videos",
+      "articleKey": "event-countdown-videos",
+      "commit": "3a694a6126e845dce312fff8a1b41bae1dce1658",
+      "source": "https://github.com/Zvid-io/workflow-examples/tree/3a694a6126e845dce312fff8a1b41bae1dce1658/workflows/event-countdown-videos",
+      "zip": "https://cdn.zvid.io/blog/event-countdown-videos/af69fe4b45e2/event-countdown-videos-3a694a6.zip",
+      "sha256": "af69fe4b45e2b774d7cd48ab262f893de2bf13b5299b3961769457c0e897c53f",
+      "bytes": 2193262,
+      "preview": "http://127.0.0.1:3024/event-countdown-videos",
+      "article": "workspace/blog-rewrites/articles/event-countdown-videos/revised.md"
+    },
+    {
+      "key": "real-estate-listing-video",
+      "articleKey": "real-estate-listing-videos-n8n",
+      "commit": "3a694a6126e845dce312fff8a1b41bae1dce1658",
+      "source": "https://github.com/Zvid-io/workflow-examples/tree/3a694a6126e845dce312fff8a1b41bae1dce1658/workflows/real-estate-listing-video",
+      "zip": "https://cdn.zvid.io/blog/real-estate-listing-videos-n8n/f496a3bba96c/real-estate-listing-video-3a694a6.zip",
+      "sha256": "f496a3bba96c46ed51a51b6e37d9e32bda1f426ed297000c95e8145064990b08",
+      "bytes": 4007862,
+      "preview": "http://127.0.0.1:3024/real-estate-listing-videos-n8n",
+      "article": "workspace/blog-rewrites/articles/real-estate-listing-videos-n8n/revised.md"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "createdAt": "2026-10-29T14:48:11.136Z",
+  "sample": "Fictional BRAINWAVE learning channel: Mars, octopus hearts and tungsten",
+  "sourceInput": "data/questions.json",
+  "config": "config.json",
+  "sampleProject": "assets/sample-project.json",
+  "n8nWorkflow": "n8n/workflow.json",
+  "canonicalWorkflowSha256": "0cc4a5b406bed09b4ea7682edfc2a6f4dc35b021fee5bbce557879e2cf85e110",
+  "projectSha256": "17ba665dd6405c0098d2570f55bcb63faee586c9ab89ffff746d411286abca51",
+  "outputSha256": "3639593c434a8728e4c5d78cd001753202a4ff8f7a45bffdcade555cdbd45008",
+  "videoSha256": "3639593c434a8728e4c5d78cd001753202a4ff8f7a45bffdcade555cdbd45008",
+  "workflowSha256": "0cc4a5b406bed09b4ea7682edfc2a6f4dc35b021fee5bbce557879e2cf85e110",
+  "posterSha256": "b1549f2f99aa6a9b8a783502a957b01a023d7d9f502c1ed807db5c954876ebfa",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "frameRate": 30,
+  "durationSeconds": 43.066667,
+  "normalizedProjectDurationSeconds": 43.05,
+  "audio": "none",
+  "validation": {
+    "valid": true,
+    "quotedCredits": 44,
+    "warnings": []
+  },
+  "generation": {
+    "method": "local Zvid renderer from the exact companion output project",
+    "paidApiRenderSubmitted": false,
+    "apiRenderCreditsSpent": 0
+  },
+  "reproductionCommands": [
+    "npm ci",
+    "npm run check",
+    "npm test",
+    "npm run offline -- --date 2026-10-29",
+    "npm run sample -- --date 2026-10-29",
+    "npm start -- --date 2026-10-29 --max-credits 44"
+  ],
+  "notes": [
+    "sample validates and renders the same design used by n8n; no fresh end-to-end n8n Google Sheets/API render execution is claimed",
+    "timerHint customized to avoid an em dash; the synchronized workflow retains the maintained default",
+    "Date-dependent answer rotation produces Mars A, Three B and Tungsten A for 2026-10-29"
+  ]
+}

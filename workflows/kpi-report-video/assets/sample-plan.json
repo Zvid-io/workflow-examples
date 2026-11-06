@@ -1,0 +1,112 @@
+{
+  "ready": true,
+  "renderKey": "kpi-sample-2026-10-22-2026-10-28-1",
+  "company": "SAMPLE DATA - Example team",
+  "period": "2026-10-22 to 2026-10-28",
+  "metrics": [
+    {
+      "id": "response",
+      "label": "Example response time",
+      "value": 3.4,
+      "previous": 2.1,
+      "unit": "hours",
+      "delta": 61.9,
+      "lowerIsBetter": true,
+      "target": 2.5,
+      "targetMiss": true,
+      "attention": true,
+      "history": [
+        2.5,
+        2.1,
+        3.4
+      ],
+      "owner": "Example support team",
+      "action": "Example: review queue coverage",
+      "baseline": "+61.9% versus previous period."
+    },
+    {
+      "id": "revenue",
+      "label": "Example revenue",
+      "value": 120000,
+      "previous": 150000,
+      "unit": "USD",
+      "delta": -20,
+      "lowerIsBetter": false,
+      "target": 160000,
+      "targetMiss": true,
+      "attention": true,
+      "history": [
+        140000,
+        150000,
+        120000
+      ],
+      "owner": "Example sales team",
+      "action": "Example: review the sales pipeline",
+      "baseline": "-20% versus previous period."
+    },
+    {
+      "id": "conversion",
+      "label": "Example conversion rate",
+      "value": 4.2,
+      "previous": 3.6,
+      "unit": "%",
+      "delta": 16.67,
+      "lowerIsBetter": false,
+      "target": 4,
+      "targetMiss": false,
+      "attention": false,
+      "history": [
+        3.4,
+        3.6,
+        4.2
+      ],
+      "owner": "Example growth team",
+      "action": "Example: review campaign performance",
+      "baseline": "+16.67% versus previous period."
+    }
+  ],
+  "usingDemoData": true,
+  "attention": true,
+  "exceptionCount": 2,
+  "totalMetricCount": 3,
+  "deferredFromVideo": 0,
+  "caption": "SAMPLE DATA - TEST ONLY. 2 metrics need review for 2026-10-22 to 2026-10-28. Review the owner action register.",
+  "handoff": [
+    {
+      "DataMode": "SAMPLE DATA - TEST ONLY",
+      "Metric": "Example response time",
+      "Current": 3.4,
+      "Previous": 2.1,
+      "ChangePercent": 61.9,
+      "Target": 2.5,
+      "Status": "review",
+      "Owner": "Example support team",
+      "Action": "Example: review queue coverage",
+      "Baseline": "+61.9% versus previous period."
+    },
+    {
+      "DataMode": "SAMPLE DATA - TEST ONLY",
+      "Metric": "Example revenue",
+      "Current": 120000,
+      "Previous": 150000,
+      "ChangePercent": -20,
+      "Target": 160000,
+      "Status": "review",
+      "Owner": "Example sales team",
+      "Action": "Example: review the sales pipeline",
+      "Baseline": "-20% versus previous period."
+    },
+    {
+      "DataMode": "SAMPLE DATA - TEST ONLY",
+      "Metric": "Example conversion rate",
+      "Current": 4.2,
+      "Previous": 3.6,
+      "ChangePercent": 16.67,
+      "Target": 4,
+      "Status": "on_track",
+      "Owner": "Example growth team",
+      "Action": "Monitor",
+      "Baseline": "+16.67% versus previous period."
+    }
+  ]
+}

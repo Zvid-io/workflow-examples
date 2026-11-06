@@ -1,0 +1,389 @@
+{
+  "name": "listing-14-cedar-lane-demo-demo-city",
+  "resolution": "instagram-reel",
+  "frameRate": 30,
+  "backgroundColor": "#14110E",
+  "outputFormat": "mp4",
+  "scenes": [
+    {
+      "id": "hero",
+      "duration": 4.95,
+      "backgroundColor": "#14110E",
+      "transition": "smoothdown",
+      "transitionId": "shot1",
+      "transitionDuration": 0.55,
+      "visuals": [
+        {
+          "type": "IMAGE",
+          "src": "https://cdn.zvid.io/tutorials/n8n-days-20-22-2026-10-21/property-exterior.fcaa9a3d0b0c.png",
+          "width": 1080,
+          "height": 1920,
+          "position": "center-center",
+          "resize": "cover",
+          "zoom": {
+            "depth": 1.11
+          },
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 4.95
+        },
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 4.95,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='relHero' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#14110E' stop-opacity='0.86'/><stop offset='0.09' stop-color='#14110E' stop-opacity='0.5'/><stop offset='0.22' stop-color='#14110E' stop-opacity='0.16'/><stop offset='0.52' stop-color='#14110E' stop-opacity='0.22'/><stop offset='0.7' stop-color='#14110E' stop-opacity='0.66'/><stop offset='0.78' stop-color='#14110E' stop-opacity='0.9'/><stop offset='1' stop-color='#14110E' stop-opacity='0.98'/></linearGradient></defs><rect width='1080' height='1920' fill='url(#relHero)'/><rect x='80' y='56' width='300' height='4' rx='2' fill='#C6A15B'/><rect x='390' y='56' width='300' height='4' rx='2' fill='rgba(246,241,232,0.28)'/><rect x='700' y='56' width='300' height='4' rx='2' fill='rgba(246,241,232,0.28)'/><path d='M80 232 L80 168 L144 168' fill='none' stroke='rgba(198,161,91,0.75)' stroke-width='4'/><path d='M1000 232 L1000 168 L936 168' fill='none' stroke='rgba(198,161,91,0.75)' stroke-width='4'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 108,
+          "width": 860,
+          "anchor": "top-center",
+          "track": 2,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#F6F1E8"
+          },
+          "html": "<div style='text-align:center; color:#F6F1E8; font-size:25px; font-weight:700; letter-spacing:9px;'>CEDARLINE DEMO HOMES</div>",
+          "enterBegin": 0,
+          "enterEnd": 0.35,
+          "enterAnimation": "fade",
+          "exitEnd": 4.4,
+          "exitBegin": 4.1,
+          "exitAnimation": "fade"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 196,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.28,
+          "enterEnd": 0.74,
+          "enterAnimation": "smoothdown",
+          "exitEnd": 4.95,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#C6A15B"
+          },
+          "html": "<div style='display:inline-block; background:rgba(20,17,14,0.72); border:1.5px solid rgba(198,161,91,0.7); color:#C6A15B; border-radius:999px; padding:15px 40px; font-size:26px; font-weight:800; letter-spacing:6px;'>FICTIONAL LISTING</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 80,
+          "y": 1634,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.7,
+          "enterEnd": 1.24,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.95,
+          "style": {
+            "fontFamily": "Playfair Display",
+            "color": "#F6F1E8"
+          },
+          "html": "<div style='color:#F6F1E8; font-size:76px; line-height:1.08; font-weight:700;'>14 Cedar Lane (Demo)</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 80,
+          "y": 1502,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.5,
+          "enterEnd": 0.98,
+          "enterAnimation": "smoothright",
+          "exitEnd": 4.95,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#F6F1E8"
+          },
+          "html": "<div style='display:inline-block; background:#1F3D34; color:#F6F1E8; border-radius:8px; padding:18px 38px; font-size:46px; font-weight:800; letter-spacing:1px;'>$425,000</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 80,
+          "y": 1736,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 1.05,
+          "enterEnd": 1.45,
+          "enterAnimation": "fade",
+          "exitEnd": 4.95,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#C6A15B"
+          },
+          "html": "<div style='color:#C6A15B; font-size:26px; font-weight:700; letter-spacing:7px;'>DEMO CITY</div>"
+        }
+      ]
+    },
+    {
+      "id": "shot1",
+      "duration": 3.85,
+      "backgroundColor": "#14110E",
+      "transition": "smoothright",
+      "transitionId": "agent",
+      "transitionDuration": 0.55,
+      "visuals": [
+        {
+          "type": "IMAGE",
+          "src": "https://cdn.zvid.io/tutorials/n8n-days-20-22-2026-10-21/property-living-room.1f7393f5ff05.png",
+          "width": 1080,
+          "height": 1920,
+          "position": "center-center",
+          "resize": "cover",
+          "zoom": {
+            "depth": 1.04
+          },
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 3.85
+        },
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 3.85,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='relShot1' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#14110E' stop-opacity='0.88'/><stop offset='0.09' stop-color='#14110E' stop-opacity='0.52'/><stop offset='0.2' stop-color='#14110E' stop-opacity='0.12'/><stop offset='0.56' stop-color='#14110E' stop-opacity='0.12'/><stop offset='0.7' stop-color='#14110E' stop-opacity='0.62'/><stop offset='0.76' stop-color='#14110E' stop-opacity='0.9'/><stop offset='1' stop-color='#14110E' stop-opacity='0.99'/></linearGradient></defs><rect width='1080' height='1920' fill='url(#relShot1)'/><rect x='80' y='56' width='300' height='4' rx='2' fill='#C6A15B'/><rect x='390' y='56' width='300' height='4' rx='2' fill='#C6A15B'/><rect x='700' y='56' width='300' height='4' rx='2' fill='rgba(246,241,232,0.28)'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 108,
+          "width": 900,
+          "anchor": "top-center",
+          "track": 2,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#F6F1E8"
+          },
+          "html": "<div style='text-align:center; color:#F6F1E8; font-size:22px; font-weight:700; letter-spacing:6px;'>14 CEDAR LANE (DEMO)  ·  DEMO CITY</div>",
+          "enterBegin": 0.55,
+          "enterEnd": 0.9,
+          "enterAnimation": "fade",
+          "exitEnd": 3.3,
+          "exitBegin": 3,
+          "exitAnimation": "fade"
+        },
+        {
+          "type": "SVG",
+          "x": 80,
+          "y": 1448,
+          "width": 6,
+          "height": 94,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.22,
+          "enterEnd": 0.72,
+          "enterAnimation": "fade",
+          "exitEnd": 3.85,
+          "svg": "<svg width='6' height='94' viewBox='0 0 6 94' xmlns='http://www.w3.org/2000/svg'><rect width='6' height='94' rx='3' fill='#C6A15B'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 116,
+          "y": 1440,
+          "width": 848,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.22,
+          "enterEnd": 0.72,
+          "enterAnimation": "smoothright",
+          "exitEnd": 3.85,
+          "style": {
+            "fontFamily": "Playfair Display",
+            "color": "#C6A15B"
+          },
+          "html": "<div style='text-align:left; color:#C6A15B; font-size:110px; line-height:1; font-weight:700;'>3</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 116,
+          "y": 1568,
+          "width": 848,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.38,
+          "enterEnd": 0.84,
+          "enterAnimation": "fade",
+          "exitEnd": 3.85,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#F6F1E8"
+          },
+          "html": "<div style='text-align:left; color:#F6F1E8; font-size:30px; font-weight:700; letter-spacing:8px;'>BEDROOMS</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 116,
+          "y": 1662,
+          "width": 848,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.6,
+          "enterEnd": 1,
+          "enterAnimation": "fade",
+          "exitEnd": 3.85,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "rgba(246,241,232,0.72)"
+          },
+          "html": "<div style='text-align:left; color:rgba(246,241,232,0.72); font-size:26px; font-weight:600; letter-spacing:3px;'>2 ba   ·   1,800 sqft</div>"
+        }
+      ]
+    },
+    {
+      "id": "agent",
+      "duration": 4.8,
+      "backgroundColor": "#14110E",
+      "visuals": [
+        {
+          "type": "IMAGE",
+          "src": "https://cdn.zvid.io/tutorials/n8n-days-20-22-2026-10-21/property-exterior.fcaa9a3d0b0c.png",
+          "width": 1080,
+          "height": 1920,
+          "position": "center-center",
+          "resize": "cover",
+          "zoom": {
+            "depth": 1.04
+          },
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 4.8
+        },
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 4.8,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='relEndTop' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#14110E' stop-opacity='0.9'/><stop offset='0.17' stop-color='#14110E' stop-opacity='0.5'/><stop offset='0.34' stop-color='#14110E' stop-opacity='0.12'/><stop offset='0.75' stop-color='#14110E' stop-opacity='0.2'/><stop offset='1' stop-color='#14110E' stop-opacity='0.9'/></linearGradient></defs><rect x='0' y='0' width='1080' height='1120' fill='url(#relEndTop)'/><rect x='0' y='1120' width='1080' height='800' fill='#14110E'/><rect x='0' y='1118' width='1080' height='3' fill='rgba(198,161,91,0.65)'/><rect x='80' y='56' width='300' height='4' rx='2' fill='#C6A15B'/><rect x='390' y='56' width='300' height='4' rx='2' fill='#C6A15B'/><rect x='700' y='56' width='300' height='4' rx='2' fill='#C6A15B'/><path d='M80 232 L80 168 L144 168' fill='none' stroke='rgba(198,161,91,0.75)' stroke-width='4'/><path d='M1000 1752 L1000 1816 L936 1816' fill='none' stroke='rgba(198,161,91,0.75)' stroke-width='4'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 108,
+          "width": 900,
+          "anchor": "top-center",
+          "track": 2,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#F6F1E8"
+          },
+          "html": "<div style='text-align:center; color:#F6F1E8; font-size:22px; font-weight:700; letter-spacing:6px;'>14 CEDAR LANE (DEMO)  ·  $425,000</div>",
+          "enterBegin": 0.55,
+          "enterEnd": 0.9,
+          "enterAnimation": "fade",
+          "exitEnd": 4.8
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1310,
+          "width": 880,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 0.5,
+          "enterEnd": 0.9,
+          "enterAnimation": "fade",
+          "exitEnd": 4.8,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#C6A15B"
+          },
+          "html": "<div style='text-align:center; color:#C6A15B; font-size:25px; font-weight:700; letter-spacing:9px;'>DEMO AGENT</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1362,
+          "width": 880,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 0.65,
+          "enterEnd": 1.12,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.8,
+          "style": {
+            "fontFamily": "Playfair Display",
+            "color": "#F6F1E8"
+          },
+          "html": "<div style='text-align:center; color:#F6F1E8; font-size:52px; line-height:1.12; font-weight:700;'>Alex Morgan (Demo)</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1486,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 1.2,
+          "enterEnd": 1.68,
+          "enterAnimation": "circleopen",
+          "exitEnd": 4.8,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#F6F1E8"
+          },
+          "html": "<div style='display:inline-block; background:#1F3D34; color:#F6F1E8; border-radius:999px; padding:27px 64px; font-size:38px; font-weight:800;'>Explore the demo</div>"
+        },
+        {
+          "type": "SVG",
+          "x": 540,
+          "y": 994,
+          "width": 252,
+          "height": 252,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.15,
+          "enterEnd": 0.75,
+          "enterAnimation": "circleopen",
+          "exitEnd": 4.8,
+          "svg": "<svg width='252' height='252' viewBox='0 0 252 252' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='relMono' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#C6A15B'/><stop offset='1' stop-color='#dac294'/></linearGradient></defs><circle cx='126' cy='126' r='120' fill='#14110E'/><circle cx='126' cy='126' r='123' fill='none' stroke='#C6A15B' stroke-width='5'/><text x='126' y='156' font-family='Georgia, serif' font-size='86' font-weight='700' fill='url(#relMono)' text-anchor='middle'>AM</text></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1626,
+          "width": 880,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 1.5,
+          "enterEnd": 1.9,
+          "enterAnimation": "fade",
+          "exitEnd": 4.8,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "rgba(246,241,232,0.66)"
+          },
+          "html": "<div style='text-align:center; color:rgba(246,241,232,0.66); font-size:26px; font-weight:600; letter-spacing:5px;'>EXAMPLE.COM</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1702,
+          "width": 880,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 1.7,
+          "enterEnd": 2.05,
+          "enterAnimation": "fade",
+          "exitEnd": 4.8,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "rgba(246,241,232,0.5)"
+          },
+          "html": "<div style='text-align:center; color:rgba(246,241,232,0.5); font-size:23px; font-weight:600; letter-spacing:6px;'>CEDARLINE DEMO HOMES</div>"
+        }
+      ]
+    }
+  ]
+}

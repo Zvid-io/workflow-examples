@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-29",
+  "commit": "4027fb932b5ba8e12f91d427b5344b742226f6cc",
+  "ci": "https://github.com/Zvid-io/workflow-examples/actions/runs/40829571449",
+  "examples": [
+    {
+      "key": "abandoned-cart-video",
+      "commit": "4027fb932b5ba8e12f91d427b5344b742226f6cc",
+      "source": "https://github.com/Zvid-io/workflow-examples/tree/4027fb932b5ba8e12f91d427b5344b742226f6cc/workflows/abandoned-cart-video",
+      "zip": "https://cdn.zvid.io/blog/abandoned-cart-video/5b050e4d0d70/abandoned-cart-video-4027fb9.zip",
+      "sha256": "5b050e4d0d706632cfa225b04d9a6039b47180ae10b4febb704e0ce128cad172",
+      "bytes": 1785348,
+      "preview": "http://127.0.0.1:3002/blog/tutorials/abandoned-cart-personalized-product-video?revision=revised",
+      "article": "workspace/blog-rewrites/articles/abandoned-cart-video/revised.md"
+    },
+    {
+      "key": "cold-outreach-videos",
+      "commit": "4027fb932b5ba8e12f91d427b5344b742226f6cc",
+      "source": "https://github.com/Zvid-io/workflow-examples/tree/4027fb932b5ba8e12f91d427b5344b742226f6cc/workflows/cold-outreach-videos",
+      "zip": "https://cdn.zvid.io/blog/cold-outreach-videos/e8a4d6321f50/cold-outreach-videos-4027fb9.zip",
+      "sha256": "e8a4d6321f50c340e199e767544a1ac2d367f70e68c5da923d24ecf35fef66ac",
+      "bytes": 927580,
+      "preview": "http://127.0.0.1:3002/blog/tutorials/personalized-cold-outreach-videos?revision=revised",
+      "article": "workspace/blog-rewrites/articles/cold-outreach-videos/revised.md"
+    },
+    {
+      "key": "welcome-video-on-signup",
+      "commit": "4027fb932b5ba8e12f91d427b5344b742226f6cc",
+      "source": "https://github.com/Zvid-io/workflow-examples/tree/4027fb932b5ba8e12f91d427b5344b742226f6cc/workflows/welcome-video-on-signup",
+      "zip": "https://cdn.zvid.io/blog/welcome-video-on-signup/6b57ae6b07e8/welcome-video-on-signup-4027fb9.zip",
+      "sha256": "6b57ae6b07e89a21e4b90fd4543603aef50fce89c0d5fe90ceabeecfd78a206e",
+      "bytes": 908654,
+      "preview": "http://127.0.0.1:3002/blog/tutorials/personalized-welcome-video-on-signup?revision=revised",
+      "article": "workspace/blog-rewrites/articles/welcome-video-on-signup/revised.md"
+    }
+  ]
+}

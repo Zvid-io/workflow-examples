@@ -1,0 +1,28 @@
+{
+  "fixture": "Fictional match for learning the design. This is not a real TheSportsDB event.",
+  "request": {
+    "EventId": "900000001",
+    "Enabled": "yes",
+    "Approval": "approved",
+    "ApprovedSnapshot": "{\"edition\":1,\"fact\":{\"eventId\":\"900000001\",\"date\":\"2026-10-20\",\"leagueId\":\"9001\",\"league\":\"Community Cup (fictional)\",\"home\":\"Cedar FC\",\"away\":\"Harbor United\",\"homeScore\":3,\"awayScore\":2,\"status\":\"FT\"}}"
+  },
+  "response": {
+    "statusCode": 200,
+    "body": {
+      "events": [
+        {
+          "idEvent": "900000001",
+          "dateEvent": "2026-10-20",
+          "idLeague": "9001",
+          "strLeague": "Community Cup (fictional)",
+          "strHomeTeam": "Cedar FC",
+          "strAwayTeam": "Harbor United",
+          "intHomeScore": "3",
+          "intAwayScore": "2",
+          "strStatus": "FT"
+        }
+      ]
+    }
+  },
+  "history": []
+}

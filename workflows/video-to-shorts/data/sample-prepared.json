@@ -1,0 +1,626 @@
+{
+  "projects": [
+    {
+      "payload": {
+        "name": "shorts-ai-news-in-under-thirty-seconds-1",
+        "resolution": "youtube-short",
+        "frameRate": 30,
+        "backgroundColor": "#08090D",
+        "outputFormat": "mp4",
+        "scenes": [
+          {
+            "id": "clip",
+            "duration": 22.87,
+            "backgroundColor": "#08090D",
+            "visuals": [
+              {
+                "type": "VIDEO",
+                "src": "https://cdn.zvid.io/tutorials/n8n-days-17-19-2026-10-20/weekly-news-clean-source.acd95626ffee.mp4",
+                "position": "center-center",
+                "resize": "cover",
+                "volume": 0,
+                "videoBegin": 0,
+                "videoEnd": 22.87,
+                "filter": {
+                  "blur": "6",
+                  "brightness": -12,
+                  "saturate": -18
+                },
+                "track": 0,
+                "enterBegin": 0,
+                "exitEnd": 22.87
+              },
+              {
+                "type": "VIDEO",
+                "src": "https://cdn.zvid.io/tutorials/n8n-days-17-19-2026-10-20/weekly-news-clean-source.acd95626ffee.mp4",
+                "position": "center-center",
+                "resize": "contain",
+                "volume": 1,
+                "videoBegin": 0,
+                "videoEnd": 22.87,
+                "radius": {
+                  "tl": 26,
+                  "tr": 26,
+                  "bl": 26,
+                  "br": 26
+                },
+                "track": 2,
+                "enterBegin": 0,
+                "exitEnd": 22.87
+              },
+              {
+                "type": "SVG",
+                "width": 1080,
+                "height": 1920,
+                "track": 1,
+                "enterBegin": 0,
+                "exitEnd": 22.87,
+                "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='vtsTop' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#08090D' stop-opacity='0.88'/><stop offset='0.55' stop-color='#08090D' stop-opacity='0.458'/><stop offset='1' stop-color='#08090D' stop-opacity='0'/></linearGradient><linearGradient id='vtsBot' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#08090D' stop-opacity='0'/><stop offset='0.45' stop-color='#08090D' stop-opacity='0.558'/><stop offset='1' stop-color='#08090D' stop-opacity='0.9'/></linearGradient></defs><rect width='1080' height='1920' fill='rgba(8,9,13,0.26)'/><rect y='0' width='1080' height='640' fill='url(#vtsTop)'/><rect y='1180' width='1080' height='740' fill='url(#vtsBot)'/></svg>"
+              },
+              {
+                "type": "SVG",
+                "x": 0,
+                "y": 0,
+                "anchor": "top-left",
+                "width": 1080,
+                "height": 10,
+                "track": 4,
+                "enterBegin": 0,
+                "exitEnd": 22.87,
+                "svg": "<svg width='1080' height='10' viewBox='0 0 1080 10' xmlns='http://www.w3.org/2000/svg'><rect width='1080' height='10' fill='rgba(255,255,255,0.18)'/></svg>"
+              },
+              {
+                "type": "SVG",
+                "x": 0,
+                "y": 0,
+                "anchor": "top-left",
+                "width": 1080,
+                "height": 10,
+                "track": 5,
+                "enterBegin": 0,
+                "enterEnd": 22.62,
+                "exitEnd": 22.87,
+                "enterAnimation": "wiperight",
+                "svg": "<svg width='1080' height='10' viewBox='0 0 1080 10' xmlns='http://www.w3.org/2000/svg'><rect width='1080' height='10' fill='#FFE066'/></svg>"
+              },
+              {
+                "type": "SVG",
+                "x": 0,
+                "y": 0,
+                "anchor": "top-left",
+                "width": 1080,
+                "height": 10,
+                "track": 6,
+                "enterBegin": 22.62,
+                "exitEnd": 22.87,
+                "svg": "<svg width='1080' height='10' viewBox='0 0 1080 10' xmlns='http://www.w3.org/2000/svg'><rect width='1080' height='10' fill='#FFE066'/></svg>"
+              },
+              {
+                "type": "TEXT",
+                "x": 540,
+                "y": 206,
+                "anchor": "top-center",
+                "track": 7,
+                "enterBegin": 0,
+                "exitEnd": 22.87,
+                "style": {
+                  "color": "#FFE066",
+                  "fontFamily": "Montserrat"
+                },
+                "html": "<div style=\"display:inline-block; background:rgba(8,9,13,0.62); border:1.5px solid rgba(255,224,102,0.72); color:#FFE066; border-radius:999px; padding:12px 32px; font-size:25px; font-weight:800; letter-spacing:6px;\">CLIP 1 OF 1</div>"
+              },
+              {
+                "type": "TEXT",
+                "x": 540,
+                "y": 296,
+                "width": 900,
+                "anchor": "top-center",
+                "track": 8,
+                "enterBegin": 0,
+                "exitEnd": 22.87,
+                "style": {
+                  "color": "#FFFFFF",
+                  "fontFamily": "Anton"
+                },
+                "html": "<div style=\"text-align:center; color:#FFFFFF; font-size:78px; line-height:1.06; letter-spacing:0.5px; text-transform:uppercase; overflow-wrap:break-word; text-shadow:0 10px 44px rgba(8,9,13,0.92);\">AI news in under thirty seconds</div>"
+              },
+              {
+                "type": "TEXT",
+                "x": 540,
+                "y": 1612,
+                "anchor": "top-center",
+                "track": 9,
+                "enterBegin": 0,
+                "exitEnd": 22.87,
+                "style": {
+                  "color": "#FFFFFF",
+                  "fontFamily": "Montserrat"
+                },
+                "html": "<div style=\"display:inline-block; text-align:center; background:rgba(8,9,13,0.5); border-radius:999px; padding:9px 26px; color:rgba(255,255,255,0.9); font-size:28px; font-weight:700; letter-spacing:3px;\">@zvid</div>"
+              }
+            ]
+          }
+        ],
+        "subtitle": {
+          "captions": [
+            {
+              "start": 0.1,
+              "end": 0.5,
+              "text": "Here is your",
+              "words": [
+                {
+                  "start": 0.1,
+                  "end": 0.22,
+                  "text": "Here"
+                },
+                {
+                  "start": 0.28,
+                  "end": 0.36,
+                  "text": "is"
+                },
+                {
+                  "start": 0.4,
+                  "end": 0.5,
+                  "text": "your"
+                }
+              ]
+            },
+            {
+              "start": 0.54,
+              "end": 1.42,
+              "text": "weekly countdown of",
+              "words": [
+                {
+                  "start": 0.54,
+                  "end": 0.84,
+                  "text": "weekly"
+                },
+                {
+                  "start": 0.9,
+                  "end": 1.32,
+                  "text": "countdown"
+                },
+                {
+                  "start": 1.36,
+                  "end": 1.42,
+                  "text": "of"
+                }
+              ]
+            },
+            {
+              "start": 1.44,
+              "end": 2.3,
+              "text": "the most important",
+              "words": [
+                {
+                  "start": 1.44,
+                  "end": 1.52,
+                  "text": "the"
+                },
+                {
+                  "start": 1.56,
+                  "end": 1.74,
+                  "text": "most"
+                },
+                {
+                  "start": 1.8,
+                  "end": 2.3,
+                  "text": "important"
+                }
+              ]
+            },
+            {
+              "start": 2.38,
+              "end": 3.18,
+              "text": "AI and tech",
+              "words": [
+                {
+                  "start": 2.38,
+                  "end": 2.74,
+                  "text": "AI"
+                },
+                {
+                  "start": 2.84,
+                  "end": 2.98,
+                  "text": "and"
+                },
+                {
+                  "start": 3.04,
+                  "end": 3.18,
+                  "text": "tech"
+                }
+              ]
+            },
+            {
+              "start": 3.28,
+              "end": 3.9,
+              "text": "stories you need",
+              "words": [
+                {
+                  "start": 3.28,
+                  "end": 3.62,
+                  "text": "stories"
+                },
+                {
+                  "start": 3.66,
+                  "end": 3.72,
+                  "text": "you"
+                },
+                {
+                  "start": 3.76,
+                  "end": 3.9,
+                  "text": "need"
+                }
+              ]
+            },
+            {
+              "start": 3.92,
+              "end": 5.72,
+              "text": "to know. Microsoft",
+              "words": [
+                {
+                  "start": 3.92,
+                  "end": 3.98,
+                  "text": "to"
+                },
+                {
+                  "start": 4.02,
+                  "end": 4.2,
+                  "text": "know."
+                },
+                {
+                  "start": 5.14,
+                  "end": 5.72,
+                  "text": "Microsoft"
+                }
+              ]
+            },
+            {
+              "start": 5.76,
+              "end": 7.36,
+              "text": "announced its third-generation",
+              "words": [
+                {
+                  "start": 5.76,
+                  "end": 6.1,
+                  "text": "announced"
+                },
+                {
+                  "start": 6.16,
+                  "end": 6.4,
+                  "text": "its"
+                },
+                {
+                  "start": 6.44,
+                  "end": 7.36,
+                  "text": "third-generation"
+                }
+              ]
+            },
+            {
+              "start": 7.66,
+              "end": 8.8,
+              "text": "Maia AI chip",
+              "words": [
+                {
+                  "start": 7.66,
+                  "end": 7.96,
+                  "text": "Maia"
+                },
+                {
+                  "start": 8.14,
+                  "end": 8.42,
+                  "text": "AI"
+                },
+                {
+                  "start": 8.54,
+                  "end": 8.8,
+                  "text": "chip"
+                }
+              ]
+            },
+            {
+              "start": 9.22,
+              "end": 9.76,
+              "text": "that will serve",
+              "words": [
+                {
+                  "start": 9.22,
+                  "end": 9.32,
+                  "text": "that"
+                },
+                {
+                  "start": 9.34,
+                  "end": 9.46,
+                  "text": "will"
+                },
+                {
+                  "start": 9.52,
+                  "end": 9.76,
+                  "text": "serve"
+                }
+              ]
+            },
+            {
+              "start": 9.8,
+              "end": 10.42,
+              "text": "as the main",
+              "words": [
+                {
+                  "start": 9.8,
+                  "end": 9.9,
+                  "text": "as"
+                },
+                {
+                  "start": 9.94,
+                  "end": 10.02,
+                  "text": "the"
+                },
+                {
+                  "start": 10.1,
+                  "end": 10.42,
+                  "text": "main"
+                }
+              ]
+            },
+            {
+              "start": 10.5,
+              "end": 11.62,
+              "text": "AI inference system",
+              "words": [
+                {
+                  "start": 10.5,
+                  "end": 10.8,
+                  "text": "AI"
+                },
+                {
+                  "start": 10.9,
+                  "end": 11.24,
+                  "text": "inference"
+                },
+                {
+                  "start": 11.28,
+                  "end": 11.62,
+                  "text": "system"
+                }
+              ]
+            },
+            {
+              "start": 11.74,
+              "end": 12.32,
+              "text": "for its products",
+              "words": [
+                {
+                  "start": 11.74,
+                  "end": 11.82,
+                  "text": "for"
+                },
+                {
+                  "start": 11.84,
+                  "end": 11.98,
+                  "text": "its"
+                },
+                {
+                  "start": 12.02,
+                  "end": 12.32,
+                  "text": "products"
+                }
+              ]
+            },
+            {
+              "start": 12.34,
+              "end": 14.48,
+              "text": "and services. Blueprints",
+              "words": [
+                {
+                  "start": 12.34,
+                  "end": 12.4,
+                  "text": "and"
+                },
+                {
+                  "start": 12.48,
+                  "end": 12.96,
+                  "text": "services."
+                },
+                {
+                  "start": 14.02,
+                  "end": 14.48,
+                  "text": "Blueprints"
+                }
+              ]
+            },
+            {
+              "start": 14.68,
+              "end": 16.04,
+              "text": "AI created software",
+              "words": [
+                {
+                  "start": 14.68,
+                  "end": 14.98,
+                  "text": "AI"
+                },
+                {
+                  "start": 15.1,
+                  "end": 15.44,
+                  "text": "created"
+                },
+                {
+                  "start": 15.58,
+                  "end": 16.04,
+                  "text": "software"
+                }
+              ]
+            },
+            {
+              "start": 16.08,
+              "end": 17.34,
+              "text": "that produces construction",
+              "words": [
+                {
+                  "start": 16.08,
+                  "end": 16.2,
+                  "text": "that"
+                },
+                {
+                  "start": 16.24,
+                  "end": 16.7,
+                  "text": "produces"
+                },
+                {
+                  "start": 16.74,
+                  "end": 17.34,
+                  "text": "construction"
+                }
+              ]
+            },
+            {
+              "start": 17.42,
+              "end": 18.72,
+              "text": "blueprints compliant with",
+              "words": [
+                {
+                  "start": 17.42,
+                  "end": 17.9,
+                  "text": "blueprints"
+                },
+                {
+                  "start": 18,
+                  "end": 18.54,
+                  "text": "compliant"
+                },
+                {
+                  "start": 18.58,
+                  "end": 18.72,
+                  "text": "with"
+                }
+              ]
+            },
+            {
+              "start": 18.78,
+              "end": 19.76,
+              "text": "codes from photos,",
+              "words": [
+                {
+                  "start": 18.78,
+                  "end": 19.06,
+                  "text": "codes"
+                },
+                {
+                  "start": 19.08,
+                  "end": 19.26,
+                  "text": "from"
+                },
+                {
+                  "start": 19.3,
+                  "end": 19.76,
+                  "text": "photos,"
+                }
+              ]
+            },
+            {
+              "start": 20.28,
+              "end": 21.5,
+              "text": "PDFs, or sketches",
+              "words": [
+                {
+                  "start": 20.28,
+                  "end": 20.84,
+                  "text": "PDFs,"
+                },
+                {
+                  "start": 20.94,
+                  "end": 21,
+                  "text": "or"
+                },
+                {
+                  "start": 21.1,
+                  "end": 21.5,
+                  "text": "sketches"
+                }
+              ]
+            },
+            {
+              "start": 21.54,
+              "end": 21.92,
+              "text": "in a matter",
+              "words": [
+                {
+                  "start": 21.54,
+                  "end": 21.6,
+                  "text": "in"
+                },
+                {
+                  "start": 21.64,
+                  "end": 21.68,
+                  "text": "a"
+                },
+                {
+                  "start": 21.72,
+                  "end": 21.92,
+                  "text": "matter"
+                }
+              ]
+            },
+            {
+              "start": 21.96,
+              "end": 22.42,
+              "text": "of minutes.",
+              "words": [
+                {
+                  "start": 21.96,
+                  "end": 22.04,
+                  "text": "of"
+                },
+                {
+                  "start": 22.1,
+                  "end": 22.42,
+                  "text": "minutes."
+                }
+              ]
+            }
+          ],
+          "animation": "karaoke",
+          "activeWord": {
+            "color": "#FFE066"
+          },
+          "font": {
+            "family": "Montserrat",
+            "size": 76,
+            "color": "#ffffff",
+            "bold": true,
+            "transform": "uppercase"
+          },
+          "stroke": {
+            "color": "#000000",
+            "width": 6
+          },
+          "position": "bottom-center",
+          "margin": {
+            "x": 90,
+            "y": 380
+          },
+          "maxWordsPerLine": 3
+        }
+      },
+      "meta": {
+        "index": 1,
+        "clipCount": 1,
+        "title": "AI news in under thirty seconds",
+        "titleSize": 78,
+        "titleLines": 2,
+        "layout": "fit",
+        "sourceUrl": "https://cdn.zvid.io/tutorials/n8n-days-17-19-2026-10-20/weekly-news-clean-source.acd95626ffee.mp4",
+        "sourceTitle": "The Weekly Signal: AI and tech highlights",
+        "startTime": 0,
+        "endTime": 22.87,
+        "seconds": 22.87,
+        "captionCount": 20,
+        "captionWords": 59,
+        "progressBar": "wipe",
+        "visualCount": 9,
+        "whyItWorks": "Reviewed demo excerpt: complete opening and two complete news items."
+      }
+    }
+  ],
+  "sampleNote": "Reviewed archival news example with manually approved word range 0 through 58; this prepared input bypasses transcription and highlight selection."
+}

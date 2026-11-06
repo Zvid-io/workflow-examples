@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-29",
+  "sourceCommit": "2cf300639125e3427b0ea7259460d31155f8bbca",
+  "sourceChecks": "https://github.com/Zvid-io/workflow-examples/actions/runs/40830231251",
+  "examples": [
+    {
+      "workflow": "proposal-recap-video",
+      "sourceUrl": "https://github.com/Zvid-io/workflow-examples/tree/2cf300639125e3427b0ea7259460d31155f8bbca/workflows/proposal-recap-video",
+      "zipUrl": "https://cdn.zvid.io/blog/proposal-recap-video/58f89fac868a/proposal-recap-video-2cf3006.zip",
+      "bytes": 1078365,
+      "sha256": "58f89fac868a0a283e5cadfc6292a9cb2284b91c762faa0052cf23acb0a13c3e",
+      "offlineTestsPassed": 9
+    },
+    {
+      "workflow": "no-show-reengagement",
+      "sourceUrl": "https://github.com/Zvid-io/workflow-examples/tree/2cf300639125e3427b0ea7259460d31155f8bbca/workflows/no-show-reengagement",
+      "zipUrl": "https://cdn.zvid.io/blog/no-show-reengagement/6dcfccc76769/no-show-reengagement-2cf3006.zip",
+      "bytes": 1121745,
+      "sha256": "6dcfccc76769368680ef78e748da056f041b09482d9fff3df899720ce28642df",
+      "offlineTestsPassed": 6
+    },
+    {
+      "workflow": "month-in-review-stats",
+      "sourceUrl": "https://github.com/Zvid-io/workflow-examples/tree/2cf300639125e3427b0ea7259460d31155f8bbca/workflows/month-in-review-stats",
+      "zipUrl": "https://cdn.zvid.io/blog/month-in-review-stats/6a6fb197a1dd/month-in-review-stats-2cf3006.zip",
+      "bytes": 1021179,
+      "sha256": "6a6fb197a1dde336da7d9501b9c1dd6b69e557f691fbda73b0da293a0a1b9721",
+      "offlineTestsPassed": 10
+    }
+  ],
+  "verification": "Each ZIP contains its exact committed workflow subtree and the MIT LICENSE. Source bytes, clean installation, checks, offline tests, stored bytes and CDN bytes were verified. Current sample validation passed without warnings at 25, 16 and 17 credits respectively; no new render was submitted. The CI head includes a catalog merge, with each workflow subtree identical to sourceCommit."
+}

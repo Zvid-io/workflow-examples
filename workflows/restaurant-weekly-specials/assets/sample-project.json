@@ -1,0 +1,418 @@
+{
+  "name": "cedarline-demo-kitchen-weekly-specials",
+  "resolution": "instagram-reel",
+  "frameRate": 30,
+  "backgroundColor": "#180F0A",
+  "outputFormat": "mp4",
+  "scenes": [
+    {
+      "id": "hook",
+      "duration": 3,
+      "backgroundColor": "#180F0A",
+      "transition": "fade",
+      "transitionId": "dish-1",
+      "transitionDuration": 0.5,
+      "visuals": [
+        {
+          "type": "VIDEO",
+          "src": "https://cdn.zvid.io/blog/restaurant-weekly-specials/70508c551b01/kitchen-sizzle.mp4",
+          "width": 1080,
+          "height": 1920,
+          "position": "center-center",
+          "resize": "cover",
+          "volume": 0,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 3
+        },
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 3,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='rwsHook' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#180F0A' stop-opacity='0.55'/><stop offset='0.42' stop-color='#180F0A' stop-opacity='0.12'/><stop offset='0.68' stop-color='#180F0A' stop-opacity='0.5'/><stop offset='1' stop-color='#180F0A' stop-opacity='0.92'/></linearGradient></defs><rect width='1080' height='1920' fill='url(#rwsHook)'/><path d='M84 300 L84 116 L268 116' fill='none' stroke='#FFF4E8' stroke-width='9' stroke-opacity='0.9'/><path d='M996 1624 L996 1808 L812 1808' fill='none' stroke='#E86A33' stroke-width='9'/><circle cx='940' cy='300' r='7' fill='#E86A33'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 150,
+          "width": 940,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.2,
+          "enterEnd": 0.6,
+          "enterAnimation": "fade",
+          "exitEnd": 3,
+          "style": {
+            "fontFamily": "Bebas Neue",
+            "color": "#FFF4E8"
+          },
+          "html": "<div style='text-align:center; color:#FFF4E8; font-size:31px; letter-spacing:6px;'>Cedarline Demo Kitchen</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1500,
+          "width": 900,
+          "anchor": "bottom-left",
+          "track": 3,
+          "enterBegin": 0.4,
+          "enterEnd": 0.85,
+          "enterAnimation": "smoothup",
+          "exitEnd": 3,
+          "style": {
+            "fontFamily": "Bebas Neue",
+            "color": "#FFF4E8"
+          },
+          "html": "<div style='display:inline-block; background:#E86A33; color:#FFF4E8; border-radius:999px; padding:14px 34px; font-size:27px; font-weight:800; letter-spacing:4px; font-family:DM Sans, sans-serif;'>WEEK OF 2026-10-19</div><div style='margin-top:26px; color:#FFF4E8; font-size:132px; line-height:0.98; letter-spacing:2px;'>This week's specials</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1560,
+          "width": 900,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 0.65,
+          "enterEnd": 1.1,
+          "enterAnimation": "smoothup",
+          "exitEnd": 3,
+          "style": {
+            "fontFamily": "DM Sans",
+            "color": "#E4CBB0"
+          },
+          "html": "<div style='color:#E4CBB0; font-size:30px; line-height:1.35; font-weight:600;'>Fictional restaurant · Sample offers</div>"
+        }
+      ]
+    },
+    {
+      "id": "dish-1",
+      "duration": 2.8,
+      "backgroundColor": "#180F0A",
+      "transition": "fade",
+      "transitionId": "dish-2",
+      "transitionDuration": 0.45,
+      "visuals": [
+        {
+          "type": "IMAGE",
+          "src": "https://cdn.zvid.io/blog/restaurant-weekly-specials/c46051eab362/bundled-dish-1.jpg",
+          "width": 1080,
+          "height": 1920,
+          "position": "center-center",
+          "resize": "cover",
+          "zoom": true,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 2.8
+        },
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 2.8,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='rwsDish1' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#180F0A' stop-opacity='0.42'/><stop offset='0.4' stop-color='#180F0A' stop-opacity='0.06'/><stop offset='0.68' stop-color='#180F0A' stop-opacity='0.55'/><stop offset='1' stop-color='#180F0A' stop-opacity='0.96'/></linearGradient></defs><rect width='1080' height='1920' fill='url(#rwsDish1)'/><rect x='46' y='46' width='988' height='1828' rx='30' fill='none' stroke='rgba(232,106,51,0.4)' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 150,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.15,
+          "enterEnd": 0.5,
+          "enterAnimation": "smoothleft",
+          "exitEnd": 2.8,
+          "style": {
+            "fontFamily": "DM Sans",
+            "color": "#FFF4E8"
+          },
+          "html": "<div style='display:inline-block; background:#E86A33; color:#FFF4E8; border-radius:999px; padding:14px 34px; font-size:26px; font-weight:800; letter-spacing:3px;'>SPECIAL 1 OF 3</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1620,
+          "width": 900,
+          "anchor": "bottom-left",
+          "track": 3,
+          "enterBegin": 0.35,
+          "enterEnd": 0.8,
+          "enterAnimation": "smoothup",
+          "exitEnd": 2.8,
+          "style": {
+            "fontFamily": "Bebas Neue",
+            "color": "#FFF4E8"
+          },
+          "html": "<div style='color:#FFF4E8; font-size:88px; line-height:0.98; letter-spacing:2px;'>Tomato pasta (Sample)</div><div style='margin-top:16px; font-family:DM Sans, sans-serif; color:#E4CBB0; font-size:29px; line-height:1.42; font-weight:500;'>Sample offer: ribbon pasta with cherry tomatoes.</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 880,
+          "y": 205,
+          "anchor": "center-center",
+          "angle": -6,
+          "track": 4,
+          "enterBegin": 0.55,
+          "enterEnd": 0.9,
+          "enterAnimation": "circleopen",
+          "exitEnd": 2.8,
+          "style": {
+            "fontFamily": "DM Sans",
+            "color": "#FFF4E8"
+          },
+          "html": "<div style='display:inline-block; background:#FFF4E8; color:#180F0A; border-radius:18px; padding:14px 36px; font-size:40px; font-weight:800;'>$19</div>"
+        }
+      ]
+    },
+    {
+      "id": "dish-2",
+      "duration": 2.8,
+      "backgroundColor": "#180F0A",
+      "transition": "fade",
+      "transitionId": "dish-3",
+      "transitionDuration": 0.45,
+      "visuals": [
+        {
+          "type": "IMAGE",
+          "src": "https://cdn.zvid.io/blog/restaurant-weekly-specials/02006cf40c4c/bundled-dish-3.jpg",
+          "width": 1080,
+          "height": 1920,
+          "position": "center-center",
+          "resize": "cover",
+          "zoom": true,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 2.8
+        },
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 2.8,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='rwsDish2' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#180F0A' stop-opacity='0.42'/><stop offset='0.4' stop-color='#180F0A' stop-opacity='0.06'/><stop offset='0.68' stop-color='#180F0A' stop-opacity='0.55'/><stop offset='1' stop-color='#180F0A' stop-opacity='0.96'/></linearGradient></defs><rect width='1080' height='1920' fill='url(#rwsDish2)'/><rect x='46' y='46' width='988' height='1828' rx='30' fill='none' stroke='rgba(232,106,51,0.4)' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 150,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.15,
+          "enterEnd": 0.5,
+          "enterAnimation": "smoothleft",
+          "exitEnd": 2.8,
+          "style": {
+            "fontFamily": "DM Sans",
+            "color": "#FFF4E8"
+          },
+          "html": "<div style='display:inline-block; background:#E86A33; color:#FFF4E8; border-radius:999px; padding:14px 34px; font-size:26px; font-weight:800; letter-spacing:3px;'>SPECIAL 2 OF 3</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1620,
+          "width": 900,
+          "anchor": "bottom-left",
+          "track": 3,
+          "enterBegin": 0.35,
+          "enterEnd": 0.8,
+          "enterAnimation": "smoothup",
+          "exitEnd": 2.8,
+          "style": {
+            "fontFamily": "Bebas Neue",
+            "color": "#FFF4E8"
+          },
+          "html": "<div style='color:#FFF4E8; font-size:72px; line-height:0.98; letter-spacing:2px;'>Harvest grain bowl (Sample)</div><div style='margin-top:16px; font-family:DM Sans, sans-serif; color:#E4CBB0; font-size:29px; line-height:1.42; font-weight:500;'>Sample offer: grain bowl with chickpeas, avocado and greens.</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 880,
+          "y": 205,
+          "anchor": "center-center",
+          "angle": -6,
+          "track": 4,
+          "enterBegin": 0.55,
+          "enterEnd": 0.9,
+          "enterAnimation": "circleopen",
+          "exitEnd": 2.8,
+          "style": {
+            "fontFamily": "DM Sans",
+            "color": "#FFF4E8"
+          },
+          "html": "<div style='display:inline-block; background:#FFF4E8; color:#180F0A; border-radius:18px; padding:14px 36px; font-size:40px; font-weight:800;'>$15</div>"
+        }
+      ]
+    },
+    {
+      "id": "dish-3",
+      "duration": 2.8,
+      "backgroundColor": "#180F0A",
+      "transition": "smoothup",
+      "transitionId": "cta",
+      "transitionDuration": 0.5,
+      "visuals": [
+        {
+          "type": "IMAGE",
+          "src": "https://cdn.zvid.io/blog/restaurant-weekly-specials/3d72be4426ea/bundled-dish-4.jpg",
+          "width": 1080,
+          "height": 1920,
+          "position": "center-center",
+          "resize": "cover",
+          "zoom": true,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 2.8
+        },
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 2.8,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='rwsDish3' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#180F0A' stop-opacity='0.42'/><stop offset='0.4' stop-color='#180F0A' stop-opacity='0.06'/><stop offset='0.68' stop-color='#180F0A' stop-opacity='0.55'/><stop offset='1' stop-color='#180F0A' stop-opacity='0.96'/></linearGradient></defs><rect width='1080' height='1920' fill='url(#rwsDish3)'/><rect x='46' y='46' width='988' height='1828' rx='30' fill='none' stroke='rgba(232,106,51,0.4)' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 150,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.15,
+          "enterEnd": 0.5,
+          "enterAnimation": "smoothleft",
+          "exitEnd": 2.8,
+          "style": {
+            "fontFamily": "DM Sans",
+            "color": "#FFF4E8"
+          },
+          "html": "<div style='display:inline-block; background:#E86A33; color:#FFF4E8; border-radius:999px; padding:14px 34px; font-size:26px; font-weight:800; letter-spacing:3px;'>SPECIAL 3 OF 3</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 90,
+          "y": 1620,
+          "width": 900,
+          "anchor": "bottom-left",
+          "track": 3,
+          "enterBegin": 0.35,
+          "enterEnd": 0.8,
+          "enterAnimation": "smoothup",
+          "exitEnd": 2.8,
+          "style": {
+            "fontFamily": "Bebas Neue",
+            "color": "#FFF4E8"
+          },
+          "html": "<div style='color:#FFF4E8; font-size:72px; line-height:0.98; letter-spacing:2px;'>Strawberry dessert (Sample)</div><div style='margin-top:16px; font-family:DM Sans, sans-serif; color:#E4CBB0; font-size:29px; line-height:1.42; font-weight:500;'>Sample offer: plated strawberry dessert.</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 880,
+          "y": 205,
+          "anchor": "center-center",
+          "angle": -6,
+          "track": 4,
+          "enterBegin": 0.55,
+          "enterEnd": 0.9,
+          "enterAnimation": "circleopen",
+          "exitEnd": 2.8,
+          "style": {
+            "fontFamily": "DM Sans",
+            "color": "#FFF4E8"
+          },
+          "html": "<div style='display:inline-block; background:#FFF4E8; color:#180F0A; border-radius:18px; padding:14px 36px; font-size:40px; font-weight:800;'>$11</div>"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "duration": 3.4,
+      "backgroundColor": "#180F0A",
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 3.4,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='rwsCta' cx='0.5' cy='0.4' r='0.9'><stop offset='0' stop-color='#2e2520'/><stop offset='1' stop-color='#180F0A'/></radialGradient></defs><rect width='1080' height='1920' fill='url(#rwsCta)'/><rect x='46' y='46' width='988' height='1828' rx='34' fill='none' stroke='rgba(232,106,51,0.4)' stroke-width='2'/><path d='M470 560 C470 610 610 610 610 560 M450 560 H630 L610 760 C608 780 472 780 470 760 Z' fill='none' stroke='#E86A33' stroke-width='7' stroke-linejoin='round'/><path d='M505 500 C505 480 520 480 520 460 M545 500 C545 480 560 480 560 460 M585 500 C585 480 600 480 600 460' stroke='rgba(232,106,51,0.7)' stroke-width='6' stroke-linecap='round' fill='none'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 900,
+          "width": 940,
+          "anchor": "top-center",
+          "track": 1,
+          "enterBegin": 0.25,
+          "enterEnd": 0.7,
+          "enterAnimation": "smoothup",
+          "exitEnd": 3.4,
+          "style": {
+            "fontFamily": "Bebas Neue",
+            "color": "#FFF4E8"
+          },
+          "html": "<div style='text-align:center; color:#FFF4E8; font-size:96px; line-height:1; letter-spacing:2px;'>Hungry yet?</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1120,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.65,
+          "enterEnd": 1.05,
+          "enterAnimation": "circleopen",
+          "exitEnd": 3.4,
+          "style": {
+            "fontFamily": "DM Sans",
+            "color": "#FFF4E8"
+          },
+          "html": "<div style='display:inline-block; background:#E86A33; color:#FFF4E8; border-radius:999px; padding:26px 62px; font-size:36px; font-weight:800;'>Book a table</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1300,
+          "width": 900,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 0.95,
+          "enterEnd": 1.35,
+          "enterAnimation": "fade",
+          "exitEnd": 3.4,
+          "style": {
+            "fontFamily": "DM Sans",
+            "color": "#FFF4E8"
+          },
+          "html": "<div style='text-align:center; color:#FFF4E8; font-size:30px; font-weight:700;'>@cedarline.demo</div><div style='margin-top:10px; text-align:center; color:#E4CBB0; font-size:26px; font-weight:500;'>Demo Town · Fictional location</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1460,
+          "width": 900,
+          "anchor": "top-center",
+          "track": 4,
+          "enterBegin": 1.15,
+          "enterEnd": 1.55,
+          "enterAnimation": "fade",
+          "exitEnd": 3.4,
+          "style": {
+            "fontFamily": "Bebas Neue",
+            "color": "#FFF4E8"
+          },
+          "html": "<div style='text-align:center; color:rgba(255,244,232,0.55); font-size:25px; letter-spacing:6px;'>DEMONSTRATION MENU</div>"
+        }
+      ]
+    }
+  ],
+  "audios": []
+}

@@ -1,0 +1,517 @@
+{
+  "name": "proposal-website-refresh-demo",
+  "resolution": "custom",
+  "width": 1920,
+  "height": 1080,
+  "frameRate": 30,
+  "backgroundColor": "#F4F1EA",
+  "outputFormat": "mp4",
+  "scenes": [
+    {
+      "id": "cover",
+      "duration": 6.15,
+      "backgroundColor": "#F4F1EA",
+      "transition": "fade",
+      "transitionDuration": 0.55,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1920,
+          "height": 1080,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 6.15,
+          "svg": "<svg width='1920' height='1080' viewBox='0 0 1920 1080' xmlns='http://www.w3.org/2000/svg'><rect width='1920' height='1080' fill='#F4F1EA'/><defs><linearGradient id='prCover' x1='0' y1='0' x2='0.85' y2='1'><stop offset='0' stop-color='#FFFFFF' stop-opacity='0.7'/><stop offset='1' stop-color='#FFFFFF' stop-opacity='0'/></linearGradient></defs><rect width='1920' height='1080' fill='url(#prCover)'/><g><rect x='1288' y='214' width='452' height='566' rx='22' fill='#FFFFFF' opacity='0.85' stroke='rgba(18,22,28,0.09)' stroke-width='1.5'/><rect x='1332' y='268' width='168' height='12' rx='6' fill='#1B4DE4' opacity='0.9'/><rect x='1332' y='320' width='364' height='10' rx='5' fill='rgba(18,22,28,0.13)'/><rect x='1332' y='352' width='320' height='10' rx='5' fill='rgba(18,22,28,0.1)'/><rect x='1332' y='384' width='352' height='10' rx='5' fill='rgba(18,22,28,0.1)'/><rect x='1332' y='440' width='364' height='10' rx='5' fill='rgba(18,22,28,0.08)'/><rect x='1332' y='472' width='286' height='10' rx='5' fill='rgba(18,22,28,0.08)'/><rect x='1332' y='528' width='364' height='10' rx='5' fill='rgba(18,22,28,0.06)'/><rect x='1332' y='560' width='330' height='10' rx='5' fill='rgba(18,22,28,0.06)'/><rect x='1332' y='648' width='168' height='42' rx='21' fill='rgba(27,77,228,0.12)'/></g><rect x='140' y='250' width='64' height='6' rx='3' fill='#1B4DE4'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 140,
+          "y": 298,
+          "width": 1060,
+          "anchor": "top-left",
+          "track": 1,
+          "enterBegin": 0.2,
+          "enterEnd": 0.6,
+          "enterAnimation": "fade",
+          "exitEnd": 6.15,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#1B4DE4"
+          },
+          "html": "<div style='color:#1B4DE4; font-size:26px; font-weight:800; letter-spacing:6px;'>PROPOSAL RECAP</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 140,
+          "y": 336,
+          "width": 1060,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.35,
+          "enterEnd": 0.9,
+          "enterAnimation": "smoothup",
+          "exitEnd": 6.15,
+          "style": {
+            "fontFamily": "Playfair Display",
+            "color": "#12161C"
+          },
+          "html": "<div style='color:#12161C; font-size:96px; line-height:1.08; font-weight:700; letter-spacing:-1px;'>Your proposal, Maya.</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 140,
+          "y": 488,
+          "width": 1060,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.75,
+          "enterEnd": 1.2,
+          "enterAnimation": "fade",
+          "exitEnd": 6.15,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#12161C"
+          },
+          "html": "<div style='color:#6E6A61; font-size:20px; font-weight:800; letter-spacing:5px;'>THE PROPOSAL</div><div style='margin-top:14px; color:#12161C; font-size:42px; line-height:1.25; font-weight:600;'>Website refresh demo</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 140,
+          "y": 792,
+          "width": 1640,
+          "height": 184,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 1.15,
+          "enterEnd": 1.65,
+          "enterAnimation": "smoothup",
+          "exitEnd": 6.15,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#12161C",
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": "22px",
+            "border": "1px solid rgba(18,22,28,0.1)",
+            "boxShadow": "0 14px 34px rgba(18,22,28,0.07)",
+            "display": "flex",
+            "alignItems": "center"
+          },
+          "html": "<div style='display:flex; align-items:center; justify-content:space-between; width:100%;'><div style='flex:0 1 auto; display:flex; align-items:center; margin-left:44px;'><span style='flex:0 0 auto; display:inline-block; width:72px; height:72px; border-radius:20px; background:#1B4DE4; color:#FFFFFF; font-size:32px; font-weight:800; text-align:center; line-height:72px;'>C</span><div style='margin-left:26px;'><div style='color:#6E6A61; font-size:20px; font-weight:800; letter-spacing:4px;'>FROM</div><div style='margin-top:8px; color:#12161C; font-size:34px; font-weight:700;'>Cedarline Demo</div></div></div><span style='flex:0 0 auto; color:rgba(18,22,28,0.3); font-size:34px; margin-left:32px; margin-right:32px;'>&#8594;</span><div style='flex:0 1 auto; display:flex; align-items:center; margin-right:44px;'><span style='flex:0 0 auto; display:inline-block; width:72px; height:72px; border-radius:20px; background:rgba(18,22,28,0.07); color:#12161C; font-size:32px; font-weight:800; text-align:center; line-height:72px;'>C</span><div style='margin-left:26px;'><div style='color:#6E6A61; font-size:20px; font-weight:800; letter-spacing:4px;'>PREPARED FOR</div><div style='margin-top:8px; color:#12161C; font-size:34px; font-weight:700;'>Cedar Grove Demo</div></div></div></div>"
+        }
+      ],
+      "transitionId": "scope"
+    },
+    {
+      "id": "scope",
+      "duration": 8.15,
+      "backgroundColor": "#F4F1EA",
+      "transition": "fade",
+      "transitionDuration": 0.55,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1920,
+          "height": 1080,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 8.15,
+          "svg": "<svg width='1920' height='1080' viewBox='0 0 1920 1080' xmlns='http://www.w3.org/2000/svg'><rect width='1920' height='1080' fill='#F4F1EA'/><defs><linearGradient id='prScope' x1='0' y1='0' x2='0.85' y2='1'><stop offset='0' stop-color='#FFFFFF' stop-opacity='0.7'/><stop offset='1' stop-color='#FFFFFF' stop-opacity='0'/></linearGradient></defs><rect width='1920' height='1080' fill='url(#prScope)'/><rect x='140' y='250' width='64' height='6' rx='3' fill='#1B4DE4'/><rect x='140' y='958' width='1640' height='1.5' fill='rgba(18,22,28,0.12)'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 140,
+          "y": 298,
+          "width": 1640,
+          "anchor": "top-left",
+          "track": 1,
+          "enterBegin": 0.7,
+          "enterEnd": 1.1,
+          "enterAnimation": "fade",
+          "exitEnd": 8.15,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#1B4DE4"
+          },
+          "html": "<div style='color:#1B4DE4; font-size:26px; font-weight:800; letter-spacing:6px;'>WHAT&#39;S INCLUDED</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 140,
+          "y": 348,
+          "width": 1640,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.8,
+          "enterEnd": 1.25,
+          "enterAnimation": "smoothup",
+          "exitEnd": 8.15,
+          "style": {
+            "fontFamily": "Playfair Display",
+            "color": "#12161C"
+          },
+          "html": "<div style='color:#12161C; font-size:72px; line-height:1.05; font-weight:700; letter-spacing:-1px;'>Scope of work</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 140,
+          "y": 492,
+          "width": 1640,
+          "height": 120,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 1.05,
+          "enterEnd": 1.5,
+          "enterAnimation": "smoothleft",
+          "exitEnd": 8.15,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#12161C",
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": "22px",
+            "border": "1px solid rgba(18,22,28,0.1)",
+            "boxShadow": "0 14px 34px rgba(18,22,28,0.07)",
+            "display": "flex",
+            "alignItems": "center"
+          },
+          "html": "<div style='display:flex; align-items:center; width:100%;'><span style='flex:0 0 auto; display:inline-block; width:62px; height:62px; border-radius:999px; background:rgba(28,122,82,0.12); color:#1C7A52; font-size:30px; font-weight:800; text-align:center; line-height:62px; margin-left:44px; margin-right:30px;'>&#10003;</span><span style='flex:1 1 auto; color:#12161C; font-size:36px; font-weight:600; line-height:1.45;'>Discovery and content plan</span><span style='flex:0 0 auto; color:rgba(18,22,28,0.55); font-size:22px; font-weight:800; letter-spacing:3px; margin-left:24px; margin-right:44px;'>01</span></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 140,
+          "y": 638,
+          "width": 1640,
+          "height": 120,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 1.5,
+          "enterEnd": 1.95,
+          "enterAnimation": "smoothleft",
+          "exitEnd": 8.15,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#12161C",
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": "22px",
+            "border": "1px solid rgba(18,22,28,0.1)",
+            "boxShadow": "0 14px 34px rgba(18,22,28,0.07)",
+            "display": "flex",
+            "alignItems": "center"
+          },
+          "html": "<div style='display:flex; align-items:center; width:100%;'><span style='flex:0 0 auto; display:inline-block; width:62px; height:62px; border-radius:999px; background:rgba(28,122,82,0.12); color:#1C7A52; font-size:30px; font-weight:800; text-align:center; line-height:62px; margin-left:44px; margin-right:30px;'>&#10003;</span><span style='flex:1 1 auto; color:#12161C; font-size:36px; font-weight:600; line-height:1.45;'>Six responsive page designs</span><span style='flex:0 0 auto; color:rgba(18,22,28,0.55); font-size:22px; font-weight:800; letter-spacing:3px; margin-left:24px; margin-right:44px;'>02</span></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 140,
+          "y": 784,
+          "width": 1640,
+          "height": 120,
+          "anchor": "top-left",
+          "track": 5,
+          "enterBegin": 1.95,
+          "enterEnd": 2.4,
+          "enterAnimation": "smoothleft",
+          "exitEnd": 8.15,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#12161C",
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": "22px",
+            "border": "1px solid rgba(18,22,28,0.1)",
+            "boxShadow": "0 14px 34px rgba(18,22,28,0.07)",
+            "display": "flex",
+            "alignItems": "center"
+          },
+          "html": "<div style='display:flex; align-items:center; width:100%;'><span style='flex:0 0 auto; display:inline-block; width:62px; height:62px; border-radius:999px; background:rgba(28,122,82,0.12); color:#1C7A52; font-size:30px; font-weight:800; text-align:center; line-height:62px; margin-left:44px; margin-right:30px;'>&#10003;</span><span style='flex:1 1 auto; color:#12161C; font-size:36px; font-weight:600; line-height:1.45;'>CMS setup and team handover</span><span style='flex:0 0 auto; color:rgba(18,22,28,0.55); font-size:22px; font-weight:800; letter-spacing:3px; margin-left:24px; margin-right:44px;'>03</span></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 140,
+          "y": 986,
+          "width": 1640,
+          "anchor": "top-left",
+          "track": 12,
+          "enterBegin": 1.45,
+          "enterEnd": 1.85,
+          "enterAnimation": "fade",
+          "exitEnd": 8.15,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#6E6A61"
+          },
+          "html": "<div style='color:#6E6A61; font-size:22px; font-weight:600; letter-spacing:2px;'>Website refresh demo <span style='color:rgba(18,22,28,0.45);'>&nbsp;&#183;&nbsp;</span> Cedar Grove Demo</div>"
+        }
+      ],
+      "transitionId": "numbers"
+    },
+    {
+      "id": "numbers",
+      "duration": 6.55,
+      "backgroundColor": "#F4F1EA",
+      "transition": "fade",
+      "transitionDuration": 0.55,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1920,
+          "height": 1080,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 6.55,
+          "svg": "<svg width='1920' height='1080' viewBox='0 0 1920 1080' xmlns='http://www.w3.org/2000/svg'><rect width='1920' height='1080' fill='#F4F1EA'/><defs><linearGradient id='prNumbers' x1='0' y1='0' x2='0.85' y2='1'><stop offset='0' stop-color='#FFFFFF' stop-opacity='0.7'/><stop offset='1' stop-color='#FFFFFF' stop-opacity='0'/></linearGradient></defs><rect width='1920' height='1080' fill='url(#prNumbers)'/><rect x='140' y='250' width='64' height='6' rx='3' fill='#1B4DE4'/><rect x='140' y='596' width='1640' height='1.5' fill='rgba(18,22,28,0.12)'/><rect x='140' y='958' width='1640' height='1.5' fill='rgba(18,22,28,0.12)'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 140,
+          "y": 298,
+          "width": 1640,
+          "anchor": "top-left",
+          "track": 1,
+          "enterBegin": 0.7,
+          "enterEnd": 1.1,
+          "enterAnimation": "fade",
+          "exitEnd": 6.55,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#1B4DE4"
+          },
+          "html": "<div style='color:#1B4DE4; font-size:26px; font-weight:800; letter-spacing:6px;'>TOTAL INVESTMENT</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 140,
+          "y": 348,
+          "width": 1640,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.85,
+          "enterEnd": 1.4,
+          "enterAnimation": "smoothup",
+          "exitEnd": 6.55,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#12161C"
+          },
+          "html": "<div style='color:#12161C; font-size:176px; line-height:1.06; font-weight:800; letter-spacing:-4px;'>$12,400</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 1780,
+          "y": 362,
+          "width": 620,
+          "anchor": "top-right",
+          "track": 6,
+          "enterBegin": 1.15,
+          "enterEnd": 1.55,
+          "enterAnimation": "fade",
+          "exitEnd": 6.55,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#12161C",
+            "textAlign": "right"
+          },
+          "html": "<div style='text-align:right; color:#6E6A61; font-size:20px; font-weight:800; letter-spacing:4px;'>PREPARED FOR</div><div style='margin-top:12px; text-align:right; color:#12161C; font-size:34px; font-weight:700; line-height:1.25;'>Cedar Grove Demo</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 140,
+          "y": 668,
+          "width": 800,
+          "height": 226,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 1.5,
+          "enterEnd": 1.95,
+          "enterAnimation": "smoothup",
+          "exitEnd": 6.55,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#12161C",
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": "22px",
+            "border": "1px solid rgba(18,22,28,0.1)",
+            "boxShadow": "0 14px 34px rgba(18,22,28,0.07)",
+            "display": "flex",
+            "alignItems": "center"
+          },
+          "html": "<div style='margin-left:44px; margin-right:44px;'><div style='color:#6E6A61; font-size:21px; font-weight:800; letter-spacing:5px;'>TIMELINE</div><div style='margin-top:16px; color:#12161C; font-size:48px; line-height:1.2; font-weight:700;'>6-week delivery</div></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 980,
+          "y": 668,
+          "width": 800,
+          "height": 226,
+          "anchor": "top-left",
+          "track": 4,
+          "enterBegin": 1.85,
+          "enterEnd": 2.3,
+          "enterAnimation": "smoothup",
+          "exitEnd": 6.55,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#12161C",
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": "22px",
+            "border": "1px solid rgba(18,22,28,0.1)",
+            "boxShadow": "0 14px 34px rgba(18,22,28,0.07)",
+            "display": "flex",
+            "alignItems": "center"
+          },
+          "html": "<div style='margin-left:44px; margin-right:44px;'><div style='color:#6E6A61; font-size:21px; font-weight:800; letter-spacing:5px;'>VALID UNTIL</div><div style='margin-top:16px; color:#12161C; font-size:48px; line-height:1.2; font-weight:700;'>30 Nov 2026</div></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 140,
+          "y": 986,
+          "width": 1640,
+          "anchor": "top-left",
+          "track": 12,
+          "enterBegin": 2.05,
+          "enterEnd": 2.45,
+          "enterAnimation": "fade",
+          "exitEnd": 6.55,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#6E6A61"
+          },
+          "html": "<div style='color:#6E6A61; font-size:22px; font-weight:600; letter-spacing:2px;'>Website refresh demo</div>"
+        }
+      ],
+      "transitionId": "cta"
+    },
+    {
+      "id": "cta",
+      "duration": 5.6,
+      "backgroundColor": "#F4F1EA",
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1920,
+          "height": 1080,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 5.6,
+          "svg": "<svg width='1920' height='1080' viewBox='0 0 1920 1080' xmlns='http://www.w3.org/2000/svg'><rect width='1920' height='1080' fill='#F4F1EA'/><defs><linearGradient id='prCta' x1='0' y1='0' x2='0.85' y2='1'><stop offset='0' stop-color='#FFFFFF' stop-opacity='0.7'/><stop offset='1' stop-color='#FFFFFF' stop-opacity='0'/></linearGradient></defs><rect width='1920' height='1080' fill='url(#prCta)'/><rect x='660' y='766' width='600' height='1.5' fill='rgba(18,22,28,0.12)'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 960,
+          "y": 250,
+          "width": 1560,
+          "anchor": "top-center",
+          "track": 1,
+          "enterBegin": 0.7,
+          "enterEnd": 1.1,
+          "enterAnimation": "fade",
+          "exitEnd": 5.6,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#1B4DE4",
+            "textAlign": "center"
+          },
+          "html": "<div style='text-align:center;'><div style='display:inline-block; width:64px; height:6px; border-radius:3px; background:#1B4DE4; margin-bottom:42px;'></div><div style='text-align:center; color:#1B4DE4; font-size:26px; font-weight:800; letter-spacing:6px;'>NEXT STEP</div></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 960,
+          "y": 352,
+          "width": 1560,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.85,
+          "enterEnd": 1.4,
+          "enterAnimation": "smoothup",
+          "exitEnd": 5.6,
+          "style": {
+            "fontFamily": "Playfair Display",
+            "color": "#12161C",
+            "textAlign": "center"
+          },
+          "html": "<div style='text-align:center; color:#12161C; font-size:84px; line-height:1.1; font-weight:700; letter-spacing:-1px;'>Questions? Grab 15 minutes.</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 960,
+          "y": 518,
+          "width": 392,
+          "height": 100,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 1.4,
+          "enterEnd": 1.85,
+          "enterAnimation": "circleopen",
+          "exitEnd": 5.6,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#FFFFFF",
+            "backgroundColor": "#1B4DE4",
+            "borderRadius": "999px",
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "textAlign": "center"
+          },
+          "html": "<div style='text-align:center; color:#FFFFFF; font-size:34px; font-weight:700; letter-spacing:0.5px;'>Book a call &#8594;</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 960,
+          "y": 654,
+          "width": 1200,
+          "anchor": "top-center",
+          "track": 4,
+          "enterBegin": 1.7,
+          "enterEnd": 2.05,
+          "enterAnimation": "fade",
+          "exitEnd": 5.6,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#6E6A61",
+            "textAlign": "center"
+          },
+          "html": "<div style='text-align:center; color:#6E6A61; font-size:26px; font-weight:600; letter-spacing:2px;'>cedarline.example/meet</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 960,
+          "y": 812,
+          "width": 300,
+          "height": 76,
+          "anchor": "top-center",
+          "track": 5,
+          "enterBegin": 2,
+          "enterEnd": 2.4,
+          "enterAnimation": "fade",
+          "exitEnd": 5.6,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#12161C",
+            "textAlign": "center",
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "center"
+          },
+          "html": "<div style='text-align:center;'><div style='display:inline-block; width:76px; height:76px; border-radius:22px; background:#1B4DE4; color:#FFFFFF; font-size:34px; font-weight:800; text-align:center; line-height:76px;'>C</div></div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 960,
+          "y": 916,
+          "width": 1200,
+          "anchor": "top-center",
+          "track": 6,
+          "enterBegin": 2.15,
+          "enterEnd": 2.55,
+          "enterAnimation": "fade",
+          "exitEnd": 5.6,
+          "style": {
+            "fontFamily": "Manrope",
+            "color": "#12161C",
+            "textAlign": "center"
+          },
+          "html": "<div style='text-align:center; color:#12161C; font-size:32px; font-weight:700;'>Alex Morgan</div><div style='margin-top:10px; text-align:center; color:#6E6A61; font-size:24px; font-weight:600; letter-spacing:1px;'>Demo project lead · Cedarline Demo</div>"
+        }
+      ]
+    }
+  ]
+}

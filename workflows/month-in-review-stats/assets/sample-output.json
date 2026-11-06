@@ -1,0 +1,18 @@
+{
+  "renderedAt": "2026-10-19",
+  "input": "data/metrics.json",
+  "config": "config.json",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "durationSeconds": 16.35,
+  "quotedCredits": 17,
+  "quoteIsNotBillingAudit": true,
+  "audio": "none",
+  "reproduction": "npm start -- --render --max-credits 17",
+  "videoSha256": "ce0a4a58a08d3071803f72cf03de3aa982c4ab7b105e615bc985f952ea689e0b",
+  "projectSha256": "f0a529dabc1b192c777aaa61dfd569c06d0da2b540b45d1a4219d98709042eb7",
+  "workflowSha256": "ab475497cecf9896fda1501271979c39043b9ae371e1f8a6c942b1fc5a19561a",
+  "evidence": "Real n8n render retained from the documented fictional September customer fixture. Current Node mapper uses the same checked-in builder."
+}

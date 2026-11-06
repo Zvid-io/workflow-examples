@@ -1,0 +1,19 @@
+{
+  "renderedAt": "2026-10-19 13:05:22.296",
+  "input": "data/sample.json",
+  "fictional": true,
+  "width": 1080,
+  "height": 1920,
+  "duration": 23.76,
+  "quotedCredits": 24,
+  "reproductionCommand": "npm run sample -- --max-credits 30",
+  "historicalOutput": true,
+  "mediaChanges": "Only source audio/art URLs were migrated to content-addressed CDN objects with matching bytes.",
+  "canonicalWorkflowSha256": "789cc2486a7cca3cafd58b2779372bcc3927f40658ed7094412870549d916a94",
+  "hashes": {
+    "sample-output.mp4": "fa73b2ea5af5653f550b1e061be736da24301aa3652888b693afc395bfdc5804",
+    "sample-output.jpg": "3c750a7d0e7e79c336bc1d9418195686d56d931d6298fa7677d59524b5e657e9"
+  },
+  "videoSha256": "fa73b2ea5af5653f550b1e061be736da24301aa3652888b693afc395bfdc5804",
+  "workflowSha256": "789cc2486a7cca3cafd58b2779372bcc3927f40658ed7094412870549d916a94"
+}

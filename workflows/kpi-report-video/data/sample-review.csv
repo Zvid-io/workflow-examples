@@ -1,0 +1,4 @@
+"DataMode","Metric","Current","Previous","ChangePercent","Target","Status","Owner","Action","Baseline"
+"SAMPLE DATA - TEST ONLY","Example response time","3.4","2.1","61.9","2.5","review","Example support team","Example: review queue coverage","'+61.9% versus previous period."
+"SAMPLE DATA - TEST ONLY","Example revenue","120000","150000","'-20","160000","review","Example sales team","Example: review the sales pipeline","'-20% versus previous period."
+"SAMPLE DATA - TEST ONLY","Example conversion rate","4.2","3.6","16.67","4","on_track","Example growth team","Monitor","'+16.67% versus previous period."

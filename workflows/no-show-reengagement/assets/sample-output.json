@@ -1,0 +1,14 @@
+{
+  "recordedAt": "2026-10-19 12:35:09.593",
+  "input": "data/no-show.json",
+  "config": "config.json",
+  "width": 1080,
+  "height": 1920,
+  "durationSeconds": 15.07,
+  "creditsQuoted": 16,
+  "reproductionCommand": "npm start -- --render --max-credits 20 --out out/sample",
+  "videoSha256": "7972a0fa5d1a3507fe143cfc6b2f40486513f15a8b46a4b7e90a28eecc35bc6e",
+  "workflowSha256": "b219afc4f6f16790148d814e3a27631fd227525eaad854490459a7959e73aef8",
+  "projectSha256": "d1327ea48ecfb0707387ea10e26a6fe45e0a90c9e534db2c80073eeba90c5956",
+  "provenance": "Historical n8n render of the fictional Cedarline Demo sample. The current Node.js mapper reproduces the source project; it does not imply a new Node.js paid render."
+}

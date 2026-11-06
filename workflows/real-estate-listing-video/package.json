@@ -1,0 +1,28 @@
+{
+  "name": "zvid-real-estate-listing-video-example",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Create a property listing video from a local JSON queue with the matching n8n design.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "check": "node src/check.js",
+    "test": "node --test tests/*.test.js",
+    "offline": "node src/index.js --input data/listings.json --offline --out out/offline"
+  },
+  "dependencies": {
+    "@zvid/sdk": "0.2.0"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://zvid.io/contact"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zvid-io/workflow-examples.git",
+    "directory": "workflows/real-estate-listing-video"
+  }
+}

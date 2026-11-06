@@ -1,0 +1,64 @@
+{
+  "videoSha256": "eaff8ba10961c839f87f73b3037220a9eb61900eb93202f2c85f2f4aa9d88213",
+  "workflowSha256": "ddd8fe160121842ce8f1ed2eda34fd714ed02bc5e466d20d19da847b3eabc60d",
+  "renderedAt": "2026-10-29",
+  "illustrative": true,
+  "description": "Fictional Lisbon bookings and fixed weather fixture, not an operational forecast. Keep portraits at 09:00, move product shoot to 11:00, defer outdoor reel at 15:00.",
+  "input": "data/sample.json",
+  "configuration": "config.json",
+  "project": "assets/sample-project.json",
+  "fixtureClock": "2026-10-29T08:00:00Z",
+  "output": {
+    "file": "assets/sample-output.mp4",
+    "width": 1080,
+    "height": 1920,
+    "durationSeconds": 23,
+    "framesPerSecond": 30,
+    "codec": "h264",
+    "audio": false
+  },
+  "validation": {
+    "valid": true,
+    "creditsQuoted": 23,
+    "warnings": [],
+    "validatedAt": "2026-10-29",
+    "explanation": "Live Zvid validation quote; no API render was submitted. This is not an audited billing amount."
+  },
+  "renderMethod": "Local Zvid renderer, using this sample project. No paid API render.",
+  "reproduction": [
+    "npm ci",
+    "npm run check",
+    "npm test",
+    "npm run sample",
+    "npm run preview",
+    "npm start -- --render --max-credits 35"
+  ],
+  "reproductionNote": "The first four commands require no credentials and generate review artifacts. Preview requires a Zvid key and returns a current quote. The last command is an optional paid API render that reproduces the project; it is not the method used to create this checked-in sample.",
+  "source": {
+    "canonicalWorkflow": "zvid-integrations/n8n/workflows/zvid-daily-weather-video.json",
+    "canonicalCommit": "30e27fa6118c564f702c0b60401d91eedd86aa83",
+    "sha256": "ddd8fe160121842ce8f1ed2eda34fd714ed02bc5e466d20d19da847b3eabc60d"
+  },
+  "files": {
+    "sample-output.mp4": {
+      "sha256": "eaff8ba10961c839f87f73b3037220a9eb61900eb93202f2c85f2f4aa9d88213",
+      "bytes": 165657
+    },
+    "sample-output.jpg": {
+      "sha256": "6d0e4e0d54a9d3d1c1d89c0677a4630b7fed1f78af3f3a2e59c1f2733bddc279",
+      "bytes": 31993
+    },
+    "sample-project.json": {
+      "sha256": "64823afa2260e2f46cd8aa5ebb76a390e0d80a33a8fe31e039bfbe0d7c0dec42",
+      "bytes": 5025
+    },
+    "sample-decisions.csv": {
+      "sha256": "86c4e10f774fa37e59e12634ad88739cbf40f51053adae6a0147b48beb92bb61",
+      "bytes": 578
+    },
+    "sample-tentative-bookings.ics": {
+      "sha256": "c8e3392caf9c4900a43d72b37ecfa5aacd2e034f17983d6a8ec8a1c3ee750ddf",
+      "bytes": 1092
+    }
+  }
+}

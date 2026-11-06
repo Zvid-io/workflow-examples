@@ -1,0 +1,20 @@
+{
+  "renderedAt": "2026-10-25T07:15:38.588Z",
+  "input": "data/jobs.json",
+  "config": "config.json",
+  "width": 1080,
+  "height": 1920,
+  "durationSeconds": 17,
+  "frameRate": 30,
+  "audio": false,
+  "creditsQuoted": 17,
+  "quoteIsBillingReceipt": false,
+  "reproductionCommand": "npm run offline",
+  "renderCommand": "npm start -- --max-credits 20",
+  "eligibilityNote": "Offline and sample validation use 2026-10-25 for this recorded fictional example. Rendering checks the current date; the supplied demo closes on 2026-12-15.",
+  "videoSha256": "05f360db7d88765f3d200352cdde77ec7acbf81ff9136b8fe218717dae852feb",
+  "workflowSha256": "7421bc3ea88bcaa27186b4ab34776d7d5477f70ecc53f8b99ed5b0d2311cf61a",
+  "projectSha256": "6cde1232466f4bf21534389d674d6d11092792526926b67296a1b37fc21bb47c",
+  "posterSha256": "9a30ae5b00e40aa4d6a6bdc76c08aef9dedc1fe1648c29ee9c36404a482b2a03",
+  "provenance": "Retained completed spotlight sample from the 25 October 2026 hiring tutorial revision. No new render performed for this companion."
+}

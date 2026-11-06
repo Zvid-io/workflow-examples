@@ -1,0 +1,107 @@
+{
+  "name": "sports-brief-2026-10-20-1",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "scenes": [
+    {
+      "id": "edition",
+      "duration": 7,
+      "backgroundColor": "#13213D",
+      "visuals": [
+        {
+          "type": "TEXT",
+          "text": "APPROVED MATCH REPORT",
+          "x": 80,
+          "y": 240,
+          "width": 920,
+          "anchor": "top-left",
+          "style": {
+            "fontFamily": "Arial",
+            "fontSize": "58px",
+            "fontWeight": "600",
+            "color": "#FFFFFF"
+          }
+        },
+        {
+          "type": "TEXT",
+          "text": "Cedar FC\n3 – 2\nHarbor United",
+          "x": 80,
+          "y": 520,
+          "width": 920,
+          "anchor": "top-left",
+          "style": {
+            "fontFamily": "Arial",
+            "fontSize": "46px",
+            "fontWeight": "600",
+            "color": "#FFFFFF"
+          }
+        },
+        {
+          "type": "TEXT",
+          "text": "2026-10-20 · TheSportsDB · edition 1",
+          "x": 80,
+          "y": 1530,
+          "width": 920,
+          "anchor": "top-left",
+          "style": {
+            "fontFamily": "Arial",
+            "fontSize": "27px",
+            "fontWeight": "600",
+            "color": "#BCD6E4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "handoff",
+      "duration": 5,
+      "backgroundColor": "#13213D",
+      "visuals": [
+        {
+          "type": "TEXT",
+          "text": "EDITORIAL HANDOFF",
+          "x": 80,
+          "y": 240,
+          "width": 920,
+          "anchor": "top-left",
+          "style": {
+            "fontFamily": "Arial",
+            "fontSize": "58px",
+            "fontWeight": "600",
+            "color": "#FFFFFF"
+          }
+        },
+        {
+          "type": "TEXT",
+          "text": "Checked final status: FT\nMatch date: 2026-10-20\nReview the source and caption before publication.",
+          "x": 80,
+          "y": 520,
+          "width": 920,
+          "anchor": "top-left",
+          "style": {
+            "fontFamily": "Arial",
+            "fontSize": "46px",
+            "fontWeight": "600",
+            "color": "#FFFFFF"
+          }
+        },
+        {
+          "type": "TEXT",
+          "text": "Event 900000001 · No automatic social publication",
+          "x": 80,
+          "y": 1530,
+          "width": 920,
+          "anchor": "top-left",
+          "style": {
+            "fontFamily": "Arial",
+            "fontSize": "27px",
+            "fontWeight": "600",
+            "color": "#BCD6E4"
+          }
+        }
+      ]
+    }
+  ],
+  "audios": []
+}

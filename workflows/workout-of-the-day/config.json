@@ -1,0 +1,20 @@
+{
+  "apiUrl": "https://api.zvid.io",
+  "gymName": "Cedarline Demo Gym",
+  "handle": "@cedarline.demo",
+  "accent": "#C6FF3D",
+  "background": "#07080A",
+  "font": "Archivo",
+  "heroVideo": "https://cdn.zvid.io/blog/workout-of-the-day/2e856faee4f3/workout-hero.mp4",
+  "musicUrl": "",
+  "musicVolume": 0.18,
+  "timezone": "UTC",
+  "dateLocale": "en-US",
+  "fallbackToLatest": true,
+  "resolution": "instagram-reel",
+  "frameRate": 30,
+  "dryRun": false,
+  "pollSeconds": 10,
+  "timeoutMinutes": 20,
+  "maxCreditsPerVideo": 20
+}

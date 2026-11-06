@@ -1,0 +1,732 @@
+{
+  "pieces": [
+    {
+      "payload": {
+        "name": "blog-kit-li-a-calmer-weekly-content-review",
+        "resolution": "squared",
+        "frameRate": 30,
+        "backgroundColor": "#0B0F1A",
+        "outputFormat": "mp4",
+        "scenes": [
+          {
+            "id": "cover",
+            "duration": 5.7,
+            "backgroundColor": "#0B0F1A",
+            "visuals": [
+              {
+                "type": "SVG",
+                "width": 1080,
+                "height": 1080,
+                "track": 0,
+                "enterBegin": 0,
+                "exitEnd": 5.7,
+                "svg": "<svg width='1080' height='1080' viewBox='0 0 1080 1080' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='bckCg' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='rgb(23,27,38)'/><stop offset='0.55' stop-color='#0B0F1A'/><stop offset='1' stop-color='rgb(7,11,22)'/></linearGradient><radialGradient id='bckCr' cx='0.86' cy='0.1' r='0.72'><stop offset='0' stop-color='#FFB454' stop-opacity='0.26'/><stop offset='1' stop-color='#FFB454' stop-opacity='0'/></radialGradient></defs><rect width='1080' height='1080' fill='url(#bckCg)'/><rect width='1080' height='1080' fill='url(#bckCr)'/><rect x='40' y='40' width='1000' height='1000' rx='30' fill='none' stroke='rgba(255,255,255,0.09)' stroke-width='1.5'/></svg>"
+              },
+              {
+                "type": "SVG",
+                "width": 1080,
+                "height": 1080,
+                "track": 1,
+                "enterBegin": 0.5,
+                "enterEnd": 1.05,
+                "enterAnimation": "wiperight",
+                "exitEnd": 5.7,
+                "svg": "<svg width='1080' height='1080' viewBox='0 0 1080 1080' xmlns='http://www.w3.org/2000/svg'><rect x='84' y='399' width='168' height='6' rx='3' fill='#FFB454'/></svg>"
+              },
+              {
+                "type": "TEXT",
+                "x": 84,
+                "y": 96,
+                "anchor": "top-left",
+                "track": 2,
+                "enterBegin": 0,
+                "exitEnd": 5.7,
+                "style": {
+                  "fontFamily": "Space Grotesk",
+                  "color": "#FFB454"
+                },
+                "html": "<div style='display:inline-block; background:rgba(255,180,84,0.14); border:1.5px solid rgba(255,180,84,0.55); color:#FFB454; border-radius:999px; padding:14px 32px; font-size:24px; font-weight:700; letter-spacing:5px;'>FROM THE BLOG</div>"
+              },
+              {
+                "type": "TEXT",
+                "x": 84,
+                "y": 556,
+                "width": 912,
+                "anchor": "center-left",
+                "track": 3,
+                "enterBegin": 0.35,
+                "enterEnd": 1.05,
+                "enterAnimation": "fade",
+                "exitEnd": 5.7,
+                "style": {
+                  "fontFamily": "Instrument Serif",
+                  "color": "#F2F5FB"
+                },
+                "html": "<div style='color:#F2F5FB; font-size:88px; line-height:1.08; font-weight:400; letter-spacing:-0.01em;'>Simplify Your Weekly Content Review Process</div>"
+              },
+              {
+                "type": "TEXT",
+                "x": 84,
+                "y": 705,
+                "anchor": "top-left",
+                "track": 4,
+                "enterBegin": 1.25,
+                "enterEnd": 1.75,
+                "enterAnimation": "fade",
+                "exitEnd": 5.7,
+                "style": {
+                  "fontFamily": "Space Grotesk",
+                  "color": "#8D99B4"
+                },
+                "html": "<div style='color:#8D99B4; font-size:28px; font-weight:600; letter-spacing:3px;'>3 takeaways inside</div>"
+              },
+              {
+                "type": "TEXT",
+                "x": 84,
+                "y": 946,
+                "anchor": "top-left",
+                "track": 5,
+                "enterBegin": 0.9,
+                "enterEnd": 1.35,
+                "enterAnimation": "fade",
+                "exitEnd": 5.7,
+                "style": {
+                  "fontFamily": "Space Grotesk",
+                  "color": "#F2F5FB"
+                },
+                "html": "<div style='color:#F2F5FB; font-size:28px; font-weight:700; letter-spacing:1px;'>Cedarline Demo<span style='color:rgba(141,153,180,0.9); font-weight:500;'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;cedarline.example</span></div>"
+              }
+            ],
+            "transition": "fade",
+            "transitionDuration": 0.5
+          },
+          {
+            "id": "points",
+            "duration": 10.9,
+            "backgroundColor": "#0B0F1A",
+            "visuals": [
+              {
+                "type": "SVG",
+                "width": 1080,
+                "height": 1080,
+                "track": 0,
+                "enterBegin": 0,
+                "exitEnd": 10.9,
+                "svg": "<svg width='1080' height='1080' viewBox='0 0 1080 1080' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='bckPg' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='rgb(23,27,38)'/><stop offset='0.55' stop-color='#0B0F1A'/><stop offset='1' stop-color='rgb(7,11,22)'/></linearGradient><radialGradient id='bckPr' cx='0.12' cy='0.92' r='0.72'><stop offset='0' stop-color='#FFB454' stop-opacity='0.26'/><stop offset='1' stop-color='#FFB454' stop-opacity='0'/></radialGradient></defs><rect width='1080' height='1080' fill='url(#bckPg)'/><rect width='1080' height='1080' fill='url(#bckPr)'/><rect x='40' y='40' width='1000' height='1000' rx='30' fill='none' stroke='rgba(255,255,255,0.09)' stroke-width='1.5'/></svg>"
+              },
+              {
+                "type": "TEXT",
+                "x": 84,
+                "y": 176,
+                "anchor": "top-left",
+                "track": 1,
+                "enterBegin": 0,
+                "exitEnd": 10.9,
+                "style": {
+                  "fontFamily": "Space Grotesk",
+                  "color": "#FFB454"
+                },
+                "html": "<div style='color:#FFB454; font-size:24px; font-weight:700; letter-spacing:6px;'>WHAT IS INSIDE</div>"
+              },
+              {
+                "type": "TEXT",
+                "x": 84,
+                "y": 946,
+                "anchor": "top-left",
+                "track": 2,
+                "enterBegin": 0.2,
+                "enterEnd": 0.6,
+                "enterAnimation": "fade",
+                "exitEnd": 10.9,
+                "style": {
+                  "fontFamily": "Space Grotesk",
+                  "color": "#F2F5FB"
+                },
+                "html": "<div style='color:#F2F5FB; font-size:28px; font-weight:700; letter-spacing:1px;'>Cedarline Demo<span style='color:rgba(141,153,180,0.9); font-weight:500;'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;cedarline.example</span></div>"
+              },
+              {
+                "type": "SVG",
+                "width": 1080,
+                "height": 1080,
+                "track": 3,
+                "enterBegin": 0.35,
+                "enterEnd": 0.8,
+                "enterAnimation": "fade",
+                "exitEnd": 10.9,
+                "svg": "<svg width='1080' height='1080' viewBox='0 0 1080 1080' xmlns='http://www.w3.org/2000/svg'><rect x='84' y='280' width='912' height='176' rx='26' fill='rgba(255,255,255,0.035)' stroke='rgba(255,255,255,0.10)' stroke-width='1.5'/><rect x='86' y='300' width='6' height='136' rx='3' fill='#FFB454'/><circle cx='176' cy='368' r='34' fill='none' stroke='rgba(255,180,84,0.55)' stroke-width='2'/></svg>"
+              },
+              {
+                "type": "TEXT",
+                "x": 176,
+                "y": 368,
+                "anchor": "center-center",
+                "track": 4,
+                "enterBegin": 0.45,
+                "enterEnd": 0.9,
+                "enterAnimation": "fade",
+                "exitEnd": 10.9,
+                "style": {
+                  "fontFamily": "Space Grotesk",
+                  "color": "#FFB454"
+                },
+                "html": "<div style='color:#FFB454; font-size:30px; font-weight:700; text-align:center;'>01</div>"
+              },
+              {
+                "type": "TEXT",
+                "x": 246,
+                "y": 368,
+                "width": 712,
+                "anchor": "center-left",
+                "track": 5,
+                "enterBegin": 0.45,
+                "enterEnd": 0.95,
+                "enterAnimation": "fade",
+                "exitEnd": 10.9,
+                "style": {
+                  "fontFamily": "Space Grotesk",
+                  "color": "#F2F5FB"
+                },
+                "html": "<div style='color:#F2F5FB; font-size:38px; line-height:1.3; font-weight:600;'>Use one shared review queue</div>"
+              },
+              {
+                "type": "SVG",
+                "width": 1080,
+                "height": 1080,
+                "track": 6,
+                "enterBegin": 1.05,
+                "enterEnd": 1.5,
+                "enterAnimation": "fade",
+                "exitEnd": 10.9,
+                "svg": "<svg width='1080' height='1080' viewBox='0 0 1080 1080' xmlns='http://www.w3.org/2000/svg'><rect x='84' y='478' width='912' height='176' rx='26' fill='rgba(255,255,255,0.035)' stroke='rgba(255,255,255,0.10)' stroke-width='1.5'/><rect x='86' y='498' width='6' height='136' rx='3' fill='#FFB454'/><circle cx='176' cy='566' r='34' fill='none' stroke='rgba(255,180,84,0.55)' stroke-width='2'/></svg>"
+              },
+              {
+                "type": "TEXT",
+                "x": 176,
+                "y": 566,
+                "anchor": "center-center",
+                "track": 7,
+                "enterBegin": 1.15,
+                "enterEnd": 1.6,
+                "enterAnimation": "fade",
+                "exitEnd": 10.9,
+                "style": {
+                  "fontFamily": "Space Grotesk",
+                  "color": "#FFB454"
+                },
+                "html": "<div style='color:#FFB454; font-size:30px; font-weight:700; text-align:center;'>02</div>"
+              },
+              {
+                "type": "TEXT",
+                "x": 246,
+                "y": 566,
+                "width": 712,
+                "anchor": "center-left",
+                "track": 8,
+                "enterBegin": 1.15,
+                "enterEnd": 1.65,
+                "enterAnimation": "fade",
+                "exitEnd": 10.9,
+                "style": {
+                  "fontFamily": "Space Grotesk",
+                  "color": "#F2F5FB"
+                },
+                "html": "<div style='color:#F2F5FB; font-size:34px; line-height:1.3; font-weight:600;'>Verify meaning before final presentation</div>"
+              },
+              {
+                "type": "SVG",
+                "width": 1080,
+                "height": 1080,
+                "track": 9,
+                "enterBegin": 1.75,
+                "enterEnd": 2.2,
+                "enterAnimation": "fade",
+                "exitEnd": 10.9,
+                "svg": "<svg width='1080' height='1080' viewBox='0 0 1080 1080' xmlns='http://www.w3.org/2000/svg'><rect x='84' y='676' width='912' height='176' rx='26' fill='rgba(255,255,255,0.035)' stroke='rgba(255,255,255,0.10)' stroke-width='1.5'/><rect x='86' y='696' width='6' height='136' rx='3' fill='#FFB454'/><circle cx='176' cy='764' r='34' fill='none' stroke='rgba(255,180,84,0.55)' stroke-width='2'/></svg>"
+              },
+              {
+                "type": "TEXT",
+                "x": 176,
+                "y": 764,
+                "anchor": "center-center",
+                "track": 10,
+                "enterBegin": 1.85,
+                "enterEnd": 2.3,
+                "enterAnimation": "fade",
+                "exitEnd": 10.9,
+                "style": {
+                  "fontFamily": "Space Grotesk",
+                  "color": "#FFB454"
+                },
+                "html": "<div style='color:#FFB454; font-size:30px; font-weight:700; text-align:center;'>03</div>"
+              },
+              {
+                "type": "TEXT",
+                "x": 246,
+                "y": 764,
+                "width": 712,
+                "anchor": "center-left",
+                "track": 11,
+                "enterBegin": 1.85,
+                "enterEnd": 2.35,
+                "enterAnimation": "fade",
+                "exitEnd": 10.9,
+                "style": {
+                  "fontFamily": "Space Grotesk",
+                  "color": "#F2F5FB"
+                },
+                "html": "<div style='color:#F2F5FB; font-size:38px; line-height:1.3; font-weight:600;'>Separate approval from publishing</div>"
+              }
+            ],
+            "transition": "fade",
+            "transitionDuration": 0.5
+          },
+          {
+            "id": "outro",
+            "duration": 4.4,
+            "backgroundColor": "#0B0F1A",
+            "visuals": [
+              {
+                "type": "SVG",
+                "width": 1080,
+                "height": 1080,
+                "track": 0,
+                "enterBegin": 0,
+                "exitEnd": 4.4,
+                "svg": "<svg width='1080' height='1080' viewBox='0 0 1080 1080' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='bckOg' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='rgb(23,27,38)'/><stop offset='0.55' stop-color='#0B0F1A'/><stop offset='1' stop-color='rgb(7,11,22)'/></linearGradient><radialGradient id='bckOr' cx='0.5' cy='0.42' r='0.72'><stop offset='0' stop-color='#FFB454' stop-opacity='0.26'/><stop offset='1' stop-color='#FFB454' stop-opacity='0'/></radialGradient></defs><rect width='1080' height='1080' fill='url(#bckOg)'/><rect width='1080' height='1080' fill='url(#bckOr)'/><rect x='40' y='40' width='1000' height='1000' rx='30' fill='none' stroke='rgba(255,255,255,0.09)' stroke-width='1.5'/></svg>"
+              },
+              {
+                "type": "SVG",
+                "width": 1080,
+                "height": 1080,
+                "track": 1,
+                "enterBegin": 0.1,
+                "enterEnd": 0.7,
+                "enterAnimation": "circleopen",
+                "exitEnd": 4.4,
+                "svg": "<svg width='1080' height='1080' viewBox='0 0 1080 1080' xmlns='http://www.w3.org/2000/svg'><circle cx='540' cy='572' r='324' fill='none' stroke='rgba(255,180,84,0.16)' stroke-width='1.5'/><circle cx='540' cy='572' r='236' fill='none' stroke='rgba(255,180,84,0.1)' stroke-width='1.5'/><rect x='486' y='700' width='108' height='5' rx='2.5' fill='#FFB454'/></svg>"
+              },
+              {
+                "type": "TEXT",
+                "x": 540,
+                "y": 412,
+                "width": 900,
+                "anchor": "bottom-center",
+                "track": 2,
+                "enterBegin": 0.25,
+                "enterEnd": 0.8,
+                "enterAnimation": "smoothdown",
+                "exitEnd": 4.4,
+                "style": {
+                  "fontFamily": "Instrument Serif",
+                  "color": "#F2F5FB"
+                },
+                "html": "<div style='text-align:center; color:#F2F5FB; font-size:78px; line-height:1.06; font-weight:400;'>Cedarline Demo</div>"
+              },
+              {
+                "type": "TEXT",
+                "x": 540,
+                "y": 552,
+                "anchor": "center-center",
+                "track": 3,
+                "enterBegin": 0.6,
+                "enterEnd": 1.15,
+                "enterAnimation": "circleopen",
+                "exitEnd": 4.4,
+                "style": {
+                  "fontFamily": "Space Grotesk",
+                  "color": "#FFB454"
+                },
+                "html": "<div style='display:inline-block; background:#FFB454; color:#0B0F1A; border-radius:999px; padding:26px 56px; font-size:34px; font-weight:700;'>Read the full post</div>"
+              },
+              {
+                "type": "TEXT",
+                "x": 540,
+                "y": 772,
+                "anchor": "top-center",
+                "track": 4,
+                "enterBegin": 1,
+                "enterEnd": 1.45,
+                "enterAnimation": "fade",
+                "exitEnd": 4.4,
+                "style": {
+                  "fontFamily": "Space Grotesk",
+                  "color": "#8D99B4"
+                },
+                "html": "<div style='text-align:center; color:#8D99B4; font-size:28px; font-weight:600; letter-spacing:4px;'>cedarline.example</div>"
+              }
+            ]
+          }
+        ]
+      },
+      "meta": {
+        "kind": "linkedin-video",
+        "label": "LinkedIn square video",
+        "format": "mp4",
+        "dimensions": "1080x1080",
+        "totalSeconds": 20,
+        "sceneCount": 3,
+        "sceneDurations": [
+          5.7,
+          10.9,
+          4.4
+        ],
+        "headline": "Simplify Your Weekly Content Review Process",
+        "subhead": "3 takeaways inside",
+        "points": [
+          "Use one shared review queue",
+          "Verify meaning before final presentation",
+          "Separate approval from publishing"
+        ],
+        "index": 1,
+        "of": 3,
+        "postTitle": "A calmer weekly content review",
+        "postLink": "https://cdn.zvid.io/tutorials/n8n-days-17-19-2026-10-20/weekly-content-review.6309788f65b7.html",
+        "postGuid": "cedarline-demo-content-review-20261020",
+        "domain": "cedarline.example",
+        "brandName": "Cedarline Demo",
+        "musicUrl": null,
+        "musicNote": "No musicUrl set in Config — the two videos render silent.",
+        "outputCount": 3,
+        "kinds": [
+          "linkedin-video",
+          "x-teaser-video",
+          "og-image"
+        ]
+      }
+    },
+    {
+      "payload": {
+        "name": "blog-kit-x-a-calmer-weekly-content-review",
+        "resolution": "hd",
+        "frameRate": 30,
+        "backgroundColor": "#0B0F1A",
+        "outputFormat": "mp4",
+        "scenes": [
+          {
+            "id": "hook",
+            "duration": 4.9,
+            "backgroundColor": "#0B0F1A",
+            "visuals": [
+              {
+                "type": "SVG",
+                "width": 1280,
+                "height": 720,
+                "track": 0,
+                "enterBegin": 0,
+                "exitEnd": 4.9,
+                "svg": "<svg width='1280' height='720' viewBox='0 0 1280 720' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='bckX1g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='rgb(23,27,38)'/><stop offset='0.55' stop-color='#0B0F1A'/><stop offset='1' stop-color='rgb(7,11,22)'/></linearGradient><radialGradient id='bckX1r' cx='0.1' cy='0.14' r='0.72'><stop offset='0' stop-color='#FFB454' stop-opacity='0.26'/><stop offset='1' stop-color='#FFB454' stop-opacity='0'/></radialGradient></defs><rect width='1280' height='720' fill='url(#bckX1g)'/><rect width='1280' height='720' fill='url(#bckX1r)'/><rect x='30' y='30' width='1220' height='660' rx='24' fill='none' stroke='rgba(255,255,255,0.09)' stroke-width='1.5'/></svg>"
+              },
+              {
+                "type": "SVG",
+                "width": 1280,
+                "height": 720,
+                "track": 1,
+                "enterBegin": 0.4,
+                "enterEnd": 0.95,
+                "enterAnimation": "wiperight",
+                "exitEnd": 4.9,
+                "svg": "<svg width='1280' height='720' viewBox='0 0 1280 720' xmlns='http://www.w3.org/2000/svg'><rect x='76' y='477' width='150' height='6' rx='3' fill='#FFB454'/></svg>"
+              },
+              {
+                "type": "TEXT",
+                "x": 76,
+                "y": 72,
+                "anchor": "top-left",
+                "track": 2,
+                "enterBegin": 0,
+                "exitEnd": 4.9,
+                "style": {
+                  "fontFamily": "Space Grotesk",
+                  "color": "#FFB454"
+                },
+                "html": "<div style='display:inline-block; background:rgba(255,180,84,0.14); border:1.5px solid rgba(255,180,84,0.55); color:#FFB454; border-radius:999px; padding:11px 26px; font-size:20px; font-weight:700; letter-spacing:4px;'>FROM THE BLOG</div>"
+              },
+              {
+                "type": "TEXT",
+                "x": 76,
+                "y": 352,
+                "width": 1128,
+                "anchor": "center-left",
+                "track": 3,
+                "enterBegin": 0.25,
+                "enterEnd": 0.9,
+                "enterAnimation": "fade",
+                "exitEnd": 4.9,
+                "style": {
+                  "fontFamily": "Instrument Serif",
+                  "color": "#F2F5FB"
+                },
+                "html": "<div style='color:#F2F5FB; font-size:66px; line-height:1.08; font-weight:400; letter-spacing:-0.01em;'>Make your weekly content review clearer and calmer</div>"
+              },
+              {
+                "type": "TEXT",
+                "x": 76,
+                "y": 620,
+                "anchor": "top-left",
+                "track": 4,
+                "enterBegin": 0.75,
+                "enterEnd": 1.15,
+                "enterAnimation": "fade",
+                "exitEnd": 4.9,
+                "style": {
+                  "fontFamily": "Space Grotesk",
+                  "color": "#F2F5FB"
+                },
+                "html": "<div style='color:#F2F5FB; font-size:24px; font-weight:700; letter-spacing:1px;'>Cedarline Demo<span style='color:rgba(141,153,180,0.9); font-weight:500;'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;cedarline.example</span></div>"
+              }
+            ],
+            "transition": "fade",
+            "transitionDuration": 0.5
+          },
+          {
+            "id": "line",
+            "duration": 3.6,
+            "backgroundColor": "#0B0F1A",
+            "visuals": [
+              {
+                "type": "SVG",
+                "width": 1280,
+                "height": 720,
+                "track": 0,
+                "enterBegin": 0,
+                "exitEnd": 3.6,
+                "svg": "<svg width='1280' height='720' viewBox='0 0 1280 720' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='bckX2g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='rgb(23,27,38)'/><stop offset='0.55' stop-color='#0B0F1A'/><stop offset='1' stop-color='rgb(7,11,22)'/></linearGradient><radialGradient id='bckX2r' cx='0.9' cy='0.86' r='0.72'><stop offset='0' stop-color='#FFB454' stop-opacity='0.26'/><stop offset='1' stop-color='#FFB454' stop-opacity='0'/></radialGradient></defs><rect width='1280' height='720' fill='url(#bckX2g)'/><rect width='1280' height='720' fill='url(#bckX2r)'/><rect x='30' y='30' width='1220' height='660' rx='24' fill='none' stroke='rgba(255,255,255,0.09)' stroke-width='1.5'/></svg>"
+              },
+              {
+                "type": "SVG",
+                "width": 1280,
+                "height": 720,
+                "track": 1,
+                "enterBegin": 0,
+                "exitEnd": 3.6,
+                "svg": "<svg width='1280' height='720' viewBox='0 0 1280 720' xmlns='http://www.w3.org/2000/svg'><rect x='76' y='190' width='96' height='4' rx='2' fill='rgba(255,180,84,0.7)'/></svg>"
+              },
+              {
+                "type": "TEXT",
+                "x": 76,
+                "y": 330,
+                "width": 1050,
+                "anchor": "center-left",
+                "track": 2,
+                "enterBegin": 0.1,
+                "enterEnd": 0.6,
+                "enterAnimation": "fade",
+                "exitEnd": 3.6,
+                "style": {
+                  "fontFamily": "Space Grotesk",
+                  "color": "#F2F5FB"
+                },
+                "html": "<div style='color:#F2F5FB; font-size:44px; line-height:1.38; font-weight:500;'>Organize drafts, check details, and keep approval steps distinct</div>"
+              },
+              {
+                "type": "TEXT",
+                "x": 76,
+                "y": 552,
+                "anchor": "top-left",
+                "track": 3,
+                "enterBegin": 0.5,
+                "enterEnd": 1,
+                "enterAnimation": "circleopen",
+                "exitEnd": 3.6,
+                "style": {
+                  "fontFamily": "Space Grotesk",
+                  "color": "#FFB454"
+                },
+                "html": "<div style='display:inline-block; background:#FFB454; color:#0B0F1A; border-radius:999px; padding:18px 40px; font-size:28px; font-weight:700;'>cedarline.example &rarr;</div>"
+              },
+              {
+                "type": "TEXT",
+                "x": 1204,
+                "y": 72,
+                "anchor": "top-right",
+                "track": 4,
+                "enterBegin": 0.1,
+                "enterEnd": 0.5,
+                "enterAnimation": "fade",
+                "exitEnd": 3.6,
+                "style": {
+                  "fontFamily": "Space Grotesk",
+                  "color": "#8D99B4"
+                },
+                "html": "<div style='text-align:right; color:rgba(141,153,180,0.95); font-size:22px; font-weight:700; letter-spacing:4px;'>CEDARLINE DEMO</div>"
+              }
+            ]
+          }
+        ]
+      },
+      "meta": {
+        "kind": "x-teaser-video",
+        "label": "X teaser video",
+        "format": "mp4",
+        "dimensions": "1280x720",
+        "totalSeconds": 8,
+        "sceneCount": 2,
+        "sceneDurations": [
+          4.9,
+          3.6
+        ],
+        "hook": "Make your weekly content review clearer and calmer",
+        "line": "Organize drafts, check details, and keep approval steps distinct",
+        "index": 2,
+        "of": 3,
+        "postTitle": "A calmer weekly content review",
+        "postLink": "https://cdn.zvid.io/tutorials/n8n-days-17-19-2026-10-20/weekly-content-review.6309788f65b7.html",
+        "postGuid": "cedarline-demo-content-review-20261020",
+        "domain": "cedarline.example",
+        "brandName": "Cedarline Demo",
+        "musicUrl": null,
+        "musicNote": "No musicUrl set in Config — the two videos render silent.",
+        "outputCount": 3,
+        "kinds": [
+          "linkedin-video",
+          "x-teaser-video",
+          "og-image"
+        ]
+      }
+    },
+    {
+      "payload": {
+        "name": "blog-kit-og-a-calmer-weekly-content-review",
+        "type": "image",
+        "resolution": "custom",
+        "width": 1200,
+        "height": 630,
+        "backgroundColor": "#0B0F1A",
+        "outputFormat": "png",
+        "visuals": [
+          {
+            "type": "SVG",
+            "width": 1200,
+            "height": 630,
+            "track": 0,
+            "svg": "<svg width='1200' height='630' viewBox='0 0 1200 630' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='ogG' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='rgb(25,29,40)'/><stop offset='0.55' stop-color='#0B0F1A'/><stop offset='1' stop-color='rgb(7,11,22)'/></linearGradient><radialGradient id='ogR' cx='0.82' cy='0.84' r='0.72'><stop offset='0' stop-color='#FFB454' stop-opacity='0.22'/><stop offset='1' stop-color='#FFB454' stop-opacity='0'/></radialGradient></defs><rect width='1200' height='630' fill='url(#ogG)'/><rect width='1200' height='630' fill='url(#ogR)'/><rect x='24' y='24' width='1152' height='582' rx='26' fill='none' stroke='rgba(255,255,255,0.09)' stroke-width='1.5'/></svg>"
+          },
+          {
+            "type": "SVG",
+            "width": 1200,
+            "height": 630,
+            "track": 1,
+            "svg": "<svg width='1200' height='630' viewBox='0 0 1200 630' xmlns='http://www.w3.org/2000/svg'><line x1='72' y1='158' x2='762' y2='158' stroke='rgba(255,255,255,0.09)' stroke-width='1.5'/><line x1='806' y1='72' x2='806' y2='558' stroke='rgba(255,255,255,0.10)' stroke-width='1.5'/><circle cx='1000' cy='272' r='128' fill='none' stroke='rgba(255,180,84,0.3)' stroke-width='2'/><circle cx='1000' cy='272' r='90' fill='none' stroke='rgba(255,180,84,0.16)' stroke-width='1.5'/><path d='M1000 144 A128 128 0 0 1 1128 272 L1000 272 Z' fill='rgba(255,180,84,0.85)'/><rect x='898' y='438' width='204' height='7' rx='3.5' fill='rgba(255,180,84,0.85)'/><rect x='898' y='464' width='148' height='7' rx='3.5' fill='rgba(255,255,255,0.18)'/><rect x='898' y='490' width='96' height='7' rx='3.5' fill='rgba(255,255,255,0.10)'/><rect x='72' y='438' width='120' height='6' rx='3' fill='#FFB454'/></svg>"
+          },
+          {
+            "type": "TEXT",
+            "x": 72,
+            "y": 72,
+            "anchor": "top-left",
+            "track": 2,
+            "style": {
+              "fontFamily": "Space Grotesk",
+              "color": "#FFB454"
+            },
+            "html": "<div style='display:inline-block; background:rgba(255,180,84,0.14); border:1.5px solid rgba(255,180,84,0.55); color:#FFB454; border-radius:999px; padding:11px 26px; font-size:20px; font-weight:700; letter-spacing:4px;'>CONTENT MANAGEMENT</div>"
+          },
+          {
+            "type": "TEXT",
+            "x": 72,
+            "y": 412,
+            "width": 690,
+            "anchor": "bottom-left",
+            "track": 3,
+            "style": {
+              "fontFamily": "Instrument Serif",
+              "color": "#F2F5FB"
+            },
+            "html": "<div style='color:#F2F5FB; font-size:70px; line-height:1.08; font-weight:400; letter-spacing:-0.01em;'>Master the Weekly Content Review</div>"
+          },
+          {
+            "type": "TEXT",
+            "x": 72,
+            "y": 492,
+            "anchor": "top-left",
+            "track": 4,
+            "style": {
+              "fontFamily": "Space Grotesk",
+              "color": "#F2F5FB"
+            },
+            "html": "<div style='color:#F2F5FB; font-size:27px; font-weight:700; letter-spacing:1px;'>Cedarline Demo<span style='color:rgba(141,153,180,0.9); font-weight:500;'>&nbsp;&nbsp;&middot;&nbsp;&nbsp;cedarline.example</span></div>"
+          }
+        ]
+      },
+      "meta": {
+        "kind": "og-image",
+        "label": "Open Graph share image",
+        "format": "png",
+        "dimensions": "1200x630",
+        "totalSeconds": 0,
+        "sceneCount": 0,
+        "title": "Master the Weekly Content Review",
+        "kicker": "CONTENT MANAGEMENT",
+        "index": 3,
+        "of": 3,
+        "postTitle": "A calmer weekly content review",
+        "postLink": "https://cdn.zvid.io/tutorials/n8n-days-17-19-2026-10-20/weekly-content-review.6309788f65b7.html",
+        "postGuid": "cedarline-demo-content-review-20261020",
+        "domain": "cedarline.example",
+        "brandName": "Cedarline Demo",
+        "musicUrl": null,
+        "musicNote": "No musicUrl set in Config — the two videos render silent.",
+        "outputCount": 3,
+        "kinds": [
+          "linkedin-video",
+          "x-teaser-video",
+          "og-image"
+        ]
+      }
+    }
+  ],
+  "post": {
+    "title": "A calmer weekly content review",
+    "link": "https://cdn.zvid.io/tutorials/n8n-days-17-19-2026-10-20/weekly-content-review.6309788f65b7.html",
+    "domain": "cdn.zvid.io",
+    "published": "2026-10-20T07:00:00.000Z",
+    "guid": "cedarline-demo-content-review-20261020"
+  },
+  "kit": {
+    "liHeadline": "Simplify Your Weekly Content Review Process",
+    "liPoints": [
+      "Use one shared review queue",
+      "Verify meaning before final presentation",
+      "Separate approval from publishing"
+    ],
+    "teaserHook": "Make your weekly content review clearer and calmer",
+    "teaserLine": "Organize drafts, check details, and keep approval steps distinct",
+    "ogTitle": "Master the Weekly Content Review",
+    "ogKicker": "CONTENT MANAGEMENT"
+  },
+  "articleSource": "page",
+  "config": {
+    "apiUrl": "https://api.zvid.io",
+    "editorUrl": "https://editor.zvid.io",
+    "feedUrl": "https://cdn.zvid.io/tutorials/n8n-days-17-19-2026-10-20/blog.72b68ecd2027.xml",
+    "brandName": "Cedarline Demo",
+    "domainOverride": "cedarline.example",
+    "kickerText": "FROM THE BLOG",
+    "pointsLabel": "What is inside",
+    "subheadText": "{n} takeaways inside",
+    "ctaText": "Read the full post",
+    "brandInk": "#0B0F1A",
+    "brandAccent": "#FFB454",
+    "textColor": "#F2F5FB",
+    "mutedColor": "#8D99B4",
+    "headlineFont": "Instrument Serif",
+    "uiFont": "Space Grotesk",
+    "llmModel": "openai/gpt-4.1-mini",
+    "maxPromptChars": 4000,
+    "makeLinkedInVideo": true,
+    "makeXTeaser": true,
+    "makeOgImage": true,
+    "linkedInSeconds": 20,
+    "teaserSeconds": 8,
+    "ogImageFormat": "png",
+    "ogImageQuality": 92,
+    "sceneTransition": "fade",
+    "transitionSeconds": 0.5,
+    "frameRate": 30,
+    "musicUrl": "",
+    "musicVolume": 0.16,
+    "maxMusicBytes": 5242880,
+    "dryRun": false,
+    "pollSeconds": 10,
+    "timeoutMinutes": 20
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "createdAt": "2026-10-29",
+  "input": "data/project.json",
+  "brief": "data/brief.txt",
+  "width": 1080,
+  "height": 1920,
+  "durationSeconds": 12,
+  "frameRate": 30,
+  "audio": false,
+  "quotedCredits": 12,
+  "quoteSource": "Remote validation of this exact project, 2026-10-29",
+  "reproductionCommand": "npm run sample, review the returned draft and quote, then npm start -- render --approve --max-credits 25",
+  "sampleProduction": "Local Zvid engine render of the saved FocusFlow draft. No new model call or paid render. Live Telegram delivery was not rerun.",
+  "videoSha256": "87ac7e72e395c2f6941fab60649325213a2ea119f9b8ebf1d8cfe43a5db7ce91",
+  "posterSha256": "4147be0824dc94c8de75ebedce94decfc09eb721faff5b7958b28be845b27b63",
+  "projectSha256": "4facb82c2322cd368b915291e1ebcc2790b1e242107fd2e5ea78e6e4e8016dfd",
+  "workflowSha256": "6475d9676f57049937225d2665f0be9373cfcd6516f825b23c1d056afc470b12"
+}

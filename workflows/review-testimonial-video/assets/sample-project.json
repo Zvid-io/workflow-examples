@@ -1,0 +1,336 @@
+{
+  "name": "review-everyday-tote-alex-morgan",
+  "resolution": "instagram-reel",
+  "frameRate": 30,
+  "backgroundColor": "#1C1512",
+  "outputFormat": "mp4",
+  "scenes": [
+    {
+      "id": "hook",
+      "duration": 4.3,
+      "backgroundColor": "#1C1512",
+      "transition": "smoothup",
+      "transitionId": "quote",
+      "transitionDuration": 0.5,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 1,
+          "enterBegin": 0,
+          "exitEnd": 4.3,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='rtvHook' cx='0.5' cy='0.34' r='0.94'><stop offset='0' stop-color='#3c3633'/><stop offset='1' stop-color='#1C1512'/></radialGradient><radialGradient id='rtvHookA' cx='0.5' cy='0.5' r='0.5'><stop offset='0' stop-color='#C2553D' stop-opacity='0.16'/><stop offset='0.6' stop-color='#C2553D' stop-opacity='0.07'/><stop offset='1' stop-color='#C2553D' stop-opacity='0'/></radialGradient><radialGradient id='rtvHookB' cx='0.5' cy='0.5' r='0.5'><stop offset='0' stop-color='#C2553D' stop-opacity='0.11'/><stop offset='0.6' stop-color='#C2553D' stop-opacity='0.05'/><stop offset='1' stop-color='#C2553D' stop-opacity='0'/></radialGradient></defs><rect width='1080' height='1920' fill='url(#rtvHook)'/><circle cx='900' cy='230' r='420' fill='url(#rtvHookA)'/><circle cx='140' cy='1680' r='380' fill='url(#rtvHookB)'/><rect x='64' y='64' width='952' height='1792' rx='36' fill='none' stroke='rgba(245,237,230,0.18)' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 140,
+          "width": 880,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 0,
+          "enterEnd": 0.45,
+          "enterAnimation": "fade",
+          "exitEnd": 4.3,
+          "style": {
+            "fontFamily": "Outfit",
+            "color": "#CFBAAE"
+          },
+          "html": "<div style=\"text-align:center; color:#CFBAAE; font-size:26px; font-weight:700; letter-spacing:9px;\">NORTHWIND GOODS</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 660,
+          "width": 880,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 0.15,
+          "enterEnd": 0.62,
+          "enterAnimation": "smoothdown",
+          "exitEnd": 4.3,
+          "style": {
+            "fontFamily": "Outfit",
+            "color": "#e2aea3"
+          },
+          "html": "<div style=\"text-align:center; color:#e2aea3; font-size:30px; font-weight:800; letter-spacing:11px;\">SAMPLE REVIEW</div>"
+        },
+        {
+          "type": "SVG",
+          "x": 540,
+          "y": 766,
+          "width": 824,
+          "height": 136,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 0.35,
+          "enterEnd": 0.95,
+          "enterAnimation": "circleopen",
+          "exitEnd": 4.3,
+          "svg": "<svg width='824' height='136' viewBox='0 0 824 136' xmlns='http://www.w3.org/2000/svg'><polygon points='68,0 83.3,47 132.7,47 92.7,76 108,123 68,94 28,123 43.3,76 3.3,47 52.7,47' fill='#D9892B'/><polygon points='240,0 255.3,47 304.7,47 264.7,76 280,123 240,94 200,123 215.3,76 175.3,47 224.7,47' fill='#D9892B'/><polygon points='412,0 427.3,47 476.7,47 436.7,76 452,123 412,94 372,123 387.3,76 347.3,47 396.7,47' fill='#D9892B'/><polygon points='584,0 599.3,47 648.7,47 608.7,76 624,123 584,94 544,123 559.3,76 519.3,47 568.7,47' fill='#D9892B'/><polygon points='756,0 771.3,47 820.7,47 780.7,76 796,123 756,94 716,123 731.3,76 691.3,47 740.7,47' fill='#D9892B'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 966,
+          "width": 880,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 0.85,
+          "enterEnd": 1.22,
+          "enterAnimation": "fade",
+          "exitEnd": 4.3,
+          "style": {
+            "fontFamily": "Outfit",
+            "color": "#F5EDE6"
+          },
+          "html": "<div style=\"text-align:center; color:#F5EDE6; font-size:38px; font-weight:600; letter-spacing:4px;\">5.0 out of 5</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1098,
+          "width": 860,
+          "anchor": "top-center",
+          "track": 3,
+          "enterBegin": 1,
+          "enterEnd": 1.55,
+          "enterAnimation": "fade",
+          "exitEnd": 4.3,
+          "style": {
+            "fontFamily": "Playfair Display",
+            "color": "#F5EDE6"
+          },
+          "html": "<div style=\"text-align:center; color:#F5EDE6; font-size:64px; line-height:1.22; font-weight:600;\">An illustrative customer story.</div>"
+        }
+      ]
+    },
+    {
+      "id": "quote",
+      "duration": 7.43,
+      "backgroundColor": "#F5EDE6",
+      "transition": "smoothup",
+      "transitionId": "cta",
+      "transitionDuration": 0.5,
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 7.43,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='rtvPaper' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#faf6f3'/><stop offset='1' stop-color='#F5EDE6'/></linearGradient><radialGradient id='rtvPaperA' cx='0.5' cy='0.5' r='0.5'><stop offset='0' stop-color='#C2553D' stop-opacity='0.16'/><stop offset='0.6' stop-color='#C2553D' stop-opacity='0.07'/><stop offset='1' stop-color='#C2553D' stop-opacity='0'/></radialGradient><radialGradient id='rtvPaperB' cx='0.5' cy='0.5' r='0.5'><stop offset='0' stop-color='#C2553D' stop-opacity='0.1'/><stop offset='0.6' stop-color='#C2553D' stop-opacity='0.05'/><stop offset='1' stop-color='#C2553D' stop-opacity='0'/></radialGradient></defs><rect width='1080' height='1920' fill='url(#rtvPaper)'/><circle cx='980' cy='1780' r='400' fill='url(#rtvPaperA)'/><circle cx='100' cy='1840' r='240' fill='url(#rtvPaperB)'/><text x='96' y='836' font-family='Georgia, serif' font-size='400' fill='rgba(194,85,61,0.14)'>&#8220;</text></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 120,
+          "y": 150,
+          "width": 560,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 0.5,
+          "enterEnd": 0.9,
+          "enterAnimation": "fade",
+          "exitEnd": 7.43,
+          "style": {
+            "fontFamily": "Outfit",
+            "color": "#70594D"
+          },
+          "html": "<div style=\"color:#70594D; font-size:26px; font-weight:700; letter-spacing:9px;\">NORTHWIND GOODS</div>"
+        },
+        {
+          "type": "SVG",
+          "x": 960,
+          "y": 144,
+          "width": 244,
+          "height": 40,
+          "anchor": "top-right",
+          "track": 2,
+          "enterBegin": 0.62,
+          "enterEnd": 1.05,
+          "enterAnimation": "smoothleft",
+          "exitEnd": 7.43,
+          "svg": "<svg width='244' height='40' viewBox='0 0 244 40' xmlns='http://www.w3.org/2000/svg'><polygon points='20,0 24.5,13.8 39,13.8 27.3,22.4 31.8,36.2 20,27.6 8.2,36.2 12.7,22.4 1,13.8 15.5,13.8' fill='#D9892B'/><polygon points='71,0 75.5,13.8 90,13.8 78.3,22.4 82.8,36.2 71,27.6 59.2,36.2 63.7,22.4 52,13.8 66.5,13.8' fill='#D9892B'/><polygon points='122,0 126.5,13.8 141,13.8 129.3,22.4 133.8,36.2 122,27.6 110.2,36.2 114.7,22.4 103,13.8 117.5,13.8' fill='#D9892B'/><polygon points='173,0 177.5,13.8 192,13.8 180.3,22.4 184.8,36.2 173,27.6 161.2,36.2 165.7,22.4 154,13.8 168.5,13.8' fill='#D9892B'/><polygon points='224,0 228.5,13.8 243,13.8 231.3,22.4 235.8,36.2 224,27.6 212.2,36.2 216.7,22.4 205,13.8 219.5,13.8' fill='#D9892B'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 120,
+          "y": 726,
+          "width": 840,
+          "anchor": "top-left",
+          "track": 3,
+          "enterBegin": 0.5,
+          "enterEnd": 1.2,
+          "enterAnimation": "fade",
+          "exitEnd": 7.43,
+          "style": {
+            "fontFamily": "Playfair Display",
+            "color": "#1C1512"
+          },
+          "html": "<div style=\"color:#1C1512; font-size:62px; line-height:1.28; font-weight:500; font-style:italic;\">&#8220;The tote feels sturdy, fits my daily essentials, and the inside pocket keeps my keys easy to find. I reach for it every morning.&#8221;</div>"
+        },
+        {
+          "type": "SVG",
+          "x": 120,
+          "y": 1171,
+          "width": 200,
+          "height": 4,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 1,
+          "enterEnd": 1.4,
+          "enterAnimation": "smoothleft",
+          "exitEnd": 7.43,
+          "svg": "<svg width='200' height='4' viewBox='0 0 200 4' xmlns='http://www.w3.org/2000/svg'><rect width='200' height='4' rx='2' fill='#C2553D'/></svg>"
+        },
+        {
+          "type": "SVG",
+          "x": 120,
+          "y": 1227,
+          "width": 100,
+          "height": 100,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 1.15,
+          "enterEnd": 1.6,
+          "enterAnimation": "circleopen",
+          "exitEnd": 7.43,
+          "svg": "<svg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='rtvMono' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#ab4b36'/><stop offset='1' stop-color='#903f2d'/></linearGradient></defs><circle cx='50' cy='50' r='50' fill='url(#rtvMono)'/><text x='50' y='66' font-family='Georgia, serif' font-size='46' font-weight='700' fill='#F5EDE6' text-anchor='middle'>A</text></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 252,
+          "y": 1235,
+          "width": 700,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 1.25,
+          "enterEnd": 1.7,
+          "enterAnimation": "smoothleft",
+          "exitEnd": 7.43,
+          "style": {
+            "fontFamily": "Outfit",
+            "color": "#1C1512"
+          },
+          "html": "<div style=\"color:#1C1512; font-size:40px; font-weight:700;\">Alex Morgan</div><div style=\"margin-top:8px; color:#70594D; font-size:25px; font-weight:600;\">Illustrative review · Everyday Tote</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 120,
+          "y": 1720,
+          "width": 840,
+          "anchor": "top-left",
+          "track": 2,
+          "enterBegin": 1.5,
+          "enterEnd": 1.9,
+          "enterAnimation": "fade",
+          "exitEnd": 7.43,
+          "style": {
+            "fontFamily": "Outfit",
+            "color": "#70594D"
+          },
+          "html": "<div style=\"color:#70594D; font-size:24px; font-weight:600; letter-spacing:5px;\">NORTHWINDGOODS.EXAMPLE</div>"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "duration": 4.2,
+      "backgroundColor": "#1C1512",
+      "visuals": [
+        {
+          "type": "SVG",
+          "width": 1080,
+          "height": 1920,
+          "track": 0,
+          "enterBegin": 0,
+          "exitEnd": 4.2,
+          "svg": "<svg width='1080' height='1920' viewBox='0 0 1080 1920' xmlns='http://www.w3.org/2000/svg'><defs><radialGradient id='rtvCta' cx='0.5' cy='0.5' r='0.95'><stop offset='0' stop-color='#3c3633'/><stop offset='1' stop-color='#1C1512'/></radialGradient><radialGradient id='rtvCtaHalo' cx='0.5' cy='0.5' r='0.5'><stop offset='0' stop-color='#D9892B' stop-opacity='0.18'/><stop offset='0.6' stop-color='#D9892B' stop-opacity='0.08'/><stop offset='1' stop-color='#D9892B' stop-opacity='0'/></radialGradient><radialGradient id='rtvCtaB' cx='0.5' cy='0.5' r='0.5'><stop offset='0' stop-color='#C2553D' stop-opacity='0.16'/><stop offset='0.6' stop-color='#C2553D' stop-opacity='0.07'/><stop offset='1' stop-color='#C2553D' stop-opacity='0'/></radialGradient></defs><rect width='1080' height='1920' fill='url(#rtvCta)'/><circle cx='540' cy='697' r='300' fill='url(#rtvCtaHalo)'/><circle cx='900' cy='1780' r='420' fill='url(#rtvCtaB)'/><rect x='64' y='64' width='952' height='1792' rx='36' fill='none' stroke='rgba(245,237,230,0.16)' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "SVG",
+          "x": 540,
+          "y": 671,
+          "width": 324,
+          "height": 52,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.15,
+          "enterEnd": 0.6,
+          "enterAnimation": "fade",
+          "exitEnd": 4.2,
+          "svg": "<svg width='324' height='52' viewBox='0 0 324 52' xmlns='http://www.w3.org/2000/svg'><polygon points='26,0 31.8,18 50.7,18 35.4,29.1 41.3,47 26,35.9 10.7,47 16.6,29.1 1.3,18 20.2,18' fill='#D9892B'/><polygon points='94,0 99.8,18 118.7,18 103.4,29.1 109.3,47 94,35.9 78.7,47 84.6,29.1 69.3,18 88.2,18' fill='#D9892B'/><polygon points='162,0 167.8,18 186.7,18 171.4,29.1 177.3,47 162,35.9 146.7,47 152.6,29.1 137.3,18 156.2,18' fill='#D9892B'/><polygon points='230,0 235.8,18 254.7,18 239.4,29.1 245.3,47 230,35.9 214.7,47 220.6,29.1 205.3,18 224.2,18' fill='#D9892B'/><polygon points='298,0 303.8,18 322.7,18 307.4,29.1 313.3,47 298,35.9 282.7,47 288.6,29.1 273.3,18 292.2,18' fill='#D9892B'/></svg>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 801,
+          "width": 880,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.35,
+          "enterEnd": 0.92,
+          "enterAnimation": "smoothup",
+          "exitEnd": 4.2,
+          "style": {
+            "fontFamily": "Playfair Display",
+            "color": "#F5EDE6"
+          },
+          "html": "<div style=\"text-align:center; color:#F5EDE6; font-size:82px; line-height:1.16; font-weight:600;\">Everyday Tote</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 940,
+          "width": 880,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.7,
+          "enterEnd": 1.05,
+          "enterAnimation": "fade",
+          "exitEnd": 4.2,
+          "style": {
+            "fontFamily": "Outfit",
+            "color": "#CFBAAE"
+          },
+          "html": "<div style=\"text-align:center; color:#CFBAAE; font-size:28px; font-weight:600; letter-spacing:7px;\">NORTHWIND GOODS</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1066,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 0.95,
+          "enterEnd": 1.45,
+          "enterAnimation": "circleopen",
+          "exitEnd": 4.2,
+          "style": {
+            "fontFamily": "Outfit",
+            "color": "#F5EDE6"
+          },
+          "html": "<div style=\"display:inline-block; background:#ab4b36; color:#F5EDE6; border-radius:999px; padding:26px 62px; font-size:38px; font-weight:700;\">Read the reviews</div>"
+        },
+        {
+          "type": "TEXT",
+          "x": 540,
+          "y": 1214,
+          "width": 880,
+          "anchor": "top-center",
+          "track": 2,
+          "enterBegin": 1.3,
+          "enterEnd": 1.68,
+          "enterAnimation": "fade",
+          "exitEnd": 4.2,
+          "style": {
+            "fontFamily": "Outfit",
+            "color": "#F5EDE6"
+          },
+          "html": "<div style=\"text-align:center; color:#F5EDE6; font-size:29px; font-weight:600; letter-spacing:3px;\">northwindgoods.example</div>"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "description": "Fictional Demo Studio Headphones offer: $89 to $54, 39% discount.",
+  "renderedAt": "2026-10-12",
+  "preparedAt": "2026-10-29",
+  "input": "data/sale.json",
+  "project": "assets/sample-project.json",
+  "bannerProject": "assets/sample-banner-project.json",
+  "durationSeconds": 13.4,
+  "width": 1080,
+  "height": 1920,
+  "bannerWidth": 1200,
+  "bannerHeight": 628,
+  "creditsQuoted": {
+    "video": 14,
+    "banner": 1,
+    "total": 15
+  },
+  "provenance": "Reused the recorded completed render. Audio track removed losslessly from the video stream to match the silent example. Source photograph rehosted byte-for-byte on Zvid CDN. No new paid render performed.",
+  "reproduce": "npm start -- --max-credits 15",
+  "workflowSha256": "1b22dcb4e28e8cd2ce0dcc29962917cc62da69295ba5ccb84033c417d245763a",
+  "sha256": {
+    "video": "697af2542e5bb7c759de829749dd2ff071a42554291f4cae7333010a2466da7d",
+    "poster": "d69fb91aaf5b159e1068d6fad187ad29e2ea5d93e55ffcad4a9269d7fa821910",
+    "banner": "f8ac02a86c644425242db61be4f7a3944124d77c76e2bcd481f310d825461de6"
+  },
+  "videoSha256": "697af2542e5bb7c759de829749dd2ff071a42554291f4cae7333010a2466da7d"
+}

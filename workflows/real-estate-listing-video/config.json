@@ -1,0 +1,22 @@
+{
+  "source": "sheet",
+  "brandName": "Cedarline Demo Homes",
+  "listedLabel": "FICTIONAL LISTING",
+  "agentLabel": "DEMO AGENT",
+  "ctaText": "Explore the demo",
+  "contactUrl": "https://example.com/?listing=cedar-house",
+  "currencySymbol": "$",
+  "serifFont": "Playfair Display",
+  "uiFont": "Manrope",
+  "inkColor": "#14110E",
+  "creamColor": "#F6F1E8",
+  "brandColor": "#1F3D34",
+  "accentColor": "#C6A15B",
+  "kenBurnsDepth": 1.08,
+  "musicVolume": 0.12,
+  "maxMusicBytes": 5242880,
+  "statusDoneValue": "done",
+  "pollSeconds": 10,
+  "timeoutMinutes": 20,
+  "musicUrl": ""
+}

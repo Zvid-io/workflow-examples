@@ -1,0 +1,14 @@
+{
+  "dealName": "Website refresh demo",
+  "company": "Cedar Grove Demo",
+  "contactFirstName": "Maya",
+  "amount": "12400",
+  "currency": "USD",
+  "scope": [
+    "Discovery and content plan",
+    "Six responsive page designs",
+    "CMS setup and team handover"
+  ],
+  "timelineWeeks": "6",
+  "validUntil": "2026-11-30"
+}

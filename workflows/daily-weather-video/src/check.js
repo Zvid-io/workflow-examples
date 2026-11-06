@@ -1,0 +1,12 @@
+import { readFileSync } from 'node:fs';
+import assert from 'node:assert/strict';
+import { build, defaults, workflow } from './workflow.js';
+const input=JSON.parse(readFileSync('data/sample.json','utf8'));
+const config={...defaults,...JSON.parse(readFileSync('config.json','utf8'))};
+const result=build(config,input,new Date(input.generatedAt));
+assert.equal(result.payload.width,1080); assert.equal(result.payload.height,1920);
+assert.deepEqual(result.decisions.map(d=>d.Decision),['keep','reschedule','defer']);
+assert.equal(result.payload.scenes.reduce((n,s)=>n+s.duration,0),23);
+assert(workflow.nodes.some(n=>n.type==='@zvid/n8n-nodes-zvid.zvid'));
+assert(!/CUSTOM\.|(?<!@zvid\/)n8n-nodes-zvid/.test(JSON.stringify(workflow)));
+console.log('Fixture: keep, reschedule and defer; 23-second vertical call sheet; scoped n8n nodes.');

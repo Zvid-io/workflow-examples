@@ -1,0 +1,17 @@
+# Import the podcast audiogram workflow
+
+1. In n8n **Settings → Community nodes**, install **`@zvid/n8n-nodes-zvid`** before configuring credentials. A workspace owner/admin may need to install it.
+2. Create an empty workflow, choose **Import from File** in its menu, and select `workflow.json`. Leave its schedule inactive.
+3. Check the installed Zvid package version. The current published 0.1.8 package does not support the export's **Save draft to editor** Project operation. Delete that unavailable node from your imported copy before executing any step, and leave `dryRun: false`. This removes the invalid node; it does not change the canonical download. Use the manual editor preview below.
+4. Create a Zvid API credential with a key from https://app.zvid.io/api-keys and base URL `https://api.zvid.io`. Select it on **Validate project (free)**, **Submit render**, **Get render status**, and **Upload episode audio**. The upload step uses HTTP Request because the published Zvid node has no multipart-upload operation.
+5. Create an ElevenLabs Header Auth credential: Name `xi-api-key`, Value your ElevenLabs API key with Speech to Text permission. Select it on **Transcribe (Scribe)**. Create an OpenRouter credential and select it on **Pick moments**.
+6. In **Config**, set your feed, name, handle and artwork; start with one clip. The supplied fictional fixture and sample settings are in `../data/sample.json`. The unmodified export defaults to the public Planet Money feed. Replace it with media you have permission to repurpose.
+7. Open **Check validation** and choose **Execute step**. This runs the preceding audio, transcription, selection and validation steps, stopping before rendering. Transcription/model charges may apply. Do not click **Execute workflow** for this preview; `dryRun: false` renders.
+8. Inspect each validated item's `payload`, `creditsRequired` and `meta`. Copy only the project object inside `payload`. At https://editor.zvid.io choose **Import**, paste it and click **Import project**. Play the whole timeline and inspect captions and cuts. Save a separate draft if needed. Editor changes do not flow back to the workflow automatically.
+9. Once approved, execute the workflow to render. A fresh execution can repeat transcription and selection, so inspect its final selections and costs. **Run summary** reports each completed clip and URL. Use **▶ Watch video → Binary → data → View**, select every item, and download accepted MP4s.
+
+The default daily trigger is 7:00 AM in the workflow timezone. It has no processed-episode history and can render the same latest episode repeatedly. Keep it inactive until you add a history check or choose an appropriate manual process.
+
+Validation does not spend Zvid render credits. The historical 23.76-second sample was quoted at 24 credits; current quotes depend on each resolved project. `creditsCharged` in the workflow summary carries the validation quote, not an independently audited billing total. Keep job IDs and inspect https://app.zvid.io after timeouts or uncertain submissions before another run.
+
+This workflow returns media for review. It does not publish to social accounts. The optional historical `dryRun: true` branch needs a Zvid package version supporting Project operations; it is not supported by 0.1.8. Read the main README for the Node.js alternative, which validates and returns importable project JSON without that node dependency.
